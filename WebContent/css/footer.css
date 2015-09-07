@@ -1,0 +1,33 @@
+#Footerleiste{
+    <!--
+    position: absolute;
+    bottom: auto;
+    width: 100%;
+    text-align: center;
+    background-color: #DEEFE7;
+    --->
+}
+
+
+<!--
+div.blackline-footer{
+        position: relative;
+        display: block;
+        width: auto;
+        height: 5px;
+        background-color: yellow;
+        clear: both;
+        margin-top: -9px;
+}
+
+
+
+.Footerelement{
+        list-style-type: none;
+        display: inline;
+        float: right;
+        margin: 0px 2px 0px 2px;
+        background-color: #deefe7;
+}
+
+--->
