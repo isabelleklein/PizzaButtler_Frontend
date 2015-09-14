@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/Users/Sunny/Documents/DHBW/DHBW SEM V/Projekt_Pizzabutler_Fronend_git/PizzaButtler_Frontend/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2710519753.index
+4080254232.index
+2667684079.index
+526691209.index
+3951178270.index
+1194425355.index
