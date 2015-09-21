@@ -1,6 +1,6 @@
 /**
- * @author Isabelle Klein
- * @Version 1.0
+ * @author Isabelle Klein, Dominik Terlau
+ * @Version 1.1
  */
 
 function checkForm() 
@@ -145,50 +145,22 @@ function checkForm()
 
 /** Pruefung, dass nur Zahlen enthalten sind in folgenden Feldern:
         - PLZ
-        - TAG
-        - MONAT
-        - JAHR
 **/
+/**
+ * Prüfung, ob es sich um ein Datum handelt ist aufgrund des Typs Datum nicht notwendig
+ */
 
 function validPlz(plz) {
 
-    var strReg = "([0-9])+([0-9])+([0-9])+([0-9])+([0-9])";
+    //var strReg = "([0-9])+([0-9])+([0-9])+([0-9])+([0-9])"; //Überprüfung, ob es sich um eine Zahlenfolge handelt ist aufgrund des Typs nicht notwendig
 
-    var regex = new RegExp(strReg);
+    var regex = new RegExp(strReg); //Was macht die Methode??
 
     return(regex.test(plz));
 
 } 
 
-function validTag(day) {
 
-    var strReg = "([0-9])+([0-9])";
-
-    var regex = new RegExp(strReg);
-
-    return(regex.test(day));
-
-}  
-
-function validMonat(month) {
-
-    var strReg = "([0-9])+([0-9])";
-
-    var regex = new RegExp(strReg);
-
-    return(regex.test(month));
-
-}  
-
-function validJahr(year) {
-
-    var strReg = "([0-9])+([0-9])+([0-9])+([0-9])";
-
-    var regex = new RegExp(strReg);
-
-    return(regex.test(year));
-
-}  
 
 
 /**  Pruefung ob eine gueltige Mail-Adresse eingegeben wurde **/
@@ -203,5 +175,44 @@ function validEmail(email) {
 
 }
 
+
+/** Übermittlung der eingegebenen Daten an das Backend **/
+
+
+var $registrieren = $('#registrieren');
+
+/** Aktionsinformationen für den Abschicken-Button **/
+
+$('#absenden').click(function(e) {
+	console.log("Abschicken Button wurde geklickt");
+	e.preventDefault(); /** cancel form submit **/
+	
+	var jsObj = $registrieren.serializeObject(), ajaxObj = {};
+	
+	//console.log(jsObj);
+	
+	ajaxObj = {  
+		type: "POST",																	/**RESTful-Methode POST**/
+		url: "http://pizzabuttler.com/reg/new/", 										/**Webadresse, welche das Anlegen eines neuen Benutzers ermöglicht**/
+		data: JSON.stringify(jsObj), 													/**Datei, die im HTTP-Body mitgegeben wird**/
+		contentType:"application/json",  												/**Dateityp der Datei im HTTP-Body**/
+		error: function(jqXHR, textStatus, errorThrown) {								/**Ermittlung von Fehlern**/
+			console.log("Error " + jqXHR.getAllResponseHeaders() + " " + errorThrown);
+		},
+		$('#div_ajaxResponse').text( "erfolgreich" );
+		success: function(data) { 														/**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
+			//console.log(data);
+			if(data[0].HTTP_CODE == 200) {
+				$('#div_ajaxResponse').text( data[0].MSG );
+			}
+		},
+		complete: function(XMLHttpRequest) {
+			//console.log( XMLHttpRequest.getAllResponseHeaders() );
+		}, 
+		dataType: "json" //request JSON
+	};
+	
+	$.ajax(ajaxObj);
+});
 
 
