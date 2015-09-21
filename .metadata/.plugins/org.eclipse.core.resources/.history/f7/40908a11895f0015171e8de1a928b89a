@@ -1,0 +1,87 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!DOCTYPE html>
+<html  xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<head>
+		<meta charset="utf-8">
+        <link rel="icon" href="Logo_klein.ico" />
+        <title>Kundendaten</title>
+        <link href="..//css/main.css" rel="stylesheet" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+       
+		<script type="text/javascript" src="../javascript/kunde.js"></script>
+	</head>
+	<body onload="ScriptFunktionen();">
+	
+        <div class="Seiteninhalt"> 
+			<form name="kunde" id="kunde" action="../results/kunde-result.jsp" method="post">
+				<input type="hidden" name="birth" id="birth" value="${Kunde.birth}">
+				<div class="ftable">
+					<!-- Fehlermeldung, falls es den Kunden schon in der DB gibt, die Email muss eindeutig sein -->
+					<c:if test="${param.error eq 1}">
+						<div id="DBpruef" class="warning">
+							<ul>Unter dieser E-mail-Adresse gibt es bereits einen Kunden.</ul>
+						</div>
+					</c:if>	
+					<!-- Einfuegen der Fehlermeldung bei falscher Eingabe -->
+					<div id="fehlermeldung" class="warning"> </div>
+					<div class="fline">
+						<label class="in1" for="vorname">Vorname</label>
+						<input class="in2" type="text" name="vorname" id="vorname" maxlength="32" value="${Kunde.vorname}">
+					</div>
+					<div class="fline">
+						<label class="in1" for="name">Nachname</label>
+						<input class="in2" type="text" name="name" id="name" maxlength="32" value="${Kunde.name}">
+					</div>
+					<div class="fline">
+						<label class="in1" for="birth">Geburtsdatum</label>
+						<input class="in2" type="text" name="day" id="day" maxlength="2" />
+						<input type="text" name="month" id="month" maxlength="2" />
+						<input type="text" name="year" id="year" maxlength="4" />
+					</div>
+					<div class="fline">
+						<label class="in1" for="strasse">Strasse / Hausnummer</label>
+						<input class="in2" type="text" name="strasse" id="strasse" maxlength="50" value="${Kunde.strasse}"/>
+						<input type="text" name="hnr" id="hnr" maxlength="4" value="${Kunde.hnr}"/>
+					</div>
+					<div class="fline">
+						<label class="in1" for="plz">PLZ / Wohnort</label>
+						<input class="in2" type="text" name="plz" id="plz" maxlength="5" value="${Kunde.plz}"/>
+						<input type="text" name="wohnort" id="wohnort" maxlength="50" value="${Kunde.wohnort}"/>
+					</div>
+					<div class="fline">
+						<label class="in1" for="email">E-mail</label>
+						<input class="in2" type="text" name="email" id="email" maxlength="32" value="${Kunde.email}"/>
+					</div>
+					<div class="fline">
+						<label class="in1" for="personr">Personalausweisnummer</label>
+						<input class="in2" type="text" name="personr" id="personr" maxlength="9" value="${Kunde.personr}">
+					</div>
+					<div class="fline">
+						<label class="in1" for="kdrabatt">Kundenrabatt</label>
+						<input class="in2" type="text" name="kdrabatt" id="kdrabatt" maxlength="2" value="${Kunde.kdrabatt}"/><a> %</a>
+					</div>
+					<div class="fline">
+						<a class="in1">Status</a>
+						<select class="in2" name="status" id="status" size="1">
+							<option value="Neukunde" selected> Neukunde	</option>
+							<option value="Bestandskunde"> Bestandskunde</option>
+							<option value="VIP"> VIP </option>
+						</select>
+					</div>
+				</div>	      
+				<div class="buttonline">
+					<c:if test="${param.anlegen eq 1}">
+						<input type="submit" value="weiter" formaction="../results/kunde-result.jsp?anlegen=1" class="fsubmit">
+					</c:if>
+					<c:if test="${empty param.anlegen}">
+						<input type="submit" value="weiter" class="fsubmit">
+					</c:if>
+				</div>
+			</form>
+		</div>
+		
+	</body>
+</html>

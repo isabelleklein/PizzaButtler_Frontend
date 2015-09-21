@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>.org.eclipse.dltk.core.external.folders</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>.link1</name>
+			<type>2</type>
+			<location>/Users/Sunny/Documents/DHBW/DHBW SEM V/Projekt_Pizzabutler_Fronend_git/PizzaButtler_Frontend/.metadata/.plugins/org.eclipse.php.core/__language__/2713a828</location>
+		</link>
+	</linkedResources>
+</projectDescription>
