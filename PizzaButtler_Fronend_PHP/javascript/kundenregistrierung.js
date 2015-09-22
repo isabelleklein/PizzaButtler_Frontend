@@ -1,268 +1,218 @@
 /**
  * @author Isabelle Klein, Dominik Terlau
- * @Version 1.3
+ * @Version 1.1
  */
 
 function checkForm() 
-{ 
-    var strFehler='';
-    
-    strFehler += anredePruefen();
-    strFehler += vornamePruefen();
-    strFehler += nachnamePruefen();
-    strFehler += strassePruefen();
-    strFehler += hausnummerPruefen();
-    strFehler += wohnortPruefen();
-    strFehler += plzPruefen();
-    strFehler += telefonnummerPruefen();
-    strFehler += mailPruefen();
-    strFehler += passwortPruefen();
-    
-    /** Ausgabe falls min 1 Fehler aufgetreten ist  **/
-    if (strFehler.length>0) {
-  	  alert("Folgende Probleme wurden festgestellt: \n\n"+strFehler);
-  	  return(false);
-    }
-    else{return(true)}
-}
-
-function anredePruefen()
 {
-	/**Pruefen der Anredde **/
-	var anrede = document.getElementById("status").value;  
-    if(anrede=="keine")
-	{
-		return "Das Feld 'Anrede' ist nicht ausgewählt\n";
-	}
-    return "";
-}
-
-function vornamePruefen1()
-{
-	var msg = '';
-	msg += vornamePruefen();
-	if (msg.length>0) 
-	  alert(msg + "");
-}
-
-function vornamePruefen()
-{
-/** Pruefen des Vornamens  **/
-
-      var vorname=document.getElementById("vorname").value;
-      if (vorname=="")
-      {
-    	  document.getElementById('vorname').style.borderColor = "red";
-    	  return  "Das Feld 'Vorname' ist leer\n";
-      }
-      else
-	  {
-    	  var strRegVor = "^[A-Za-zÀ-Üß-ü_]{2,32}$";
-          var regexVor = new RegExp(strRegVor);
-          if(regexVor.test(vorname)==false)
-          	return "Das Feld 'Vorname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 2 maximal 32 Buchstaben, Umlaute möglich\n";
-
-	  }
-      return "";
-}
-
-function nachnamePruefen1()
-{
-	var msg = '';
-	msg += nachnamePruefen();
-	if (msg.length>0) 
-	  alert(msg + "");
-}
-
-function nachnamePruefen()
-{
-/** Pruefen des Nachnamens  **/
-
+            
+    var vorname=document.getElementById("vorname").value;
     var name=document.getElementById("name").value;
-      if (name=="")
-    	  return "Das Feld 'Name' ist leer\n";
-
-      else
-	  {
-    	  var strRegNam = "^[A-Za-zÀ-Üß-ü_]{3,32}$";
-          var regexNam = new RegExp(strRegNam);
-          if(regexNam.test(name)==false)
-          	return "Das Feld 'Name' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 3 maximal 32 Buchstaben, Umlaute möglich\n";
-	  }
-      return "";
-}
-
-function strassePruefen1()
-{
-	var msg = '';
-	msg += strassePruefen();
-	if (msg.length>0) 
-	  alert(msg + "");
-}
-
-function strassePruefen()
-{
-/** Pruefen der Strasse und der Hausnummer **/   
+	var day=document.getElementById("day").value;
+	var month=document.getElementById("month").value;
+	var year=document.getElementById("year").value;
 	var strasse=document.getElementById("strasse").value;
-      if (strasse=="")
-    	  return "Das Feld 'Straße' ist leer\n";
-      else
-	  {
-    	  var strRegStr = "^[A-Za-zÀ-Üß-ü_]{2,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}$";
-          var regexStr = new RegExp(strRegStr);
-          if(regexStr.test(strasse)==false)
-          	return "Das Feld 'Strasse' entspricht nicht der typischen Form! Form: nur Buchstaben, maximal 2 Leerzeichen\n";
-	  }
-      return"";
-}
-
-function hausnummerPruefen1()
-{
-	var msg = '';
-	msg += hausnummerPruefen();
-	if (msg.length>0) 
-	  alert(msg + "");
-}
-
-function hausnummerPruefen()
-{
-  	var hnr=document.getElementById("hnr").value;
-      if (hnr=="")
-    	  return "Das Feld 'Hausnummer' ist leer\n";
-      else
-	  {
-    	  var strRegHnr = "^[0-9-_\.]{1,10}[a-zA-Z]{0,1}$";
-          var regexHnr = new RegExp(strRegHnr);
-          if(regexHnr.test(hnr)==false)
-          	return "Das Feld 'Hausnummer' entspricht nicht der typischen Form! Form:1-10 Ziffern, 1 Buchstabe\n";
-	  }
-      return "";
-}
-
-function wohnortPruefen1()
-{
-	var msg = '';
-	msg += wohnortPruefen();
-	if (msg.length>0) 
-	  alert(msg + "");
-}
-
-function wohnortPruefen()
-{
-
+	var hnr=document.getElementById("hnr").value;
 	var wohnort=document.getElementById("wohnort").value;
-/** Pruefen des Ortes und der Postleitzahl **/         
-      if (wohnort=="")
-    	  return "Das Feld 'Wohnort' ist leer\n";
-      else{
-          var strRegWoh = "^[A-Za-zÀ-Üß-ü_]{1,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}$";
-          var regexWoh = new RegExp(strRegWoh); 
-          if(regexWoh.test(wohnort)==false)
-        	  return "Das Feld 'Wohnort' entspricht nicht der typischen Form! \n";
-      }
-      return "";
-}
-
-function plzPruefen1()
-{
-	var msg = '';
-	msg += plzPruefen();
-	if (msg.length>0) 
-	  alert(msg + "");
-}
-
-function plzPruefen()
-{
-  	var plz=document.getElementById("plz").value;
-      if (plz=="")
-    	  return "Das Feld 'PLZ' ist leer\n";
-
-      else{
-    	  /** Pruefung, dass nur Zahlen in der PLZ enthalten sind **/
-          var strRegPLZ = "^[0-9]{5,5}$";
-          var regexPLZ = new RegExp(strRegPLZ); 
-          if(regexPLZ.test(plz)==false)
-        	  return "Das Feld 'plz' entspricht nicht der typischen Form! Form: 5 Ziffern \n";
-      }
-      return "";
-}
-
-function telefonnummerPruefen1()
-{
-	var msg = '';
-	msg += telefonnummerPruefen();
-	if (msg.length>0) 
-	  alert(msg + "");
-}
-
-function telefonnummerPruefen()
-{
-/** Pruefe der Telefonnummer  **/       
-    var tel=document.getElementById("tel").value;
-      if (tel=="")
-    	  return "Das Feld 'Telefonnummer' ist leer\n";
-      else{
-    	  /** Pruefung, dass nur Zahlen in der Tel enthalten sind **/
-          var strRegTel = "^[0-9-_\.]{5,20}$";
-          var regexTel = new RegExp(strRegTel); 
-          if(regexTel.test(tel)==false)
-        	  return "Das Feld 'Telefonnummer' entspricht nicht der typischen Form! Form: mindestens 5 maximal 20 Ziffern \n";
-      }
-      return "";
-}
-
-function mailPruefen1()
-{
-	var msg = '';
-	msg += mailPruefen();
-	if (msg.length>0) 
-	  alert(msg + "");
-}
-
-function mailPruefen()
-{
-/** Pruefen der Mail-Adresse  **/
+	var plz=document.getElementById("plz").value;
     var email=document.getElementById("email").value;
-      if (email=="")
-    	  return "Das Feld 'Email' ist leer\n";
-      else{
-    	  /**  Pruefung ob eine gueltige Mail-Adresse eingegeben wurde **/
-          var strRegMail = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-          var regexMail = new RegExp(strRegMail);
-          if(regexMail.test(email)==false)
-        	  return "Das Feld 'Email' entspricht nicht der typischen Form einer Email!\n";
-      }
-      return ""
+    var tel=document.getElementById("tel").value;
+
+    var strFehler='';
+
+
+/** Pruefen des Vornamens  **/
+      if (vorname=="")
+
+        strFehler += "Das Feld 'Vorname' ist leer\n";
+
+          if (vorname.length<2)
+
+        strFehler += "Dies ist kein gültiger Vorname\n";
+
+
+/** Pruefen des Nachnamens  **/
+          if (name=="")
+
+        strFehler += "Das Feld 'Name' ist leer\n";
+
+          if (name.length<3)
+
+        strFehler += "Dies ist kein gültiger Nachname\n";
+
+
+/** Pruefen des Datums, unterteilt in Tag / Monat / Jahr  **/   
+          if (day=="")
+
+        strFehler += "Das Feld 'Tag' ist leer\n";
+
+              if (month=="")
+
+        strFehler += "Das Feld 'Monat' ist leer\n";
+
+              if (year=="")
+
+        strFehler += "Das Feld 'Jahr' ist leer\n";
+
+              if (day.length>2)
+
+        strFehler += "Dies ist kein gültiger Tag\n";
+              if (month.length>2)
+
+        strFehler += "Dies ist kein gültiger Monat\n";
+              if (year.length>4)
+
+        strFehler += "Dies ist kein gültiges Jahr\n";
+
+/**              if (!validTag(document.forms[0].day.value)) {
+
+        strFehler += "Kein gültiger Tag - bitte nur Zahlen angeben\n";
+
+            }
+              if (!validMonat(document.forms[0].month.value)) {
+
+        strFehler += "Kein gültiger Monat - bitte nur Zahlen angeben\n";
+
+            }
+              if (!validJahr(document.forms[0].year.value)) {
+
+        strFehler += "Kein gültiges Jahr - bitte nur Zahlen angeben\n";
+
+            }
+    **/
+
+
+/** Pruefen der Strasse und der Hausnummer **/   
+          if (strasse=="")
+
+        strFehler += "Das Feld 'Straße' ist leer\n";
+
+          if (hnr=="")
+
+        strFehler += "Das Feld 'Hausnummer' ist leer\n";
+
+
+/** Pruefen des Ortes und der Postleitzahl **/         
+          if (wohnort=="")
+
+        strFehler += "Das Feld 'Wohnort' ist leer\n";
+
+          if (plz=="")
+
+        strFehler += "Das Feld 'PLZ' ist leer\n";
+
+          if (plz.length<5)
+
+        strFehler += "Die Postleitzahl ist zu kurz \n";
+
+/**          if (!validPlz(document.forms[0].plz.value)) {
+
+        strFehler += "Die Postleitzahl darf nur Zahlen enthalten! \n";
+
+            }
+
+**/
+
+/** Pruefe der Telefonnummer  **/    
+          if (tel=="")
+
+        strFehler += "Das Feld 'Telefonnummer' ist leer\n";
+
+
+/** Pruefen der Mail-Adresse  **/
+          if (email=="")
+
+        strFehler += "Das Feld 'Email' ist leer\n";
+
+/**          if (!validEmail(document.forms[0].email.value)) {
+
+        strFehler += "Bitte geben Sie eine gueltige Mail-Adresse an\n";
+
+            }
+**/
+
+/** Ausgabe falls min 1 Fehler aufgetreten ist  **/
+          if (strFehler.length>0) {
+
+        alert("Folgende Probleme wurden festgestellt: \n\n"+strFehler);
+
+        return(false);
+
+            }
+
+
 }
 
-function passwortPruefen1()
-{
-	var msg = '';
-	msg += passwortPruefen();
-	if (msg.length>0) 
-	  alert(msg + "");
+/** Pruefung, dass nur Zahlen enthalten sind in folgenden Feldern:
+        - PLZ
+**/
+/**
+ * Prüfung, ob es sich um ein Datum handelt ist aufgrund des Typs Datum nicht notwendig
+ */
+
+function validPlz(plz) {
+
+    //var strReg = "([0-9])+([0-9])+([0-9])+([0-9])+([0-9])"; //Überprüfung, ob es sich um eine Zahlenfolge handelt ist aufgrund des Typs nicht notwendig
+
+    var regex = new RegExp(strReg); //Was macht die Methode??
+
+    return(regex.test(plz));
+
+} 
+
+
+
+
+/**  Pruefung ob eine gueltige Mail-Adresse eingegeben wurde **/
+
+function validEmail(email) {
+
+    var strReg = "^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$";
+
+    var regex = new RegExp(strReg);
+
+    return(regex.test(email));
+
 }
-      
-function passwortPruefen()
-{
-    var pw1=document.getElementById("pw1").value;  
-    var pw2=document.getElementById("pw2").value;
-      if (pw1=="")
-    	  return "Das Feld 'Passwort' ist leer\n";
-      else{
-    	  /**  Pruefung ob sicheres Passwort eingegeben wurde **/
-          var strRegPw = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$";
-          var regexPw = new RegExp(strRegPw);
-          if(regexPw.test(pw1)==false)
-        	  return "Das Feld 'Passwort' hat nicht die erforderliche Sicherheit! Bitte mind. 8 stelliges Passwort mit Kleinbuchstaben, Großbuchstaben und Zahlen verwenden\n";
-      }
-      if (pw2=="")
-    	  return "Das Feld 'Passwort wiederholen' ist leer\n";
-      else{
-          if(pw2!=pw1)
-        	  return "Die Passwörter stimmen nicht überein!\n";
-      }
-      return "";
-}
-    
-   
+
+
+/** Übermittlung der eingegebenen Daten an das Backend **/
+
+
+var $registrieren = $('#registrieren');
+
+/** Aktionsinformationen für den Abschicken-Button **/
+
+$('#absenden').click(function(e) {
+	console.log("Abschicken Button wurde geklickt");
+	e.preventDefault(); /** cancel form submit **/
+	
+	var jsObj = $registrieren.serializeObject(), ajaxObj = {};
+	
+	//console.log(jsObj);
+	
+	ajaxObj = {  
+		type: "POST",																	/**RESTful-Methode POST**/
+		url: "http://pizzabuttler.com/reg/new/", 										/**Webadresse, welche das Anlegen eines neuen Benutzers ermöglicht**/
+		data: JSON.stringify(jsObj), 													/**Datei, die im HTTP-Body mitgegeben wird**/
+		contentType:"application/json",  												/**Dateityp der Datei im HTTP-Body**/
+		error: function(jqXHR, textStatus, errorThrown) {								/**Ermittlung von Fehlern**/
+			console.log("Error " + jqXHR.getAllResponseHeaders() + " " + errorThrown);
+		},
+		$('#div_ajaxResponse').text( "erfolgreich" );
+		success: function(data) { 														/**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
+			//console.log(data);
+			if(data[0].HTTP_CODE == 200) {
+				$('#div_ajaxResponse').text( data[0].MSG );
+			}
+		},
+		complete: function(XMLHttpRequest) {
+			//console.log( XMLHttpRequest.getAllResponseHeaders() );
+		}, 
+		dataType: "json" //request JSON
+	};
+	
+	$.ajax(ajaxObj);
+});
+
+
