@@ -13,6 +13,6 @@
    /* Begrüßung des Benutzers */
    echo "<p>Hallo " . $_SESSION["n"] . "</p>";
 ?>
-<p><a href="login_intro.php">Zur Intro-Seite</a></p> <p><a href="login_kunde.php">Logoff</a></p>
+<p><a href="login_intro.php">Zur Intro-Seite</a></p> <p><a href="login_kunde.php">Logout</a></p>
 </body>
 </html>

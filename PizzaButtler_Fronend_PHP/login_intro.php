@@ -17,12 +17,23 @@ if($_POST["n"] == "Hans" && $_POST["p"] == "bingo"
 <a href='login_kunde.php'>Zum Login</a></p>");
 ?>
 <html>
-<body>
-<h3>Intro-Seite</h3>
-<?php
-   /* Begrüßung des Benutzers */
-   echo "<p>Hallo " . $_SESSION["n"] . "</p>";
-?>
-<p><a href="login_erfolgreich.php">Zur beliebigen Seite</a></p> <p><a href="login_kunde.php">Logoff</a></p>
-</body>
+    <body>
+        <h3>Profilseite / Daten ändern </h3>
+
+        <form action="login_kunde.php" method="post">
+            <?php
+       /* Begrüßung des Benutzers */
+            echo "<p>Hallo " . $_SESSION["n"] . "</p>";
+            ?>
+            <p>Hier folgen dann die Kundendaten die aus der Datenbank gezogen werden ...</p>
+            <p><input type="submit" value="Logout" /></p>
+
+    <!-- dies wird nur benötigt, falls wir noch eine weitere Webseite verlinken, so wäre dann der Aufbau, wenn man die Session beachtet! 
+            <p><a href="login_erfolgreich.php">Link zu einer beliebigen Seite</a></p> 
+    -->
+
+
+
+        </form>
+    </body>
 </html>
