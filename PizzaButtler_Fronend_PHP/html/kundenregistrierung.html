@@ -93,13 +93,18 @@
                 <input class="in2" type="password" name="pw2" id="pw2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}" required title="Mindestens eine Ziffer, ein Großbuchstabe, ein Kleinbuchstabe und insgesamt 8 Zeichen" 
                 		onchange="passwortPruefen1()"/>
             </div>
+            <div class="fline">
+            	<label class="in2" for="agb">Ich habe die AGB und die Datenschutz-Bestimmungen gelesen und akzeptiere die Bedingungen zur Nutzung der Website" </label>
+            	<input class="in2" name="agb" id="agb" type="checkbox" />
+            </div>
+            
             <p>
-                <input id="absenden" name="absenden" type="button" value="Absenden" />
+                <input id="absenden" name="absenden" type="button" value="Absenden"/>
             </p>
         </form>
         
         <br />
-        <div id="div_ajaxResponse">Ich bin ein Feld, welches visualisiert, ob die POST-Methode ausgeführt wurde.</div>
+        <div id="div_ajaxResponse"></div>
     </body>
 
 </html>

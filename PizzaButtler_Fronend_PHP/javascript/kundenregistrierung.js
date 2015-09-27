@@ -17,6 +17,7 @@ function checkForm()
     strFehler += telefonnummerPruefen();
     strFehler += mailPruefen();
     strFehler += passwortPruefen();
+    strFehler += agbPruefen();
     
     /** Ausgabe falls min 1 Fehler aufgetreten ist  **/
     if (strFehler.length>0) {
@@ -264,5 +265,14 @@ function passwortPruefen()
       }
       return "";
 }
+
+function agbPruefen()
+{
+	if(document.getElementById("agb").checked == false)
+		{
+			return "Sie müssen die AGB und die Datenschutzbestimmungen akzeptieren"
+		}
+	return ""
+	}
     
    

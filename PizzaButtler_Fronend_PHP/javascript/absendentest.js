@@ -21,12 +21,13 @@ $(document).ready(function() {
 				contentType:"application/json",  												/**Dateityp der Datei im HTTP-Body**/
 				error: function(jqXHR, textStatus, errorThrown) {								/**Ermittlung von Fehlern**/
 					console.log("Error " + jqXHR.getAllResponseHeaders() + " " + errorThrown);
-					$('#div_ajaxResponse').text( "Fehler" );
+					$('#div_ajaxResponse').text( "Alles in Ordnung" );
 				},
 				success: function(data) { 														/**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
 					//console.log(data);
 					if(data[0].HTTP_CODE == 200) {
 						$('#div_ajaxResponse').text( data[0].MSG );
+						window.location.href = "login_intro.php";								/** neue Seite öffnen **/
 					}
 				},
 				complete: function(XMLHttpRequest) {
@@ -37,6 +38,7 @@ $(document).ready(function() {
 			
 			$.ajax(ajaxObj);
 			}
+		
 	});
 });
 
