@@ -5,7 +5,7 @@
    if(isset($_POST["n"]))
    {
       /* Falls Name und Passwort korrekt */
-if($_POST["n"] == "Hans" && $_POST["p"] == "bingo"
+if($_POST["n"] == "alexzur@test.de" && $_POST["p"] == "Aa12345!"
 || $_POST["n"] == "Gerd" && $_POST["p"] == "tango")
       {
          $_SESSION["n"] = $_POST["n"];
@@ -25,7 +25,12 @@ if($_POST["n"] == "Hans" && $_POST["p"] == "bingo"
        /* Begrüßung des Benutzers */
             echo "<p>Hallo " . $_SESSION["n"] . "</p>";
             ?>
-            <p>Hier folgen dann die Kundendaten die aus der Datenbank gezogen werden ...</p>
+            <p>Du hast folgende Daten bei uns hinterlegt:</p>
+            <p>Vorname: Alex</p>
+            <p>Nachname: Zur</p>
+            <p>Strasse: Teststraße 1a</p>
+            <p>Postleitzahl: 123456</p>
+            <p>Wohnort: Testort</p>
             <p><input type="submit" value="Logout" /></p>
 
     <!-- dies wird nur benötigt, falls wir noch eine weitere Webseite verlinken, so wäre dann der Aufbau, wenn man die Session beachtet! 
