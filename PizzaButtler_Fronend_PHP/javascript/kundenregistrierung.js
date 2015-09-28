@@ -30,7 +30,7 @@ function checkForm()
 function anredePruefen()
 {
 	/**Pruefen der Anredde **/
-	var anrede = document.getElementById("status").value;  
+	var anrede = document.getElementById("anrede").value;  
     if(anrede=="keine")
 	{
 		return "Das Feld 'Anrede' ist nicht ausgewählt\n";
@@ -58,7 +58,7 @@ function vornamePruefen()
       }
       else
 	  {
-    	  var strRegVor = "^[A-Za-zÀ-Üß-ü_]{2,32}$";
+    	  var strRegVor = "^[A-Za-zÀ-Üß-ü_]{2,25}$";
           var regexVor = new RegExp(strRegVor);
           if(regexVor.test(vorname)==false)
           	return "Das Feld 'Vorname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 2 maximal 32 Buchstaben, Umlaute möglich\n";
@@ -79,16 +79,16 @@ function nachnamePruefen()
 {
 /** Pruefen des Nachnamens  **/
 
-    var name=document.getElementById("name").value;
-      if (name=="")
-    	  return "Das Feld 'Name' ist leer\n";
+    var nachname=document.getElementById("nachname").value;
+      if (nachname=="")
+    	  return "Das Feld 'Nachname' ist leer\n";
 
       else
 	  {
-    	  var strRegNam = "^[A-Za-zÀ-Üß-ü_]{3,32}$";
+    	  var strRegNam = "^[A-Za-zÀ-Üß-ü_]{3,25}$";
           var regexNam = new RegExp(strRegNam);
-          if(regexNam.test(name)==false)
-          	return "Das Feld 'Name' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 3 maximal 32 Buchstaben, Umlaute möglich\n";
+          if(regexNam.test(nachname)==false)
+          	return "Das Feld 'Nachname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 3 maximal 32 Buchstaben, Umlaute möglich\n";
 	  }
       return "";
 }
@@ -109,7 +109,7 @@ function strassePruefen()
     	  return "Das Feld 'Straße' ist leer\n";
       else
 	  {
-    	  var strRegStr = "^[A-Za-zÀ-Üß-ü_]{2,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}$";
+    	  var strRegStr = "^[A-Za-zÀ-Üß-ü_]{2,25}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,25}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,25}$";
           var regexStr = new RegExp(strRegStr);
           if(regexStr.test(strasse)==false)
           	return "Das Feld 'Strasse' entspricht nicht der typischen Form! Form: nur Buchstaben, maximal 2 Leerzeichen\n";
@@ -127,12 +127,12 @@ function hausnummerPruefen1()
 
 function hausnummerPruefen()
 {
-  	var hnr=document.getElementById("hnr").value;
+  	var hnr=document.getElementById("hausnummer").value;
       if (hnr=="")
     	  return "Das Feld 'Hausnummer' ist leer\n";
       else
 	  {
-    	  var strRegHnr = "^[0-9-_\.]{1,10}[a-zA-Z]{0,1}$";
+    	  var strRegHnr = "^[0-9-_\.]{1,4}[a-zA-Z]{0,1}$";
           var regexHnr = new RegExp(strRegHnr);
           if(regexHnr.test(hnr)==false)
           	return "Das Feld 'Hausnummer' entspricht nicht der typischen Form! Form:1-10 Ziffern, 1 Buchstabe\n";
@@ -156,7 +156,7 @@ function wohnortPruefen()
       if (wohnort=="")
     	  return "Das Feld 'Wohnort' ist leer\n";
       else{
-          var strRegWoh = "^[A-Za-zÀ-Üß-ü_]{1,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}$";
+          var strRegWoh = "^[A-Za-zÀ-Üß-ü_]{1,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}$";
           var regexWoh = new RegExp(strRegWoh); 
           if(regexWoh.test(wohnort)==false)
         	  return "Das Feld 'Wohnort' entspricht nicht der typischen Form! \n";
@@ -199,7 +199,7 @@ function telefonnummerPruefen1()
 function telefonnummerPruefen()
 {
 /** Pruefe der Telefonnummer  **/       
-    var tel=document.getElementById("tel").value;
+    var tel=document.getElementById("telefonnummer").value;
       if (tel=="")
     	  return "Das Feld 'Telefonnummer' ist leer\n";
       else{
@@ -252,7 +252,7 @@ function passwortPruefen()
     	  return "Das Feld 'Passwort' ist leer\n";
       else{
     	  /**  Pruefung ob sicheres Passwort eingegeben wurde **/
-          var strRegPw = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$";
+          var strRegPw = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,30}$";
           var regexPw = new RegExp(strRegPw);
           if(regexPw.test(pw1)==false)
         	  return "Das Feld 'Passwort' hat nicht die erforderliche Sicherheit! Bitte mind. 8 stelliges Passwort mit Kleinbuchstaben, Großbuchstaben und Zahlen verwenden\n";
