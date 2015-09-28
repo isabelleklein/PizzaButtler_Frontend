@@ -21,17 +21,26 @@ $(document).ready(function() {
 				contentType:"application/json",  												/**Dateityp der Datei im HTTP-Body**/
 				error: function(jqXHR, textStatus, errorThrown) {								/**Ermittlung von Fehlern**/
 					console.log("Error " + jqXHR.getAllResponseHeaders() + " " + errorThrown);
-					$('#div_ajaxResponse').text( "Alles in Ordnung" );
+					$('#div_ajaxResponse').text( "Fehler aufgetreten" );
 				},
 				success: function(data) { 														/**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
-					//console.log(data);
-					if(data[0].HTTP_CODE == 200) {
-						$('#div_ajaxResponse').text( data[0].MSG );
-						window.location.href = "login_intro.php";								/** neue Seite öffnen **/
+					console.log(data);
+					if(data.status[0] == 0) {
+						//$('#div_ajaxResponse').text( data[0].MSG );
+						$('#div_ajaxResponse').text( "Alles in Ordnung" );
+						console.log("if-Abschnitt durchlaufen");
+						//window.location.href = "login_kunde.php";								/** neue Seite öffnen **/
 					}
+					else if(data.status[0] == -2) {
+						//$('#div_ajaxResponse').text( data[0].MSG );
+						$('#div_ajaxResponse').text( "Die Email-Adresse wird bereits verwendet" );
+						console.log("if-Abschnitt durchlaufen");
+						//window.location.href = "login_kunde.php";								/** neue Seite öffnen **/
+					}
+					//window.location.href = "../views/login_kunde.php";	
 				},
 				complete: function(XMLHttpRequest) {
-					//console.log( XMLHttpRequest.getAllResponseHeaders() );
+					console.log( XMLHttpRequest.getAllResponseHeaders() );
 				}, 
 				dataType: "json" //request JSON
 			};

@@ -53,7 +53,6 @@ function vornamePruefen()
       var vorname=document.getElementById("vorname").value;
       if (vorname=="")
       {
-    	  document.getElementById('vorname').style.borderColor = "red";
     	  return  "Das Feld 'Vorname' ist leer\n";
       }
       else
@@ -151,7 +150,7 @@ function wohnortPruefen1()
 function wohnortPruefen()
 {
 
-	var wohnort=document.getElementById("wohnort").value;
+	var wohnort=document.getElementById("ort").value;
 /** Pruefen des Ortes und der Postleitzahl **/         
       if (wohnort=="")
     	  return "Das Feld 'Wohnort' ist leer\n";
@@ -246,7 +245,7 @@ function passwortPruefen1()
       
 function passwortPruefen()
 {
-    var pw1=document.getElementById("pw1").value;  
+    var pw1=document.getElementById("passwort").value;  
     var pw2=document.getElementById("pw2").value;
       if (pw1=="")
     	  return "Das Feld 'Passwort' ist leer\n";

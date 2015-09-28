@@ -67,7 +67,7 @@
             <div class="fline">
                 <label class="in1" for="plz">PLZ / Wohnort</label>
                 <input class="in2" type="text" name="plz" id="plz" pattern="[0-9]{5}" required title="5 Zahlen" onchange=""/>
-                <input type="text" name="wohnort" id="wohnort" pattern="^[A-Za-zÀ-Üß-ü_]{1,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}$"
+                <input type="text" name="ort" id="ort" pattern="^[A-Za-zÀ-Üß-ü_]{1,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}$"
                  required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="wohnortPruefen1()"/>
             </div>
 
@@ -84,7 +84,7 @@
 
             <div class="fline">
                 <label class="in1" for="pw1">Passwort</label>
-                <input class="in2" type="password" name="pw1" id="pw1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}" required title="Mindestens eine Ziffer, ein Großbuchstabe, ein Kleinbuchstabe und insgesamt 8 Zeichen" 
+                <input class="in2" type="password" name="passwort" id="passwort" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}" required title="Mindestens eine Ziffer, ein Großbuchstabe, ein Kleinbuchstabe und insgesamt 8 Zeichen" 
                 		onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.pw2.pattern = this.value;"/>
             </div>
 
@@ -94,8 +94,8 @@
                 		onchange="passwortPruefen1()"/>
             </div>
             <div class="fline">
-            	<label class="in2" for="agb">Ich habe die AGB und die Datenschutz-Bestimmungen gelesen und akzeptiere die Bedingungen zur Nutzung der Website" </label>
-            	<input class="in2" name="agb" id="agb" type="checkbox" />
+            	<label class="in2" for="agb"></label>
+            	<input class="in2" name="agb" id="agb" type="checkbox" />Ich habe die AGB und die Datenschutz-Bestimmungen gelesen und akzeptiere die Bedingungen zur Nutzung der Website" 
             </div>
             
             <p>
