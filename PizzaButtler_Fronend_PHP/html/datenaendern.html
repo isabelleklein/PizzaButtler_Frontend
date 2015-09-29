@@ -1,0 +1,81 @@
+<html>	
+
+	<head>
+	
+		<title>Daten &auml;ndern bei Pizzabutler</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<script type="text/javascript" src="../javascript/datenaendern.js"></script>
+		
+	</head>
+	
+	<body> 
+	
+		<form id='datenaendern' name="datenaendern" action="#">
+			<h1> Daten &auml;ndern</h1>
+			
+			<h2>Gebe deine neuen Daten ein</h2>
+			
+			<div class="fline">
+                <a class="in1">Anrede</a>
+				<select class="in2" name="anrede" id="anrede" size="1" required autofocus>
+				    <option value="keine" selected disabled> bitte wählen</option>
+				    <option value="Herr"> Herr </option>
+				    <option value="Frau"> Frau </option>
+				</select>
+            </div>
+			
+            <div class="fline">
+                <label class="in1" for="vorname">Vorname</label>
+                <input type="text" class="in2" name="vorname" id="vorname" pattern="^[A-ZÀ-Ü]{1,1}[a-zß-ü]{1,24}$" 
+                required title="Zwischen 3 und 25 Zeichen (Umlaute möglich)" onchange="vornamePruefen1()"></input>
+                
+            </div>
+
+            <div class="fline">
+                <label class="in1" for="nachname">Nachname</label>
+                <input type="text" class="in2" type="text" name="nachname" id="nachname" pattern="^[A-ZÀ-Ü]{1,1}[a-zß-ü]{1,24}$"
+                 required title="3 bis 25 Zeichen (Umlaute möglich)" onchange="nachnamePruefen1()"/>
+            </div>
+
+            <div class="fline">
+                <label class="in1" for="datepicker">Geburtsdatum</label>
+                <input type="text" class="in2" name="datepicker" id="datepicker" placeholder="dd.mm.yyyy" pattern="^[0-9]{2,2}[-]{1,1}[0-9]{2,2}[-]{1,1}[0-9]{4,4}$"
+                 required title="dd.mm.yyyy">
+            </div>
+
+            <div class="fline">
+                <label class="in1" for="strasse">Strasse / Hausnummer</label>
+                <input class="in2" type="text" name="strasse" id="strasse" pattern="^[A-Za-zÀ-Üß-ü_]{1,25}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,25}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,25}$"
+                 required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="strassePruefen1()"/>
+                <input type="text" name="hausnummer" id="hausnummer" pattern="^[0-9-_\.]{1,4}[a-zA-Z]{0,1}$"
+                 required title="4 stellige Hausnummer mit maximal einem Zusatzbuchstaben a-z ohne Umlaute " onchange="hausnummerPruefen1()"/>
+            </div>
+
+            <div class="fline">
+                <label class="in1" for="plz">PLZ / Wohnort</label>
+                <input class="in2" type="text" name="plz" id="plz" pattern="[0-9]{5}" required title="5 Zahlen" onchange=""/>
+                <input type="text" name="ort" id="ort" pattern="^[A-Za-zÀ-Üß-ü_]{1,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}$"
+                 required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="wohnortPruefen1()"/>
+            </div>
+
+            <div class="fline">
+                <label class="in1" for="email">Email</label>
+                <input class="in2" type="text" name="email" id="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" onchange="mailPruefen1()"/>
+            </div>
+
+            <div class="fline">
+                <label class="in1" for="tel">Telefonnummer</label>
+                <input class="in2" type="text" name="telefonnummer" id="telefonnummer" pattern="^[0-9-_\.]{5,20}$"
+                 required title="Mindestens 5 Maximal 20 Ziffern" onchange="telefonnummerPruefen1()"/>
+            </div>
+			
+			 <p>
+                <input id="datenspeichern" name="datenspeichern" type="button" value="&Auml;nderungen speichern"/>
+            </p>
+			
+		</form>
+			
+	</body>
+	
+</html>
+			
