@@ -47,8 +47,33 @@ $(document).ready(function() {
 			
 			$.ajax(ajaxObj);
 			}
-		
 	});
+    $('#open').click(
+        function() {
+            $('#overlay').show('slow', 
+                function() {
+                    $('#container').fadeIn('slow');
+                    $('#changeText').html('Dynamischer Inhalt');
+                }
+            );
+        }
+    );
+    
+     $('#close').click(
+        function() {
+            $('#container').hide('slow', 
+                 function() {
+                      $('#overlay').fadeOut();          
+                 }    
+            );
+        }
+    );  
+  	$(function() {
+	    $( '#datepicker' ).datepicker({
+	      changeMonth: true,
+	      changeYear: true
+	    });
+	 });
 });
 
 

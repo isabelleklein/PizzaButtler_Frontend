@@ -272,6 +272,5 @@ function agbPruefen()
 			return "Sie müssen die AGB und die Datenschutzbestimmungen akzeptieren"
 		}
 	return ""
-	}
-    
-   
+}
+

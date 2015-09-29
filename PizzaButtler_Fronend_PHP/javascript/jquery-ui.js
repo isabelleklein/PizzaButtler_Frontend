@@ -8082,11 +8082,11 @@ function Datepicker() {
 		gotoCurrent: false, // True if today link goes back to current selection instead
 		changeMonth: false, // True if month can be selected directly, false if only prev/next
 		changeYear: false, // True if year can be selected directly, false if only prev/next
-		yearRange: "c-10:c+10", // Range of years to display in drop-down,
+		yearRange: "c-80:c", // Range of years to display in drop-down,
 			// either relative to today's year (-nn:+nn), relative to currently displayed year
 			// (c-nn:c+nn), absolute (nnnn:nnnn), or a combination of the above (nnnn:-n)
 		showOtherMonths: false, // True to show dates in other months, false to leave blank
-		selectOtherMonths: false, // True to allow selection of dates in other months, false for unselectable
+		selectOtherMonths: true, // True to allow selection of dates in other months, false for unselectable
 		showWeek: false, // True to show week of the year, false to not show it
 		calculateWeek: this.iso8601Week, // How to calculate the week of the year,
 			// takes a Date and returns the number of the week for it
@@ -16313,7 +16313,7 @@ var effectScale = $.effects.effect.scale = function( o, done ) {
 		outerWidth: original.outerWidth * factor.x
 	};
 
-	// Fade option to support puff
+	//  option to support puff
 	if ( options.fade ) {
 		if ( mode === "show" ) {
 			options.from.opacity = 0;
