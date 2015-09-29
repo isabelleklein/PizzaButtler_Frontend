@@ -51,6 +51,7 @@ $(document).ready(function() {
 			$.ajax(ajaxObj);
 			}
 	});
+	
     $('#open').click(
         function() {
             $('#overlay').show('slow', 
@@ -70,7 +71,8 @@ $(document).ready(function() {
                  }    
             );
         }
-    );  
+    );
+     
   	$(function() {
 	    $( '#datepicker' ).datepicker({
 	      changeMonth: true,

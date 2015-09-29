@@ -113,10 +113,10 @@ input{
 	color: #ffffff;
 	background-color: #852002;
 }
-#fehlerAnrede_2, #fehlerAnrede, #fehlerName, #fehlerName_2,
-#fehlerVorname_2, #fehlerStrasse, #fehlerStrasse_2, #fehlerHnr_2,
-#fehlerPlz, #fehlerPlz_2, #fehlerOrt_2, #fehlerEmail, #fehlerEmail_2,
-#fehlerTel_2, #fehlerPw, #fehlerPw_1, #fehlerPw_2, #fehlerDat, #fehlerDat_2, #fehlerAgb, #fehlerAgb_2{
+#fehlerAnrede, #fehlerName,
+#fehlerVorname, #fehlerStrasse, #fehlerHnr,
+#fehlerPlz, #fehlerOrt, #fehlerEmail,
+#fehlerTel, #fehlerPw_1, #fehlerPw_2, #fehlerDat, #fehlerAgb{
 	margin-top:0px;
 	margin-bottom:10px;
 	color: blue;
