@@ -30,8 +30,10 @@ if($_POST["n"] == "alexzur@test.de" && $_POST["p"] == "Aa12345!"
             <p>Nachname: Zur</p>
             <p>Strasse: Teststraße 1a</p>
             <p>Postleitzahl: 123456</p>
-            <p>Wohnort: Testort</p>
-            <p><input type="submit" value="Logout" /></p>
+            <p>Wohnort: Testort</p>     
+            <p>
+                <input id="logout" name="logout" type="button" value="Logout"/>
+            </p>
 
     <!-- dies wird nur benötigt, falls wir noch eine weitere Webseite verlinken, so wäre dann der Aufbau, wenn man die Session beachtet! 
             <p><a href="login_erfolgreich.php">Link zu einer beliebigen Seite</a></p> 
