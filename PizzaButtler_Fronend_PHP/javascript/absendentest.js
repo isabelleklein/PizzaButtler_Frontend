@@ -25,17 +25,20 @@ $(document).ready(function() {
 				},
 				success: function(data) { 														/**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
 					console.log(data);
-					if(data.status[0] == 0) {
+					if(data ==0) {
 						//$('#div_ajaxResponse').text( data[0].MSG );
 						$('#div_ajaxResponse').text( "Alles in Ordnung" );
 						console.log("if-Abschnitt durchlaufen");
-						//window.location.href = "login_kunde.php";								/** neue Seite öffnen **/
+						$('#container').hide('slow', 
+				                 function() {
+				                      $('#overlay').fadeOut();          
+				                 }    
+				            );
 					}
-					else if(data.status[0] == -2) {
+					else if(data == -2) {
 						//$('#div_ajaxResponse').text( data[0].MSG );
 						$('#div_ajaxResponse').text( "Die Email-Adresse wird bereits verwendet" );
 						console.log("if-Abschnitt durchlaufen");
-						//window.location.href = "login_kunde.php";								/** neue Seite öffnen **/
 					}
 					//window.location.href = "../views/login_kunde.php";	
 				},
