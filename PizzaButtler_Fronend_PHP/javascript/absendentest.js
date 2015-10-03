@@ -1,3 +1,8 @@
+/**
+ * @author Dominik Terlau
+ * @Version 2.1
+ */
+
 
 /** Übermittlung der eingegebenen Daten an das Backend **/
 
@@ -21,13 +26,10 @@ $(document).ready(function() {
 				contentType:"application/json",  												/**Dateityp der Datei im HTTP-Body**/
 				error: function(jqXHR, textStatus, errorThrown) {								/**Ermittlung von Fehlern**/
 					console.log("Error " + jqXHR.getAllResponseHeaders() + " " + errorThrown);
-					$('#div_ajaxResponse').text( "Fehler aufgetreten" );
 				},
 				success: function(data) { 														/**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
 					console.log(data);
 					if(data ==0) {
-						//$('#div_ajaxResponse').text( data[0].MSG );
-						$('#div_ajaxResponse').text( "Alles in Ordnung" );
 						console.log("if-Abschnitt durchlaufen");
 						$('#container').hide('slow', 
 				                 function() {
@@ -35,12 +37,16 @@ $(document).ready(function() {
 				                 }    
 				            );
 					}
-					else if(data == -2) {
-						//$('#div_ajaxResponse').text( data[0].MSG );
-						$('#div_ajaxResponse').text( "Die Email-Adresse wird bereits verwendet" );
+					else if(data == -1) {
+						document.getElementById("fehlerAbsenden").innerHTML = "Ein oder mehr Eingabedaten sind ungültig";
+						document.getElementById("fehlerAbsenden").style.display="inline";
 						console.log("if-Abschnitt durchlaufen");
-					}
-					//window.location.href = "../views/login_kunde.php";	
+					}	
+					else if(data == -2) {
+						document.getElementById("fehlerAbsenden").innerHTML = "Die Email-Adresse wird bereits verwendet";
+						document.getElementById("fehlerAbsenden").style.display="inline";
+						console.log("if-Abschnitt durchlaufen");
+					}	
 				},
 				complete: function(XMLHttpRequest) {
 					console.log( XMLHttpRequest.getAllResponseHeaders() );

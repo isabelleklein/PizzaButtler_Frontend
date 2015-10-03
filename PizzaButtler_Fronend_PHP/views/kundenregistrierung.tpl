@@ -3,96 +3,101 @@
     <head>
 
         <title>Kundenregistrierung Pizzabuttler</title>
-        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <script type="text/javascript" src="../javascript/kundenregistrierung.js"></script>
  		<script type="text/javascript" src="../javascript/jquery.js"></script>
- 		<script src="../javascript/jquery-ui.js"></script>
+ 		<script type="text/javascript" src="../javascript/jquery-ui.js"></script>
+ 		<script type="text/javascript" src="../javascript/polyfill.js"></script>
+ 		<script type="text/javascript" src="../javascript/absendentest.js"></script>
+ 		
         <link href="../css/jquery-ui.css" rel="stylesheet" />
+        <link href="../css/popupRegistrierung.css" rel="stylesheet" />
 		
     </head>
 
     <body>
-
-        <form id='registrieren' name="registrieren" action="#" onsubmit='#'>
-
-            <h1>Kundenregistrieung bei Pizzabuttler</h1>
-            
-            <div class="fline">
-                <a class="in1">Anrede</a>
-				<select class="in2" name="status" id="status" size="1" required>
-				    <option value="keine" selected disabled> bitte w&aumlhlen</option>
-				    <option value="Herr"> Herr </option>
-				    <option value="Frau"> Frau </option>
-				</select>
-            </div>
-			
-            <div class="fline">
-                <label class="in1" for="vorname">Vorname</label>
-                <input type="text" class="in2" name="vorname" id="vorname" pattern="^[A-Za-zÀ-Üß-ü_]{3,32}$" required title="Zwischen 3 und 32 Zeichen (Umlaute möglich)"></input>
-                
-            </div>
-
-            <div class="fline">
-                <label class="in1" for="name">Nachname</label>
-                <input type="text" class="in2" type="text" name="name" id="name" pattern="^[A-Za-zÀ-Üß-ü_]{3,32}$" required title="3 bis 32 Zeichen (Umlaute möglich)"/>
-            </div>
-
-			<script>
-			  	$(function() {
-				    $( "#datepicker" ).datepicker({
-				      changeMonth: true,
-				      changeYear: true
-				    });
-				 });
-			</script>
-            <div class="fline">
-                <label class="in1" for="day">Geburtsdatum</label>
-                <input type="text" class="in2" name="gebdat" id="datepicker" placeholder="dd.mm.yyyy" pattern="^[0-9]{2,2}[-]{1,1}[0-9]{2,2}[-]{1,1}[0-9]{4,4}$" required title="dd.mm.yyyy">
-            </div>
-
-            <div class="fline">
-                <label class="in1" for="strasse">Strasse / Hausnummer</label>
-                <input class="in2" type="text" name="strasse" id="strasse" pattern="^[A-Za-zÀ-Üß-ü_]{1,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}$" required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen"/>
-                <input type="text" name="hnr" id="hnr" pattern="^[0-9-_\.]{1,20}[a-zA-Z]{0,1}$" required title="Hausnummer mit maximal einem Zusatzbuchstaben a-z ohne Umlaute "/>
-            </div>
-
-            <div class="fline">
-                <label class="in1" for="plz">PLZ / Wohnort</label>
-                <input class="in2" type="text" name="plz" id="plz" pattern="[0-9]{5}" required title="5 Zahlen"/>
-                <input type="text" name="wohnort" id="wohnort" pattern="^[A-Za-zÀ-Üß-ü_]{1,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,50}$" required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" required/>
-            </div>
-
-            <div class="fline">
-                <label class="in1" for="email">Email</label>
-                <input class="in2" type="email" name="email" id="email" required maxlength="32"/>
-            </div>
-
-            <div class="fline">
-                <label class="in1" for="tel">Telefonnummer</label>
-                <input class="in2" type="text" name="tel" id="tel" pattern="^[0-9-_\.]{5,20}$" required title="Mindestens 5 Maximal 20 Ziffern"/>
-            </div>
-
-            <div class="fline">
-                <label class="in1" for="pw1">Passwort</label>
-                <input class="in2" type="password" name="pw1" id="pw1" minlength="8" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required title="Mindestens eine Ziffer, ein Großbuchstabe, ein Kleinbuchstabe und insgesamt 8 Zeichen" 
-                		onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.pw2.pattern = this.value;"/>
-            </div>
-
-            <div class="fline">
-                <label class="in1" for="pw2">Passwort wiederholen</label>
-                <input class="in2" type="password" name="pw2" id="pw2" minlength="8" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required title="Mindestens eine Ziffer, ein Großbuchstabe, ein Kleinbuchstabe und insgesamt 8 Zeichen" 
-                		onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"/>
-            </div>
-
-            <p>
-                <input id="absenden" name="absenden" type="button" value="Absenden" />
-            </p>
-        </form>
-        
-        <br />
-        <div id="div_ajaxResponse"></div>
+    	<h1>Kundenregistrieung bei Pizzabuttler</h1>
+    	<a href="#" id="open">Eingabemaske Registrierung �ffnen</a>
+		<br/>
+		<div id="container">
+	        <form id='registrieren' name="registrieren" action="#">
+	            <div class="fline">
+					<select class="in2" name="anrede" id="anrede" size="1" onchange="anredePruefen()" required autofocus>
+					    <option value="keine" selected disabled> Anrede </option>
+					    <option value="Herr"> Herr </option>
+					    <option value="Frau"> Frau </option>
+					</select>
+					<input type="button" id="close" value="X">
+					
+	            </div>
+	            <label id="fehlerAnrede">Das Feld 'Anrede' ist nicht ausgew�hlt</label>
+				
+	            <div class="fline">
+	                <input type="text" class="in2" name="vorname" id="vorname" placeholder="Vorname"  
+	                required title="Zwischen 3 und 25 Zeichen (Umlaute m�glich)" onchange="vornamePruefen()"></input>
+	    
+	                <input type="text" class="in2" type="text" name="nachname" id="nachname" placeholder="Nachname" 
+	                 required title="3 bis 25 Zeichen (Umlaute m�glich)" onchange="nachnamePruefen()"/>
+	            </div>
+	            <label id="fehlerName">Bitte geben Sie einen g�ltigen Nachnamen an</label>
+	            <label id="fehlerVorname">Bitte geben Sie einen g�ltigen Vornamen an</label>
+	
+				
+	            <div class="fline">
+	                <input type="text" class="in2" name="datepicker" id="datepicker" placeholder="Geburtsdatum"
+	                 onchange="datumPruefen()" required title="dd-mm-yyyy">
+	            </div>
+	            <label id="fehlerDat">Bitte geben Sie einen g�ltiges Datum an</label>
+	            <div class="fline">
+	                <input class="in2" type="text" name="strasse" id="strasse" placeholder="Strasse" 
+	                 required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="strassePruefen()"/>
+	                <input type="text" name="hausnummer" id="hausnummer" placeholder="Nr."
+	                 required title="4 stellige Hausnummer mit maximal einem Zusatzbuchstaben a-z ohne Umlaute " onchange="hausnummerPruefen()"/>
+	            </div>
+	            <label id="fehlerStrasse">Bitte geben Sie eine g�ltige Strasse an</label>
+	            <label id="fehlerHnr">Bitte geben Sie eine g�ltige Hausnummer an</label>
+	
+	            <div class="fline">
+	                <input class="in2" type="text" name="plz" id="plz" placeholder="PLZ" required title="5 Zahlen" onchange="plzPruefen()"/>
+	                <input type="text" name="ort" id="ort" placeholder="Ort" 
+	                 required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="wohnortPruefen()"/>
+	            </div>
+	            <label id="fehlerPlz">Bitte geben Sie eine g�ltige Postleitzahl an</label>
+	            <label id="fehlerOrt">Bitte geben Sie einen g�ltigen Ort an</label>
+	
+	            <div class="fline">
+	                <input class="in2" type="text" name="email" id="email" placeholder="Email-Adresse" required onchange="mailPruefen()"/>
+	            
+	                <input class="in2" type="text" name="telefonnummer" id="telefonnummer" placeholder="Telefonnummer" title="Telefonnummer mindestens 5 Ziffern"
+	                 required onchange="telefonnummerPruefen()"/>
+	            </div>
+	            <label id="fehlerEmail">Bitte geben Sie eine g�ltige Email-Adresse an</label>
+	            <label id="fehlerTel">Bitte geben Sie eine g�ltige Telefonnummer an</label>
+	
+	            <div class="fline">
+	                <input class="in2" type="password" name="passwort" placeholder="Passwort" id="passwort" required title="Mindestens eine Ziffer, ein Gro�buchstabe, ein Kleinbuchstabe und insgesamt 8 Zeichen" 
+	                		onchange="passwortPruefen()"/>
+	            
+	                <input class="in2" type="password" name="pw2" id="pw2" placeholder="Passwort wdh." required onchange="passwortPruefen()"/>
+	            </div>
+	            <label id="fehlerPw_1">Bitte geben Sie eine sicheres Passwort ein</label>
+	            <label id="fehlerPw_2">Die Passw�rter stimmen nicht �berein</label>
+	            <div class="fline">
+	            	<input class="in2" name="agb" id="agb" type="checkbox" />Ich bin mit den AGB und dem Datenschutz einverstanden
+	            </div>
+	            <label id="fehlerAgb">Bitte stimmen Sie unseren AGBs und Datenschutzbestimmungen zu</label>
+	            <p>
+	                <input id="absenden" name="absenden" type="button" value="Kundenregistrierung abschlie�en"/>
+	            </p>
+	            <label id="fehlerAbsenden"></label>
+	        </form>
+	        
+	        <br />
+ 		</div>
+ 		<div id="overlay"></div>
     </body>
 
 </html>
 
     
+

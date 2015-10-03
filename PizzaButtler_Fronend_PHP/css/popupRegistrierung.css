@@ -1,3 +1,8 @@
+/**
+ * @author Dominik Terlau
+ * @Version 2.1
+ */
+
 #overlay {
     position:absolute;
     top:0;
@@ -11,6 +16,7 @@
     opacity:.60;
     display:none;
 }
+
 
 
 #container {
@@ -113,12 +119,15 @@ input{
 	color: #ffffff;
 	background-color: #852002;
 }
+
+/* Alle Fehlerausgaben gruppiert definiert. Werden durch JavaScript im Fehlerfall sichtbar gemacht */
 #fehlerAnrede, #fehlerName,
 #fehlerVorname, #fehlerStrasse, #fehlerHnr,
 #fehlerPlz, #fehlerOrt, #fehlerEmail,
-#fehlerTel, #fehlerPw_1, #fehlerPw_2, #fehlerDat, #fehlerAgb{
+#fehlerTel, #fehlerPw_1, #fehlerPw_2, 
+#fehlerDat, #fehlerAgb, #fehlerAbsenden{
 	margin-top:0px;
 	margin-bottom:10px;
-	color: blue;
+	color: #852002;
 	display:none;
 }

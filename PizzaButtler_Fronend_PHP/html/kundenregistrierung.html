@@ -44,9 +44,8 @@
 	
 				
 	            <div class="fline">
-	                <label class="in1" for="datepicker">Geburtsdatum</label>
-	                <input type="text" class="in2" name="datepicker" id="datepicker" placeholder="dd.mm.yyyy"
-	                 onchange="datumPruefen()" required title="dd.mm.yyyy">
+	                <input type="text" class="in2" name="datepicker" id="datepicker" placeholder="Geburtsdatum"
+	                 onchange="datumPruefen()" required title="dd-mm-yyyy">
 	            </div>
 	            <label id="fehlerDat">Bitte geben Sie einen gültiges Datum an</label>
 	            <div class="fline">
@@ -87,14 +86,13 @@
 	            	<input class="in2" name="agb" id="agb" type="checkbox" />Ich bin mit den AGB und dem Datenschutz einverstanden
 	            </div>
 	            <label id="fehlerAgb">Bitte stimmen Sie unseren AGBs und Datenschutzbestimmungen zu</label>
-	            
 	            <p>
 	                <input id="absenden" name="absenden" type="button" value="Kundenregistrierung abschließen"/>
 	            </p>
+	            <label id="fehlerAbsenden"></label>
 	        </form>
 	        
 	        <br />
-	        <div id="div_ajaxResponse"></div>
  		</div>
  		<div id="overlay"></div>
     </body>
