@@ -1,4 +1,7 @@
 
+/**
+ * @author Julian Steil
+ */
 /** Übermittlung der eingegebenen Daten an das Backend **/
 
 $(document).ready(function() {

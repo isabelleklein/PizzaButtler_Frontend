@@ -1,0 +1,42 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Login Pizzabuttler</title>
+    <script type="text/javascript" src="javascript/jquery.js"></script>
+    <script type="text/javascript" src="javascript/kundenlogin.js"></script>
+    <script type="text/javascript" src="javascript/login_absenden.js"></script>
+    
+    <link href="css/popupLogin.css" rel="stylesheet"/>
+    
+</head>
+    
+<body>
+    <h1>Kundenlogin Pizzabuttler</h1>
+    <a href="#" id="open"> Eingabemaske Login öffnen</a>
+    <br/>
+  	  <div id="container">
+  	  <div class="fline">
+        	<input type="text" class="in2" name="email" id="email" placeholder="Email-Adresse" required onchange="mailPruefen()" />
+            <input class="in2" type="password" name="passwort" id="passwort" placeholder="Passwort" required onchange="passwortPruefen()" />
+            <input type="button" id="close" value="X">
+ 	</div>
+ 	<div id="merken">
+ 	<input class="in2" name="merken" id="merken" type="checkbox"/>
+ 	<div id="log">
+ 	Logindaten merken.
+ 	</div>
+    </div>
+ 	<div id="passwortvergessen">
+ 	   <a href="#" id="fline">Passwort vergessen</a>
+ 	   </div>
+ 	    <Input id="absenden" name="absenden" type="button" value="Login" />
+ 	</div>
+ 	
+ 	 
+ 	   
+    
+    <div id="overlay"></div>
+</body>
+
+</html>
