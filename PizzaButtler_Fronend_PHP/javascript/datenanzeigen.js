@@ -1,6 +1,6 @@
 
 
-function machwas() {
+function datenaendern() {
 	console.log("Button gedrückt");
 	window.location.href = "datenaendern.html";
 }
