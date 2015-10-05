@@ -1,0 +1,59 @@
+<html>	
+
+	<head>
+	
+		<title>Passwort vergessen</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        
+
+        
+        <link href="../PizzaButtler_Fronend_PHP/../css/main.css" rel="stylesheet" />
+        <link href="../css/jquery-ui.css" rel="stylesheet" />
+        <link href="../css/popup_passwort_vergessen.css" rel="stylesheet" />
+		
+        
+
+ 		<script type="text/javascript" src="../javascript/jquery.js"></script>
+ 		<script type="text/javascript" src="../javascript/jquery-ui.js"></script>
+ 		<script type="text/javascript" src="../javascript/polyfill.js"></script>
+        <script type="text/javascript" src="../javascript/passwort_vergessen.js"></script>
+        <script type="text/javascript" src="../javascript/passwort_vergessen_absenden.js"></script>
+        <script type="text/javascript" src="../javascript/jquery.js"></script>
+ 		<script type="text/javascript" src="../javascript/jquery-ui.js"></script>
+ 		<script type="text/javascript" src="../javascript/polyfill.js"></script>
+ 		        
+	</head>
+	
+	<body> 
+	
+		<form id='pwvergessen' name="pwvergessen" action="#">
+			<h1> Passwort vergessen </h1>
+            <a href="#" id="open" onclick="textEinblenden('box1')" >POPs UP öffnen</a>
+		    <br/>
+            
+            <div id="container">     
+                <div id="box1">
+                    <p>Passwort vergessen?</p>
+                    <p>Gib deine E-Mail ein, wir senden dir ein neues Passwort zu </p>
+                    <div class="fline">
+                        <input class="in2" type="text" name="email" id="email" placeholder="Email" required onchange="mailPruefen()"/>
+                        <input class="in2" id="absenden" name="absenden" type="button" value="Absenden" onclick="textTauschen('box1','box2')"/>
+                       
+                    </div>
+                </div>
+
+                <div id="box2">    
+                 
+                        <p>Bitte klicke auf den Link, der dir per E-Mail zugestellt wird!</p>
+                        <p>Du wirst dann automatisch weiter geleitet!</p>
+                </div>
+
+                
+                
+                
+            </div>
+		</form>
+		<div id="overlay"></div>	
+	</body>
+	
+</html>
