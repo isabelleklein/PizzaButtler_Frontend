@@ -17,8 +17,6 @@
     display:none;
 }
 
-
-
 #container {
     position:fixed!important;
     position:absolute;
@@ -27,7 +25,7 @@
     margin:-150px 0px 0px -155px;
     top: 50%;
     left: 50%;
-    color: #852002;
+    color: #842002;
     background-color: #ffffff;
     border-radius: 18px;
     display:none;
@@ -36,8 +34,8 @@
 }
 
 select{
-	color: #852002;
-	border-color:#852002;
+	color: #842002;
+	border-color:#842002;
 	border-width: 4px;
 	margin-left: 2px;
 	margin-bottom: 2px;
@@ -48,30 +46,30 @@ select{
 }
 
 label{
-	color: #852002;
+	color: #842002;
 }
 
 input{
 	border-radius:7px;
-	border-color: #852002;
+	border-color: #842002;
 	border-style: solid;
     border-width: 4px;
     width: 140px;
     margin: 2px;
-    color: #852002;
+    color: #842002;
 }
 #agb{
 	content: "";  
     display: inline-block;  
     width: 15px;  
     height: 15px;  
-    color: #852002;
+    color: #842002;
     vertical-align:middle; 
     margin: 2px;
     margin-right: 8px; 
-    background-color: #852002; 
+    background-color: #842002; 
     border-radius: 4px;  
-    border-color: #852002;
+    border-color: #842002;
     border-style: solid;
     border-width: 4px;
     cursor: pointer;
@@ -87,11 +85,11 @@ input{
 
 #absenden{
 	border-radius:7px;
-	border-color: #852002;
+	border-color: #842002;
 	border-style: solid;
     border-width: 4px;
     margin: 4px;
-    background-color: #852002;
+    background-color: #842002;
     color: #ffffff;
     font-weight: 900;
     left:30px;
@@ -99,7 +97,7 @@ input{
 }
 #absenden:hover{
 	cursor: pointer;
-	color: #852002;
+	color: #842002;
 	background-color: #ffffff;
 
 }
@@ -117,7 +115,7 @@ input{
 #close:hover{
 	cursor: pointer;
 	color: #ffffff;
-	background-color: #852002;
+	background-color: #842002;
 }
 
 /* Alle Fehlerausgaben gruppiert definiert. Werden durch JavaScript im Fehlerfall sichtbar gemacht */
@@ -128,6 +126,6 @@ input{
 #fehlerDat, #fehlerAgb, #fehlerAbsenden{
 	margin-top:0px;
 	margin-bottom:10px;
-	color: #852002;
+	color: #842002;
 	display:none;
 }
