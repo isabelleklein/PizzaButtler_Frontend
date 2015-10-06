@@ -12,7 +12,7 @@ $(document).ready(function() {
 			
 			ajaxObj = {  
 				type: "PUT",																	/**RESTful-Methode POST**/
-				url: "http://pizzabutlerentwbak.krihi.com/entwicklung/rest/user/1", 										/**Webadresse, welche das Anlegen eines neuen Benutzers ermöglicht**/
+				url: "http://pizzabutlerentwbak.krihi.com/entwicklung/rest/user/" + id, 										/**Webadresse, welche das Anlegen eines neuen Benutzers ermöglicht**/
 				data: JSON.stringify(jsObj), 													/**Datei, die im HTTP-Body mitgegeben wird**/
 				contentType:"application/json",  												/**Dateityp der Datei im HTTP-Body**/
 				error: function(jqXHR, textStatus, errorThrown) {								/**Ermittlung von Fehlern**/
