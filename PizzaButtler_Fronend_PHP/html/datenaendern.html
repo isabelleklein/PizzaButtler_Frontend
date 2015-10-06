@@ -9,7 +9,7 @@
 		<script type="text/javascript" src="../javascript/polyfill.js"></script>
 		<script type="text/javascript" src="../javascript/getDaten.js"></script>
 		<script type="text/javascript" src="../javascript/datenaendern.js"></script>
-		<script type="text/javascript" src="../javascript/formbefüllen.js"></script>
+		<script type="text/javascript" src="../javascript/aendernFormBefuellen.js"></script>
 		<script type="text/javascript" src="../javascript/kundenregistrierung.js"></script>
 
 		
@@ -45,7 +45,7 @@
 
             <div class="fline">
 			<label class="in1" for="nachname">Geburtsdatum</label>
-	                <input type="text" class="in2" name="datepicker" id="datepicker" placeholder="Geburtsdatum"
+	                <input type="text" class="in2" name="geburtsdatum" id="datepicker" placeholder="Geburtsdatum"
 	                 onchange="datumPruefen()" required title="dd-mm-yyyy">
 	        </div>
 
@@ -72,11 +72,11 @@
             <div class="fline">
                 <label class="in1" for="tel">Telefonnummer</label>
                 <input class="in2" type="text" name="telefonnummer" id="telefonnummer" pattern="^[0-9-_\.]{5,20}$"
-                 required title="Mindestens 5 Maximal 20 Ziffern" onchange="telefonnummerPruefen1()"/>
+                 required title="Mindestens 5 Maximal 20 Ziffern"/>
             </div>
 			
 			 <p>
-                <input id="datenspeichern" name="datenspeichern" type="button" value="&Auml;nderungen speichern" onclick="getDaten()"/>
+                <input id="datenspeichern" name="datenspeichern" type="button" value="&Auml;nderungen speichern"/>
             </p>
 			
 		</form>

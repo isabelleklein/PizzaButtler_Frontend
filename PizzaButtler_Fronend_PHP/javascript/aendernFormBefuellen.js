@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	getDaten(function(daten) {
+	getDaten(1, function(daten) {
 		console.log(daten);
 		$('#anrede').val(daten.anrede);
 		$('#vorname').val(daten.vorname);

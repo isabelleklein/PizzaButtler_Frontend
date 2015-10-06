@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	getDaten(function(daten) {
+	getDaten(1, function(daten) {
 		console.log(daten);
 		$('#anrede').text(daten.anrede);
 		$('#vorname').text(daten.vorname);
@@ -10,6 +10,5 @@ $(document).ready(function() {
 		$('#ort').text(daten.ort);
 		$('#email').text(daten.email);
 		$('#telefonnummer').text(daten.telefonnummer);
-		
 	});
 });
