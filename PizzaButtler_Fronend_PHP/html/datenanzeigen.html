@@ -4,7 +4,14 @@
 	
 		<title>Daten Anzeigen bei Pizzabutler</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<script type="text/javascript" src="../javascript/jquery.js"></script>
+ 		<script type="text/javascript" src="../javascript/jquery-ui.js"></script>
+		<script type="text/javascript" src="../javascript/polyfill.js"></script>
+		<script type="text/javascript" src="../javascript/getDaten.js"></script>
+		<script type="text/javascript" src="../javascript/datenaendern.js"></script>
 		<script type="text/javascript" src="../javascript/datenanzeigen.js"></script>
+		<script type="text/javascript" src="../javascript/befüllentest.js"></script>
+
 		
 	</head>
 	
@@ -14,19 +21,40 @@
 			<h1> Daten Anzeigen</h1>
 			
 			<h2>Deine Daten sind:</h2>
-			
-			<p>Anrede:</p>
-			<p>Vorname:</p>
-			<p>Nachname:</p>
-			<p>Geburtsdatum:</p>
-			<p>Strasse/Hausnummer:</p>
-			<p>PLZ/Wohnort:</p>
-			<p>Email:</p>
-			<p>Telefonnummer:</p>
-			
+			<div id="container">
+				<div class="fline">
+					<label class="in1" for="vorname"Anrede</label>
+				</div>
+				<div class="fline">
+					<label class="in1">Vorname:</label>
+					<label type="text" class="text" name="vorname" id="vorname"></label>
+				</div>
+				<div class="fline">
+					<label class="in1">Nachname:</label>
+					<label class="in1" name="nachname" id="nachname"></label>
+				</div>
+				<div class="fline">
+					<label class="in1">Geburtstag:</label>
+					<label class="in1" name="vorname" id="vorname"></label>
+				</div>
+				<div class="fline">
+					<label class="in1">Straße/Hausnummer:</label>
+				</div>
+				<div class="fline">
+					<label class="in1">PLZ/Ort:</label>
+				</div>
+				<div class="fline">
+					<label class="in1">Email:</label>
+				</div>
+				<div class="fline">
+					<label class="in1">Telefonnummer:</label>
+				</div>
+				
 			 <p>
-                <input id="datenaendern" name="datenaendern" type="button" value="Daten &auml;ndern" onclick="datenaendern()"/>
+                <input id="datenaendern" name="datenaendern" type="button" value="Daten &auml;ndern" onclick="machwas()"/>
             </p>
+			
+			</div>
 			
 			
 		</form>
