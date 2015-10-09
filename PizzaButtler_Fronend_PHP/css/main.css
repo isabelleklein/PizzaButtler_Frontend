@@ -1,3 +1,97 @@
+<!--// Startseite -->
+.farbe1 {
+    border-radius:7px;
+	border-color: #842002;
+	border-style: solid;
+    border-width: 4px;
+    margin: 4px;
+    background-color: #842002;
+    color: #ffffff;
+    font-weight: 900;
+    left:30px;
+}
+
+.farbe {
+
+    background-color: #ce3d11;
+}
+
+.ersterBereich {
+
+    height: 45%;
+}
+
+.zweiterBereich {
+
+
+    height: 55%;
+}
+
+
+.button_startseite{
+    border-radius: 2px;
+	border-color: white;
+	border-style: solid;
+    border-width: 4px;
+
+    background-color: #e59a83;
+    color: white;
+    font-color: white;
+    font-weight: 900;
+    left:30px;
+    text-decoration-color: white;
+    width: 50%;
+    height: 17%;
+    margin-left: 25%;
+    margin-top: 28%;
+
+
+}
+
+.logo{
+    width: 50%;
+    height: auto;
+
+
+}
+
+#textbaustein{
+  
+    margin-left: -300px;
+}
+
+.paypal{
+    flaot:left;
+    width: 20%;
+    height: auto;
+    margin-left: auto;
+
+}
+
+#bild1{
+    margin-left: 25%;
+
+}
+
+#bild2{
+    margin-left: 5%;
+
+}
+
+
+.links{
+
+    width: 50%;
+    float: left;
+    color: white;
+}
+.rechts{
+
+    width: 50%;
+    height: -50%;
+    margin-left: 50%;
+}
+
 .button_absenden {
     border-radius:7px;
 	border-color: #842002;
@@ -42,3 +136,5 @@
 	cursor: pointer;
 	color: #842002;
 	background-color: #ffffff;
+}
+
