@@ -11,7 +11,7 @@
             <div id="header_nav">
                 <div>
                     <span class="head_left">
-                        <img src="./images/pizzabutler_logo_roteschrift_transparent.png" alt="PizzaButler Logo" height="175"/>
+                        <img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="200"/>
                     </span>
                     <span class="head_right">
                         <button class="header_button">Anmelden</button><br/>
