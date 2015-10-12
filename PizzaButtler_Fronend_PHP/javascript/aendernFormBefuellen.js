@@ -9,7 +9,6 @@ $(document).ready(function() {
 		$('#plz').val(daten.plz);
 		$('#ort').val(daten.ort);
 		$('#email').val(daten.email);
-		$('#telefonnummer').val(daten.telefonnummer);
-		
+		$('#geburtsdatum').val(daten.geburtsdatum);
 	});
 });

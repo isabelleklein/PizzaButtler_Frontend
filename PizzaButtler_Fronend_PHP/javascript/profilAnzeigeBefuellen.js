@@ -9,6 +9,6 @@ $(document).ready(function() {
 		$('#plz').text(daten.plz);
 		$('#ort').text(daten.ort);
 		$('#email').text(daten.email);
-		$('#telefonnummer').text(daten.telefonnummer);
+		$('#geburtsdatum').text(daten.geburtsdatum);
 	});
 });
