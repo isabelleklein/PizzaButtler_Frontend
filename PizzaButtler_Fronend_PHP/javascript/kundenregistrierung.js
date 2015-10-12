@@ -32,9 +32,12 @@ function checkForm()
 	                                if(strFehler.length==0){
 	                                	strFehler += telefonnummerPruefen();
 	                                    if(strFehler.length==0){
-	                                    	strFehler += passwortPruefen();
-	                                        if(strFehler.length==0)
-	                                        	strFehler += agbPruefen();
+	                                    	strFehler += passwortPruefen1();
+	                                    	if(strFehler.length==0){
+	                                        	strFehler += passwortPruefen2();
+		                                        if(strFehler.length==0)
+		                                        	strFehler += agbPruefen();
+	                                    		}
 	                                    	}
 	                                    }
 	                                }
@@ -195,18 +198,25 @@ function datumPruefen()
 	return"";
 }
 
-/** Pruefung, ob die Passwörter den Vorgaben entsprechen und die beiden Passwörter ueberreinstimmen **/      
-function passwortPruefen()
+/** Pruefung, ob das erste Passworter den Vorgaben entspricht**/      
+function passwortPruefen1()
 {
-    var pw1=document.getElementById("passwort").value;  
-    var pw2=document.getElementById("pw2").value;
+    var pw1=document.getElementById("passwort").value;
 	  /**  Pruefung ob sicheres Passwort eingegeben wurde **/
       if(checkGrammatik("^[0-9a-zA-ZÀ-Üß-ü_]{8,30}$", pw1)==false)
     	  {
     	  fehlerAusgeben("fehlerPw_1", "passwort");
           return "Das Feld 'Passwort' hat nicht die erforderliche Sicherheit! Bitte mind. 8 stelliges Passwort verwenden\n";
     	  }
-      else if(pw2!=pw1)
+      hinweisVerbergen("fehlerPw_1", "passwort");
+      return "";
+}
+/** Pruefung, ob das zweite Passwort mit dem ersten ueberreinstimmt **/      
+function passwortPruefen2()
+{
+    var pw1=document.getElementById("passwort").value;  
+    var pw2=document.getElementById("pw2").value;
+      if(pw2!=pw1)
 	  {
     	hinweisVerbergen("fehlerPw_1", "passwort"); 
     	fehlerAusgeben("fehlerPw_2", "pw2");

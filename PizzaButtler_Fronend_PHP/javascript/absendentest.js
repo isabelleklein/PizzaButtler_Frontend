@@ -21,7 +21,7 @@ $(document).ready(function() {
 			
 			ajaxObj = {  
 				type: "POST",																	/**RESTful-Methode POST**/
-				url: "http://pizzabutlerentwbak.krihi.com/entwicklung/rest/user/regUser", 										/**Webadresse, welche das Anlegen eines neuen Benutzers ermöglicht**/
+				url: "http://pizzabutlerentwbak.krihi.com/entwicklung/rest/user", 		/**Webadresse, welche das Anlegen eines neuen Benutzers ermöglicht**/
 				data: JSON.stringify(jsObj), 													/**Datei, die im HTTP-Body mitgegeben wird**/
 				contentType:"application/json",  												/**Dateityp der Datei im HTTP-Body**/
 				error: function(jqXHR, textStatus, errorThrown) {								/**Ermittlung von Fehlern**/
@@ -67,7 +67,7 @@ $(document).ready(function() {
                 }
             );
         }
-    );
+    ); 
     
      $('#close').click(
         function() {

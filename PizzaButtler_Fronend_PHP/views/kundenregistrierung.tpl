@@ -76,9 +76,9 @@
 	
 	            <div class="fline">
 	                <input class="in2" type="password" name="passwort" placeholder="Passwort" id="passwort" required title="Mindestens eine Ziffer, ein Groﬂbuchstabe, ein Kleinbuchstabe und insgesamt 8 Zeichen" 
-	                		onchange="passwortPruefen()"/>
+	                		onchange="passwortPruefen1()"/>
 	            
-	                <input class="in2" type="password" name="pw2" id="pw2" placeholder="Passwort wdh." required onchange="passwortPruefen()"/>
+	                <input class="in2" type="password" name="pw2" id="pw2" placeholder="Passwort wdh." required onchange="passwortPruefen2()"/>
 	            </div>
 	            <label id="fehlerPw_1">Bitte geben Sie eine sicheres Passwort ein</label>
 	            <label id="fehlerPw_2">Die Passw&oumlrter stimmen nicht &uumlberein</label>
