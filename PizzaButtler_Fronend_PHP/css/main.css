@@ -49,9 +49,11 @@
 }
 
 .logo{
-    width: 50%;
+    width: 25%;
     height: auto;
-
+	position: absolute;
+	right: 20px;
+	top: 150px;
 
 }
 
