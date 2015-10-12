@@ -1,86 +1,51 @@
-html{
-    font-family: 'Open Sans', sans-serif;  
-    margin: 0px;
-    padding: 0px;
+#header_nav {
+background:#ce3d11;
+clear:both;
+height:6.9em;
+margin:-10;
+padding-left:2em;
+padding-right:1em;
+position:relative;
+font-family: "Open Sans";
 }
 
-.header{
-    <!--
-    background-color: blue;
-    height: 45px;
-    width: auto;
-    background-color: #DEEFE7;
-    position: static;
-    float: both;
-    --->
-
+#header_nav .right a,
+#header_nav .left a {
+margin-left:.5em;
+margin-right:.5em;
 }
 
-
-.textfeld{
-    <!--
-    display: inline;
-    position: absolute;
-    font-size: 50px;
-    font-family: 'Open Sans', sans-serif, bold;
-    left: 50%; 
-    text-align:center; 
-    width: 100%; 
-    margin-left: -50%; 
-    --->
-
+#header_nav a {
+background:#ffffff;
+color:#842002;
+text-decoration:none;
 }
 
-.Navigationelement{
-    <!--
-    z-index: 4;
-    position: relative;
-    list-style-type: none;
-    display: inline;
-    float: right;
-    width: 100px;
-    text-align: center;
-    padding: 13px;
-    border-style: solid;
-    border-radius: 3px;
-    border-width: 1px;
-    background-color: black;
-    color: white;
-    --->
-
+#header_bottom{
+background:#fecc3f;
+height: 2.2em;
+margin:-10;
 }
 
-.Navigationelement a:hover{
-    color: yellow;
+.head_left {
+float:left;
+background:#ffffff;
+width: 10em;
 }
 
-
-<!--
-
-.linkstyle{
-        text-decoration: none;
-        color: white;
+.head_right {
+float:right;
+padding-top: .6em;
 }
 
-.linkstyle2{
-        text-decoration: none;
-        color: black;
+.header_button{
+background:#ce3d11;
+color: #ffffff;
+border: #ffffff solid;
+border-radius: 0.6em;    
+width: 7.5em;
+margin-top: 0.7em;
+text-align: left;
+font-family: "Open Sans";
+font-weight: bold;
 }
-
-
-div.blackline-header{
-        z-index: 1;
-        
-        display: block;
-        width: auto;
-        height: 9px;
-        background-color: grey;
-        clear: both;
-}
-
-div.Seiteninhalt{
-        z-index: 1;
-        position: relative;
-}
-
---->

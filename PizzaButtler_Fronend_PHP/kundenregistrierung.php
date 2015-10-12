@@ -8,6 +8,6 @@ $data = array(
 );
 
 $tpl = new SMTemplate();
-$tpl->render('kundenregistrierung', $data);
+$tpl->render('kundenregistrierung', $data, 'page', 'Kundenregistrierung');
 
 ?>
