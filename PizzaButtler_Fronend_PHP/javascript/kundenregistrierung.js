@@ -17,8 +17,8 @@ function checkForm()
     	strFehler += vornamePruefen();
         if(strFehler.length==0){
         	strFehler += nachnamePruefen();
-        	if(strFehler.length==0){
-	        	strFehler += datumPruefen();
+        	//if(strFehler.length==0){
+	        //	strFehler += datumPruefen();
 	            if(strFehler.length==0){
 	            	strFehler += strassePruefen();
 	                if(strFehler.length==0){
@@ -45,7 +45,7 @@ function checkForm()
 	                        }
 	                    }
 	            	}
-        		}
+        		//}
         	}
     	}
     	

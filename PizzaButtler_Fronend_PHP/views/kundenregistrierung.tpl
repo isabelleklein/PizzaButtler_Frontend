@@ -41,13 +41,6 @@
 	            </div>
 	            <label id="fehlerName">Bitte geben Sie einen g&uumlltigen Nachnamen an</label>
 	            <label id="fehlerVorname">Bitte geben Sie einen g&uumlltigen Vornamen an</label>
-	
-				
-	            <div class="fline">
-	                <input type="text" class="in2" name="datepicker" id="datepicker" placeholder="Geburtsdatum"
-	                 onchange="datumPruefen()" required title="dd-mm-yyyy">
-	            </div>
-	            <label id="fehlerDat">Bitte geben Sie einen g&uumlltiges Datum an</label>
 	            <div class="fline">
 	                <input class="in2" type="text" name="strasse" id="strasse" placeholder="Strasse" 
 	                 required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="strassePruefen()"/>
