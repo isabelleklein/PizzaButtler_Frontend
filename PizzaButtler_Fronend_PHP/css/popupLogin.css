@@ -74,7 +74,7 @@ input{
 	background-color: #ffffff;
 
 }
-#close{
+#closex{
 	position: absolute;
 	border-radius:18px;
 	border-width:2px;
@@ -84,7 +84,7 @@ input{
 	font-weight: 900;
 	width: 30px;
 }
-#close:hover{
+#closex:hover{
 	cursor: pointer;
 	color: #ffffff;
 	background-color: #852002;
