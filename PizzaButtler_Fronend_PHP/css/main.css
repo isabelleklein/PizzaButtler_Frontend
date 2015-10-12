@@ -29,7 +29,7 @@
 
 
 .button_startseite{
-    border-radius: 2px;
+    border-radius: 7px;
 	border-color: white;
 	border-style: solid;
     border-width: 4px;
@@ -44,7 +44,7 @@
     height: 17%;
     margin-left: 25%;
     margin-top: 28%;
-
+    font-size: 20;
 
 }
 
@@ -139,5 +139,6 @@
 }
 
 ::-webkit-input-placeholder {
-   color: #ffffff;
+    color: #ffffff;
+    text-align: center;
 }
