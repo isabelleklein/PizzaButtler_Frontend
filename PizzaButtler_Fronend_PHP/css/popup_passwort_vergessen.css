@@ -102,7 +102,7 @@ input{
 
 }
 
-#close{
+.close{
 	position: absolute;
 	border-radius:18px;
 	border-width:2px;
@@ -112,11 +112,12 @@ input{
 	font-weight: 900;
 	width: 30px;
 }
-#close:hover{
+.close:hover{
 	cursor: pointer;
 	color: #ffffff;
 	background-color: #842002;
 }
+
 
 /* Alle Fehlerausgaben gruppiert definiert. Werden durch JavaScript im Fehlerfall sichtbar gemacht */
 #box1, #box2{

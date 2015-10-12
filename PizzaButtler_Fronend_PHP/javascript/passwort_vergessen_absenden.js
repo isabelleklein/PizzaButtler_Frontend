@@ -71,7 +71,7 @@ $(document).ready(function() {
     
 
     
-     $('#close').click(
+     $('.close').click(
         function() {
             $('#container').hide('slow', 
                  function() {
