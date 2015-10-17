@@ -1,0 +1,132 @@
+/**
+ * @author Isabelle Klein
+ * @Version 2.1
+ */
+
+#overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:10;
+    height:100%;
+    width:100%;
+    background:#000;
+    filter:alpha(opacity=60);
+    -moz-opacity:.60;
+    opacity:.60;
+    display:none;
+}
+
+#container {
+    position:fixed!important;
+    position:absolute;
+    height: auto;
+    width:310px;
+    margin-left: 40%;
+    color: #842002;
+    background-color: #ce3d11 ;
+    border-radius: 18px;
+    display:none;
+    z-index:1002;
+    padding:10px;
+}
+#containerLogOut {
+    position:fixed!important;
+    position:absolute;
+    height: 100px;
+    width:310px;
+    margin: -150px 0px 0px -155px;
+    top: 50%;
+    left: 50%;
+    color: #842002;
+    background-color: #ffffff;
+    border-radius: 18px;
+    display:none;
+    z-index:1002;
+    padding:10px;
+}
+
+select{
+	color: #842002;
+	border-color:#842002;
+	border-width: 4px;
+	margin-left: 2px;
+	margin-bottom: 2px;
+	margin-top:2px;
+	border-radius:7px;
+	width:100px;
+	cursor: pointer;
+}
+
+label{
+	color: #842002;
+}
+
+input{
+	border-color: #842002;
+	border-style: solid;
+    border-width: 4px;
+    width: 140px;
+    margin: 2px;
+    color: #842002;
+}
+#agb{
+	content: "";  
+    display: inline-block;  
+    width: 15px;  
+    height: 15px;  
+    color: #842002;
+    vertical-align:middle; 
+    margin: 2px;
+    margin-right: 8px; 
+    background-color: #842002; 
+    border-radius: 4px;  
+    border-color: #842002;
+    border-style: solid;
+    border-width: 4px;
+    cursor: pointer;
+}
+
+#strasse{
+	width:230px;
+}
+
+#hausnummer{
+	width:50px;
+}
+
+#absenden{
+	border-radius:7px;
+	border-color: #842002;
+	border-style: solid;
+    border-width: 4px;
+    margin: 4px;
+    background-color: #842002;
+    color: #ffffff;
+    font-weight: 900;
+    left:30px;
+	width:300px;
+}
+#absenden:hover{
+	cursor: pointer;
+	color: #842002;
+	background-color: #ffffff;
+
+}
+
+.close{
+	position: absolute;
+	border-radius:18px;
+	border-width:2px;
+	right: 3px;
+	top: 3px;
+	background-color: #ffffff;
+	font-weight: 900;
+	width: 30px;
+}
+.close:hover{
+	cursor: pointer;
+	color: #ffffff;
+	background-color: #842002;
+}
+

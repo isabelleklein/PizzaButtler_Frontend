@@ -16,6 +16,17 @@
     background-color: #ce3d11;
 }
 
+.hintergrundfarbe{
+    background-color: #ce3d11;
+
+}
+
+
+h1{
+    color: white;
+
+}
+
 .ersterBereich {
 
     height: 45%;
@@ -143,4 +154,20 @@
 ::-webkit-input-placeholder {
     color: #ffffff;
     text-align: center;
+}
+
+.Text1{
+    background-color: #fecc3f;
+    border-radius:7px;
+	border-color: #842002;
+	border-style: solid;
+    border-width: medium;
+    margin-left: -0,5%;
+
+}
+
+.Text2 {
+    color: white;
+    margin-left: 1%;
+
 }
