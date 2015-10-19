@@ -1,20 +1,67 @@
+<?php /* Smarty version 3.1.27, created on 2015-10-12 11:39:45
+         compiled from "layouts\header_start.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:14654561b7fe192e3d1_52870664%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'e902567a32fe888042ccac6e75fc999660945f2b' => 
+    array (
+      0 => 'layouts\\header_start.tpl',
+      1 => 1444642662,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '14654561b7fe192e3d1_52870664',
+  'variables' => 
+  array (
+    'title' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => '3.1.27',
+  'unifunc' => 'content_561b7fe19748e2_71063018',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_561b7fe19748e2_71063018')) {
+function content_561b7fe19748e2_71063018 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '14654561b7fe192e3d1_52870664';
+?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
     <head>
          <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-         <script type="text/javascript" src="./javascript/kundenregistrierung.js"></script>
- 		 <script type="text/javascript" src="./javascript/jquery.js"></script>
- 		 <script type="text/javascript" src="./javascript/jquery-ui.js"></script>
- 	 	 <script type="text/javascript" src="./javascript/polyfill.js"></script>
- 		 <script type="text/javascript" src="./javascript/absendentest.js"></script>
- 		 <script type="text/javascript" src="./javascript/jquery.js"></script>
-    <script type="text/javascript" src="./javascript/kundenlogin.js"></script>
-    <script type="text/javascript" src="./javascript/login_absenden.js"></script>
+         <?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/kundenregistrierung.js"><?php echo '</script'; ?>
+>
+ 		 <?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/jquery.js"><?php echo '</script'; ?>
+>
+ 		 <?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/jquery-ui.js"><?php echo '</script'; ?>
+>
+ 	 	 <?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/polyfill.js"><?php echo '</script'; ?>
+>
+ 		 <?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/absendentest.js"><?php echo '</script'; ?>
+>
+ 		 <?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/jquery.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/kundenlogin.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/login_absenden.js"><?php echo '</script'; ?>
+>
          <link href="./css/jquery-ui.css" rel="stylesheet" />
          <link href="./css/popupRegistrierung.css" rel="stylesheet" />
          <link href="./css/popupLogin.css" rel="stylesheet"/>
         
-         <title>{$title|default:"Title"} | PizzaButler</title>
+         <title><?php echo (($tmp = @$_smarty_tpl->tpl_vars['title']->value)===null||$tmp==='' ? "Title" : $tmp);?>
+ | PizzaButler</title>
     </head>
     <body class="body">
      	<header>
@@ -26,7 +73,7 @@
                         <img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="180"/>
                     </span>
                     <span class="head_right">
-                        <button class="header_button" id="openx">Anmelden</button><br/>
+                        <button class="header_button">Anmelden</button><br/>
                         <button class="header_button" id="open">Registrieren</button>
                     </span>
                 </div>
@@ -117,7 +164,8 @@
  	<div id="passwortvergessen">
  	   <a href="#" id="fline">Passwort vergessen</a>
  	   </div>
- 	    <Input id="absenden_login" name="absenden" type="button" value="Login" />
+ 	    <Input id="absenden" name="absenden" type="button" value="Login" />
  	</div>
- 	<div id="overlay"></div>
-             
+             <?php }
+}
+?>

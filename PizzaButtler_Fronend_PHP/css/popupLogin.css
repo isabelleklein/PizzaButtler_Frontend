@@ -12,7 +12,7 @@
     display:none;
 }
 
-#container {
+#containerx {
     position:fixed!important;
     position:absolute;
     height:100px;
@@ -27,7 +27,7 @@
     z-index:1002;
     padding:10px;
 }
-input{
+inputx{
 	border-radius:7px;
 	border-color: #852002;
 	border-style: solid;
@@ -53,7 +53,7 @@ input{
   left: 54px;
   bottom: 17;
 }
-#absenden{
+#absenden_login{
   position:relative;
 	border-radius:7px;
 	border-color: #852002;
@@ -68,7 +68,7 @@ input{
 	width:120px;
     margin-bottom: ;
 }
-#absenden:hover{
+#absenden_login:hover{
 	cursor: pointer;
 	color: #852002;
 	background-color: #ffffff;

@@ -5,7 +5,7 @@ $(function() {
 	        	console.log("1");
 	            $('#overlay').show('slow', 
 	                function() {
-	                    $('#container').fadeIn('slow');
+	                    $('#containerx').fadeIn('slow');
 	                    $('#changeText').html('Dynamischer Inhalt');
 	                }
 	            );
@@ -13,7 +13,7 @@ $(function() {
 	    );
 	$('#closex').click(
 	            function() {
-	                $('#container').hide('slow', 
+	                $('#containerx').hide('slow', 
 	                     function() {
 	                          $('#overlay').fadeOut();          
 	                     }    
