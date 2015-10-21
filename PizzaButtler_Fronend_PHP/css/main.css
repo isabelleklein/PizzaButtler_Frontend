@@ -23,8 +23,7 @@
 
 
 h1{
-    color: white;
-
+    color: #842002;
 }
 
 .ersterBereich {
@@ -169,5 +168,15 @@ h1{
 .Text2 {
     color: white;
     margin-left: 1%;
+
+}
+
+.Text3 {
+    color: #842002;
+    font-weight: bold;
+}
+
+.Text4 {
+    color: #842002;
 
 }

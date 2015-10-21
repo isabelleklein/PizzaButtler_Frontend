@@ -1,5 +1,5 @@
 /**
- * @author Dominik Terlau
+ * @author Isabelle Klein
  * @Version 2.1
  */
 
