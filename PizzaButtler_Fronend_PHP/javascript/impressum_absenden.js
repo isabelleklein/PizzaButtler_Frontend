@@ -12,20 +12,20 @@ $(document).ready(function() {
 	
 
 	
-    $('#open').click(
+    $('#open_impressum').click(
         function() {
             $('#overlay').show('slow', 
                 function() {
-                    $('#container').fadeIn('slow');
+                    $('#container_impressum').fadeIn('slow');
                     $('#changeText').html('Dynamischer Inhalt');
                 }
             );
         }
     ); 
     
-     $('.close').click(
+     $('.close_impressum').click(
         function() {
-            $('#container').hide('slow', 
+            $('#container_impressum').hide('slow', 
                  function() {
                       $('#overlay').fadeOut();          
                  }    

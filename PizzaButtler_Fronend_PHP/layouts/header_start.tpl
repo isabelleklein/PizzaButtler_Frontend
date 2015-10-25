@@ -1,20 +1,24 @@
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
     <head>
-         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-         <script type="text/javascript" src="./javascript/kundenregistrierung.js"></script>
- 		 <script type="text/javascript" src="./javascript/jquery.js"></script>
- 		 <script type="text/javascript" src="./javascript/jquery-ui.js"></script>
- 	 	 <script type="text/javascript" src="./javascript/polyfill.js"></script>
- 		 <script type="text/javascript" src="./javascript/absendentest.js"></script>
- 		 <script type="text/javascript" src="./javascript/jquery.js"></script>
-    <script type="text/javascript" src="./javascript/kundenlogin.js"></script>
-    <script type="text/javascript" src="./javascript/login_absenden.js"></script>
-         <link href="./css/jquery-ui.css" rel="stylesheet" />
-         <link href="./css/popupRegistrierung.css" rel="stylesheet" />
-         <link href="./css/popupLogin.css" rel="stylesheet"/>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="./javascript/kundenregistrierung.js"></script>
+        <script type="text/javascript" src="./javascript/jquery.js"></script>
+        <script type="text/javascript" src="./javascript/jquery-ui.js"></script>
+ 	 	<script type="text/javascript" src="./javascript/polyfill.js"></script>
+        <script type="text/javascript" src="./javascript/absendentest.js"></script>
+        <script type="text/javascript" src="./javascript/jquery.js"></script>
+        <script type="text/javascript" src="./javascript/kundenlogin.js"></script>
+        <script type="text/javascript" src="./javascript/login_absenden.js"></script>
+        <script type="text/javascript" src="./javascript/impressum_absenden.js"></script>
+         
+        <link href="./css/jquery-ui.css" rel="stylesheet" />
+        <link href="./css/popupRegistrierung.css" rel="stylesheet" />
+        <link href="./css/popupLogin.css" rel="stylesheet"/>
+        <link href="./css/popupImpressum.css" rel="stylesheet" />
+        <link href="./css/main.css" rel="stylesheet" />
         
-         <title>{$title|default:"Title"} | PizzaButler</title>
+        <title>{$title|default:"Title"} | PizzaButler</title>
     </head>
     <body class="body">
      	<header>
@@ -120,4 +124,43 @@
  	    <Input id="absenden_login" name="absenden" type="button" value="Login" />
  	</div>
  	<div id="overlay"></div>
+    <div id="container_impressum"> 
+        
+            <form id='impressum' name="impressum" action="#">
+                <div>
+                    <h1>Impressum</h1>
+                    
+                    
+                    <div class="Text3">Betreiber der Website von PizzaButtler.de:</div>
+
+                    <div class="Text4">
+                        </br>
+                            WWI13AMB</br>
+                            info@PizzaButtler.de
+                        </br></br>
+                    </div>
+
+                    <div class="Text3">Geschäftsführer:</div>
+
+                    <div class="Text4">
+
+                        </br>
+                            Alexander Zur, Christoph Flick
+                        </br></br>
+                    </div>
+
+                    <div class="Text3"> Rechtliche Hinweise: </div>
+
+                    <div class="Text4">
+
+                        </br>
+                           Die yd. yourdelivery GmbH behält sich alle Rechte an den eigenen redaktionellen Texten, eigenen Bildern, eigenen Grafiken, sowie an dem gesamten Design inklusive Layout-, Schrift- und Farbgestaltung der Websites vor. Die Vervielfältigung und Verwendung dieser Informationen und/oder Daten, sowie jegliche Art von Kopie oder Reproduktion bedarf der vorherigen schriftlichen Zustimmung der yd. yourdelivery GmbH. Zuwiderhandlungen werden rechtlich verfolgt. Die rechtlichen Rahmenbedingungen unserer Webseiten entnehmen Sie bitte unseren Allgemeinen Geschäftsbedingungen.
+
+                        </br></br>
+                    </div>  
+                   <input type="button_impressum"  class="close_impressum" value="X"/> 
+            </div>	
+        </div>
+    </form>
+    <div id="overlay"></div>
              
