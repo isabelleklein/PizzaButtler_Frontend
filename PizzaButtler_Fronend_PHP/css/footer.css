@@ -9,6 +9,9 @@ width:100%;
 list-style:none;
 padding-left:0;
 position:absolute;
+-webkit-margin-after: 0px;
+-webkit-padding-start: 0px;
+padding-right: 0px;
 }
 
 #navi_bottom .right a,
