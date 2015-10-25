@@ -1,7 +1,7 @@
 
 
 <div class="hintergrundfarbe">
-            <h1>Datenschutzerklärung</h1>
+            <h1>Datenschutzerkl&aumlrung</h1>
             <div class="Text1">
                 § 1 Zweck der Erhebung und Verwendung der Daten gemäß § 13 Abs. 1 Telemediengesetz
             </div>
