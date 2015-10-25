@@ -8,8 +8,15 @@ height:1.2em;
 width:100%;
 list-style:none;
 padding-left:0;
+<<<<<<< HEAD
 position:fixed;
 -webkit-margin-after: 0px;
+=======
+position:absolute;
+-webkit-margin-after: 0px;
+-webkit-padding-start: 0px;
+padding-right: 0px;
+>>>>>>> origin/PHP-branch
 }
 
 #navi_bottom .right a,
