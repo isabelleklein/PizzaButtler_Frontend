@@ -11,15 +11,19 @@
         <script type="text/javascript" src="./javascript/kundenlogin.js"></script>
         <script type="text/javascript" src="./javascript/login_absenden.js"></script>
         <script type="text/javascript" src="./javascript/impressum_absenden.js"></script>
+        <script type="text/javascript" src="./javascript/passwort_vergessen.js"></script>
+        <script type="text/javascript" src="./javascript/passwort_vergessen_absenden.js"></script>
          
         <link href="./css/jquery-ui.css" rel="stylesheet" />
         <link href="./css/popupRegistrierung.css" rel="stylesheet" />
         <link href="./css/popupLogin.css" rel="stylesheet"/>
         <link href="./css/popupImpressum.css" rel="stylesheet" />
         <link href="./css/main.css" rel="stylesheet" />
+        <link href="./css/popup_passwort_vergessen.css" rel="stylesheet" />
         
         <title>{$title|default:"Title"} | PizzaButler</title>
     </head>
+    
     <body class="body">
      	<header>
             <link href="./css/header.css" rel="stylesheet" />
@@ -37,6 +41,8 @@
             </div>
             <div id="header_bottom"></div>
      	</header>
+        
+        <!-- Registrierung -->
      	<div id="container">
 	        <form id='registrieren' name="registrieren" action="#">
 	            <div class="fline">
@@ -101,66 +107,58 @@
 	                <input id="absenden" name="absenden" type="button" value="Kundenregistrierung abschliessen"/>
 	            </p>
 	            <label id="fehlerAbsenden"></label>
-	        </form>
-	        
-	        <br />
- 		</div>
- 		<div id="overlay"></div>
- 		<div id="containerx">
-  	  <div class="fline">
-        	<input type="text" class="in2" name="email" id="email" placeholder="Email-Adresse" required onchange="mailPruefen()" />
-            <input class="in2" type="password" name="passwort" id="passwort" placeholder="Passwort" required onchange="passwortPruefen()" />
-            <input type="button" id="closex" value="X">
- 	</div>
- 	<div id="merken">
- 	<input class="in2" name="merken" id="merken" type="checkbox"/>
- 	<div id="log">
- 	Logindaten merken.
- 	</div>
-    </div>
- 	<div id="passwortvergessen">
- 	   <a href="#" id="fline">Passwort vergessen</a>
- 	   </div>
- 	    <Input id="absenden_login" name="absenden" type="button" value="Login" />
- 	</div>
- 	<div id="overlay"></div>
-    <div id="container_impressum"> 
+            </form><br />
+        </div>
+        <div id="overlay"></div>
+    
+        <!-- Login -->
+        <div id="containerx">
+            <div class="fline">
+                <input type="text" class="in2" name="email" id="email" placeholder="Email-Adresse" required onchange="mailPruefen()" />
+                <input class="in2" type="password" name="passwort" id="passwort" placeholder="Passwort" required onchange="passwortPruefen()" />
+                <input type="button" id="closex" value="X">
+            </div>
+            <div id="merken">
+                <input class="in2" name="merken" id="merken" type="checkbox"/>
+                <div id="log">Logindaten merken.</div>
+            </div>
+            <div id="passwortvergessen"><a href="#" id="open_pwvergessen" onclick="textEinblenden('box1')">Passwort vergessen</a></div>
+            <Input id="absenden_login" name="absenden" type="button" value="Login" />
+        </div>
+        <div id="overlay"></div>
         
+        <!-- Impressum -->
+        <div id="container_impressum"> 
             <form id='impressum' name="impressum" action="#">
                 <div>
                     <h1>Impressum</h1>
-                    
-                    
                     <div class="Text3">Betreiber der Website von PizzaButtler.de:</div>
-
-                    <div class="Text4">
-                        </br>
-                            WWI13AMB</br>
-                            info@PizzaButtler.de
-                        </br></br>
-                    </div>
-
+                    <div class="Text4"></br>WWI13AMB</br>info@PizzaButtler.de</br></br></div>
                     <div class="Text3">Geschäftsführer:</div>
-
-                    <div class="Text4">
-
-                        </br>
-                            Alexander Zur, Christoph Flick
-                        </br></br>
-                    </div>
-
+                    <div class="Text4"></br>Alexander Zur, Christoph Flick</br></br></div>
                     <div class="Text3"> Rechtliche Hinweise: </div>
-
-                    <div class="Text4">
-
-                        </br>
-                           Die yd. yourdelivery GmbH behält sich alle Rechte an den eigenen redaktionellen Texten, eigenen Bildern, eigenen Grafiken, sowie an dem gesamten Design inklusive Layout-, Schrift- und Farbgestaltung der Websites vor. Die Vervielfältigung und Verwendung dieser Informationen und/oder Daten, sowie jegliche Art von Kopie oder Reproduktion bedarf der vorherigen schriftlichen Zustimmung der yd. yourdelivery GmbH. Zuwiderhandlungen werden rechtlich verfolgt. Die rechtlichen Rahmenbedingungen unserer Webseiten entnehmen Sie bitte unseren Allgemeinen Geschäftsbedingungen.
-
-                        </br></br>
+                    <div class="Text4"></br>Die yd. yourdelivery GmbH behält sich alle Rechte an den eigenen redaktionellen Texten, eigenen Bildern, eigenen Grafiken, sowie an dem gesamten Design inklusive Layout-, Schrift- und Farbgestaltung der Websites vor. Die Vervielfältigung und Verwendung dieser Informationen und/oder Daten, sowie jegliche Art von Kopie oder Reproduktion bedarf der vorherigen schriftlichen Zustimmung der yd. yourdelivery GmbH. Zuwiderhandlungen werden rechtlich verfolgt. Die rechtlichen Rahmenbedingungen unserer Webseiten entnehmen Sie bitte unseren Allgemeinen Geschäftsbedingungen.</br></br>
                     </div>  
-                   <input type="button_impressum"  class="close_impressum" value="X"/> 
-            </div>	
+                    <input type="button_impressum"  class="close_impressum" value="X"/> 
+                </div>	
+            </div>
+        </form>
+        <div id="overlay"></div>
+        
+        <!-- Passwort vergessen -->
+        <div id="container_pwvergessen">     
+            <div id="box1">
+                <p>Passwort vergessen?</p>
+                <p>Gib deine E-Mail ein, wir senden dir ein neues Passwort zu </p>
+                <div class="fline">
+                    <input class="in2" type="text" name="email" id="email_pwvergessen" placeholder="Email" required onchange="mailPruefen_pwvergessen()"/>
+                    <input class="in2" id="absenden_pwvergessen" name="absenden" type="button" value="Absenden" onclick="textTauschen('box1','box2')"/>
+                    <input type="button"  class="close" value="X"/>
+                </div>
+            </div>
+            <div id="box2">    
+                <p>Bitte klicke auf den Link, der dir per E-Mail zugestellt wird!</p>
+                <p>Du wirst dann automatisch weiter geleitet!</p>
+                <input type="button"  class="close" value="X"/>
+            </div>
         </div>
-    </form>
-    <div id="overlay"></div>
-             

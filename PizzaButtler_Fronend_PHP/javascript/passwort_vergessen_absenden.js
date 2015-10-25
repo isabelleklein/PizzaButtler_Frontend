@@ -10,7 +10,7 @@ $(document).ready(function() {
 	var $pwvergessen = $('#pwvergessen');
 	/** Aktionsinformationen für den Absenden-Button **/
 	
-	$('#absenden').click(function(e) {
+	$('#absenden_pwvergessen').click(function(e) {
 		console.log("Abschicken Button wurde geklickt");
 		if(checkForm()==true)
 			{
@@ -31,7 +31,7 @@ $(document).ready(function() {
 					console.log(data);
 					if(data ==0) {
 						console.log("if-Abschnitt durchlaufen");
-						$('#container').hide('slow', 
+						$('#container_pwvergessen').hide('slow', 
 				                 function() {
 				                      $('#overlay').fadeOut();          
 				                 }    
@@ -58,11 +58,11 @@ $(document).ready(function() {
 			}
 	});
 	
-    $('#open').click(
+    $('#open_pwvergessen').click(
         function() {
             $('#overlay').show('slow', 
                 function() {
-                    $('#container').fadeIn('slow');
+                    $('#container_pwvergessen').fadeIn('slow');
                     $('#changeText').html('Dynamischer Inhalt');
                 }
             );
@@ -73,9 +73,9 @@ $(document).ready(function() {
     
      $('.close').click(
         function() {
-            $('#container').hide('slow', 
+            $('#container_pwvergessen').hide('slow', 
                  function() {
-                      $('#overlay').fadeOut();          
+                    $('#overlay').fadeOut();          
                  }    
             );
         }

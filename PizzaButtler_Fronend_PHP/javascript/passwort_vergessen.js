@@ -1,14 +1,14 @@
 /** Pruefen der Mail-Adresse  **/
-function mailPruefen()
+function mailPruefen_pwvergessen()
 {
-    var email=document.getElementById("email").value;
+    var email=document.getElementById("email_pwvergessen").value;
 	  /**  Pruefung ob eine gueltige Mail-Adresse eingegeben wurde **/
       if(checkGrammatik("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", email)==false)
     	  {
-    	      fehlerAusgeben("fehlerEmail", "email");
+    	      fehlerAusgeben("fehlerEmail", "email_pwvergessen");
 	          return "Das Feld 'Email' entspricht nicht der typischen Form einer Email!\n";
     	  }
-      hinweisVerbergen("fehlerEmail", "email");
+      hinweisVerbergen("fehlerEmail", "email_pwvergessen");
  
       return ""
 }
@@ -23,7 +23,7 @@ function fehlerAusgeben(fehl, feld)
     document.getElementById("" + fehl).style.display="inline"; //Fehlerhinweis wird angezeigt
     document.getElementById("" + feld).style.background="#852002"; //Fehlerhaftes Feld wird markiert
     document.getElementById("" + feld).style.color="#ffffff"; //Schriftfarbe des fehlerhaften Feldes wird dem neuen Hintergrund angepasst
-    document.getElementById("container").style.height="320"; //Pop-Up wird zur Angabe des Fehlers vergrößert
+    document.getElementById("container_pwvergessen").style.height="320"; //Pop-Up wird zur Angabe des Fehlers vergrößert
 	}
 
 function textEinblenden(fehl)
@@ -42,7 +42,7 @@ function hinweisVerbergen(fehl, feld)
 	  document.getElementById("" + fehl).style.display="none"; //Fehlerhinweis wird ausgeblendet
 	  document.getElementById("" + feld).style.background="#ffffff"; //Fehlerhaftes Feld wird farblich in Ausgangszustand gebracht
 	  document.getElementById("" + feld).style.color="#852002"; //Schriftfarbe wird farblich in Ausgangszustand gebracht
-	  document.getElementById("container").style.height="300"; //Die Größe des Pop-Ups wird in Ausgangszustand gebracht
+	  document.getElementById("container_pwvergessen").style.height="300"; //Die Größe des Pop-Ups wird in Ausgangszustand gebracht
 	}
 
 
