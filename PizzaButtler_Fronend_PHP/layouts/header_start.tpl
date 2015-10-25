@@ -94,7 +94,7 @@
 	            <label id="fehlerPw_1">Bitte geben Sie eine sicheres Passwort ein</label>
 	            <label id="fehlerPw_2">Die Passw&oumlrter stimmen nicht &uumlberein</label>
 	            <div class="fline">
-	            	<input class="in2" name="agb" id="agb" type="checkbox" />Ich bin mit den AGB und dem Datenschutz einverstanden
+	            	<input class="in2" name="agb" id="agb" type="checkbox" />Ich bin mit den <a href="./agb.php">AGB</a> und dem Datenschutz einverstanden
 	            </div>
 	            <label id="fehlerAgb">Bitte stimmen Sie unseren AGBs und Datenschutzbestimmungen zu</label>
 	            <p>
