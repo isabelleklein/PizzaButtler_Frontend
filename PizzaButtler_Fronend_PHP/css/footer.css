@@ -3,13 +3,14 @@ background:#ffffff;
 color:#842002;
 padding: 5px;
 white-space:nowrap;
-bottom:-150px;
+bottom:0px;
 clear:both;
 height:1.2em;
+width:100%;
 list-style:none;
 margin:-10;
 padding-left:1em;
-position:relative;
+position:absolute;
 }
 
 #navi_bottom .right a,
