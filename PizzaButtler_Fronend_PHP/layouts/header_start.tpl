@@ -6,8 +6,10 @@
         <script type="text/javascript" src="./javascript/jquery.js"></script>
         <script type="text/javascript" src="./javascript/jquery-ui.js"></script>
  	 	<script type="text/javascript" src="./javascript/polyfill.js"></script>
+    
         <script type="text/javascript" src="./javascript/absendentest.js"></script>
         <script type="text/javascript" src="./javascript/jquery.js"></script>
+        
         <script type="text/javascript" src="./javascript/kundenlogin.js"></script>
         <script type="text/javascript" src="./javascript/login_absenden.js"></script>
         <script type="text/javascript" src="./javascript/impressum_absenden.js"></script>
@@ -153,7 +155,7 @@
                 <div class="fline">
                     <input class="in2" type="text" name="email" id="email_pwvergessen" placeholder="Email" required onchange="mailPruefen_pwvergessen()"/>
                     <input class="in2" id="absenden_pwvergessen" name="absenden" type="button" value="Absenden" onclick="textTauschen('box1','box2')"/>
-                    <input type="button"  class="close" value="X"/>
+                    <input type="button"  class="close_pwvergessen" value="X"/>
                 </div>
             </div>
             <div id="box2">    

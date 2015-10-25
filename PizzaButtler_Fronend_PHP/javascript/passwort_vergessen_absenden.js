@@ -64,6 +64,7 @@ $(document).ready(function() {
                 function() {
                     $('#container_pwvergessen').fadeIn('slow');
                     $('#changeText').html('Dynamischer Inhalt');
+                    $('#containerx').hide('slow');
                 }
             );
         }
@@ -71,7 +72,7 @@ $(document).ready(function() {
     
 
     
-     $('.close').click(
+     $('.close_pwvergessen').click(
         function() {
             $('#container_pwvergessen').hide('slow', 
                  function() {
@@ -80,13 +81,14 @@ $(document).ready(function() {
             );
         }
     );
-     
-  	$(function() {
+    
+    // wird das hier benötigt?
+  	/*$(function() {
 	    $( '#datepicker' ).datepicker({
 	      changeMonth: true,
 	      changeYear: true
 	    });
-	 });
+	 });*/
 });
 
 

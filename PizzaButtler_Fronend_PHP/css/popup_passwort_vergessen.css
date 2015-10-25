@@ -3,6 +3,7 @@
  * @Version 2.1
  */
 
+/* container_pwvergessen stimmt mit container der popupRegistrierung.css überein könnte also entfernt werden? */
 #container_pwvergessen {
     position:fixed!important;
     position:absolute;
@@ -17,4 +18,20 @@
     display:none;
     z-index:1002;
     padding:10px;
+}
+
+.close_pwvergessen{
+	position: absolute;
+	border-radius:18px;
+	border-width:2px;
+	right: 3px;
+	top: 3px;
+	background-color: #ffffff;
+	font-weight: 900;
+	width: 30px;
+}
+.close_pwvergessen:hover{
+	cursor: pointer;
+	color: #ffffff;
+	background-color: #842002;
 }
