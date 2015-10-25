@@ -79,12 +79,13 @@ $(document).ready(function() {
         }
     );
      
-  	$(function() {
+  	/* ggf. Verwendung falls geburtsdatum eingebaut werden soll
+    $(function() {
 	    $( '#datepicker' ).datepicker({
 	      changeMonth: true,
 	      changeYear: true
 	    });
-	 });
+	 });*/
 });
 
 
