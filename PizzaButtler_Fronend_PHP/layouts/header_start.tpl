@@ -161,6 +161,6 @@
             <div id="box2">    
                 <p>Bitte klicke auf den Link, der dir per E-Mail zugestellt wird!</p>
                 <p>Du wirst dann automatisch weiter geleitet!</p>
-                <input type="button"  class="close" value="X"/>
+                <input type="button"  class="close_pwvergessen" value="X"/>
             </div>
         </div>
