@@ -1,0 +1,264 @@
+<!--// Startseite -->
+.farbe1 {
+    border-radius:7px;
+	border-color: #842002;
+	border-style: solid;
+    border-width: 4px;
+    margin: 4px;
+    background-color: #842002;
+    color: #ffffff;
+    font-weight: 900;
+    left:30px;
+}
+
+.farbe {
+    margin-top: 4%;
+    background-color: #ce3d11;
+}
+
+.hintergrundfarbe{
+    background-color: #ce3d11;
+
+}
+
+
+h1{
+    color: #842002;
+}
+
+.ersterBereich {
+
+    height: 45%;
+}
+
+.button_startseite{
+    border-radius: 7px;
+	border-color: white;
+	border-style: solid;
+    border-width: 4px;
+
+    background-color: #e59a83;
+    color: white;
+    font-color: white;
+    font-weight: 900;
+    left:30px;
+    text-decoration-color: white;
+    width: 50%;
+    height: 17%;
+    margin-left: 25%;
+    margin-top: 28%;
+    font-size: 20;
+
+}
+
+input.button_startseite::-webkit-input-placeholder {
+    color: #ffffff;
+    text-align: center;
+}
+
+.logo{
+    width: 25%;
+    height: auto;
+	position: absolute;
+	right: 20px;
+	top: 150px;
+
+}
+
+#textbaustein{
+  
+    margin-left: -300px;
+}
+
+.paypal{
+    flaot:left;
+    width: 20%;
+    height: auto;
+    margin-left: auto;
+
+}
+
+#bild1{
+    margin-left: 25%;
+
+}
+
+#bild2{
+    margin-left: 5%;
+
+}
+
+
+.links{
+
+    width: 50%;
+    float: left;
+    color: white;
+}
+.rechts{
+
+    width: 50%;
+    height: -50%;
+    margin-left: 50%;
+}
+
+.button_absenden {
+    border-radius:7px;
+	border-color: #842002;
+	border-style: solid;
+    border-width: 4px;
+    margin: 4px;
+    background-color: #842002;
+    color: #ffffff;
+    font-weight: 900;
+    left:30px;
+}
+
+.button_absenden:hover{
+	cursor: pointer;
+	color: #842002;
+	background-color: #ffffff;
+
+}
+
+.button {
+	border-radius:7px;
+	border-color: #842002;
+	border-style: solid;
+    border-width: 4px;
+    width: 140px;
+    margin: 2px;
+    color: #842002;
+}
+
+#absenden{
+	border-radius:7px;
+	border-color: #842002;
+	border-style: solid;
+    border-width: 4px;
+    margin: 4px;
+    background-color: #842002;
+    color: #ffffff;
+    font-weight: 900;
+    left:30px;
+}
+#absenden:hover{
+	cursor: pointer;
+	color: #842002;
+	background-color: #ffffff;
+}
+
+#pizzerienContainer{
+	border-radius:12px;
+	border-width:0px;
+	background-color: #ffffff;
+	width:50%; 
+	height:80%;
+	left:15%;
+	top:10em;
+	position:absolute;
+	color: #842002;
+}
+#logo_uebersicht{
+	height: 80%;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	overflow:auto;
+}
+
+#infoContainer{
+	border-radius:12px;
+	border-width:0px;
+	background-color: #ffffff;
+	width:30%;
+	height:35%;
+	left:67%;
+	top:10em;
+	position:absolute;
+	color: #842002;
+}
+.subContainer{
+	height:20%;
+	width:90%;
+}
+
+#infoContainerText{
+	width: auto;
+	left: 5%;
+	position:absolute;
+	font-weight: 900;
+	font-size: 130%;
+	font-family: "Open Sans";
+	color:black;
+}
+
+@media all and (max-width: 980px) {
+    #pizzerienContainer{
+        left: 190px;
+        width: 490px;
+    }
+    #infoContainer{
+    	left:700px;
+    	width: 245px;
+    }
+}
+.pizzeriaIcon
+{
+	width:100px;
+	height:auto;
+}
+
+.iconspalte
+{
+	width:100px;
+}
+.listParagraph
+{
+	margin:0px;
+	font-family:"Open Sans";
+	font-weight: 900;
+	color:black;
+}
+#pizzeriaName
+{
+	font-size:130%;
+}
+tr.line td{ 
+border-bottom: 3px solid #842002; 
+}
+table{
+	margin:20px;
+	width:94%;
+}
+
+::-webkit-input-placeholder {
+    color: #696a6d;
+    text-align: center;
+}
+
+.Text1{
+    background-color: #fecc3f;
+    border-radius:7px;
+	border-color: #842002;
+	border-style: solid;
+    border-width: medium;
+    margin-left: -0,5%;
+
+}
+
+.Text2 {
+    color: white;
+    margin-left: 1%;
+
+}
+
+.Text3 {
+    color: #842002;
+    font-weight: bold;
+}
+
+.Text4 {
+    color: #842002;
+
+}

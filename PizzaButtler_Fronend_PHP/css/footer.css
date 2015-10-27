@@ -1,0 +1,36 @@
+#navi_bottom {
+background:#ffffff;
+color:#842002;
+white-space:nowrap;
+bottom:0px;
+clear:both;
+height:1.2em;
+width:100%;
+list-style:none;
+padding-left:0;
+position:fixed;
+-webkit-margin-after: 0px;
+-webkit-padding-start: 0px;
+padding-right: 0px;
+}
+
+#navi_bottom .right a,
+#navi_bottom .left a {
+margin-left:.5em;
+margin-right:.5em;
+}
+
+#navi_bottom a {
+background:#ffffff;
+color:#842002;
+text-decoration:none;
+font:10px "Open Sans", sans-serif;
+font-weight: 700;
+}
+
+.left {
+float:left;
+}
+.right {
+float:right;
+}

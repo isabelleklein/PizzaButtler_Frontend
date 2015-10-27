@@ -1,0 +1,52 @@
+/**
+ * @author Isabelle Klein
+ * @Version 2.1
+ */
+
+#container_impressum {
+    position:fixed!important;
+    position:absolute;
+    height: auto;
+    width:310px;
+    margin-left: 40%;
+    color: #842002;
+    background-color: white ;
+    border-radius: 18px;
+    display:none;
+    z-index:500;
+    padding:10px;
+}
+
+#containerLogOut {
+    position:fixed!important;
+    position:absolute;
+    height: 100px;
+    width:310px;
+    margin: -150px 0px 0px -155px;
+    top: 50%;
+    left: 50%;
+    color: #842002;
+    background-color: #ffffff;
+    border-radius: 18px;
+    display:none;
+    z-index:1002;
+    padding:10px;
+}
+
+.close_impressum{
+	position: absolute;
+    text-align: center;
+	border-radius:18px;
+	border-width:2px;
+	right: 3px;
+	top: 3px;
+	background-color: #ffffff;
+	font-weight: 900;
+	width: 30px;
+}
+.close_impressum:hover{
+	cursor: pointer;
+	color: #ffffff;
+	background-color: #842002;
+}
+
