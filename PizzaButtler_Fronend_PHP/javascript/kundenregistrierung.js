@@ -17,6 +17,7 @@ function checkForm()
     	strFehler += vornamePruefen();
         if(strFehler.length==0){
         	strFehler += nachnamePruefen();
+        	//Wird nach Vorgabe der Fachlichkeit aktuell nicht in der Registrierung benötigt.
         	//if(strFehler.length==0){
 	        //	strFehler += datumPruefen();
 	            if(strFehler.length==0){
@@ -185,7 +186,9 @@ function mailPruefen()
       return ""
 }
 
-/** Pruefung des angegebenen Datums **/
+/** Pruefung des angegebenen Datums 
+ * Wird nach der Vorgabe durch die Fachlichkeit bei der Registrierung nicht vom Anwender verlangt**/
+/**
 function datumPruefen()
 {
 	var datum=document.getElementById("datepicker").value;
@@ -197,6 +200,7 @@ function datumPruefen()
 	hinweisVerbergen("fehlerDat", "datepicker");
 	return"";
 }
+**/
 
 /** Pruefung, ob das erste Passworter den Vorgaben entspricht**/      
 function passwortPruefen1()
