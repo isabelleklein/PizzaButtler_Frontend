@@ -1,4 +1,4 @@
-    
+"use strict";
 $(document).ready(function() {
 	var $login = $('#login');
 	/** Aktionsinformationen für den Absenden-Button **/
@@ -7,43 +7,35 @@ $(document).ready(function() {
 		console.log("Login Button wurde geklickt");
 		
 			
-			e.preventDefault(); /** cancel form submit **/
-			var jsObj = $login.serializeObject(), ajaxObj = {};
-			
-			
-			//console.log(jsObj);
-			
-			ajaxObj = {  
-				type: "POST",																	/**RESTful-Methode POST**/                                                       /**Webadresse, welche das Anlegen eines neuen Benutzers ermöglicht**/
-				url: "http://pizzabutlerentwbak.krihi.com/entwicklung/rest/user/login", 		
-				data: JSON.stringify(jsObj), 													/**Datei, die im HTTP-Body mitgegeben wird**/
-				contentType:"application/json",  												/**Dateityp der Datei im HTTP-Body**/
-				error: function(jqXHR, textStatus, errorThrown) {								/**Ermittlung von Fehlern**/
-					console.log("Error " + jqXHR.getAllResponseHeaders() + " " + errorThrown);
-					$('#div_ajaxResponse').text( "Alles in Ordnung" );
-				},
-				success: function(data) { 														/**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
-					//console.log(data);
-					if(data[0].HTTP_CODE == 0) {												/** Login erfolgreich **/
-						$('#div_ajaxResponse').text( data[0].MSG );
-						window.location.href = "login_intro.php";								/** neue Seite öffnen **/
-					}
-				},
-				complete: function(XMLHttpRequest) {
-					//console.log( XMLHttpRequest.getAllResponseHeaders() );
-				}, 
-				dataType: "json" //request JSON
-			};
-			
-			$.ajax(ajaxObj);
-			
-		
+		e.preventDefault(); /** cancel form submit **/
+		var jsObj = $login.serializeObject();
+		console.log("Login Daten: " + jsObj);
+		var rest = RestInterface;
+
+		rest.setParameters("POST", "user/login", jsObj, function(returnCode){
+			console.log("Anwortdaten: " + returnCode);
+			if(returnCode > -1) {
+				console.log("Login erfolgreich");
+				$('#div_ajaxResponse').text( returnCode );
+				localStorage.setItem("userID", returnCode);
+				window.location.href = "../login_intro.php"
+			}
+			else if(returnCode === -1){
+				console.log("Fehler: Falsche Eingaben / Nicht vorhanden");
+			}
+			else {
+				console.log("Fehler im Prozess aufgetreten");
+			}
+		});
+		rest.fakeSend("http://localhost:63342/PizzaButtler_Frontend/PizzaButtler_Fronend_PHP/mock/loginSuccess.json")
+
+
 	});
 });
 $(function() {
 	$('#openx').click(
 	        function() {
-	        	console.log("1");
+	        	console.log("Öffnen angeklickt");
 	            $('#overlay').show('slow', 
 	                function() {
 	                    $('#containerx').fadeIn('slow');

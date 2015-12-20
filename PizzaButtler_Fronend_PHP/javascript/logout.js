@@ -1,29 +1,32 @@
-$(document).ready(function() {
-	$('#logout').click(function(e) {
-		e.preventDefault();
-        $.ajax({
-            type:"POST",
-            url:"../logout.php",
-            data:'',
-            dataType:'html',
-            context:document.body,
-            global:false,
-            async:false,
-            success:function(data){
-                console.log(data);
-                localStorage.removeItem("logged");
-            }
-        });
-		 $('#overlay').show('slow', 
-	                function() {
-	                    $('#containerLogOut').fadeIn('fast');
-	                }
-	            );
-		window.setTimeout(weiterleiten,3000);
-		
-	});
-	function weiterleiten()
-	{
-		window.location.href = "./index.html"
-	};
+$("head").append('<script type="text/javascript" src="../javascript/RestInterface.js"></script>');
+var rest = RestInterface;
+var userID = localStorage.getItem("userID");
+
+if(userID != null) {
+    rest.setParameters("POST", "user/logout", userID, function (data) {
+        localStorage.removeItem("userID");
+    });
+}
+
+$(document).ready(function () {
+    $('#logout').click(function (e) {
+        e.preventDefault();
+
+        if(userID != null) {
+            rest.fakeSend("http://localhost:63342/PizzaButtler_Frontend/PizzaButtler_Fronend_PHP/mock/logout.json");
+
+
+            $('#overlay').show('slow',
+                function () {
+                    $('#containerLogOut').fadeIn('fast');
+                }
+            );
+            window.setTimeout(weiterleiten, 3000);
+        }
+
+    });
+
+    function weiterleiten() {
+        window.location.href = "./index.html"
+    };
 });
