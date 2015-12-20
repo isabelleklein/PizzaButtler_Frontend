@@ -1,4 +1,4 @@
-		<script type="text/javascript" src="../javascript/getDaten.js"></script>
+		<script type="text/javascript" src="../javascript/datenanzeigen.js"></script>
 		<script type="text/javascript" src="../javascript/datenaendern.js"></script>
 		<script type="text/javascript" src="../javascript/datenanzeigen.js"></script>
 		<script type="text/javascript" src="../javascript/profilAnzeigeBefuellen.js"></script>

@@ -4,12 +4,11 @@
 	
 		<title>Daten &auml;ndern bei Pizzabutler</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<script type="text/javascript" src="../javascript/jquery.js"></script>
- 		<script type="text/javascript" src="../javascript/jquery-ui.js"></script>
-		<script type="text/javascript" src="../javascript/polyfill.js"></script>
-		<script type="text/javascript" src="../javascript/getDaten.js"></script>
+        <script type="text/javascript" src="../lib/jquery/jquery.js"></script>
+        <script type="text/javascript" src="../lib/jquery-ui-1.11.4/jquery-ui.js"></script>
+		<script type="text/javascript" src="../javascript/lib/polyfill.js"></script>
+		<script type="text/javascript" src="../javascript/datenanzeigen.js"></script>
 		<script type="text/javascript" src="../javascript/datenaendern.js"></script>
-		<script type="text/javascript" src="../javascript/aendernFormBefuellen.js"></script>
 		<script type="text/javascript" src="../javascript/kundenregistrierung.js"></script>
 
 		
@@ -34,7 +33,7 @@
             <div class="fline">
                 <label class="in1" for="vorname">Vorname</label>
                 <input type="text" class="in2" name="vorname" id="vorname" pattern="^[A-ZÀ-Ü]{1,1}[a-zß-ü]{1,24}$" 
-                required title="Zwischen 3 und 25 Zeichen (Umlaute möglich)" onchange="vornamePruefen1()"></input>
+                required title="Zwischen 3 und 25 Zeichen (Umlaute möglich)" onchange="vornamePruefen1()"/>
             </div>
 
             <div class="fline">
@@ -45,7 +44,7 @@
 
             <div class="fline">
 			<label class="in1" for="nachname">Geburtsdatum</label>
-	                <input type="text" class="in2" name="geburtsdatum" id="datepicker" placeholder="Geburtsdatum"
+	                <input type="text" class="in2" name="geburtsdatum" id="geburtsdatum" placeholder="Geburtsdatum"
 	                 onchange="datumPruefen()" required title="dd-mm-yyyy">
 	        </div>
 
