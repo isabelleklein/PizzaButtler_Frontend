@@ -1,0 +1,46 @@
+[
+	{
+		"RestaurantID":123,
+		"name":"Pizzeria Toni",
+		"oeffnungszeiten":"16:00-23:00",
+		"mindestbestellwert":12.50,
+		"strasse":"deine strasse",
+		"hausnummer":"666a",
+		"plz":"123456",
+		"ort":"Monnem",
+		"lieferkosten":15.00
+	},
+	{
+		"RestaurantID":234,
+		"name":"Pizzeria Mudder",
+		"oeffnungszeiten":"15:00-23:00",
+		"mindestbestellwert":102.50,
+		"strasse":"abcsdesjikenm straße",
+		"hausnummer":"64a",
+		"plz":"234567",
+		"ort":"Mommmm",
+		"lieferkosten":1.00
+	},
+	{
+		"RestaurantID":2,
+		"name":"Pizzeria 3",
+		"oeffnungszeiten":"13:00-15:00",
+		"mindestbestellwert":33.50,
+		"strasse":"3333 strasse",
+		"hausnummer":"336a",
+		"plz":"123256",
+		"ort":"Monnem",
+		"lieferkosten":15.00
+	},
+	{
+		"RestaurantID":143,
+		"name":"Pizzeria Drölf",
+		"oeffnungszeiten":"16:00-23:00",
+		"mindestbestellwert":12.50,
+		"strasse":"mannnheimr straße",
+		"hausnummer":"234a",
+		"plz":"123456",
+		"ort":"Mannheim",
+		"lieferkosten":15.00
+	}
+]
