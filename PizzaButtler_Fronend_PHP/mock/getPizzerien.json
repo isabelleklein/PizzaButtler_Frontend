@@ -1,6 +1,6 @@
 [
 	{
-		"RestaurantID":123,
+		"restaurantID":123,
 		"name":"Pizzeria Toni",
 		"oeffnungszeiten":"16:00-23:00",
 		"mindestbestellwert":12.50,
@@ -11,7 +11,7 @@
 		"lieferkosten":15.00
 	},
 	{
-		"RestaurantID":234,
+		"restaurantID":234,
 		"name":"Pizzeria Mudder",
 		"oeffnungszeiten":"15:00-23:00",
 		"mindestbestellwert":102.50,
@@ -22,7 +22,7 @@
 		"lieferkosten":1.00
 	},
 	{
-		"RestaurantID":2,
+		"restaurantID":2,
 		"name":"Pizzeria 3",
 		"oeffnungszeiten":"13:00-15:00",
 		"mindestbestellwert":33.50,
@@ -33,7 +33,7 @@
 		"lieferkosten":15.00
 	},
 	{
-		"RestaurantID":143,
+		"restaurantID":143,
 		"name":"Pizzeria Drölf",
 		"oeffnungszeiten":"16:00-23:00",
 		"mindestbestellwert":12.50,

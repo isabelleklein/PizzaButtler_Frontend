@@ -2,15 +2,11 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <script type="text/javascript" src="./javascript/kundenregistrierung.js"></script>
-        <script type="text/javascript" src="./javascript/jquery.js"></script>
-        <script type="text/javascript" src="./javascript/jquery-ui.js"></script>
- 	 	<script type="text/javascript" src="./javascript/polyfill.js"></script>
+        <script type="text/javascript" src="./lib/jquery/jquery.js"></script>
+        <script type="text/javascript" src="./lib/jquery-ui-1.11.4/jquery-ui.js"></script>
+ 	 	<script type="text/javascript" src="./javascript/lib/polyfill.js"></script>
     
-        <script type="text/javascript" src="./javascript/absendentest.js"></script>
-        <script type="text/javascript" src="./javascript/jquery.js"></script>
-        
-        <script type="text/javascript" src="./javascript/kundenlogin.js"></script>
+        <script type="text/javascript" src="./javascript/kundenregistrierung.js"></script>
         <script type="text/javascript" src="./javascript/login_absenden.js"></script>
         <script type="text/javascript" src="./javascript/impressum_absenden.js"></script>
         <script type="text/javascript" src="./javascript/passwort_vergessen.js"></script>
