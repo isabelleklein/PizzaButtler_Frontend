@@ -27,7 +27,7 @@ var buildPizzerienListe = function(data){
 		for(var i = 0; i < data.length; i++){
 			// Eine Zeile
 			var a = $("<a href='./pizzeria?id=" + data[i].restaurantID + "'></a>");
-			var tr = $("<tr data-href='./pizzeria?id=" + data[i].restaurantID + "'></tr>");
+			var tr = $("<tr data-href='./pizzeria.php?id=" + data[i].restaurantID + "'></tr>");
 			tr.addClass ("line");
 			// Spalte mit Bild
 			var td1 = $("<td></td>");

@@ -1,0 +1,13 @@
+{
+	"restaurantID":123,
+	"name":"Pizzeria Toni",
+	"beschreibung":"Pizzeria Toni is die niceste Pizza wo gibt, yo!",
+	"oeffnungszeiten":"16:00-23:00",
+	"mindestbestellwert":12.50,
+	"strasse":"deine strasse",
+	"hausnummer":"666a",
+	"plz":"123456",
+	"ort":"Monnem",
+	"lieferkosten":15.00,
+	"email":"info@pizzeriatoni.to"
+}
