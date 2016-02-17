@@ -31,7 +31,9 @@
             <div id="header_nav">
                 <div>
                     <span class="head_left">
-                        <img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="180"/>
+                   		<a href="./index.php">
+                        	<img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="180" />
+                    	</a>
                     </span>
                     <span class="head_right">
                         <button class="header_button" id="openx">Anmelden</button><br/>
