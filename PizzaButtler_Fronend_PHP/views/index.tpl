@@ -2,12 +2,10 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'/>
     <link href="./css/main.css" rel="stylesheet" />     
-
-	<script type="text/javascript" src="./javascript/pizzerienListe.js"></script>
 	
 		<div class="farbe">
 			<div class="ersterBereich">
-				<form onSubmit="return showPizzerien()" name="pizzerienListeButton">
+				<form action="./pizzerienSuche.php" name="pizzerienListeButton">
 					<p class="links">
 						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" />
 					</p>

@@ -25,7 +25,7 @@ function getDaten(callback) {
 	var userID = localStorage.getItem("userID");
 	//if(userID != null) {
 		rest.setParameters("GET", "user/" + userID, null, callback);
-		rest.fakeSend("http://localhost:63342/PizzaButtler_Frontend/PizzaButtler_Fronend_PHP/mock/getUser.json");
+		rest.fakeSend("http://localhost/mock/getUser.json");
 	//}
 }
 

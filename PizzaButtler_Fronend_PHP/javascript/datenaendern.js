@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 			if(userID != null) {
 				rest.setParameters("PUT", "user/" + userID, daten, null);
-				rest.fakeSend("http://localhost:63342/PizzaButtler_Frontend/PizzaButtler_Fronend_PHP/mock/putUser.json");
+				rest.fakeSend("http://localhost/mock/putUser.json");
 			}
 		}
 	});

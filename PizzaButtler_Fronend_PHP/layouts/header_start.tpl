@@ -6,11 +6,13 @@
         <script type="text/javascript" src="./lib/jquery-ui-1.11.4/jquery-ui.js"></script>
  	 	<script type="text/javascript" src="./javascript/lib/polyfill.js"></script>
     
+	    <script type="text/javascript" src="./javascript/registrierung.js"></script>
         <script type="text/javascript" src="./javascript/kundenregistrierung.js"></script>
         <script type="text/javascript" src="./javascript/login_absenden.js"></script>
         <script type="text/javascript" src="./javascript/impressum_absenden.js"></script>
         <script type="text/javascript" src="./javascript/passwort_vergessen.js"></script>
         <script type="text/javascript" src="./javascript/passwort_vergessen_absenden.js"></script>
+		<script type="text/javascript" src="./javascript/header.js"></script>
          
         <link href="./css/jquery-ui.css" rel="stylesheet" />
         <link href="./css/popupRegistrierung.css" rel="stylesheet" />

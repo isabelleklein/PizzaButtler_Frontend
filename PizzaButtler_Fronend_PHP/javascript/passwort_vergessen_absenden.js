@@ -18,7 +18,7 @@ $(document).ready(function() {
 			var jsObj = $pwvergessen.serializeObject();
 
 			rest.setParameters("POST", "passwortvergessen", jsObj, success);
-			rest.fakeSend("http://localhost:63342/PizzaButtler_Frontend/PizzaButtler_Fronend_PHP/mock/pwVergessen.json");
+			rest.fakeSend("http://localhost/mock/pwVergessen.json");
 		}
 	});
 	

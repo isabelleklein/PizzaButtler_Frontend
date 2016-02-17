@@ -20,7 +20,7 @@ $(document).ready(function() {
 			var jsObj = $registrieren.serializeObject();
 
 			rest.setParameters("POST", "user", jsObj, success);
-			rest.fakeSend("http://localhost:63342/PizzaButtler_Frontend/PizzaButtler_Fronend_PHP/mock/postUser.json");
+			rest.fakeSend("http://localhost/mock/postUser.json");
 		}
 	});
 	
@@ -45,11 +45,12 @@ $(document).ready(function() {
         }
     );
 
-	var success = function(data) {
-		/**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
-		console.log(data);
-		if (data == 0) {
-			console.log("if-Abschnitt durchlaufen");
+	var success = function(returnCode) {
+		/**Ermittlung von Erfolgreicher übertragung --> Rückgabe User-ID**/
+		if (returnCode > 0) { // Erfolgreiche Registrierung
+			// UserID setzen == angemeldet
+			localStorage.setItem("userID", returnCode);
+			
 			$('#container').hide('slow',
 				function () {
 					$('#overlay').fadeOut();

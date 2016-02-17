@@ -1,4 +1,3 @@
-"use strict";
 $(document).ready(function() {
 	var $login = $('#login');
 	/** Aktionsinformationen für den Absenden-Button **/
@@ -18,7 +17,7 @@ $(document).ready(function() {
 				console.log("Login erfolgreich");
 				$('#div_ajaxResponse').text( returnCode );
 				localStorage.setItem("userID", returnCode);
-				window.location.href = "../login_intro.php"
+				window.location.href = "."
 			}
 			else if(returnCode === -1){
 				console.log("Fehler: Falsche Eingaben / Nicht vorhanden");
@@ -27,7 +26,7 @@ $(document).ready(function() {
 				console.log("Fehler im Prozess aufgetreten");
 			}
 		});
-		rest.fakeSend("http://localhost:63342/PizzaButtler_Frontend/PizzaButtler_Fronend_PHP/mock/loginSuccess.json")
+		rest.fakeSend("http://localhost/mock/loginSuccess.json")
 
 
 	});

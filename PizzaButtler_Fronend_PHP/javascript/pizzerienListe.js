@@ -1,17 +1,14 @@
-var showPizzerien = function(){
+$(document).ready(function(){
+	// GET-Parameter
+	var plzOrt = parse("plz-ort");
 	
 	// Rest-Aufruf vorbereiten
 	var rest = RestInterface;
-	rest.setParameters("GET", "pizzeria?q=" + $("#plz-ort").val() , null, buildPizzerienListe);
-
-	// Pizzerienlisten (Layout) laden
-	$(".farbe").load("./views/pizzerienUebersicht.tpl")
+	rest.setParameters("GET", "pizzeria?q=" + plzOrt , null, buildPizzerienListe);
 
 	// Rest-Aufruf durchführen und Liste befüllen
 	rest.fakeSend("http://localhost/mock/getPizzerien.json");
-	
-	return false; // Damit der Button-Click nicht ausgeführt wird
-} 
+});
 
 var buildPizzerienListe = function(data){
 	// Tabelle an sich
@@ -20,7 +17,8 @@ var buildPizzerienListe = function(data){
 	// Empfangene Daten durchgehen
 	for(var i = 0; i < data.length; i++){
 		// Eine Zeile
-		var tr = $("<tr></tr>");
+		var a = $("<a href='./pizzeria?id=" + data[i].restaurantID + "'></a>");
+		var tr = $("<tr data-href='./pizzeria?id=" + data[i].restaurantID + "'></tr>");
 		tr.addClass ("line");
 		// Spalte mit Bild
 		var td1 = $("<td></td>");
@@ -35,8 +33,7 @@ var buildPizzerienListe = function(data){
 		    	<p class='listParagraph'>Lieferkosten: " + data[i].lieferkosten + "&#8364</p>\
 		    	<p class='listParagraph'>Mindestbestellwert: " + data[i].mindestbestellwert + "&#8364</p>\
 		    	<p class='listParagraph'></p>\
-		    	<p class='listParagraph'>" + data[i].oeffnungszeiten + "</p>\
-				<input type='hidden' id='id' value='" + data[i].restaurantID + "'/>";
+		    	<p class='listParagraph'>" + data[i].oeffnungszeiten + "</p>";
 				
 		td1.append(img);
 		td2.append(content);
@@ -45,4 +42,23 @@ var buildPizzerienListe = function(data){
 		table.append(tr);
 	}
 	$("#pizzerienContainer").html(table);
+	
+	$(".line").click(function() {
+        window.document.location = $(this).data("href");
+    });
+}
+
+function parse(val) {
+    var result = "Not found",
+        tmp = [];
+    location.search
+    //.replace ( "?", "" ) 
+    // this is better, there might be a question mark inside
+    .substr(1)
+        .split("&")
+        .forEach(function (item) {
+        tmp = item.split("=");
+        if (tmp[0] === val) result = decodeURIComponent(tmp[1]);
+    });
+    return result;
 }

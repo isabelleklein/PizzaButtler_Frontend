@@ -227,6 +227,11 @@ input.button_startseite::-webkit-input-placeholder {
 tr.line td{ 
 border-bottom: 3px solid #842002; 
 }
+
+tr.line {
+	cursor: pointer;
+}
+
 table{
 	margin:20px;
 	width:94%;

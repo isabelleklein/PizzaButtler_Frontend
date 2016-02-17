@@ -13,7 +13,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         if(userID != null) {
-            rest.fakeSend("http://localhost:63342/PizzaButtler_Frontend/PizzaButtler_Fronend_PHP/mock/logout.json");
+            rest.fakeSend("http://localhost/mock/logout.json");
 
 
             $('#overlay').show('slow',

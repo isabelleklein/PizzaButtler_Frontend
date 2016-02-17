@@ -3,7 +3,8 @@
 
         <title>Gefundene Pizzerien</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-           <link href="./css/main.css" rel="stylesheet" />  
+        <link href="./css/main.css" rel="stylesheet" /> 
+		<script type="text/javascript" src="./javascript/pizzerienListe.js"></script>
 		
     </head>
     
