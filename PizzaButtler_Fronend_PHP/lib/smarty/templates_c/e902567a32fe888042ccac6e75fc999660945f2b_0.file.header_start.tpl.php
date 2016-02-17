@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-12-20 00:03:12
+<?php /* Smarty version 3.1.27, created on 2016-02-17 17:47:08
          compiled from "layouts\header_start.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:157165675e2300d6cd4_86502642%%*/
+/*%%SmartyHeaderCode:2697556c4a40c90f634_00894613%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,54 +9,53 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e902567a32fe888042ccac6e75fc999660945f2b' => 
     array (
       0 => 'layouts\\header_start.tpl',
-      1 => 1450540825,
+      1 => 1455727626,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '157165675e2300d6cd4_86502642',
+  'nocache_hash' => '2697556c4a40c90f634_00894613',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5675e230101c54_34997741',
+  'unifunc' => 'content_56c4a40c98c429_53001772',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5675e230101c54_34997741')) {
-function content_5675e230101c54_34997741 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56c4a40c98c429_53001772')) {
+function content_56c4a40c98c429_53001772 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '157165675e2300d6cd4_86502642';
+$_smarty_tpl->properties['nocache_hash'] = '2697556c4a40c90f634_00894613';
 ?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <?php echo '<script'; ?>
+ type="text/javascript" src="./lib/jquery/jquery.js"><?php echo '</script'; ?>
+>
+		<?php echo '<script'; ?>
+ type="text/javascript" src="./lib/jquery/js.cookie.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="./lib/jquery-ui-1.11.4/jquery-ui.js"><?php echo '</script'; ?>
+>
+ 	 	<?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/lib/polyfill.js"><?php echo '</script'; ?>
+>
+    
+	    <?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/registrierung.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
  type="text/javascript" src="./javascript/kundenregistrierung.js"><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
- type="text/javascript" src="./javascript/jquery.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="./javascript/jquery-ui.js"><?php echo '</script'; ?>
->
- 	 	<?php echo '<script'; ?>
- type="text/javascript" src="./javascript/polyfill.js"><?php echo '</script'; ?>
->
-    
-        <?php echo '<script'; ?>
- type="text/javascript" src="./javascript/absendentest.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="./javascript/jquery.js"><?php echo '</script'; ?>
->
-        
-        <?php echo '<script'; ?>
- type="text/javascript" src="./javascript/kundenlogin.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
  type="text/javascript" src="./javascript/login_absenden.js"><?php echo '</script'; ?>
+>
+		<?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/header.js"><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
  type="text/javascript" src="./javascript/impressum_absenden.js"><?php echo '</script'; ?>
@@ -66,6 +65,9 @@ $_smarty_tpl->properties['nocache_hash'] = '157165675e2300d6cd4_86502642';
 >
         <?php echo '<script'; ?>
  type="text/javascript" src="./javascript/passwort_vergessen_absenden.js"><?php echo '</script'; ?>
+>
+		<?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/logout.js"><?php echo '</script'; ?>
 >
          
         <link href="./css/jquery-ui.css" rel="stylesheet" />
@@ -86,7 +88,9 @@ $_smarty_tpl->properties['nocache_hash'] = '157165675e2300d6cd4_86502642';
             <div id="header_nav">
                 <div>
                     <span class="head_left">
-                        <img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="180"/>
+                   		<a href="./index.php">
+                        	<img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="180" />
+                    	</a>
                     </span>
                     <span class="head_right">
                         <button class="header_button" id="openx">Anmelden</button><br/>
@@ -168,17 +172,19 @@ $_smarty_tpl->properties['nocache_hash'] = '157165675e2300d6cd4_86502642';
     
         <!-- Login -->
         <div id="containerx">
-            <div class="fline">
-                <input type="text" class="in2" name="email" id="email" placeholder="Email-Adresse" required onchange="mailPruefen()" />
-                <input class="in2" type="password" name="passwort" id="passwort" placeholder="Passwort" required onchange="passwortPruefen()" />
-                <input type="button" id="closex" value="X">
-            </div>
-            <div id="merken">
-                <input class="in2" name="merken" id="merken" type="checkbox"/>
-                <div id="log">Logindaten merken.</div>
-            </div>
-            <div id="passwortvergessen"><a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a></div>
-            <Input id="absenden_login" name="absenden" type="button" value="Login" />
+			<form id='login' name="login" action="#">
+				<div class="fline">
+					<input type="text" class="in2" name="email" id="email" placeholder="Email-Adresse" required onchange="mailPruefen()" />
+					<input class="in2" type="password" name="passwort" id="passwort" placeholder="Passwort" required onchange="passwortPruefen()" />
+					<input type="button" id="closex" value="X">
+				</div>
+				<div id="merken">
+					<input class="in2" name="merken" id="merken" type="checkbox"/>
+					<div id="log">Logindaten merken.</div>
+				</div>
+				<div id="passwortvergessen"><a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a></div>
+				<input id="absenden_login" name="absenden" type="button" value="Login" />
+			</form>
         </div>
         <div id="overlay"></div>
         

@@ -49,7 +49,7 @@ $(document).ready(function() {
 		/**Ermittlung von Erfolgreicher übertragung --> Rückgabe User-ID**/
 		if (returnCode > 0) { // Erfolgreiche Registrierung
 			// UserID setzen == angemeldet
-			localStorage.setItem("userID", returnCode);
+			Cookies.set("userID", returnCode, {expires: 0.2});			
 			
 			$('#container').hide('slow',
 				function () {

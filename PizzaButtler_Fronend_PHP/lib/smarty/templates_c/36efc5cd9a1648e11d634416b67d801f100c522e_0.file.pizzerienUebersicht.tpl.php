@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-12-20 19:21:58
+<?php /* Smarty version 3.1.27, created on 2016-02-17 13:22:00
          compiled from "views\pizzerienUebersicht.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:166315676f1c6ce0968_57326533%%*/
+/*%%SmartyHeaderCode:2094256c465e88646f0_24618800%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,27 +9,30 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '36efc5cd9a1648e11d634416b67d801f100c522e' => 
     array (
       0 => 'views\\pizzerienUebersicht.tpl',
-      1 => 1450540825,
+      1 => 1455711629,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '166315676f1c6ce0968_57326533',
+  'nocache_hash' => '2094256c465e88646f0_24618800',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5676f1c6d2acf3_18743141',
+  'unifunc' => 'content_56c465e88c26c8_62084753',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5676f1c6d2acf3_18743141')) {
-function content_5676f1c6d2acf3_18743141 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56c465e88c26c8_62084753')) {
+function content_56c465e88c26c8_62084753 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '166315676f1c6ce0968_57326533';
+$_smarty_tpl->properties['nocache_hash'] = '2094256c465e88646f0_24618800';
 ?>
 <html>
     <head>
 
         <title>Gefundene Pizzerien</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-           <link href="./css/main.css" rel="stylesheet" />  
+        <link href="./css/main.css" rel="stylesheet" /> 
+		<?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/pizzerienListe.js"><?php echo '</script'; ?>
+>
 		
     </head>
     

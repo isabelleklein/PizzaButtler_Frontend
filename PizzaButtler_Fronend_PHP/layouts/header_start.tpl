@@ -3,16 +3,18 @@
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <script type="text/javascript" src="./lib/jquery/jquery.js"></script>
+		<script type="text/javascript" src="./lib/jquery/js.cookie.js"></script>
         <script type="text/javascript" src="./lib/jquery-ui-1.11.4/jquery-ui.js"></script>
  	 	<script type="text/javascript" src="./javascript/lib/polyfill.js"></script>
     
 	    <script type="text/javascript" src="./javascript/registrierung.js"></script>
         <script type="text/javascript" src="./javascript/kundenregistrierung.js"></script>
         <script type="text/javascript" src="./javascript/login_absenden.js"></script>
+		<script type="text/javascript" src="./javascript/header.js"></script>
         <script type="text/javascript" src="./javascript/impressum_absenden.js"></script>
         <script type="text/javascript" src="./javascript/passwort_vergessen.js"></script>
         <script type="text/javascript" src="./javascript/passwort_vergessen_absenden.js"></script>
-		<script type="text/javascript" src="./javascript/header.js"></script>
+		<script type="text/javascript" src="./javascript/logout.js"></script>
          
         <link href="./css/jquery-ui.css" rel="stylesheet" />
         <link href="./css/popupRegistrierung.css" rel="stylesheet" />
@@ -115,17 +117,19 @@
     
         <!-- Login -->
         <div id="containerx">
-            <div class="fline">
-                <input type="text" class="in2" name="email" id="email" placeholder="Email-Adresse" required onchange="mailPruefen()" />
-                <input class="in2" type="password" name="passwort" id="passwort" placeholder="Passwort" required onchange="passwortPruefen()" />
-                <input type="button" id="closex" value="X">
-            </div>
-            <div id="merken">
-                <input class="in2" name="merken" id="merken" type="checkbox"/>
-                <div id="log">Logindaten merken.</div>
-            </div>
-            <div id="passwortvergessen"><a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a></div>
-            <Input id="absenden_login" name="absenden" type="button" value="Login" />
+			<form id='login' name="login" action="#">
+				<div class="fline">
+					<input type="text" class="in2" name="email" id="email" placeholder="Email-Adresse" required onchange="mailPruefen()" />
+					<input class="in2" type="password" name="passwort" id="passwort" placeholder="Passwort" required onchange="passwortPruefen()" />
+					<input type="button" id="closex" value="X">
+				</div>
+				<div id="merken">
+					<input class="in2" name="merken" id="merken" type="checkbox"/>
+					<div id="log">Logindaten merken.</div>
+				</div>
+				<div id="passwortvergessen"><a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a></div>
+				<input id="absenden_login" name="absenden" type="button" value="Login" />
+			</form>
         </div>
         <div id="overlay"></div>
         

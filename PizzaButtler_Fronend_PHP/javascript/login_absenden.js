@@ -1,22 +1,20 @@
 $(document).ready(function() {
-	var $login = $('#login');
-	/** Aktionsinformationen für den Absenden-Button **/
-	
+
 	$('#absenden_login').click(function(e) {
-		console.log("Login Button wurde geklickt");
-		
 			
 		e.preventDefault(); /** cancel form submit **/
-		var jsObj = $login.serializeObject();
-		console.log("Login Daten: " + jsObj);
+		var jsObj = $('#login').serializeObject();
+		
 		var rest = RestInterface;
-
+		
 		rest.setParameters("POST", "user/login", jsObj, function(returnCode){
-			console.log("Anwortdaten: " + returnCode);
-			if(returnCode > -1) {
-				console.log("Login erfolgreich");
+			if(returnCode > 0) {
+				var jsObj = $('#login').serializeObject();
+				var expireTime = (jsObj.merken == 'on')? 7 : 0.2;
+				
 				$('#div_ajaxResponse').text( returnCode );
-				localStorage.setItem("userID", returnCode);
+				
+				Cookies.set("userID", returnCode, {expires: expireTime});
 				window.location.href = "."
 			}
 			else if(returnCode === -1){
@@ -27,7 +25,6 @@ $(document).ready(function() {
 			}
 		});
 		rest.fakeSend("http://localhost/mock/loginSuccess.json")
-
 
 	});
 });
