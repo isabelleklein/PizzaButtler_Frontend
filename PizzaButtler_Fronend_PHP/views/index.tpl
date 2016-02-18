@@ -10,14 +10,8 @@
 				<form action="./pizzerienSuche.php" name="pizzerienListeButton">
 					<p>
 						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" />
-						
 					</p>
-					
 				</form>
-               
-               
-               
-           
            <div class="zweiterBereich">
            	<div>
                
@@ -28,8 +22,4 @@
                </br>
                <img class="paypal" src="./images/stars.png" alt="5 Sterne fuer Paypal">
                <img class="paypal" id="bild2" src="./images/paypal.png" alt="Paypal Symbol">
-               
-            
-           
-            
         </div>

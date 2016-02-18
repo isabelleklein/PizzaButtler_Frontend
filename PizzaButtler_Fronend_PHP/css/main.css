@@ -112,29 +112,34 @@ h1 {
     border-radius: 12px;
     border-width: 0;
     color: #842002;
-    height: 80%;
-    left: 15%;
-    position: absolute;
-    top: 10em;
+    height: auto;
+    left: 11%;
+    position: relative;
+    top: 0%;
     width: 50%;
+    float: left;
+    margin-bottom: 4%;
 }
 #logo_uebersicht {
     bottom: 0;
-    height: 80%;
+    width: 20%;
+    height: auto;
     overflow: auto;
-    position: absolute;
-    right: 0;
+    position: relative;
+    top: 0%;
+    right: 0%;
 }
 #infoContainer {
     background-color: #ffffff;
     border-radius: 12px;
     border-width: 0;
     color: #842002;
-    height: 35%;
-    left: 67%;
-    position: absolute;
-    top: 10em;
+    height: auto;
+    position: relative;
+    top: 0%;
+    right: 5%;
     width: 30%;
+    float: right;
 }
 .subContainer {
     height: 20%;
@@ -146,7 +151,6 @@ h1 {
     font-size: 130%;
     font-weight: 900;
     left: 5%;
-    position: absolute;
     width: auto;
 }
 @media all and (max-width: 980px) {
