@@ -2,8 +2,10 @@
 $(document).ready(function(){	
 	loadData();
 	$('#datenaendern').click(function(e) {
-		$('.content').load("./views/changeuserdata.tpl");
-		loadData();
+		$('.content').load("./views/changeuserdata.tpl", function(){
+			loadData();
+			setClickListener();
+		});
 	});
 });
 
@@ -33,3 +35,24 @@ var callback = function(data){
 	$('#userEmail').text(data.email).val(data.email);
 	$('#userGeburtsdatum').text(data.geburtsdatum).val(data.geburtsdatum);	
 };
+
+var setClickListener = function(){
+	var restInterface = RestInterface;
+	/** Aktionsinformationen f�r den Absenden-Button **/
+	
+	$('#datenspeichern').click(function(e) {
+		if(true){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen
+			e.preventDefault(); /** cancel form submit **/
+
+			var daten = $('#datenaendern').serializeObject();
+			var userID = Cookies.get("userID");
+
+			if(typeof userID != 'undefined') {
+				restInterface.setParameters("PUT", "user/" + userID, daten, function(data){
+					window.location.href = "./user.php"; 
+				});
+				restInterface.fakeSend("http://localhost/mock/putUser.json");
+			}
+		}
+	});	
+}

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-12-20 18:30:22
+<?php /* Smarty version 3.1.27, created on 2016-02-18 10:36:44
          compiled from "views\agb.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:280495676e5ae8fc1e4_10520433%%*/
+/*%%SmartyHeaderCode:3152656c590ac2c2597_58184561%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '03e7fee0e3f8aa6543364608699bd93df09dfaf9' => 
     array (
       0 => 'views\\agb.tpl',
-      1 => 1450540825,
+      1 => 1455706611,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '280495676e5ae8fc1e4_10520433',
+  'nocache_hash' => '3152656c590ac2c2597_58184561',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5676e5ae946575_00281016',
+  'unifunc' => 'content_56c590ac383124_19668052',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5676e5ae946575_00281016')) {
-function content_5676e5ae946575_00281016 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56c590ac383124_19668052')) {
+function content_56c590ac383124_19668052 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '280495676e5ae8fc1e4_10520433';
+$_smarty_tpl->properties['nocache_hash'] = '3152656c590ac2c2597_58184561';
 ?>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'/>
     <link href="./css/main.css" rel="stylesheet" />        

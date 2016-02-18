@@ -5,8 +5,7 @@
         <link href="./css/main.css" rel="stylesheet" /> 
 		
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<script type="text/javascript" src="../javascript/datenanzeigen.js"></script>
-		<script type="text/javascript" src="../javascript/datenaendern.js"></script>
+		<script type="text/javascript" src="../javascript/user.js"></script>
 		<script type="text/javascript" src="../javascript/kundenregistrierung.js"></script>
 		
     </head>

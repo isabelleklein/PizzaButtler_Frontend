@@ -1,10 +1,38 @@
+<?php /* Smarty version 3.1.27, created on 2016-02-18 12:04:53
+         compiled from "views\user.tpl" */ ?>
+<?php
+/*%%SmartyHeaderCode:913856c5a5558dd088_57552334%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '39d53655a3e08b6fd93437ccfa4aa9a1fe55656d' => 
+    array (
+      0 => 'views\\user.tpl',
+      1 => 1455793489,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '913856c5a5558dd088_57552334',
+  'has_nocache_code' => false,
+  'version' => '3.1.27',
+  'unifunc' => 'content_56c5a5559261b1_57945506',
+),false);
+/*/%%SmartyHeaderCode%%*/
+if ($_valid && !is_callable('content_56c5a5559261b1_57945506')) {
+function content_56c5a5559261b1_57945506 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '913856c5a5558dd088_57552334';
+?>
 <html>
     <head>
 
         <title>Benutzer</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link href="./css/main.css" rel="stylesheet" /> 
-		<script type="text/javascript" src="./javascript/user.js"></script>
+		<?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/user.js"><?php echo '</script'; ?>
+>
 		
     </head>
     
@@ -52,4 +80,6 @@
 		</div>
     </body>
 </html>
-	
+	<?php }
+}
+?>

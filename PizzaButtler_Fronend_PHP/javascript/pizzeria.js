@@ -1,4 +1,4 @@
-$(document).ready(function(){
+Ôªø$(document).ready(function(){
 	// GET-Parameter
 	var pizzeriaId = parse("id");
 	
@@ -17,17 +17,17 @@ $(document).ready(function(){
 
 var buildpizzeriaSeite = function(data){
 	if(data == 0) {
-		$("#pizzerienContainer").html("<h1>Die gew&uuml;nschte Pizzeria konnte leider nicht gefunden werden</h1>");
+		$("#infoContainer").html("<h1>Es konnten leider keine Daten zur Pizzeria geladen werden</h1>");
 	}
 	else {
 
-		$("#pizzerienContainer").html("Daten:<br>\
+		$("#infoContainer").html("Daten:<br>\
 		ID: " + data.restaurantID + "<br>\
 		Name: " + data.name + "<br>\
 		Beschreibung: " + data.beschreibung + "<br>\
-		÷ffnungszeiten: " + data.oeffnungszeiten + "<br>\
+		√ñffnungszeiten: " + data.oeffnungszeiten + "<br>\
 		Mindestbestellwert: " + data.mindestbestellwert + "<br>\
-		Straﬂe: " + data.strasse + "<br>\
+		Stra√üe: " + data.strasse + "<br>\
 		Hausnummer: " + data.hausnummer + "<br>\
 		PLZ: " + data.plz + "<br>\
 		Ort: " + data.ort + "<br>\

@@ -13,8 +13,7 @@
 			
     	</div>
     	<div id = "infoContainer">
-    		<p id="infoContainerText"> Der Buttler Bringts!</p>
-    		<img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
+    		
     	</div>
     </body>
 </html>

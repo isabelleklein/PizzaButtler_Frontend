@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-17 16:12:02
+<?php /* Smarty version 3.1.27, created on 2016-02-18 12:09:47
          compiled from "views\pizzeria.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2815856c48dc250a498_20814808%%*/
+/*%%SmartyHeaderCode:1246656c5a67bbed068_96242785%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f8be390f4ad3bbf367f4c192c00064c28322633d' => 
     array (
       0 => 'views\\pizzeria.tpl',
-      1 => 1455721918,
+      1 => 1455793735,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2815856c48dc250a498_20814808',
+  'nocache_hash' => '1246656c5a67bbed068_96242785',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56c48dc2559760_79986865',
+  'unifunc' => 'content_56c5a67bc2a801_96214623',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56c48dc2559760_79986865')) {
-function content_56c48dc2559760_79986865 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56c5a67bc2a801_96214623')) {
+function content_56c5a67bc2a801_96214623 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2815856c48dc250a498_20814808';
+$_smarty_tpl->properties['nocache_hash'] = '1246656c5a67bbed068_96242785';
 ?>
 <html>
     <head>
@@ -41,8 +41,7 @@ $_smarty_tpl->properties['nocache_hash'] = '2815856c48dc250a498_20814808';
 			
     	</div>
     	<div id = "infoContainer">
-    		<p id="infoContainerText"> Der Buttler Bringts!</p>
-    		<img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
+    		
     	</div>
     </body>
 </html><?php }
