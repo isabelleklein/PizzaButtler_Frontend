@@ -1,13 +1,21 @@
 /** Userdata zum User mit best. ID holen **/
-$(document).ready(function(){
+$(document).ready(function(){	
+	loadData();
+	$('#datenaendern').click(function(e) {
+		$('.content').load("./views/changeuserdata.tpl");
+		loadData();
+	});
+});
+
+
+var loadData = function(){
 	var rest = RestInterface;
 	var userID = Cookies.get("userID");
-	if(userID !== 'undefined') {
+	if(typeof userID != 'undefined') {
 		rest.setParameters("GET", "user/" + userID, null, callback);
 		rest.fakeSend("http://localhost/mock/getUser.json");
 	}
-});
-
+}
 
 var callback = function(data){
 	if($('#userAnrede').prop("tagName") == "SELECT") {
@@ -23,5 +31,5 @@ var callback = function(data){
 	$('#userPlz').text(data.plz).val(data.plz);
 	$('#userOrt').text(data.ort).val(data.ort);
 	$('#userEmail').text(data.email).val(data.email);
-	$('#userGeburtsdatum').text(data.geburtsdatum).val(data.geburtsdatum);
+	$('#userGeburtsdatum').text(data.geburtsdatum).val(data.geburtsdatum);	
 };

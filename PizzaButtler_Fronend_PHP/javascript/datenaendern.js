@@ -1,29 +1,21 @@
 $(document).ready(function() {
-	var $daten = $('#datenaendern');
-	var id = 1;
-
-	var rest = RestInterface;
+	var restInterface = RestInterface;
 	/** Aktionsinformationen f�r den Absenden-Button **/
 	
 	$('#datenspeichern').click(function(e) {
-		console.log("Abschicken Button wurde geklickt");
 		if(true){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen
 			e.preventDefault(); /** cancel form submit **/
 
-			var daten = $daten.serializeObject();
-			var userID = localStorage.getItem("userID");
+			var daten = $('#datenaendern').serializeObject();
+			var userID = Cookies.get("userID");
 
-			console.log("Eingegebene Userdaten:");
-			console.log(daten);
-			console.log(userID);
-
-			if(userID != null) {
-				rest.setParameters("PUT", "user/" + userID, daten, null);
-				rest.fakeSend("http://localhost/mock/putUser.json");
+			if(typeof userID != 'undefined') {
+				restInterface.setParameters("PUT", "user/" + userID, daten, function(data){
+					console.log(data);
+					window.location.href = "."; // TODO: Funktioniert akt. noch nicht!
+				});
+				restInterface.fakeSend("http://localhost/mock/putUser.json");
 			}
 		}
-	});
+	});	
 });
-
-
-

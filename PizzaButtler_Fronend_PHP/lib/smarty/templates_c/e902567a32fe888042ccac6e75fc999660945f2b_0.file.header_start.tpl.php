@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-17 17:47:08
+<?php /* Smarty version 3.1.27, created on 2016-02-18 11:48:13
          compiled from "layouts\header_start.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2697556c4a40c90f634_00894613%%*/
+/*%%SmartyHeaderCode:1690656c5a16d943857_89372448%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e902567a32fe888042ccac6e75fc999660945f2b' => 
     array (
       0 => 'layouts\\header_start.tpl',
-      1 => 1455727626,
+      1 => 1455792489,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2697556c4a40c90f634_00894613',
+  'nocache_hash' => '1690656c5a16d943857_89372448',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56c4a40c98c429_53001772',
+  'unifunc' => 'content_56c5a16d9b67c6_07481487',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56c4a40c98c429_53001772')) {
-function content_56c4a40c98c429_53001772 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56c5a16d9b67c6_07481487')) {
+function content_56c5a16d9b67c6_07481487 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2697556c4a40c90f634_00894613';
+$_smarty_tpl->properties['nocache_hash'] = '1690656c5a16d943857_89372448';
 ?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
@@ -43,6 +43,9 @@ $_smarty_tpl->properties['nocache_hash'] = '2697556c4a40c90f634_00894613';
 >
  	 	<?php echo '<script'; ?>
  type="text/javascript" src="./javascript/lib/polyfill.js"><?php echo '</script'; ?>
+>
+		<?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/RestInterface.js"><?php echo '</script'; ?>
 >
     
 	    <?php echo '<script'; ?>

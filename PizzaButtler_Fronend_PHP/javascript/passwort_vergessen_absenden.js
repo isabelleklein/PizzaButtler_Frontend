@@ -2,7 +2,6 @@
  * @author Dominik Terlau
  * @Version 2.1
  */
-$("head").append('<script type="text/javascript" src="../javascript/RestInterface.js"></script>');
 var rest = RestInterface;
 
 /** Übermittlung der eingegebenen Daten an das Backend **/

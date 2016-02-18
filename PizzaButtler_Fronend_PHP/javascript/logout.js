@@ -4,7 +4,7 @@ $(document).ready(function () {
 		
 		var userID = Cookies.get("userID");
 		
-        if(userID !== 'undefined') {
+        if(typeof userID != 'undefined') {
 			var rest = RestInterface;
 			rest.setParameters("POST", "user/logout", userID, function (data) {
 				Cookies.remove("userID");

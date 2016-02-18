@@ -6,6 +6,7 @@
 		<script type="text/javascript" src="./lib/jquery/js.cookie.js"></script>
         <script type="text/javascript" src="./lib/jquery-ui-1.11.4/jquery-ui.js"></script>
  	 	<script type="text/javascript" src="./javascript/lib/polyfill.js"></script>
+		<script type="text/javascript" src="./javascript/RestInterface.js"></script>
     
 	    <script type="text/javascript" src="./javascript/registrierung.js"></script>
         <script type="text/javascript" src="./javascript/kundenregistrierung.js"></script>
