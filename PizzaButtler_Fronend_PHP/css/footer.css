@@ -2,9 +2,9 @@
 background:#ffffff;
 color:#842002;
 white-space:nowrap;
-bottom:0px;
+bottom:-6%;
 clear:both;
-height:1.2em;
+height:8%;
 width:100%;
 list-style:none;
 padding-left:0;
@@ -24,7 +24,7 @@ margin-right:.5em;
 background:#ffffff;
 color:#842002;
 text-decoration:none;
-font:10px "Open Sans", sans-serif;
+font: 100% "Open Sans", sans-serif;
 font-weight: 700;
 }
 
