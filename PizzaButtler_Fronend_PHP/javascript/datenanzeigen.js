@@ -1,31 +1,27 @@
-/** Userdaten zum User mit best. ID holen **/
-$("head").append('<script type="text/javascript" src="../javascript/RestInterface.js"></script>');
-
-$(document).ready(getDaten(function(daten) {
-	console.log("Von der REST-Schnittstelle empfangene Userdaten:\n");
-	console.log(daten);
-	if($('#anrede').prop("tagName") == "SELECT") {
-		$('#anrede').val(daten.anrede);
-	}
-	else {
-		$('#anrede').text(daten.anrede);
-	}
-	$('#vorname').text(daten.vorname).val(daten.vorname);
-	$('#nachname').text(daten.nachname).val(daten.nachname);
-	$('#strasse').text(daten.strasse).val(daten.strasse);
-	$('#hausnummer').text(daten.hausnummer).val(daten.hausnummer);
-	$('#plz').text(daten.plz).val(daten.plz);
-	$('#ort').text(daten.ort).val(daten.ort);
-	$('#email').text(daten.email).val(daten.email);
-	$('#geburtsdatum').text(daten.geburtsdatum).val(daten.geburtsdatum);
-}));
-
-function getDaten(callback) {
+/** Userdata zum User mit best. ID holen **/
+$(document).ready(function(){
 	var rest = RestInterface;
-	var userID = localStorage.getItem("userID");
-	//if(userID != null) {
+	var userID = Cookies.get("userID");
+	if(userID !== 'undefined') {
 		rest.setParameters("GET", "user/" + userID, null, callback);
 		rest.fakeSend("http://localhost/mock/getUser.json");
-	//}
-}
+	}
+});
 
+
+var callback = function(data){
+	if($('#userAnrede').prop("tagName") == "SELECT") {
+		$('#userAnrede').val(data.anrede);
+	}
+	else {
+		$('#userAnrede').text(data.anrede);
+	}
+	$('#userVorname').text(data.vorname).val(data.vorname);
+	$('#userNachname').text(data.nachname).val(data.nachname);
+	$('#userStrasse').text(data.strasse).val(data.strasse);
+	$('#userHausnummer').text(data.hausnummer).val(data.hausnummer);
+	$('#userPlz').text(data.plz).val(data.plz);
+	$('#userOrt').text(data.ort).val(data.ort);
+	$('#userEmail').text(data.email).val(data.email);
+	$('#userGeburtsdatum').text(data.geburtsdatum).val(data.geburtsdatum);
+};
