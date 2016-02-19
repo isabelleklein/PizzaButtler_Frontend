@@ -1,0 +1,29 @@
+{
+	"groessen":[
+		"24 cm",
+		"28 cm",
+		"32 cm"
+	],
+	"pizza":[
+		{
+			"name":"Pizza Salami",
+			"zutaten":["käse", "salami"],
+			"preise":[4.50, 5.50, 8.00]
+		},
+		{
+			"name":"Pizza Tonno",
+			"zutaten":["käse", "Thunfish"],
+			"preise":[4.50, 5.50, 8.00]
+		},
+		{
+			"name":"Pizza Salaschi",
+			"zutaten":["käse", "salami", "schinken"],
+			"preise":[5.50, 6.50, 8.50]
+		},
+		{
+			"name":"Pizza Hawaii",
+			"zutaten":["käse", "schinken", "ananas"],
+			"preise":[5.50, 6.00, 7.00]
+		}
+	]
+}

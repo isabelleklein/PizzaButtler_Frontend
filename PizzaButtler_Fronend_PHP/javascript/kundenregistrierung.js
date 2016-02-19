@@ -7,6 +7,7 @@
 //wird ausschließlich bei klicken des Absenden-Buttons aufgerufen
 function checkForm() 
 { 
+	return true; // NUR DEBUG!!!!!
     var strFehler='';
     
   //Eingabefehler werden nacheinander geprueft. 
@@ -60,7 +61,9 @@ function checkForm()
     	//Rueckgabe=false, wenn die Pruefung einen Fehler ermittelt hat
   	  return(false);
     }
-    else{return(true)}
+    else{
+		return(true);
+	}
 }
 
 /**Pruefen der Anrede **/

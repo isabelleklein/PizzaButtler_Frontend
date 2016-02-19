@@ -1,50 +1,51 @@
 /**
  * Created by Chris on 19.12.2015.
  */
-var RestInterface = {
-    type: "GET",
-    baseUrl: "http://pizzabutlerentwbak.krihi.com/entwicklung/rest/",
-    urlEnding: "",
-    dataToSend: null,
-    contentType: "application/json",
-    successCallback: null,
-    dataType: "json",
+function RestInterface(){
+    this.type = "GET";
+    var baseUrl = "http://pizzabutlerentwbak.krihi.com/entwicklung/rest/";
+    this.urlEnding = "";
+    this.dataToSend = null;
+    var contentType = "application/json";
+    this.successCallback = null;
+    var dataType = "json";
 
-    setParameters: function(type, urlEnding, dataToSend, successCallback){
+    this.setParameters = function(type, urlEnding, dataToSend, successCallback){
         this.type = type;
         this.urlEnding = urlEnding;
         this.dataToSend = dataToSend;
         this.successCallback = successCallback;
-    },
+    };
 
-    send: function(){
+    this.send = function(){
         var ajaxObj = {
-            type: RestInterface.type,
-            url: RestInterface.baseUrl + RestInterface.urlEnding,
-            data: JSON.stringify(RestInterface.dataToSend),
-            contentType: RestInterface.contentType,
+            type: this.type,
+            url: baseUrl + this.urlEnding,
+            data: JSON.stringify(this.dataToSend),
+            contentType: contentType,
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("Error in 'RestInterface.js' " + jqXHR.getAllResponseHeaders() + " " + errorThrown);
             },
             success: function(data){
-                if(RestInterface.successCallback != null){
-                    RestInterface.successCallback(data)
+                if(this.successCallback != null){
+                    this.successCallback(data)
                 }
                 else {console.log("Callback ist null")}
             },
             complete: function(XMLHttpRequest) {
                 console.log( XMLHttpRequest.getAllResponseHeaders() );
             },
-            dataType: RestInterface.dataType
+            dataType: dataType,
+			successCallback: this.successCallback
         };
 
         $.ajax(ajaxObj);
-    },
+    };
 
-    fakeSend: function(url){
+    this.fakeSend = function(url){
         this.type = "GET";
-        this.baseUrl = url;
+        baseUrl = url;
         this.urlEnding = "";
         this.send();
-    }
+    };
 }

@@ -1,9 +1,10 @@
+var rest;
 $(document).ready(function(){
 	// GET-Parameter
 	var plzOrt = parse("plz-ort");
 	
 	// Rest-Aufruf vorbereiten
-	var rest = RestInterface;
+	rest = new RestInterface();
 	rest.setParameters("GET", "pizzeria?q=" + plzOrt , null, buildPizzerienListe);
 	
 	if(plzOrt != ""){

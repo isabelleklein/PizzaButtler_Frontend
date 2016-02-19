@@ -2,7 +2,7 @@
  * @author Dominik Terlau
  * @Version 2.1
  */
-var rest = RestInterface;
+var rest;
 
 /** Übermittlung der eingegebenen Daten an das Backend **/
 $(document).ready(function() {
@@ -16,6 +16,7 @@ $(document).ready(function() {
 			e.preventDefault(); /** cancel form submit **/
 			var jsObj = $pwvergessen.serializeObject();
 
+			rest = new RestInterface();
 			rest.setParameters("POST", "passwortvergessen", jsObj, success);
 			rest.fakeSend("http://localhost/mock/pwVergessen.json");
 		}

@@ -1,4 +1,5 @@
 /** Userdata zum User mit best. ID holen **/
+var rest;
 $(document).ready(function(){	
 	loadData();
 	$('#datenaendern').click(function(e) {
@@ -11,9 +12,9 @@ $(document).ready(function(){
 
 
 var loadData = function(){
-	var rest = RestInterface;
 	var userID = Cookies.get("userID");
 	if(typeof userID != 'undefined') {
+		rest = new RestInterface();
 		rest.setParameters("GET", "user/" + userID, null, callback);
 		rest.fakeSend("http://localhost/mock/getUser.json");
 	}
@@ -37,7 +38,6 @@ var callback = function(data){
 };
 
 var setClickListener = function(){
-	var restInterface = RestInterface;
 	/** Aktionsinformationen f�r den Absenden-Button **/
 	
 	$('#datenspeichern').click(function(e) {
@@ -48,10 +48,11 @@ var setClickListener = function(){
 			var userID = Cookies.get("userID");
 
 			if(typeof userID != 'undefined') {
-				restInterface.setParameters("PUT", "user/" + userID, daten, function(data){
+				rest = new RestInterface()
+				rest.setParameters("PUT", "user/" + userID, daten, function(data){
 					window.location.href = "./user.php"; 
 				});
-				restInterface.fakeSend("http://localhost/mock/putUser.json");
+				rest.fakeSend("http://localhost/mock/putUser.json");
 			}
 		}
 	});	

@@ -12,7 +12,7 @@
     	<div id="pizzerienContainer">
 			
     	</div>
-    	<div id = "infoContainer">
+    	<div id="infoContainer">
     		
     	</div>
     </body>

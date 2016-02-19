@@ -1,14 +1,19 @@
-ï»¿$(document).ready(function(){
+ï»¿var rest;
+$(document).ready(function(){
 	// GET-Parameter
 	var pizzeriaId = parse("id");
 	
-	// Rest-Aufruf vorbereiten
-	var rest = RestInterface;
+	// rest-Aufruf vorbereiten
+	rest = new RestInterface();
 	rest.setParameters("GET", "pizzeria/" + pizzeriaId , null, buildpizzeriaSeite);
 	
 	if(pizzeriaId != ""){
-		// Rest-Aufruf durchführen und Liste befüllen
+		// rest-Aufruf durchführen und Liste befüllen
 		rest.fakeSend("http://localhost/mock/getPizzeria.json");
+		
+		// Abrufen der Speisekarte
+		rest.setParameters("GET", "pizzeria/" + pizzeriaId + "/speisekarte", null, buildSpeisekarte);
+		rest.fakeSend("http://localhost/mock/getSpeisekarte.json");
 	}
 	else {
 		rest.fakeSend("http://localhost/mock/null.json");
@@ -35,6 +40,14 @@ var buildpizzeriaSeite = function(data){
 		E-Mail: " + data.email);
 		
 	}
+}
+
+var buildSpeisekarte = function(data){
+	var groessen = data["groessen"];
+	var pizzaArray = data["pizza"];
+	
+	console.log(groessen);
+	console.log(pizzaArray);
 }
 
 function parse(val) {

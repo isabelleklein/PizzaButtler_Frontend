@@ -2,7 +2,7 @@
  * @author Dominik Terlau
  * @Version 2.1
  */
-var rest = RestInterface;
+var rest;
 
 /** Übermittlung der eingegebenen Daten an das Backend **/
 
@@ -16,7 +16,8 @@ $(document).ready(function() {
 			e.preventDefault();
 			/** cancel form submit **/
 			var jsObj = $registrieren.serializeObject();
-
+			
+			rest = new RestInterface();
 			rest.setParameters("POST", "user", jsObj, success);
 			rest.fakeSend("http://localhost/mock/postUser.json");
 		}
@@ -52,6 +53,7 @@ $(document).ready(function() {
 			$('#container').hide('slow',
 				function () {
 					$('#overlay').fadeOut();
+					document.location.href = ".";
 				}
 			);
 		}

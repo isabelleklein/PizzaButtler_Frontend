@@ -1,3 +1,4 @@
+var rest;
 $(document).ready(function () {
     $('#logout').click(function (e) {
         e.preventDefault();
@@ -5,7 +6,7 @@ $(document).ready(function () {
 		var userID = Cookies.get("userID");
 		
         if(typeof userID != 'undefined') {
-			var rest = RestInterface;
+			rest = new RestInterface();
 			rest.setParameters("POST", "user/logout", userID, function (data) {
 				Cookies.remove("userID");
 				window.location.href = "./";
