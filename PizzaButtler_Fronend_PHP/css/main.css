@@ -24,7 +24,7 @@ h1 {
     font-weight: 900;
     height: 0.7in;
     margin-left: 25%;
-    margin-top: 20%;
+    margin-top: 10%;
     min-width: 1.8in;
     width: 35%;
 }
@@ -33,7 +33,7 @@ h1 {
 .logo {
     float: right;
     height: auto;
-    max-width: 3in;
+    max-width: 3.5in;
     position: relative;
     right: 20px;
     width: 25%;
@@ -112,8 +112,8 @@ h1 {
     border-radius: 12px;
     border-width: 0;
     color: #842002;
+    left: 12%;
     height: auto;
-    left: 11%;
     position: relative;
     top: 0%;
     width: 50%;

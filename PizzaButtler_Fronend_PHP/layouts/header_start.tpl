@@ -38,10 +38,10 @@
                         	<img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="180" />
                     	</a>
                     </span>
-                    <span class="head_right">
+                    <section class="head_right_start">
                         <button class="header_button" id="openx">Anmelden</button><br/>
                         <button class="header_button" id="open">Registrieren</button>
-                    </span>
+                    </section>
                 </div>
             </div>
             <div id="header_bottom"></div>

@@ -8,6 +8,6 @@ $data = array(
 );
 
 $tpl = new SMTemplate();
-$tpl->render('index', $data, 'page', 'Startseite PizzeButler');
+$tpl->render('index', $data, 'page_start', 'Startseite PizzeButler');
 
 ?>
