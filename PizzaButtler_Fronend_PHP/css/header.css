@@ -50,11 +50,14 @@ color: #ffffff;
 border: #ffffff solid;
 border-radius: 0.6em;    
 width: 7.5em;
-margin-top: 0.7em;
+margin-bottom: 0.7em;
 text-align: left;
 font-family: "Open Sans";
 font-weight: bold;
 float: right;
+}
+#plz_ort_start{
+	visibility: hidden;
 }
 
 .umkreissuche_header {
@@ -65,7 +68,7 @@ float: right;
     float: left;
     font-family: "Open Sans";
     font-weight: bold;
-    margin-top: 3.25em;
+    margin-top: 2.6em;
     text-align: right;
     width: 75%;
 }
@@ -74,4 +77,8 @@ float: right;
 background:#ce3d11;
 margin: 0;
 min-width: 7in;
+}
+
+#meine_Daten{
+	bottom: 0px;
 }

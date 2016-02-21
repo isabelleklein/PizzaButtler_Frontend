@@ -22,7 +22,8 @@ var callback = function(returnCode){
 		$('#div_ajaxResponse').text( returnCode );
 				
 		Cookies.set("userID", returnCode, {expires: expireTime});
-		window.location.href = "."
+		location.reload()
+		//window.location.href = "."
 	}
 	else if(returnCode === -1){
 		console.log("Fehler: Falsche Eingaben / Nicht vorhanden");

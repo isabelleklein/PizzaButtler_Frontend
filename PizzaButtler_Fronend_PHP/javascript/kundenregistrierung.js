@@ -7,7 +7,7 @@
 //wird ausschließlich bei klicken des Absenden-Buttons aufgerufen
 function checkForm() 
 { 
-	return true; // NUR DEBUG!!!!!
+	//return true; // NUR DEBUG!!!!!
     var strFehler='';
     
   //Eingabefehler werden nacheinander geprueft. 

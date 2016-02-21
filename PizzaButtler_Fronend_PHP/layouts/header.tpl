@@ -44,7 +44,7 @@
 									<input class="umkreissuche_header" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" />
 							</form>
 						</div>
-						<div>
+						<div class="head_right_buttons">
                         	<button class="header_button" id="openx">Anmelden</button><br/>
                        		<button class="header_button" id="open">Registrieren</button>
                        	</div>
@@ -104,7 +104,7 @@
 	            <label id="fehlerTel">Bitte geben Sie eine g&uumlltige Telefonnummer an</label>
 	
 	            <div class="fline">
-	                <input class="in2" type="password" name="passwort" placeholder="Passwort" id="passwort" required title="Mindestens eine Ziffer, ein Groﬂbuchstabe, ein Kleinbuchstabe und insgesamt 8 Zeichen" 
+	                <input class="in2" type="password" name="passwort" placeholder="Passwort" id="passwort" required title="Mindestens 8-stelliges Passwort" 
 	                		onchange="passwortPruefen1()"/>
 	            
 	                <input class="in2" type="password" name="pw2" id="pw2" placeholder="Passwort wdh." required onchange="passwortPruefen2()"/>

@@ -9,7 +9,8 @@ $(document).ready(function () {
 			rest = new RestInterface();
 			rest.setParameters("POST", "user/logout", userID, function (data) {
 				Cookies.remove("userID");
-				window.location.href = "./";
+				location.reload();
+				//window.location.href = "./";
 			});
 			
             rest.fakeSend("http://localhost/mock/logout.json");
