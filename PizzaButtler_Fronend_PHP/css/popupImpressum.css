@@ -5,16 +5,15 @@
 
 #container_impressum {
     position:fixed!important;
-    position:absolute;
     height: auto;
-    width:310px;
+    width: 25%;
     margin-left: 40%;
     color: #842002;
     background-color: white ;
     border-radius: 18px;
     display:none;
     z-index:500;
-    padding:10px;
+    padding: 1%;
 }
 
 #containerLogOut {
