@@ -17,7 +17,7 @@
     display:none;
 }
 
-#registrieren{
+.registrieren{
 	margin-bottom: 0px;
 }
 

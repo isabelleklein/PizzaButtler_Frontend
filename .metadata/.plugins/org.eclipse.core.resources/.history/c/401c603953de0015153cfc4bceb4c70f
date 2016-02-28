@@ -44,11 +44,6 @@ inputx{
 	cursor: pointer;
 }
 
-#login
-{
-	margin-bottom: 0px;
-}
-
 #log{
     position:relative;
     left: 0px;

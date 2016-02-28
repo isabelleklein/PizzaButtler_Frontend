@@ -17,10 +17,6 @@
     display:none;
 }
 
-#registrieren{
-	margin-bottom: 0px;
-}
-
 #container {
     position:fixed!important;
     position:absolute;

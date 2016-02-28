@@ -40,13 +40,10 @@ inputx{
     top: 0px;  
     width: auto;
 }
-#merken input:hover{
+.merken in2:hover{
+	color: #ffffff; 
+	background-color:#852002;
 	cursor: pointer;
-}
-
-#login
-{
-	margin-bottom: 0px;
 }
 
 #log{

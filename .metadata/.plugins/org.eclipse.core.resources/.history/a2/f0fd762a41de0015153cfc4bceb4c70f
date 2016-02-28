@@ -5,7 +5,7 @@
 #containerx {
     position:fixed!important;
     position:absolute;
-    height:auto;
+    height:100px;
     width:320px;
     margin:-150px 0px 0px -155px;
     top: 50%;
@@ -36,23 +36,14 @@ inputx{
 }
 
 #merken{
-	position: relative;
-    top: 0px;  
-    width: auto;
-}
-#merken input:hover{
-	cursor: pointer;
-}
-
-#login
-{
-	margin-bottom: 0px;
+    left: 5px;
+    top:2px;  
 }
 
 #log{
     position:relative;
-    left: 0px;
-    top: 0px;
+    left: 54px;
+    bottom: 17;
 }
 
 #absenden_login{

@@ -44,8 +44,7 @@ inputx{
 	cursor: pointer;
 }
 
-#login
-{
+#login{
 	margin-bottom: 0px;
 }
 

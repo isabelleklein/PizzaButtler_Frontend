@@ -17,6 +17,9 @@
     z-index:1002;
     padding:10px;
 }
+form{
+	margin-bottom: 0px;
+}
 
 inputx{
 	border-radius:7px;
@@ -39,15 +42,8 @@ inputx{
 	position: relative;
     top: 0px;  
     width: auto;
-}
-#merken input:hover{
-	cursor: pointer;
-}
-
-#login
-{
-	margin-bottom: 0px;
-}
+    
+    }
 
 #log{
     position:relative;
