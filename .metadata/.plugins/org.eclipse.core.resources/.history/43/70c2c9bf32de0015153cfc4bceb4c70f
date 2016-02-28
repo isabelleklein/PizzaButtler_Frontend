@@ -28,15 +28,16 @@ h1 {
     min-width: 1.8in;
     width: 35%;
     text-align: center;
-    font: "Open Sans", sans-serif;
 }
 input.button_startseite::-webkit-input-placeholder {
     color: #ffffff;
     text-align: center;
-    opacity: 100;
 }
-input::-moz-placeholder {
-  opacity:100;
+input ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #ffffff;
+}
+input :-moz-placeholder { /* Mozilla Firefox  */
+   color: #ffffff;
 }
 
 

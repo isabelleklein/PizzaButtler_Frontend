@@ -33,7 +33,6 @@ h1 {
 input.button_startseite::-webkit-input-placeholder {
     color: #ffffff;
     text-align: center;
-    opacity: 100;
 }
 input::-moz-placeholder {
   opacity:100;
