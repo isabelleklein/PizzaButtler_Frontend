@@ -2,9 +2,9 @@
 background:#ffffff;
 color:#842002;
 white-space:nowrap;
-bottom:-5%;
+bottom:0;
 clear:both;
-height:8%;
+height:auto;
 width:100%;
 list-style:none;
 padding-left:0;
@@ -12,6 +12,8 @@ position:fixed;
 -webkit-margin-after: 0px;
 -webkit-padding-start: 0px;
 padding-right: 0px;
+margin-bottom: 0px;
+
 }
 
 #navi_bottom .right a,
