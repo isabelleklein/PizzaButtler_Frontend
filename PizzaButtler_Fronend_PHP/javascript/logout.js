@@ -22,7 +22,7 @@ $(document).ready(function () {
 				//window.location.href = "./";
 			});
 			
-            rest.fakeSend("http://localhost/mock/logout.json");
+            rest.fakeSend("./mock/logout.json");
         }
 
     });

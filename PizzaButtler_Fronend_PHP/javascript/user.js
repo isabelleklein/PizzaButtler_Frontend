@@ -52,7 +52,7 @@ var setClickListener = function(){
 				rest.setParameters("PUT", "user/" + userID, daten, function(data){
 					window.location.href = "./user.php"; 
 				});
-				rest.fakeSend("http://localhost/mock/putUser.json");
+				rest.fakeSend("./mock/putUser.json");
 			}
 		}
 	});	

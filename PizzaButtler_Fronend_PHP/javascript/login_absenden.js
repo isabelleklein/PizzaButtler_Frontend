@@ -9,7 +9,7 @@ $(document).ready(function() {
 		rest = new RestInterface();
 		
 		rest.setParameters("POST", "user/login", jsObj, callback);
-		rest.fakeSend("http://localhost/mock/loginSuccess.json")
+		rest.fakeSend("./mock/loginSuccess.json")
 
 	});
 });

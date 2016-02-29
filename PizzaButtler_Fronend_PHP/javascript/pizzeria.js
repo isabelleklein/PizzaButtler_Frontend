@@ -8,15 +8,15 @@ $(document).ready(function(){
 	rest.setParameters("GET", "pizzeria/" + pizzeriaId , null, buildpizzeriaSeite);
 	
 	if(pizzeriaId != ""){
-		// rest-Aufruf durchführen und Liste befüllen
-		rest.fakeSend("http://localhost/mock/getPizzeria.json");
+		// rest-Aufruf durchfï¿½hren und Liste befï¿½llen
+		rest.fakeSend("./mock/getPizzeria.json");
 		
 		// Abrufen der Speisekarte
 		rest.setParameters("GET", "pizzeria/" + pizzeriaId + "/speisekarte", null, buildSpeisekarte);
-		rest.fakeSend("http://localhost/mock/getSpeisekarte.json");
+		rest.fakeSend("./mock/getSpeisekarte.json");
 	}
 	else {
-		rest.fakeSend("http://localhost/mock/null.json");
+		rest.fakeSend("./mock/null.json");
 	}
 });
 

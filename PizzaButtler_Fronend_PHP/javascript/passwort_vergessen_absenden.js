@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 			rest = new RestInterface();
 			rest.setParameters("POST", "passwortvergessen", jsObj, success);
-			rest.fakeSend("http://localhost/mock/pwVergessen.json");
+			rest.fakeSend("./mock/pwVergessen.json");
 		}
 	});
 	
