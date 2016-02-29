@@ -1,3 +1,7 @@
+.body{
+	font: 100% "Open Sans",sans-serif;
+}
+
 #navi_bottom {
 background:#ffffff;
 color:#842002;
@@ -26,7 +30,6 @@ margin-right:.5em;
 background:#ffffff;
 color:#842002;
 text-decoration:none;
-font: 100% "Open Sans", sans-serif;
 font-weight: 700;
 }
 

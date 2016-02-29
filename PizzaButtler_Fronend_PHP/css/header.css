@@ -66,11 +66,20 @@ float: right;
     border-radius: 0.6em;
     color: #ffffff;
     float: left;
-    font-family: "Open Sans";
+    font: "Open Sans", sans-serif;
     font-weight: bold;
     margin-top: 2.6em;
     text-align: right;
     width: 75%;
+}
+
+input.umkreissuche_header::-webkit-input-placeholder {
+    color: #ffffff;
+    text-align: center;
+    opacity: 100;
+}
+input.umkreissuche_header::-moz-placeholder {
+  opacity:100;
 }
 
 .body{

@@ -3,6 +3,10 @@
  * @Version 2.1
  */
 
+.body{
+	font: 100% "Open Sans",sans-serif;
+}
+
 #container_impressum {
     position:fixed!important;
     height: auto;

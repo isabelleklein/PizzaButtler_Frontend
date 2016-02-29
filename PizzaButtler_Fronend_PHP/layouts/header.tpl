@@ -132,8 +132,7 @@
 					<input type="button" id="closex" value="X">
 				</div>
 				<div id="merken">
-					<input class="in2" name="merken" id="merken" type="checkbox"/>
-					<div id="log">Logindaten merken.</div>
+					<input class="in2" name="merken" id="merken" type="checkbox"><label>Logindaten merken</label></input>
 				</div>
 				<div id="passwortvergessen"><a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a></div>
 				<input id="absenden_login" name="absenden" type="button" value="Login" />
