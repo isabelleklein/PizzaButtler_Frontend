@@ -19,7 +19,7 @@ $(document).ready(function() {
 			
 			rest = new RestInterface();
 			rest.setParameters("POST", "user", jsObj, success);
-			rest.fakeSend("http://localhost/mock/postUser.json");
+			rest.fakeSend("./mock/postUser.json");
 		}
 	});
 	

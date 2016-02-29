@@ -8,11 +8,11 @@ $(document).ready(function(){
 	rest.setParameters("GET", "pizzeria?q=" + plzOrt , null, buildPizzerienListe);
 	
 	if(plzOrt != ""){
-		// Rest-Aufruf durchführen und Liste befüllen
-		rest.fakeSend("http://localhost/mock/getPizzerien.json");
+		// Rest-Aufruf durchfï¿½hren und Liste befï¿½llen
+		rest.fakeSend("./mock/getPizzerien.json");
 	}
 	else {
-		rest.fakeSend("http://localhost/mock/null.json");
+		rest.fakeSend("./mock/null.json");
 	}
 });
 
