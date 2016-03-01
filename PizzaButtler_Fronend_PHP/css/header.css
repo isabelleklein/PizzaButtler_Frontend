@@ -1,7 +1,7 @@
 #header_nav {
 background:#ce3d11;
 clear:both;
-height:6.9em;
+height:4em;
 margin:-10;
 padding-left:2em;
 padding-right:1em;
@@ -25,7 +25,7 @@ text-decoration:none;
 background:#fecc3f;
 height: 2.2em;
 width: 100%;
-margin-bottom: 50px;
+margin-bottom: 100px;
 }
 
 .head_left {
@@ -37,12 +37,15 @@ margin-left: 5%;
 .head_right {
 float:right;
 padding-top: .6em;
-width: 5in;
+width: 65%;
+margin-right: 5%;
 }
 
 .head_right_start {
 float:right;
 padding-top: .6em;
+width: 9in;
+margin-right: 5%;
 }
 
 .header_button{
@@ -51,12 +54,22 @@ color: #ffffff;
 border: #ffffff solid;
 border-radius: 0.6em;    
 width: 7.5em;
-margin-bottom: 0.7em;
+margin-top: 0.4em;
 text-align: left;
 font-family: "Open Sans";
 font-weight: bold;
 float: right;
+margin: 0.05in;
 }
+
+#open{
+	position: relative;
+}
+
+#openx{
+	position: relative;
+}
+
 #plz_ort_start{
 	visibility: hidden;
 }
@@ -69,9 +82,10 @@ float: right;
     float: left;
     font: "Open Sans", sans-serif;
     font-weight: bold;
-    margin-top: 2.6em;
+    margin-top: 0.4em;
     text-align: right;
-    width: 75%;
+    width: 45%;
+    margin-left: 5%;
 }
 
 input.umkreissuche_header::-webkit-input-placeholder {
@@ -86,9 +100,9 @@ input.umkreissuche_header::-moz-placeholder {
 .body{
 background:#ce3d11;
 margin: 0;
-min-width: 7in;
+min-width: 8in;
 }
 
 #meine_Daten{
-	bottom: 0px;
+	width: auto;
 }

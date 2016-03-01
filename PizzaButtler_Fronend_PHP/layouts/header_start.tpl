@@ -39,15 +39,15 @@
                     	</a>
                     </span>
                     <section class="head_right">
-                    	<div>
+                    	<span class="head_right_buttons">
                     		<form action="./pizzerienSuche.php" name="pizzerienListeButton">
 									<input class="umkreissuche_header" type="text" name="plz-ort" id="plz_ort_start" placeholder="Wo wohnst du?" />
 							</form>
-						</div>
-						<div class="head_right_buttons">
-                        	<button class="header_button" id="openx">Anmelden</button><br/>
-                        	<button class="header_button" id="open">Registrieren</button>
-                        </div>
+							<span class="head_right_button_ersetzen">
+                        		<button class="header_button" id="openx">Anmelden</button>
+                        		<button class="header_button" id="open">Registrieren</button>
+                        	<span/>
+                        </span>
                     </section>
                 </div>
             </div>
