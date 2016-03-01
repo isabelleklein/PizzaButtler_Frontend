@@ -1,5 +1,6 @@
 .body{
 	font: 100% "Open Sans",sans-serif;
+	
 }
 
 #navi_bottom {
@@ -10,6 +11,7 @@ bottom:0;
 clear:both;
 height:auto;
 width:100%;
+min-width: 8in;
 list-style:none;
 padding-left:0;
 position:fixed;
