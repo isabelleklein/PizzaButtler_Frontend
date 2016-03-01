@@ -35,7 +35,9 @@ font-weight: 700;
 
 .left {
 float:left;
+margin-left: 5%;
 }
+
 .right {
 float:right;
 }
