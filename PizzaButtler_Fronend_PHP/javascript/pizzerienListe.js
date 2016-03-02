@@ -65,13 +65,6 @@ var buildPizzerienListe = function(data){
 function hatOffen(oeffnungszeiten){
 	var date = new Date();
 	var day = date.getDay();
-	if(day == 0){day = "so";}
-	else if(day == 1){day = "mo";}
-	else if(day == 2){day = "di";}
-	else if(day == 3){day = "mi";}
-	else if(day == 4){day = "do";}
-	else if(day == 5){day = "fr";}
-	else if(day == 6){day = "sa";}
 	
 	var time;
 	var hours = date.getHours();

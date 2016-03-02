@@ -2,15 +2,15 @@
 	{
 		"restaurantID":123,
 		"name":"Pizzeria Toni",
-		"oeffnungszeiten":{
+		"oeffnungszeiten":[
+			{"tag": "so", "von": 1000, "bis": 2200},
 			{"tag": "mo", "von": 1000, "bis": 2200},
 			{"tag": "di", "von": 1000, "bis": 2200},
 			{"tag": "mi", "von": 1000, "bis": 2200},
 			{"tag": "do", "von": 1000, "bis": 2200},
 			{"tag": "fr", "von": 1000, "bis": 2200},
-			{"tag": "sa", "von": 1000, "bis": 2200},
-			{"tag": "so", "von": 1000, "bis": 2200}
-		},
+			{"tag": "sa", "von": 1000, "bis": 2200}
+		],
 		"mindestbestellwert":12.50,
 		"strasse":"deine strasse",
 		"hausnummer":"666a",
@@ -22,15 +22,15 @@
 	{
 		"restaurantID":234,
 		"name":"Pizzeria Mudder",
-		"oeffnungszeiten":{
+		"oeffnungszeiten":[
+			{"tag": "so", "von": 1000, "bis": 2200},
 			{"tag": "mo", "von": 1000, "bis": 2200},
 			{"tag": "di", "von": 1000, "bis": 2200},
 			{"tag": "mi", "von": 1000, "bis": 2200},
 			{"tag": "do", "von": 1000, "bis": 2200},
 			{"tag": "fr", "von": 1000, "bis": 2200},
-			{"tag": "sa", "von": 1000, "bis": 2200},
-			{"tag": "so", "von": 1000, "bis": 2200}
-		},
+			{"tag": "sa", "von": 1000, "bis": 2200}
+		],
 		"mindestbestellwert":102.50,
 		"strasse":"abcsdesjikenm straße",
 		"hausnummer":"64a",
@@ -43,15 +43,15 @@
 	{
 		"restaurantID":2,
 		"name":"Pizzeria 3",
-		"oeffnungszeiten":{
+		"oeffnungszeiten":[
+			{"tag": "so", "von": 1000, "bis": 2200},
 			{"tag": "mo", "von": 1000, "bis": 2200},
 			{"tag": "di", "von": 1000, "bis": 2200},
 			{"tag": "mi", "von": 1000, "bis": 2200},
 			{"tag": "do", "von": 1000, "bis": 2200},
 			{"tag": "fr", "von": 1000, "bis": 2200},
-			{"tag": "sa", "von": 1000, "bis": 2200},
-			{"tag": "so", "von": 1000, "bis": 2200}
-		},
+			{"tag": "sa", "von": 1000, "bis": 2200}
+		],
 		"mindestbestellwert":33.50,
 		"strasse":"3333 strasse",
 		"hausnummer":"336a",
@@ -64,15 +64,15 @@
 	{
 		"restaurantID":143,
 		"name":"Pizzeria Drölf",
-		"oeffnungszeiten":{
+		"oeffnungszeiten":[
+			{"tag": "so", "von": 1000, "bis": 2200},
 			{"tag": "mo", "von": 1000, "bis": 2200},
 			{"tag": "di", "von": 1000, "bis": 2200},
 			{"tag": "mi", "von": 1000, "bis": 2200},
 			{"tag": "do", "von": 1000, "bis": 2200},
 			{"tag": "fr", "von": 1000, "bis": 2200},
-			{"tag": "sa", "von": 1000, "bis": 2200},
-			{"tag": "so", "von": 1000, "bis": 2200}
-		},
+			{"tag": "sa", "von": 1000, "bis": 2200}
+		],
 		"mindestbestellwert":12.50,
 		"strasse":"mannnheimr straße",
 		"hausnummer":"234a",
