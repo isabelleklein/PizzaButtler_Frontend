@@ -1,4 +1,6 @@
 ﻿var rest;
+var speisekarte;
+var test;
 $(document).ready(function(){
 	// GET-Parameter
 	var pizzeriaId = parse("id");
@@ -25,29 +27,39 @@ var buildpizzeriaSeite = function(data){
 		$("#infoContainer").html("<h1>Es konnten leider keine Daten zur Pizzeria geladen werden</h1>");
 	}
 	else {
-
-		$("#infoContainer").html("Daten:<br>\
-		ID: " + data.restaurantID + "<br>\
+		$("#infoContainer").html("<img height='120px' width='350px' src='data:image/jpg;base64," + data.bild + "'><br>\
+		<input type='hidden' value='" + data.restaurantID + "'/>\
 		Name: " + data.name + "<br>\
-		Beschreibung: " + data.beschreibung + "<br>\
 		Öffnungszeiten: " + data.oeffnungszeiten + "<br>\
 		Mindestbestellwert: " + data.mindestbestellwert + "<br>\
-		Straße: " + data.strasse + "<br>\
-		Hausnummer: " + data.hausnummer + "<br>\
-		PLZ: " + data.plz + "<br>\
-		Ort: " + data.ort + "<br>\
-		Lieferkosten: " + data.lieferkosten + "<br>\
-		E-Mail: " + data.email);
-		
+		Adresse: " + data.strasse + " " + data.hausnummer + "<br>\
+		PLZ: " + data.plz + " " + data.ort + "<br>\
+		Lieferkosten: " + data.lieferkosten);
 	}
 }
 
 var buildSpeisekarte = function(data){
-	var groessen = data["groessen"];
-	var pizzaArray = data["pizza"];
-	
-	console.log(groessen);
-	console.log(pizzaArray);
+	if(data == 0) {
+		$("#pizzerienContainer").html("<h1>Es konnten leider keine Daten zur Pizzeria geladen werden</h1>");
+	}
+	else {
+		speisekarte = data;
+		
+		var container = $("#pizzerienContainer");
+		
+		for(var i = 0; i<speisekarte.length; i++){
+			var list = $("<ul></ul>");
+			var kategorie = "Kategorie: " + speisekarte[i].bezeichnung;
+			list.append(kategorie);
+			for(var j = 0; j<speisekarte[i].produkte.length; j++){
+				var li = $("<li></li>");
+				var content = "Bezeichnung: " + speisekarte[i].produkte[j].bezeichnung;
+				li.append(content);
+				list.append(li);
+			}
+			container.append(list);
+		}
+	}
 }
 
 function parse(val) {
