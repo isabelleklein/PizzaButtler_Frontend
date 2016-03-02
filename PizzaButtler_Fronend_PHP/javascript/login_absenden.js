@@ -15,17 +15,28 @@ $(document).ready(function() {
 });
 
 var callback = function(returnCode){
-	if(returnCode > 0) {
-		var jsObj = $('#login').serializeObject();
-		var expireTime = (jsObj.merken == 'on')? 7 : 0.2;
+	console.log("" + returnCode.userID);
+	if(returnCode != -1 && returnCode != -2) {
+		//var jsObj = $('#login').serializeObject();
+		console.log(returnCode.userID + "");
+		var expireTime = (returnCode.merken == 'on')? 7 : 0.2;
 				
 		$('#div_ajaxResponse').text( returnCode );
-				
-		Cookies.set("userID", returnCode, {expires: expireTime});
+		if(returnCode.userID != "null")	
+		{
+			console.log("Privatkunde");
+			Cookies.set("userID", returnCode.userID, {expires: expireTime});
+		}
+		else if(returnCode.restaurantID != "null")
+		{
+			console.log("Restaurant");
+			Cookies.set("restaurantID", returnCode.restaurantID, {expires: expireTime});
+		}
+		
 		location.reload()
 		//window.location.href = "."
 	}
-	else if(returnCode === -1){
+	else if(returnCode == -1){
 		console.log("Fehler: Falsche Eingaben / Nicht vorhanden");
 	}
 	else {
