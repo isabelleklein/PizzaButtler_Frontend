@@ -11,7 +11,7 @@ $(document).ready(function(){
 	
 	if(pizzeriaId != ""){
 		// rest-Aufruf durchf�hren und Liste bef�llen
-		rest.fakeSend("./mock/getPizzeria.json");
+		rest.fakeSend("./mock/getRestaurant.json");
 		
 		// Abrufen der Speisekarte
 		rest.setParameters("GET", "pizzeria/" + pizzeriaId + "/speisekarte", null, buildSpeisekarte);
