@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-18 11:48:13
+<?php /* Smarty version 3.1.27, created on 2016-03-02 14:01:38
          compiled from "layouts\header_start.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1690656c5a16d943857_89372448%%*/
+/*%%SmartyHeaderCode:1740956d6e432d86337_72903731%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e902567a32fe888042ccac6e75fc999660945f2b' => 
     array (
       0 => 'layouts\\header_start.tpl',
-      1 => 1455792489,
+      1 => 1456917274,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1690656c5a16d943857_89372448',
+  'nocache_hash' => '1740956d6e432d86337_72903731',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56c5a16d9b67c6_07481487',
+  'unifunc' => 'content_56d6e432dbaa60_27166089',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56c5a16d9b67c6_07481487')) {
-function content_56c5a16d9b67c6_07481487 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56d6e432dbaa60_27166089')) {
+function content_56d6e432dbaa60_27166089 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1690656c5a16d943857_89372448';
+$_smarty_tpl->properties['nocache_hash'] = '1740956d6e432d86337_72903731';
 ?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
@@ -42,6 +42,12 @@ $_smarty_tpl->properties['nocache_hash'] = '1690656c5a16d943857_89372448';
  type="text/javascript" src="./lib/jquery-ui-1.11.4/jquery-ui.js"><?php echo '</script'; ?>
 >
  	 	<?php echo '<script'; ?>
+ type="text/javascript" src="./lib/sugar.min.js"><?php echo '</script'; ?>
+>
+ 	    <?php echo '<script'; ?>
+ type="text/javascript" src="./lib/jquerymy-1.2.2.min.js"><?php echo '</script'; ?>
+>
+		<?php echo '<script'; ?>
  type="text/javascript" src="./javascript/lib/polyfill.js"><?php echo '</script'; ?>
 >
 		<?php echo '<script'; ?>
@@ -95,10 +101,17 @@ $_smarty_tpl->properties['nocache_hash'] = '1690656c5a16d943857_89372448';
                         	<img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="180" />
                     	</a>
                     </span>
-                    <span class="head_right">
-                        <button class="header_button" id="openx">Anmelden</button><br/>
-                        <button class="header_button" id="open">Registrieren</button>
-                    </span>
+                    <section class="head_right">
+                    	<span class="head_right_buttons">
+                    		<form action="./pizzerienSuche.php" name="pizzerienListeButton">
+									<input class="umkreissuche_header" type="text" name="plz-ort" id="plz_ort_start" placeholder="Wo wohnst du?" />
+							</form>
+							<span class="head_right_button_ersetzen">
+                        		<button class="header_button" id="openx">Anmelden</button>
+                        		<button class="header_button" id="open">Registrieren</button>
+                        	<span/>
+                        </span>
+                    </section>
                 </div>
             </div>
             <div id="header_bottom"></div>
@@ -154,7 +167,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1690656c5a16d943857_89372448';
 	            <label id="fehlerTel">Bitte geben Sie eine g&uumlltige Telefonnummer an</label>
 	
 	            <div class="fline">
-	                <input class="in2" type="password" name="passwort" placeholder="Passwort" id="passwort" required title="Mindestens eine Ziffer, ein Groﬂbuchstabe, ein Kleinbuchstabe und insgesamt 8 Zeichen" 
+	                <input class="in2" type="password" name="passwort" placeholder="Passwort" id="passwort" required title="Mindestens 8-stelliges Passwort" 
 	                		onchange="passwortPruefen1()"/>
 	            
 	                <input class="in2" type="password" name="pw2" id="pw2" placeholder="Passwort wdh." required onchange="passwortPruefen2()"/>
@@ -182,8 +195,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1690656c5a16d943857_89372448';
 					<input type="button" id="closex" value="X">
 				</div>
 				<div id="merken">
-					<input class="in2" name="merken" id="merken" type="checkbox"/>
-					<div id="log">Logindaten merken.</div>
+					<input class="in2" name="merken" id="merken" type="checkbox"><label>Logindaten merken</label></input>
 				</div>
 				<div id="passwortvergessen"><a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a></div>
 				<input id="absenden_login" name="absenden" type="button" value="Login" />

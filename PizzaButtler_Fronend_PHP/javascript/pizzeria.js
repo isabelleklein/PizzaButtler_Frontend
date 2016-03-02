@@ -47,18 +47,28 @@ var buildSpeisekarte = function(data){
 		
 		var container = $("#pizzerienContainer");
 		
+		var ul = $("<ul></ul>");
 		for(var i = 0; i<speisekarte.length; i++){
+			var li = $("<li><a href='#tabs-" + i + "'>"+ speisekarte[i].bezeichnung + "</a></li>");
+			ul.append(li);
+		}
+		container.append(ul);		
+		
+		for(var i = 0; i<speisekarte.length; i++){
+			var div = $("<div id='tabs-" + i + "'></div>");
 			var list = $("<ul></ul>");
-			var kategorie = "Kategorie: " + speisekarte[i].bezeichnung;
-			list.append(kategorie);
 			for(var j = 0; j<speisekarte[i].produkte.length; j++){
 				var li = $("<li></li>");
-				var content = "Bezeichnung: " + speisekarte[i].produkte[j].bezeichnung;
+				var content = speisekarte[i].produkte[j].bezeichnung;
 				li.append(content);
 				list.append(li);
+				div.append(list);
 			}
-			container.append(list);
+			container.append(div);
 		}
+		
+		
+		$("#pizzerienContainer").tabs();
 	}
 }
 
