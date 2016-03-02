@@ -4,8 +4,10 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <script type="text/javascript" src="./lib/jquery/jquery.js"></script>
 		<script type="text/javascript" src="./lib/jquery/js.cookie.js"></script>
+ 	 	<script type="text/javascript" src="./lib/sugar.min.js"></script>
         <script type="text/javascript" src="./lib/jquery-ui-1.11.4/jquery-ui.js"></script>
- 	 	<script type="text/javascript" src="./javascript/lib/polyfill.js"></script>
+ 	 	<script type="text/javascript" src="./lib/jquerymy-1.2.2.min.js"></script>
+		<script type="text/javascript" src="./javascript/lib/polyfill.js"></script>
 		<script type="text/javascript" src="./javascript/RestInterface.js"></script>
     
 	    <script type="text/javascript" src="./javascript/registrierung.js"></script>

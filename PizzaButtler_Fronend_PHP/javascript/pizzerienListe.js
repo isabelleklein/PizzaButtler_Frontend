@@ -26,6 +26,9 @@ var buildPizzerienListe = function(data){
 		
 		// Empfangene Daten durchgehen
 		for(var i = 0; i < data.length; i++){
+			var offen = hatOffen(data[i].oeffnungszeiten);
+			offen = offen ? "Geöffnet" : "Geschlossen";
+			
 			// Eine Zeile
 			var a = $("<a href='./pizzeria?id=" + data[i].restaurantID + "'></a>");
 			var tr = $("<tr data-href='./pizzeria.php?id=" + data[i].restaurantID + "'></tr>");
@@ -33,7 +36,7 @@ var buildPizzerienListe = function(data){
 			// Spalte mit Bild
 			var td1 = $("<td></td>");
 			td1.addClass("iconspalte");
-			var img = "<img class='pizzeriaIcon' id='samplePizzeria1' src='./images/samplePizzeria1.jpg' alt='Pizzeria1'>";
+			var img = "<img class='pizzeriaIcon' id='samplePizzeria1' src='data:image/jpg;base64," + data[i].bild + "' alt='Pizzeria1'>";
 			// Spalte mit Textinfos
 			var td2 = $("<td></td>");
 			var content = "<p class='listParagraph' id='pizzeriaName'>" + data[i].name + "</p>\
@@ -43,7 +46,7 @@ var buildPizzerienListe = function(data){
 					<p class='listParagraph'>Lieferkosten: " + data[i].lieferkosten + "&#8364</p>\
 					<p class='listParagraph'>Mindestbestellwert: " + data[i].mindestbestellwert + "&#8364</p>\
 					<p class='listParagraph'></p>\
-					<p class='listParagraph'>" + data[i].oeffnungszeiten + "</p>";
+					<p class='listParagraph'>" + offen + "</p>";
 					
 			td1.append(img);
 			td2.append(content);
@@ -57,6 +60,36 @@ var buildPizzerienListe = function(data){
 			window.document.location = $(this).data("href");
 		});
 	}
+}
+
+function hatOffen(oeffnungszeiten){
+	var date = new Date();
+	var day = date.getDay();
+	if(day == 0){day = "so";}
+	else if(day == 1){day = "mo";}
+	else if(day == 2){day = "di";}
+	else if(day == 3){day = "mi";}
+	else if(day == 4){day = "do";}
+	else if(day == 5){day = "fr";}
+	else if(day == 6){day = "sa";}
+	
+	var time;
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	if(minutes < 10){
+		time = hours + "0" + minutes;
+	} else {
+		time = hours + "" + minutes;
+	}
+	
+	if(time > oeffnungszeiten[day].von &&
+		time < oeffnungszeiten[day].bis){
+			return true;
+		}
+	else {
+		return false;
+	}
+	
 }
 
 function parse(val) {

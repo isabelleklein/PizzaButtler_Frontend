@@ -1,4 +1,6 @@
 ﻿var rest;
+var speisekarte;
+var test;
 $(document).ready(function(){
 	// GET-Parameter
 	var pizzeriaId = parse("id");
@@ -43,11 +45,20 @@ var buildpizzeriaSeite = function(data){
 }
 
 var buildSpeisekarte = function(data){
-	var groessen = data["groessen"];
-	var pizzaArray = data["pizza"];
-	
-	console.log(groessen);
-	console.log(pizzaArray);
+	if(data == 0) {
+		$("#pizzerienContainer").html("<h1>Es konnten leider keine Daten zur Pizzeria geladen werden</h1>");
+	}
+	else {
+		speisekarte = data;
+		test = {
+			name: "Luke Skywalker",
+			age: 12
+		};
+		$("#pizzerienContainer").my({ui:{
+			"#name": "name",
+			"#age": "age"
+		}}, test);
+	}
 }
 
 function parse(val) {
