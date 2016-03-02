@@ -10,8 +10,7 @@
     
     <body>
     	<div id="pizzerienContainer">
-			<div id="name"></div>
-			<div id="age"></age>
+		
     	</div>
     	<div id="infoContainer">
     		

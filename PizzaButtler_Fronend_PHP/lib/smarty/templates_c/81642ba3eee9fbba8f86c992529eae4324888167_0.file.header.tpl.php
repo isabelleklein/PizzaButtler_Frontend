@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-02 11:14:42
+<?php /* Smarty version 3.1.27, created on 2016-03-02 12:14:44
          compiled from "layouts\header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1542456d6bd12376933_60188041%%*/
+/*%%SmartyHeaderCode:2610856d6cb241d6910_03949797%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '81642ba3eee9fbba8f86c992529eae4324888167' => 
     array (
       0 => 'layouts\\header.tpl',
-      1 => 1456913662,
+      1 => 1456917274,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1542456d6bd12376933_60188041',
+  'nocache_hash' => '2610856d6cb241d6910_03949797',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56d6bd123f4715_39804924',
+  'unifunc' => 'content_56d6cb242476a7_44007709',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56d6bd123f4715_39804924')) {
-function content_56d6bd123f4715_39804924 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56d6cb242476a7_44007709')) {
+function content_56d6cb242476a7_44007709 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1542456d6bd12376933_60188041';
+$_smarty_tpl->properties['nocache_hash'] = '2610856d6cb241d6910_03949797';
 ?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
@@ -102,15 +102,15 @@ $_smarty_tpl->properties['nocache_hash'] = '1542456d6bd12376933_60188041';
                     	</a>
                     </span>
                     <section class="head_right">
-                    	<div>
+                    	<span class="head_right_buttons">
                     		<form action="./pizzerienSuche.php" name="pizzerienListeButton">
-									<input class="umkreissuche_header" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" />
+									<input class="umkreissuche_header" type="text" name="plz-ort" id="plz_ort" placeholder="Wo wohnst du?" />
 							</form>
-						</div>
-						<div class="head_right_buttons">
-                        	<button class="header_button" id="openx">Anmelden</button><br/>
-                       		<button class="header_button" id="open">Registrieren</button>
-                       	</div>
+							<span class="head_right_button_ersetzen">
+                        		<button class="header_button" id="openx">Anmelden</button>
+                        		<button class="header_button" id="open">Registrieren</button>
+                        	<span/>
+                        </span>
                     </section>
                 </div>
             </div>

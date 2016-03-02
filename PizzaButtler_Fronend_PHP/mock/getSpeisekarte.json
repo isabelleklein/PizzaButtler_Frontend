@@ -1,52 +1,50 @@
-{
-	"kategorien":[
-		{
-			"bezeichnung": "Pizza",
-			"groessen": ["24cm", "28cm", "32cm"],
-			"produkte": [
-				{
-					"produktID": 1,	
-					"bezeichnung": "Pizza Salami",
-					"zutaten": ["Salami", "K‰se", "Tomatensoﬂe"],
-					"preis": [5, 6, 7]
-				},
-				{
-					"produktID": 2,
-					"bezeichnung": "Pizza Tonno",
-					"zutaten": ["Thunfisch", "K‰se", "Tomatensoﬂe"],
-					"preis": [5, 6, 7]
-				},
-				{
-					"produktID": 3,
-					"bezeichnung": "Pizza Asiate",
-					"zutaten": ["Katzenfleisch", "K‰se", "Tomatensoﬂe"],
-					"preis": [5, 6, 7]
-				}
-			]
-		},
-		{
-			"bezeichnung":"Pasta",
-			"groessen":["Mittel", "Groﬂ"],
-			"produkte": [
-				{
-					"produktID": 1002,
-					"bezeichnung": "karottensalat",
-					"zutaten": ["Feldsalat", "Karotten", "Currywurstpulver"],
-					"preis": [6, 9]
-				}
-			]
-		},
-		{
-			"bezeichnung":"Aktion",
-			"groessen":["Mittel"],
-			"produkte": [
-				{
-					"produktID": 3001,
-					"bezeichnung": "Groﬂer Karottensalat",
-					"zutaten": ["Feldsalat", "Karotten", "Currywurstpulver"],
-					"preis": [3.99]
-				}
-			]
-		}
-	]
-}
+[
+	{
+		"bezeichnung": "Pizza",
+		"groessen": ["24cm", "28cm", "32cm"],
+		"produkte": [
+			{
+				"produktID": 1,	
+				"bezeichnung": "Pizza Salami",
+				"zutaten": ["Salami", "K‰se", "Tomatensoﬂe"],
+				"preis": [5, 6, 7]
+			},
+			{
+				"produktID": 2,
+				"bezeichnung": "Pizza Tonno",
+				"zutaten": ["Thunfisch", "K‰se", "Tomatensoﬂe"],
+				"preis": [5, 6, 7]
+			},
+			{
+				"produktID": 3,
+				"bezeichnung": "Pizza Asiate",
+				"zutaten": ["Katzenfleisch", "K‰se", "Tomatensoﬂe"],
+				"preis": [5, 6, 7]
+			}
+		]
+	},
+	{
+		"bezeichnung":"Pasta",
+		"groessen":["Mittel", "Groﬂ"],
+		"produkte": [
+			{
+				"produktID": 1002,
+				"bezeichnung": "karottensalat",
+				"zutaten": ["Feldsalat", "Karotten", "Currywurstpulver"],
+				"preis": [6, 9]
+			}
+		]
+	},
+	{
+		"bezeichnung":"Aktion",
+		"groessen":["Mittel"],
+		"produkte": [
+			{
+				"produktID": 3001,
+				"bezeichnung": "Groﬂer Karottensalat",
+				"zutaten": ["Feldsalat", "Karotten", "Currywurstpulver"],
+				"preis": [3.99]
+			}
+		]
+	}
+]

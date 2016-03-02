@@ -50,14 +50,21 @@ var buildSpeisekarte = function(data){
 	}
 	else {
 		speisekarte = data;
-		test = {
-			name: "Luke Skywalker",
-			age: 12
-		};
-		$("#pizzerienContainer").my({ui:{
-			"#name": "name",
-			"#age": "age"
-		}}, test);
+		
+		var container = $("#pizzerienContainer");
+		
+		for(var i = 0; i<speisekarte.length; i++){
+			var list = $("<ul></ul>");
+			var kategorie = "Kategorie: " + speisekarte[i].bezeichnung;
+			list.append(kategorie);
+			for(var j = 0; j<speisekarte[i].produkte.length; j++){
+				var li = $("<li></li>");
+				var content = "Bezeichnung: " + speisekarte[i].produkte[j].bezeichnung;
+				li.append(content);
+				list.append(li);
+			}
+			container.append(list);
+		}
 	}
 }
 
