@@ -3,13 +3,13 @@
 		"restaurantID":123,
 		"name":"Pizzeria Toni",
 		"oeffnungszeiten":{
-			"mo": {"von": 1000, "bis": 2200},
-			"di": {"von": 1000, "bis": 2200},
-			"mi": {"von": 1000, "bis": 2200},
-			"do": {"von": 1000, "bis": 2200},
-			"fr": {"von": 1000, "bis": 2200},
-			"sa": {"von": 1000, "bis": 2200},
-			"so": {"von": 1000, "bis": 2200}
+			{"tag": "mo", "von": 1000, "bis": 2200},
+			{"tag": "di", "von": 1000, "bis": 2200},
+			{"tag": "mi", "von": 1000, "bis": 2200},
+			{"tag": "do", "von": 1000, "bis": 2200},
+			{"tag": "fr", "von": 1000, "bis": 2200},
+			{"tag": "sa", "von": 1000, "bis": 2200},
+			{"tag": "so", "von": 1000, "bis": 2200}
 		},
 		"mindestbestellwert":12.50,
 		"strasse":"deine strasse",
@@ -23,13 +23,13 @@
 		"restaurantID":234,
 		"name":"Pizzeria Mudder",
 		"oeffnungszeiten":{
-			"mo": {"von": 1000, "bis": 2200},
-			"di": {"von": 1000, "bis": 2200},
-			"mi": {"von": 1000, "bis": 2200},
-			"do": {"von": 1000, "bis": 2200},
-			"fr": {"von": 1000, "bis": 2200},
-			"sa": {"von": 1000, "bis": 2200},
-			"so": {"von": 1000, "bis": 2200}
+			{"tag": "mo", "von": 1000, "bis": 2200},
+			{"tag": "di", "von": 1000, "bis": 2200},
+			{"tag": "mi", "von": 1000, "bis": 2200},
+			{"tag": "do", "von": 1000, "bis": 2200},
+			{"tag": "fr", "von": 1000, "bis": 2200},
+			{"tag": "sa", "von": 1000, "bis": 2200},
+			{"tag": "so", "von": 1000, "bis": 2200}
 		},
 		"mindestbestellwert":102.50,
 		"strasse":"abcsdesjikenm straße",
@@ -44,13 +44,13 @@
 		"restaurantID":2,
 		"name":"Pizzeria 3",
 		"oeffnungszeiten":{
-			"mo": {"von": 1000, "bis": 2200},
-			"di": {"von": 1000, "bis": 2200},
-			"mi": {"von": 1000, "bis": 2200},
-			"do": {"von": 1000, "bis": 2200},
-			"fr": {"von": 1000, "bis": 2200},
-			"sa": {"von": 1000, "bis": 2200},
-			"so": {"von": 1000, "bis": 2200}
+			{"tag": "mo", "von": 1000, "bis": 2200},
+			{"tag": "di", "von": 1000, "bis": 2200},
+			{"tag": "mi", "von": 1000, "bis": 2200},
+			{"tag": "do", "von": 1000, "bis": 2200},
+			{"tag": "fr", "von": 1000, "bis": 2200},
+			{"tag": "sa", "von": 1000, "bis": 2200},
+			{"tag": "so", "von": 1000, "bis": 2200}
 		},
 		"mindestbestellwert":33.50,
 		"strasse":"3333 strasse",
@@ -65,13 +65,13 @@
 		"restaurantID":143,
 		"name":"Pizzeria Drölf",
 		"oeffnungszeiten":{
-			"mo": {"von": 1000, "bis": 2200},
-			"di": {"von": 1000, "bis": 2200},
-			"mi": {"von": 1000, "bis": 2200},
-			"do": {"von": 1000, "bis": 2200},
-			"fr": {"von": 1000, "bis": 2200},
-			"sa": {"von": 1000, "bis": 2200},
-			"so": {"von": 1000, "bis": 2200}
+			{"tag": "mo", "von": 1000, "bis": 2200},
+			{"tag": "di", "von": 1000, "bis": 2200},
+			{"tag": "mi", "von": 1000, "bis": 2200},
+			{"tag": "do", "von": 1000, "bis": 2200},
+			{"tag": "fr", "von": 1000, "bis": 2200},
+			{"tag": "sa", "von": 1000, "bis": 2200},
+			{"tag": "so", "von": 1000, "bis": 2200}
 		},
 		"mindestbestellwert":12.50,
 		"strasse":"mannnheimr straße",
