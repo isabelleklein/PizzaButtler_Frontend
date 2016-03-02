@@ -27,20 +27,14 @@ var buildpizzeriaSeite = function(data){
 		$("#infoContainer").html("<h1>Es konnten leider keine Daten zur Pizzeria geladen werden</h1>");
 	}
 	else {
-
-		$("#infoContainer").html("Daten:<br>\
-		ID: " + data.restaurantID + "<br>\
+		$("#infoContainer").html("<img height='120px' width='350px' src='data:image/jpg;base64," + data.bild + "'><br>\
+		<input type='hidden' value='" + data.restaurantID + "'/>\
 		Name: " + data.name + "<br>\
-		Beschreibung: " + data.beschreibung + "<br>\
 		Öffnungszeiten: " + data.oeffnungszeiten + "<br>\
 		Mindestbestellwert: " + data.mindestbestellwert + "<br>\
-		Straße: " + data.strasse + "<br>\
-		Hausnummer: " + data.hausnummer + "<br>\
-		PLZ: " + data.plz + "<br>\
-		Ort: " + data.ort + "<br>\
-		Lieferkosten: " + data.lieferkosten + "<br>\
-		E-Mail: " + data.email);
-		
+		Adresse: " + data.strasse + " " + data.hausnummer + "<br>\
+		PLZ: " + data.plz + " " + data.ort + "<br>\
+		Lieferkosten: " + data.lieferkosten);
 	}
 }
 
