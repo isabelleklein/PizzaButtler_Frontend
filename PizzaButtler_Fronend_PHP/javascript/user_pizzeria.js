@@ -21,16 +21,17 @@ var loadData = function(){
 }
 
 var callback = function(data){
-	$('#name').text(data.name).val(data.name);
-	$('#beschreibung').text(data.beschreibung).val(data.beschreibung);
-	$('#oeffnungszeiten').text(data.oeffnungszeiten).val(data.oeffnungszeiten);
-	$('#mindestbestellwert').text(data.mindestbestellwert).val(data.mindestbestellwert);
-	$('#strasse').text(data.strasse).val(data.strasse);
-	$('#hausnummer').text(data.hausnummer).val(data.hausnummer);
-	$('#plz').text(data.plz).val(data.plz);
-	$('#ort').text(data.ort).val(data.ort);	
-	$('#lieferkosten').text(data.lieferkosten).val(data.lieferkosten);	
-	$('#email').text(data.email).val(data.email);	
+	$('#name_data_anz').text(data.name).val(data.name);
+	$('#beschreibung_data_anz').text(data.beschreibung).val(data.beschreibung);
+	$('#oeffnungszeiten_data_anz').text(data.oeffnungszeiten.mo.von).val(data.oeffnungszeiten.mo.von);
+	$('#mindestbestellwert_data_anz').text(data.mindestbestellwert).val(data.mindestbestellwert);
+	$('#strasse_data_anz').text(data.strasse).val(data.strasse);
+	$('#hausnummer_data_anz').text(data.hausnummer).val(data.hausnummer);
+	console.log(data);
+	$('#plz_data_anz').text(data.plz).val(data.plz);
+	$('#ort_data_anz').text(data.ort).val(data.ort);	
+	$('#lieferkosten_data_anz').text(data.lieferkosten).val(data.lieferkosten);	
+	$('#email_data_anz').text(data.email).val(data.email);	
 };
 
 var setClickListener = function(){

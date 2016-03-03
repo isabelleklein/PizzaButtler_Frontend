@@ -16,37 +16,33 @@
 				<div id="data">
 					<div class="fline">
 						<label class="in1">Name:</label>
-						<label type="text" class="text" name="name" id="name"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">Beschreibung:</label>
-						<label type="text" class="text" name="beschreibung" id="beschreibung"></label>
+						<label type="text" class="text" name="name" id="name_data_anz"></label>
 					</div>
 					<div class="fline">
 						<label class="in1">Oeffnungszeiten:</label>
-						<label class="in1" class="text" name="oeffnungszeiten" id="oeffnungszeiten"></label>
+						<label type="text" class="in1" class="text" name="oeffnungszeiten" id="oeffnungszeiten_data_anz"></label>
 					</div>
 					<div class="fline">
 						<label class="in1">Mindesbestellwert:</label>
-						<label class="in1" class="text" name="mindestbestellwert" id="mindestbestellwert"></label>
+						<label type="text" class="in1" class="text" name="mindestbestellwert" id="mindestbestellwert_data_anz"></label>
 					</div>
 					<div class="fline">
 						<label class="in1">Straße/Hausnummer:</label>
-						<label class="in1" class="text" name="strasse" id="strasse"></label>
-						<label class="in1" class="text" name="hausnummer" id="hausnummer"></label>
+						<label type="text" class="in1" class="text" name="strasse" id="strasse_data_anz"></label>
+						<label type="text" class="in1" class="text" name="hausnummer" id="hausnummer_data_anz"></label>
 					</div>
 					<div class="fline">
 						<label class="in1">PLZ/Ort:</label>
-						<label class="in1" class="text" name="plz" id="plz"></label>
-						<label class="in1" class="text" name="ort" id="ort"></label>
+						<label type="text" class="in1" class="text" name="plz" id="plz_data_anz"></label>
+						<label type="text" class="in1" class="text" name="ort" id="ort_data_anz"></label>
 					</div>
 					<div class="fline">
 						<label class="in1">Lieferkosten:</label>
-						<label class="in1" class="text" name="lieferkosten" id="lieferkosten"></label>
+						<label type="text" class="in1" class="text" name="lieferkosten" id="lieferkosten_data_anz"></label>
 					</div>
-					<div>
+					<div class="fline">
 						<label class = "in1">E-Mail:</label>
-						<label class = "in1" class="text" name="email" id = "email"></label>
+						<label type="text" class="in1" class="text" name="email" id = "email_data_anz"></label>
 					<p>
 						<input id="datenaendern" name="datenaendern" type="button" value="Daten &auml;ndern" />
 					</p>

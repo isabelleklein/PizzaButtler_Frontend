@@ -24,12 +24,6 @@
 	            </div>
 	
 	            <div class="fline">
-	                <label class="in1" for="beschreibung">beschreibung</label>
-	                <input type="text" class="in2" name="beschreibung" id="beschreibung"
-	                 required title="freie Texteingabe"/>
-	            </div>
-	
-	            <div class="fline">
 				<label class="in1" for="oeffnungszeiten">Oeffnungszeiten</label>
 		                <input type="text" class="in2" name="oeffnungszeiten" id="oeffnungszeiten" placeholder="Oeffnungszeiten"
 		                 onchange="datumPruefen()" required title="dd-mm-yyyy">
