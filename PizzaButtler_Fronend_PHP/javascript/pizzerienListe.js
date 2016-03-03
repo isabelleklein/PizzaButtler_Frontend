@@ -28,6 +28,11 @@ var buildPizzerienListe = function(data){
 		for(var i = 0; i < data.length; i++){
 			var offen = hatOffen(data[i].oeffnungszeiten);
 			offen = offen ? "Geöffnet" : "Geschlossen";
+
+			var bewertung = "" + Math.round(2*data[i].bewertung)/2;
+			if(bewertung.length == 1){
+				bewertung += ".0";
+			}
 			
 			// Eine Zeile
 			var a = $("<a href='./pizzeria?id=" + data[i].restaurantID + "'></a>");
@@ -47,9 +52,11 @@ var buildPizzerienListe = function(data){
 					<p class='listParagraph'>Mindestbestellwert: " + data[i].mindestbestellwert + "&#8364</p>\
 					<p class='listParagraph'></p>\
 					<p class='listParagraph'>" + offen + "</p>";
+			var bewertung = "<img src='./images/" + bewertung + "Sterne.png'>";
 					
 			td1.append(img);
 			td2.append(content);
+			td2.append(bewertung);
 			tr.append(td1);
 			tr.append(td2);
 			table.append(tr);
