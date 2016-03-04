@@ -52,19 +52,29 @@ var buildPizzerienListe = function(data){
 					<p class='listParagraph'>Mindestbestellwert: " + data[i].mindestbestellwert + "&#8364</p>\
 					<p class='listParagraph'></p>\
 					<p class='listParagraph'>" + offen + "</p>";
-			//Spalte mit Bewertung
+						//Spalte mit Bewertung
             var td3 = $("<td></td>");
             td3.addClass("bewertung");
-            var bewertung = "<img src='./images/" + bewertung + "Sterne.png' width='50%' height='50%'>";
-					
+            var bewertung = "<img width='auto' height='42%' src='./images/" + bewertung + "Sterne.png'>";
+            
+            //Spalte mit Bezahlung
+            var td4 = $("<td></td>");
+            td4.addClass("bezahlung");
+            var bezahlung = "<img width='auto' height='20%' class='bezahlart' id='bezahlart1' src='./images/bezahlart1.png'>";
+            var bezahlung2 = "<img width='auto' height='8%' class='bezahlart' id='bezahlart2' src='./images/bezahlart2.png'>";
+            
+            
 			td1.append(img);
 			td2.append(content);
 			td3.append(bewertung);
+            td4.append(bezahlung);
+            td4.append(bezahlung2);
 			tr.append(td1);
 			tr.append(td2);
             tr.append(td3);
+            tr.append(td4);
 			table.append(tr);
-		}
+        }
 		$("#pizzerienContainer").html(table);
 		
 		$(".line").click(function() {
