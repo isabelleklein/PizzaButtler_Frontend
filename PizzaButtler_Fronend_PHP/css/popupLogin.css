@@ -1,11 +1,6 @@
 /**
  * @author Julian Steil
  */
-
-.body{
-	font: 100% "Open Sans",sans-serif;
-}
-
 #containerx {
     position:fixed!important;
     position:absolute;

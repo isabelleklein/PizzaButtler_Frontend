@@ -2,11 +2,6 @@
  * @author Dominik Terlau
  * @Version 2.1
  */
-
-.body{
-	font: 100% "Open Sans",sans-serif;
-}
-
 #overlay {
     position: fixed;
     top:0;
