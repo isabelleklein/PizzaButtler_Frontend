@@ -22,7 +22,7 @@ var buildPizzerienListe = function(data){
 	}
 	else {
 		// Tabelle an sich
-		var table = $("<table></table>");
+		var table = $("<table class='pizzerienuebersicht'></table>");
 		
 		// Empfangene Daten durchgehen
 		for(var i = 0; i < data.length; i++){
@@ -55,7 +55,7 @@ var buildPizzerienListe = function(data){
 			//Spalte mit Bewertung
             var td3 = $("<td></td>");
             td3.addClass("bewertung");
-            var bewertung = "<img src='./images/" + bewertung + "Sterne.png'>";
+            var bewertung = "<img src='./images/" + bewertung + "Sterne.png' width='50%' height='50%'>";
 					
 			td1.append(img);
 			td2.append(content);

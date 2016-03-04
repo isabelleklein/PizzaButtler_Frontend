@@ -2,8 +2,8 @@
 var rest;
 $(document).ready(function(){	
 	loadData();
-	$('#datenaendern').click(function(e) {
-		$('.content').load("./views/changeuserdata.tpl", function(){
+	$('#userdatenaendern').click(function(e) {
+		$('.maincontent').load("./views/changeuserdata.tpl", function(){
 			loadData();
 			setClickListener();
 		});
@@ -16,7 +16,7 @@ var loadData = function(){
 	if(typeof userID != 'undefined') {
 		rest = new RestInterface();
 		rest.setParameters("GET", "user/" + userID, null, callback);
-		rest.fakeSend("http://localhost/mock/getUser.json");
+		rest.fakeSend("./mock/getUser.json");
 	}
 }
 
@@ -34,6 +34,7 @@ var callback = function(data){
 	$('#userPlz').text(data.plz).val(data.plz);
 	$('#userOrt').text(data.ort).val(data.ort);
 	$('#userEmail').text(data.email).val(data.email);
+    $('#userTelefon').text(data.telefon).val(data.telefon);
 	$('#userGeburtsdatum').text(data.geburtsdatum).val(data.geburtsdatum);	
 };
 

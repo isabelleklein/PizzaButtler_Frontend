@@ -11,40 +11,42 @@
     <body>
 		<div class="maincontent">
 			<form id='datenanzeigen' name="datenanzeigen" action="#">
-				<h2 class="contenthead"> Deine Daten </h2>
+				<h3 class="contenthead"> Deine Daten </h3>
 				<div id="data">
-					<div class="fline">
-						<label class="in1" for="vorname">Anrede</label>
-						<label type="text" class="text" name="anrede" id="userAnrede"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">Vorname:</label>
-						<label type="text" class="text" name="vorname" id="userVorname"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">Nachname:</label>
-						<label class="in1" name="nachname" id="userNachname"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">Geburtsdatum:</label>
-						<label class="in1" name="geburtsdatum" id="userGeburtsdatum"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">Straße/Hausnummer:</label>
-						<label class="in1" name="strasse" id="userStrasse"></label>
-						<label class="in1" name="hausnummer" id="userHausnummer"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">PLZ/Ort:</label>
-						<label class="in1" name="plz" id="userPlz"></label>
-						<label class="in1" name="ort" id="userOrt"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">Email:</label>
-						<label class="in1" name="email" id="userEmail"></label>
-					</div>
+                    <table>
+                        <tr>
+                            <td class="in1"><label>Anrede:</label></td>
+                            <td>
+                                <label type="text" class="text" name="anrede" id="userAnrede"></label><br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="in1"><label>Name:</label></td>
+                            <td>
+                                <label type="text" class="text" name="vorname" id="userVorname"></label>
+                                <label name="nachname" id="userNachname"></label>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td class="in1"><label>Anschrift:</label></td>
+                            <td>
+                                <label name="strasse" id="userStrasse"></label>
+                                <label name="hausnummer" id="userHausnummer"></label><br />
+                                <label name="plz" id="userPlz"></label>
+                                <label name="ort" id="userOrt"></label><br /><br />
+                            </td>     
+                        </tr>
+                        <tr>
+                            <td class="in1"><label>Telefon:</label></td>
+                            <td><label name="telefon" id="userTelefon"></label></td>  
+                        </tr>
+                        <tr>
+                            <td class="in1"><label>Email:</label></td>
+                            <td><label name="email" id="userEmail"></label></td>  
+                        </tr>
+                    </table>
 					<p>
-						<input id="datenaendern" name="datenaendern" type="button" value="Daten &auml;ndern" />
+						<input id="userdatenaendern" name="userdatenaendern" type="button" value="Daten &auml;ndern" />
 					</p>
 				</div>
 			</form>

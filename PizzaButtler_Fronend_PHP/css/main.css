@@ -136,6 +136,11 @@ input::-moz-placeholder {
     border-bottom: 1px solid;
 }
 
+.in1{
+    width: 30%;
+    vertical-align: top;
+}
+
 #absenden {
     background-color: #842002;
     border-color: #842002;
@@ -224,19 +229,24 @@ input::-moz-placeholder {
     font-size: 70%;
 }
 #pizzeriaName {
-     font-size: 90%;
+    font-size: 90%;
 }
 
 tr.line {
     cursor: pointer;
+    border-bottom: 3px solid #842002;
 }
+
 tr, table{
-	border-bottom: 3px solid #842002;
 	border-collapse: collapse;
 }
-table {
+
+.pizzerienuebersicht{
     margin: 20px;
     width: 94%;
+}
+table {
+    
 }
 .Text1 {
     background-color: #fecc3f;
