@@ -15,7 +15,7 @@
            <div class="zweiterBereich">
            	<div>
                
-               <img class="paypal" id="bild1" src="./images/cart.png" alt="Einkaufswagen Symbol">
+               <img class="paypal" id="bild1" src="./images/pizzaStartseite.png" alt="Pizza Symbol Startseite">
             </div>
             </div>
            	<div id="textbaustein"> Pizza Butler ist deine persönliche Plattform für Lieferdienste. Wir bringen dir dein favorisiertes Gericht direkt mit einem unserer Butler direkt nach Hause. Frisch für dich zubereitet – direkt zu dir geliefert. <br>

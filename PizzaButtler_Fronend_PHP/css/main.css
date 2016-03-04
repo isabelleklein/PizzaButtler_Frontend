@@ -56,7 +56,8 @@ input::-moz-placeholder {
     margin-left: 25%;
     margin-top: -18%;
     width: 45%;
-    margin-bottom: 5%
+    margin-bottom: 5%;
+    font-size: 85%;
 }
 .paypal {
     height: auto;
@@ -64,7 +65,7 @@ input::-moz-placeholder {
     width: 20%;
 }
 #bild1 {
-    margin-left: 5%;
+    margin-left: 4%;
     min-width: 0.5in;
 }
 #bild2 {
