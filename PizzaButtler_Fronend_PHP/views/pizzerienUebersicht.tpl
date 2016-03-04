@@ -9,7 +9,7 @@
     </head>
     
     <body>
-    	<div id="pizzerienContainer">
+    	<div class="maincontent" id="pizzerienContainer">
     	 <table>
 		  <tr class="line">
 		    <td class="iconspalte"><img class="pizzeriaIcon" id="samplePizzeria1" src="./images/samplePizzeria1.jpg" alt="Pizzeria1"></td>
@@ -46,7 +46,7 @@
 		  </tr>
 		</table>
     	</div>
-    	<div id = "infoContainer">
+    	<div class = "infocontent" id = "infoContainer">
     		<p id="infoContainerText"> Der Butler Bringts!</p>
     		<img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
     	</div>

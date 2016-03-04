@@ -103,6 +103,39 @@ input::-moz-placeholder {
     margin: 2px;
     width: 140px;
 }
+
+.maincontent {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border-width: 0;
+    color: #842002;
+    left: 17%;
+    height: auto;
+    position: relative;
+    top: 0%;
+    width: 48%;
+    float: left;
+    margin-bottom: 4%;
+    padding: 20px;
+}
+
+.infocontent {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border-width: 0;
+    color: #842002;
+    height: auto;
+    position: relative;
+    top: 0%;
+    right: 5%;
+    width: 25%;
+    float: right;
+}
+
+.contenthead{
+    border-bottom: 1px solid;
+}
+
 #absenden {
     background-color: #842002;
     border-color: #842002;
@@ -121,20 +154,6 @@ input::-moz-placeholder {
 }
 #pizzerienContainer {
     background-color: #ffffff;
-    border-radius: 12px;
-    border-width: 0;
-    color: #842002;
-    left: 12%;
-    height: auto;
-    position: relative;
-    top: 0%;
-    width: 50%;
-    float: left;
-    margin-bottom: 4%;
-}
-
-#datenContainer{
-	background-color: #ffffff;
     border-radius: 12px;
     border-width: 0;
     color: #842002;

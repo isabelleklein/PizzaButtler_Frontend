@@ -9,10 +9,9 @@
     </head>
     
     <body>
-		<div class="content" id=datenContainer>
+		<div class="maincontent">
 			<form id='datenanzeigen' name="datenanzeigen" action="#">
-				<h1> Daten Anzeigen</h1>
-				<h2>Deine Daten sind:</h2>
+				<h2 class="contenthead"> Deine Daten </h2>
 				<div id="data">
 					<div class="fline">
 						<label class="in1" for="vorname">Anrede</label>
@@ -50,6 +49,10 @@
 				</div>
 			</form>
 		</div>
+        <div class = "infocontent">
+    		<p id="infoContainerText"> Der Butler Bringts!</p>
+    		<img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
+    	</div>
     </body>
 </html>
 	
