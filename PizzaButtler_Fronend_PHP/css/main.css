@@ -221,9 +221,10 @@ input::-moz-placeholder {
     color: black;
     font-weight: 900;
     margin: 0;
+    font-size: 70%;
 }
 #pizzeriaName {
-    font-size: 130%;
+     font-size: 90%;
 }
 
 tr.line {
