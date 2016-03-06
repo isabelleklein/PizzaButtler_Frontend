@@ -154,7 +154,7 @@ input::-moz-placeholder {
 }
 
 .in1{
-    width: 30%;
+    width: 40%;
     vertical-align: top;
 }
 
@@ -290,4 +290,8 @@ table {
 
 #userhausnummer{
 	width:50px;
+}
+
+#oeffnungszeiten{
+    width:288px;
 }

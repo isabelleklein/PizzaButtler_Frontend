@@ -32,12 +32,10 @@
                     <input type="text" name="strasse" id="userStrasse" required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="strassePruefen1()" placeholder="Strasse"/>
                     <input type="text" name="hausnummer" id="userHausnummer" required title="4 stellige Hausnummer mit maximal einem Zusatzbuchstaben a-z ohne Umlaute " onchange="hausnummerPruefen1()"/ placeholder="Nr.">
 	            </div>
-	
 	            <div class="fline">
 				    <input type="text" name="plz" id="userPlz" pattern="[0-9]{5}" required title="5 Zahlen" onchange="" placeholder="PLZ"/>
                     <input type="text" name="ort" id="userOrt" required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="wohnortPruefen1()" placeholder="Ort"/>
 		        </div>
-	
 	            <div class="fline">
 	                <input type="text" name="telefon" id="userTelefon" required onchange="telefonPruefen1()" placeholder="Telefon"/>
                     <input type="text" name="email" id="userEmail" required onchange="mailPruefen1()" placeholder="Email"/>
@@ -45,7 +43,7 @@
 	
 	            
 				<p>
-	                <input  class="userbutton" id="userdatenspeichern" name="userdatenspeichern" type="button" value="&Auml;nderungen speichern"/>
+	                <input class="userbutton" id="userdatenspeichern" name="userdatenspeichern" type="button" value="&Auml;nderungen speichern"/>
                 </p>
 			</form>
 		</div>

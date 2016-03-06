@@ -3,7 +3,7 @@ var rest;
 $(document).ready(function(){	
 	loadData();
 	$('#datenaendern').click(function(e) {
-		$('.content').load("./views/changepizzeriendata.tpl", function(){
+		$('.maincontent').load("./views/changepizzeriendata.tpl", function(){
 			loadData();
 			setClickListener();
 		});
@@ -16,7 +16,7 @@ var loadData = function(){
 	if(typeof restaurantID != 'undefined') {
 		rest = new RestInterface();
 		rest.setParameters("GET", "user/" + restaurantID, null, callback);
-		rest.fakeSend("http://localhost/mock/getRestaurant.json");
+		rest.fakeSend("./mock/getRestaurant.json");
 	}
 }
 

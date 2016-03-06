@@ -11,44 +11,59 @@
     <body>
 		<div class="maincontent" id=datenContainer>
 			<form id='datenanzeigen' name="datenanzeigen" action="#">
-				<h1> Daten Anzeigen</h1>
-				<h2>Deine Daten sind:</h2>
+				<h3 class="contenthead"> Deine Daten </h3>
 				<div id="data">
-					<div class="fline">
-						<label class="in1">Name:</label>
-						<label type="text" class="text" name="name" id="name_data_anz"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">Oeffnungszeiten:</label>
-						<label type="text" class="in1" class="text" name="oeffnungszeiten" id="oeffnungszeiten_data_anz"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">Mindesbestellwert:</label>
-						<label type="text" class="in1" class="text" name="mindestbestellwert" id="mindestbestellwert_data_anz"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">Straße/Hausnummer:</label>
-						<label type="text" class="in1" class="text" name="strasse" id="strasse_data_anz"></label>
-						<label type="text" class="in1" class="text" name="hausnummer" id="hausnummer_data_anz"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">PLZ/Ort:</label>
-						<label type="text" class="in1" class="text" name="plz" id="plz_data_anz"></label>
-						<label type="text" class="in1" class="text" name="ort" id="ort_data_anz"></label>
-					</div>
-					<div class="fline">
-						<label class="in1">Lieferkosten:</label>
-						<label type="text" class="in1" class="text" name="lieferkosten" id="lieferkosten_data_anz"></label>
-					</div>
-					<div class="fline">
-						<label class = "in1">E-Mail:</label>
-						<label type="text" class="in1" class="text" name="email" id = "email_data_anz"></label>
+                    <table class="userdaten">
+                        <tr>
+                            <td class="in1"><label>Name:</label></td>
+                            <td>
+                                <label type="text" class="text" name="name" id="name_data_anz"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="in1"><label>Anschrift:</label></td>
+                            <td>
+                                <label type="text" class="text" name="strasse" id="strasse_data_anz"></label>
+                                <label type="text" class="text" name="hausnummer" id="hausnummer_data_anz"></label><br />
+                                <label type="text" class="text" name="plz" id="plz_data_anz"></label>
+                                <label type="text" class="text" name="ort" id="ort_data_anz"></label><br /><br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="in1"><label>&Ouml;ffnungszeiten:</label></td>
+                            <td>
+                                <label type="text" class="text" name="oeffnungszeiten" id="oeffnungszeiten_data_anz"></label><br /><br />
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td class="in1"><label>Mindesbestellwert:</label></td>
+                            <td>
+                                <label type="text" class="text" name="mindestbestellwert" id="mindestbestellwert_data_anz"></label>
+                            </td>     
+                        </tr>
+                        <tr>
+                            <td class="in1"><label>Lieferkosten:</label></td>
+                            <td><label type="text" class="text" name="lieferkosten" id="lieferkosten_data_anz"></label><br /><br /></td>
+                        </tr>
+                        <tr>
+                            <td class="in1"><label>Telefon:</label></td>
+                            <td><label name="telefon" id="pizzeriaTelefon"></label></td>  
+                        </tr>
+                        <tr>
+                            <td class="in1"><label>Email:</label></td>
+                            <td><label type="text" class="text" name="email" id = "email_data_anz"></label></td>  
+                        </tr>
+                    </table>
 					<p>
-						<input id="datenaendern" name="datenaendern" type="button" value="Daten &auml;ndern" />
+						<input class="userbutton" id="datenaendern" name="datenaendern" type="button" value="Daten &auml;ndern" />
 					</p>
 				</div>
 			</form>
 		</div>
+        <div class = "infocontent">
+    		<p id="infoContainerText"> Der Butler Bringts!</p>
+    		<img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
+    	</div>
     </body>
 </html>
 	
