@@ -11,7 +11,7 @@
     </head>
     
     <body>
-    	<div class="maincontent" id=datenContainer>
+    	<div id=datenContainer>
 			<form id='datenaendern' name="datenaendern" action="#">
 				<h3 class="contenthead"> Deine Daten / Daten ändern </h3>
                 
@@ -49,9 +49,5 @@
                 </p>
 			</form>
 		</div>
-        <div class = "infocontent">
-            <p id="infoContainerText"> Der Butler Bringts!</p>
-            <img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
-        </div>
     </body>
 </html>
