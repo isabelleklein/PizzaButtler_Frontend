@@ -9,7 +9,7 @@
     </head>
     
     <body>
-		<div class="content" id=datenContainer>
+		<div class="maincontent" id=datenContainer>
 			<form id='datenanzeigen' name="datenanzeigen" action="#">
 				<h1> Daten Anzeigen</h1>
 				<h2>Deine Daten sind:</h2>
