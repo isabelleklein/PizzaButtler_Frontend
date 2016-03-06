@@ -5,70 +5,53 @@
         <link href="./css/main.css" rel="stylesheet" /> 
 		
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<script type="text/javascript" src="../javascript/user.js"></script>
-		<script type="text/javascript" src="../javascript/kundenregistrierung.js"></script>
+		<script type="text/javascript" src="./javascript/user.js"></script>
+		<script type="text/javascript" src="./javascript/kundenregistrierung.js"></script>
 		
     </head>
     
     <body>
-    	<div id=datenContainer>
+    	<div class="maincontent" id=datenContainer>
 			<form id='datenaendern' name="datenaendern" action="#">
-				<h1> Daten &auml;ndern</h1>
-				
-				<h2>Gebe deine neuen Daten ein</h2>
-				
+				<h3 class="contenthead"> Deine Daten / Daten ändern </h3>
+                
 				<div class="fline">
-	                <a class="in1">Anrede</a>
-					<select class="in2" name="anrede" id="userAnrede" size="1" required autofocus>
-					    <option value="keine" selected disabled> bitte wählen</option>
-					    <option value="Herr"> Herr </option>
-					    <option value="Frau"> Frau </option>
-					</select>
+	                <select name="anrede" id="userAnrede" size="1" required autofocus>
+                        <option value="keine" selected disabled> bitte wählen</option>
+                        <option value="Herr"> Herr </option>
+                        <option value="Frau"> Frau </option>
+                    </select>
 	            </div>
 				
 	            <div class="fline">
-	                <label class="in1" for="vorname">Vorname</label>
-	                <input type="text" class="in2" name="vorname" id="userVorname" 
-	                required title="Zwischen 3 und 25 Zeichen (Umlaute möglich)" onchange="vornamePruefen1()"/>
+	                <input type="text" name="vorname" id="userVorname" required title="Zwischen 3 und 25 Zeichen (Umlaute möglich)" onchange="vornamePruefen1()" placeholder="Vorname"/>
+	                <input type="text" type="text" name="nachname" id="userNachname" required title="3 bis 25 Zeichen (Umlaute möglich)" onchange="nachnamePruefen1()" placeholder="Nachname"/>
 	            </div>
 	
 	            <div class="fline">
-	                <label class="in1" for="nachname">Nachname</label>
-	                <input type="text" class="in2" type="text" name="nachname" id="userNachname"
-	                 required title="3 bis 25 Zeichen (Umlaute möglich)" onchange="nachnamePruefen1()"/>
+                    <input type="text" name="strasse" id="userStrasse" required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="strassePruefen1()" placeholder="Strasse"/>
+                    <input type="text" name="hausnummer" id="userHausnummer" required title="4 stellige Hausnummer mit maximal einem Zusatzbuchstaben a-z ohne Umlaute " onchange="hausnummerPruefen1()"/ placeholder="Nr.">
 	            </div>
 	
 	            <div class="fline">
-				<label class="in1" for="nachname">Geburtsdatum</label>
-		                <input type="text" class="in2" name="geburtsdatum" id="userGeburtsdatum" placeholder="Geburtsdatum"
-		                 onchange="datumPruefen()" required title="dd-mm-yyyy">
+				    <input type="text" name="plz" id="userPlz" pattern="[0-9]{5}" required title="5 Zahlen" onchange="" placeholder="PLZ"/>
+                    <input type="text" name="ort" id="userOrt" required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="wohnortPruefen1()" placeholder="Ort"/>
 		        </div>
 	
 	            <div class="fline">
-	                <label class="in1" for="strasse">Strasse / Hausnummer</label>
-	                <input class="in2" type="text" name="strasse" id="userStrasse" 
-	                 required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="strassePruefen1()"/>
-	                <input type="text" name="hausnummer" id="userHausnummer" 
-	                 required title="4 stellige Hausnummer mit maximal einem Zusatzbuchstaben a-z ohne Umlaute " onchange="hausnummerPruefen1()"/>
+	                <input type="text" name="telefon" id="userTelefon" required onchange="telefonPruefen1()" placeholder="Telefon"/>
+                    <input type="text" name="email" id="userEmail" required onchange="mailPruefen1()" placeholder="Email"/>
 	            </div>
 	
-	            <div class="fline">
-	                <label class="in1" for="plz">PLZ / Wohnort</label>
-	                <input class="in2" type="text" name="plz" id="userPlz" pattern="[0-9]{5}" required title="5 Zahlen" onchange=""/>
-	                <input type="text" name="ort" id="userOrt" 
-	                 required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" onchange="wohnortPruefen1()"/>
-	            </div>
-	
-	            <div class="fline">
-	                <label class="in1" for="email">Email</label>
-	                <input class="in2" type="text" name="email" id="userEmail" required onchange="mailPruefen1()"/>
-	            </div>
-				
+	            
 				<p>
-	                <input id="datenspeichern" name="datenspeichern" type="button" value="&Auml;nderungen speichern"/>
-	            </p>
-				
+	                <input  class="userbutton" id="userdatenspeichern" name="userdatenspeichern" type="button" value="&Auml;nderungen speichern"/>
+                </p>
 			</form>
 		</div>
+        <div class = "infocontent">
+            <p id="infoContainerText"> Der Butler Bringts!</p>
+            <img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
+        </div>
     </body>
 </html>

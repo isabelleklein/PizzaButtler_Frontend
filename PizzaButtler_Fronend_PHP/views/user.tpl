@@ -13,7 +13,7 @@
 			<form id='datenanzeigen' name="datenanzeigen" action="#">
 				<h3 class="contenthead"> Deine Daten </h3>
 				<div id="data">
-                    <table>
+                    <table class="userdaten">
                         <tr>
                             <td class="in1"><label>Anrede:</label></td>
                             <td>
@@ -46,7 +46,10 @@
                         </tr>
                     </table>
 					<p>
-						<input id="userdatenaendern" name="userdatenaendern" type="button" value="Daten &auml;ndern" />
+						<input class="userbutton" id="userdatenaendern" name="userdatenaendern" type="button" value="Daten &auml;ndern" />
+					</p>
+                    <p>
+						<input class="userbutton" id="userpwaendern" name="userpwaendern" type="button" value="Passwort &auml;ndern" />
 					</p>
 				</div>
 			</form>

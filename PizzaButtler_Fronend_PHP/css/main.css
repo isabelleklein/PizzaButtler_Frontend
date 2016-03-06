@@ -105,6 +105,22 @@ input::-moz-placeholder {
     width: 140px;
 }
 
+.userbutton{
+    border-radius: 7px;
+    border-color: #842002;
+    border-style: solid;
+    border-width: 4px;
+    width: auto;
+    margin: 2px;
+    color: #ffffff;
+    background-color: #842002; 
+    font-size: small;
+}
+
+.userdaten{
+    font-size: small;
+}
+
 .maincontent {
     background-color: #ffffff;
     border-radius: 12px;
@@ -266,4 +282,12 @@ table {
 }
 .Text4 {
     color: #842002;
+}
+
+#userstrasse{
+	width:230px;
+}
+
+#userhausnummer{
+	width:50px;
 }
