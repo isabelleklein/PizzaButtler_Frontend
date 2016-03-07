@@ -6,31 +6,31 @@
 			{
 				"produktID": 1,	
 				"bezeichnung": "Pizza Salami",
-				"zutaten": ["Salami", "K‰se", "Tomatensoﬂe"],
+				"beschreibung": "Salami, Kaese, Tomatensosse",
 				"preis": [5, 6, 7]
 			},
 			{
 				"produktID": 2,
 				"bezeichnung": "Pizza Tonno",
-				"zutaten": ["Thunfisch", "K‰se", "Tomatensoﬂe"],
+				"beschreibung": "Thunfisch, Kaese, Tomatensosse",
 				"preis": [5, 6, 7]
 			},
 			{
 				"produktID": 3,
 				"bezeichnung": "Pizza Asiate",
-				"zutaten": ["Katzenfleisch", "K‰se", "Tomatensoﬂe"],
+				"beschreibung":"Katzenfleisch, Kaese, Tomatensosse",
 				"preis": [5, 6, 7]
 			}
 		]
 	},
 	{
 		"bezeichnung":"Pasta",
-		"groessen":["Mittel", "Groﬂ"],
+		"groessen":["Mittel", "Gross"],
 		"produkte": [
 			{
 				"produktID": 1002,
 				"bezeichnung": "karottensalat",
-				"zutaten": ["Feldsalat", "Karotten", "Currywurstpulver"],
+				"beschreibung":"Feldsalat, Karotten, Currywurstpulver",
 				"preis": [6, 9]
 			}
 		]
@@ -41,8 +41,8 @@
 		"produkte": [
 			{
 				"produktID": 3001,
-				"bezeichnung": "Groﬂer Karottensalat",
-				"zutaten": ["Feldsalat", "Karotten", "Currywurstpulver"],
+				"bezeichnung": "Grosser Karottensalat",
+				"beschreibung":"Feldsalat, Karotten, Currywurstpulver",
 				"preis": [3.99]
 			}
 		]

@@ -27,14 +27,20 @@ var buildpizzeriaSeite = function(data){
 		$("#infoContainer").html("<h1>Es konnten leider keine Daten zur Pizzeria geladen werden</h1>");
 	}
 	else {
-		$("#infoContainer").html("<img height='120px' width='350px' src='data:image/jpg;base64," + data.bild + "'><br>\
-		<input type='hidden' value='" + data.restaurantID + "'/>\
-		Name: " + data.name + "<br>\
-		Öffnungszeiten: " + data.oeffnungszeiten + "<br>\
-		Mindestbestellwert: " + data.mindestbestellwert + "<br>\
-		Adresse: " + data.strasse + " " + data.hausnummer + "<br>\
-		PLZ: " + data.plz + " " + data.ort + "<br>\
-		Lieferkosten: " + data.lieferkosten);
+		$("#infoContainer").html("<img id='pizzarienlogo' src='data:image/jpg;base64," + data.bild + "'><br>\
+		<input type='hidden' value='" + data.restaurantID + "'/>" + "<p id='containertitel'>" + data.name + "</p>" + "\
+		<img id='haus' src='./images/Haus_-_Vector-Icon.png'/>"  + data.strasse + " " + data.hausnummer + "<br>" + data.plz + " " + data.ort + "<br>\
+		<img id='uhr' src='./images/Uhr_-_Vector-Icon.png'/>" + data.oeffnungszeiten[0].tag + " " + data.oeffnungszeiten[0].von + " " + data.oeffnungszeiten[0].bis + "<br>"  + "<br>\
+		<img id='schein' src='./images/bezahlart2.png'/> " + "\ Mindestbestellwert: " + data.mindestbestellwert + "<br>\
+		Lieferkosten: " + " " + data.lieferkosten);
+	}
+}
+var buildpizzaeriaSeite = function(data){
+	if (data == 0) {
+		$("#warenkorbContainer").html("<h1>Es konnten leider keine Daten zur Pizzeria geladen werden</h1>");
+	}
+	else {
+		$("#warenkorbContainer").html("Warenkorb");
 	}
 }
 
@@ -55,15 +61,28 @@ var buildSpeisekarte = function(data){
 		container.append(ul);		
 		
 		for(var i = 0; i<speisekarte.length; i++){
-			var div = $("<div id='tabs-" + i + "'></div>");
-			var list = $("<ul></ul>");
-			for(var j = 0; j<speisekarte[i].produkte.length; j++){
-				var li = $("<li></li>");
-				var content = speisekarte[i].produkte[j].bezeichnung;
-				li.append(content);
-				list.append(li);
-				div.append(list);
+		var div = $("<div id='tabs-" + i + "'></div>");
+			
+		var list;
+		if(speisekarte[i].groessen.length == 3)
+				list = $("<table id='pizzeriatabelle'> <tr> <th class='pspalte'> </th> <th class='pspalte'> <img id='groesses' src='./images/s.png'/> </th> <th class='pspalte'> <img id='groessem' src='./images/m.png'/> </th> <th class='pspalte'> <img id='groessel' src='./images/l.png'/> </th> </tr>");
+		else if(speisekarte[i].groessen.length == 2)
+			list = $("<table id='pizzeriatabelle'> <tr> <th class='pspalte'></th> <th class='pspalte'> <img id='groessem' src='./images/m.png'/> </th> <th class='pspalte'> <img id='groessel' src='./images/l.png'/> </th> <th class='pspalte'> </th> </tr>");
+		else if(speisekarte[i].groessen.length == 1)
+			list = $("<table id='pizzeriatabelle'> <tr> <th class='pspalte'></th> <th class='pspalte'> <img id='groessem' src='./images/m.png'/> </th> <th class='pspalte'> </th> <th class='pspalte'> </th>  </tr>");
+		for(var j = 0; j<speisekarte[i].produkte.length; j++){
+			var li;
+			if(speisekarte[i].groessen.length == 3)
+				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + " </div> <div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> <td> <button class='preisbutton'>  "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> <td> <button class='preisbutton'> "+ speisekarte[i].produkte[j].preis[1] +" € </button> </td> <td> <button class='preisbutton'> "+ speisekarte[i].produkte[j].preis[2] +" € </button> </td> </tr>");
+			else if(speisekarte[i].groessen.length == 2)
+				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + " </div> <div class='spaltenbezeichnung'>" + speisekarte[i].produkte[j].beschreibung + " </div> </td> <td> <button class='preisbutton'> "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> <td> <button class='preisbutton'> "+ speisekarte[i].produkte[j].preis[1] +" € </button> </td> </tr>");
+			else if(speisekarte[i].groessen.length == 1)
+				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + "</div> <div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> <td> <button class='preisbutton'> "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> </tr>");
+
+			list.append(li);
+			div.append(list);
 			}
+			div.append("</table>");
 			container.append(div);
 		}
 		

@@ -10,10 +10,13 @@
     
     <body>
     	<div id="pizzerienContainer">
-		
+    	
     	</div>
     	<div id="infoContainer">
     		
+    	</div>
+    	<div id="warenkorbContainer">
+    	
     	</div>
     </body>
 </html>
