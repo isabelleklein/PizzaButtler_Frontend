@@ -327,13 +327,13 @@ table {
     border-radius: 12px;
     border-width: 0;
     color: #842002;
-    top: 75%;
+    top: 60%;
     height: 22%;
     width: 25%;
-    right: 5%;
+    left: 21.5%;
     float: right;
     padding: 1%;
-    position: fixed;
+    position: relative;
 }
 #groesses{
 	width: 15%;
@@ -372,4 +372,8 @@ table {
 }
 .spaltepizza{
 	margin: 0;
+}
+#bildwarenkorb{
+	width: 20%;
+	float: left;
 }
