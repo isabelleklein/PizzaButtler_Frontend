@@ -45,7 +45,7 @@ var callback = function(data){
 };
 
 var setClickListener = function(){
-	/** Aktionsinformationen f�r den Absenden-Button **/
+	/** Aktionsinformationen fuer den Absenden-Button **/
 	
 	$('#userdatenspeichern').click(function(e) {
 		if(true){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen

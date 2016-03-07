@@ -8,6 +8,12 @@ $(document).ready(function(){
 			setClickListener();
 		});
 	});
+    $('#pwaendern').click(function(e) {
+		$('.maincontent').load("./views/changepizzeriapassword.tpl", function(){
+			loadData();
+			setClickListener();
+		});
+	});
 });
 
 
