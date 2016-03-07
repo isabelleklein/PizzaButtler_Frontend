@@ -8,6 +8,12 @@ $(document).ready(function(){
 			setClickListener();
 		});
 	});
+    $('#userpwaendern').click(function(e) {
+		$('.maincontent').load("./views/changeuserpassword.tpl", function(){
+			loadData();
+			setClickListener();
+		});
+	});
 });
 
 
@@ -41,7 +47,7 @@ var callback = function(data){
 var setClickListener = function(){
 	/** Aktionsinformationen f�r den Absenden-Button **/
 	
-	$('#datenspeichern').click(function(e) {
+	$('#userdatenspeichern').click(function(e) {
 		if(true){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen
 			e.preventDefault(); /** cancel form submit **/
 
@@ -56,5 +62,21 @@ var setClickListener = function(){
 				rest.fakeSend("./mock/putUser.json");
 			}
 		}
-	});	
+	});
+    $('#userpwspeichern').click(function(e) {
+		if(true){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen
+			e.preventDefault(); /** cancel form submit **/
+
+			var daten = $('#userpwaendern').serializeObject();
+			var userID = Cookies.get("userID");
+
+			if(typeof userID != 'undefined') {
+				rest = new RestInterface()
+				rest.setParameters("PUT", "user/" + userID, daten, function(data){
+					window.location.href = "./user.php"; 
+				});
+				rest.fakeSend("./mock/putUser.json");
+			}
+		}
+	});
 }
