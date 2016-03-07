@@ -32,7 +32,13 @@
                         <tr>
                             <td class="in1"><label>&Ouml;ffnungszeiten:</label></td>
                             <td>
-                                <label type="text" class="text" name="oeffnungszeiten" id="oeffnungszeiten_data_anz"></label><br /><br />
+                                <label type="text" class="text" name="oeffnungszeiten" id="oeffnungszeiten_data_anz_so"></label><br />
+                                <label type="text" class="text" name="oeffnungszeiten" id="oeffnungszeiten_data_anz_mo"></label><br />
+                                <label type="text" class="text" name="oeffnungszeiten" id="oeffnungszeiten_data_anz_di"></label><br />
+                                <label type="text" class="text" name="oeffnungszeiten" id="oeffnungszeiten_data_anz_mi"></label><br />
+                                <label type="text" class="text" name="oeffnungszeiten" id="oeffnungszeiten_data_anz_do"></label><br />
+                                <label type="text" class="text" name="oeffnungszeiten" id="oeffnungszeiten_data_anz_fr"></label><br />
+                                <label type="text" class="text" name="oeffnungszeiten" id="oeffnungszeiten_data_anz_sa"></label><br />
                             </td> 
                         </tr>
                         <tr>
@@ -43,15 +49,11 @@
                         </tr>
                         <tr>
                             <td class="in1"><label>Lieferkosten:</label></td>
-                            <td><label type="text" class="text" name="lieferkosten" id="lieferkosten_data_anz"></label><br /><br /></td>
+                            <td><label type="text" class="text" name="lieferkosten" id="lieferkosten_data_anz"></label><br /></td>
                         </tr>
                         <tr>
                             <td class="in1"><label>Telefon:</label></td>
                             <td><label name="telefon" id="pizzeriaTelefon"></label></td>  
-                        </tr>
-                        <tr>
-                            <td class="in1"><label>Email:</label></td>
-                            <td><label type="text" class="text" name="email" id = "email_data_anz"></label></td>  
                         </tr>
                     </table>
 					<p>
