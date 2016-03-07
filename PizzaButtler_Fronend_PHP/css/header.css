@@ -25,7 +25,7 @@ text-decoration:none;
 background:#fecc3f;
 height: 2.2em;
 width: 100%;
-margin-bottom: 100px;
+margin-bottom: 45px;
 }
 
 .head_left {
@@ -53,11 +53,12 @@ background:#ce3d11;
 color: #ffffff;
 border: #ffffff solid;
 border-radius: 0.6em;    
-width: 7.5em;
+width: auto;
 margin-top: 0.4em;
 text-align: left;
 font-family: "Open Sans";
 font-weight: bold;
+font-size: small;
 float: right;
 margin: 0.05in;
 }

@@ -28,9 +28,9 @@ h1 {
     font-weight: 900;
     height: 0.7in;
     margin-left: 25%;
-    margin-top: 5%;
+    margin-top: 13%;
     min-width: 1.8in;
-    width: 35%;
+    width: 40%;
     text-align: center;
 }
 input.button_startseite::-webkit-input-placeholder {
@@ -48,14 +48,14 @@ input::-moz-placeholder {
     height: auto;
     max-width: 3.5in;
     position: relative;
-    right: 20px;
-    width: 25%;
+    right: 15%;
+    width: 19%;
 }
 #textbaustein {
     color: white;
-    margin-left: 25%;
-    margin-top: -18%;
-    width: 45%;
+    margin-left: 35%;
+    margin-top: -15%;
+    width: 50%;
     margin-bottom: 5%;
     font-size: 85%;
 }
@@ -65,8 +65,10 @@ input::-moz-placeholder {
     width: 20%;
 }
 #bild1 {
-    margin-left: 4%;
+    margin-left: 17%;
     min-width: 0.5in;
+    width: 16%;
+    margin-top: 7%;
 }
 #bild2 {
     margin-left: 5%;

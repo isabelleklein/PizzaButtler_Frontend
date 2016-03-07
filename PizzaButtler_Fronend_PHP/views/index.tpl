@@ -18,12 +18,11 @@
                <img class="paypal" id="bild1" src="./images/pizzaStartseite.png" alt="Pizza Symbol Startseite">
             </div>
             </div>
-           	<div id="textbaustein"> Pizza Butler ist deine persönliche Plattform für Lieferdienste. Wir bringen dir dein favorisiertes Gericht direkt mit einem unserer Butler direkt nach Hause. Frisch für dich zubereitet – direkt zu dir geliefert. <br>
-Mit unseren zahlreichen Partnerlieferdiensten, bei denen einer auch in deiner Nähe ist, wird dir dein Lieblingsgericht direkt und ohne Umweg an dich zugestellt. Auf deiner eigenen Favoritenliste kannst du dir deine Lieblingsgerichte zusammenstellen und auf Wunsch mit unserer 1-Klick Bestellmöglichkeit sofort bestellen. Über unseren Zahlungsdienstleister PayPal kannst du deine Bestellung mit deinen bestehenden PayPal Zugangsdaten abwickeln, ohne diese extra neu bei uns verifizieren zu müssen. Bestell noch heute – und erhalte als Neukunde <b>15% Rabatt</b> auf deine gesamte Bestellung.
+           	<div id="textbaustein"> 
+               <h3> Warum Pizza Butler ?</h3>
+                
+                Pizza Butler ist Deine persönliche Plattform für Lieferdienste. Wir bringen Dir Dein favorisiertes Gericht direkt mit einem unserer Butler nach Hause. Frisch für Dich zubereitet – direkt zu Dir geliefert. <br>
+Auf Deiner eigenen Favoritenliste kannst Du Dir Deine Lieblingsgerichte zusammenstellen und sofort bestellen. Über unseren Zahlungsdienstleister PayPal kannst Du Deine Bestellung mit Deinen PayPal Zugangsdaten direkt bezahlen.
  <br> <br>
 Wir wünschen dir einen guten Appetit, euer Pizza Butler Team.
-
-               </br>
-               <img class="paypal" src="./images/stars.png" alt="5 Sterne fuer Paypal">
-               <img class="paypal" id="bild2" src="./images/paypal.png" alt="Paypal Symbol">
         </div>

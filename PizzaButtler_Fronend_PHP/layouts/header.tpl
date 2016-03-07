@@ -37,7 +37,7 @@
                 <div>
                     <span class="head_left">
                    		<a href="./index.php">
-                        	<img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="180" />
+                        	<img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="auto" width="60%" />
                     	</a>
                     </span>
                     <section class="head_right">
