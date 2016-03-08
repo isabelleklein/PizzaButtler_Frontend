@@ -294,6 +294,18 @@ table {
 	width:50px;
 }
 
+.bezahlart{
+	width: auto;
+	height: 2.5em;
+}
+#bezahlart2{
+
+}
+
 #oeffnungszeiten{
     width:288px;
+}
+.sterne{
+	width:10em;
+	height:auto;
 }

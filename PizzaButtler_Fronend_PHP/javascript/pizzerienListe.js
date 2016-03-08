@@ -55,13 +55,13 @@ var buildPizzerienListe = function(data){
 						//Spalte mit Bewertung
             var td3 = $("<td></td>");
             td3.addClass("bewertung");
-            var bewertung = "<img width='auto' height='42%' src='./images/" + bewertung + "Sterne.png'>";
+            var bewertung = "<img class='sterne' src='./images/" + bewertung + "Sterne.png'>";
             
             //Spalte mit Bezahlung
             var td4 = $("<td></td>");
             td4.addClass("bezahlung");
-            var bezahlung = "<img width='auto' height='20%' class='bezahlart' id='bezahlart1' src='./images/bezahlart1.png'>";
-            var bezahlung2 = "<img width='auto' height='8%' class='bezahlart' id='bezahlart2' src='./images/bezahlart2.png'>";
+            var bezahlung = "<img class='bezahlart' id='bezahlart1' src='./images/bezahlart1.png'>";
+            var bezahlung2 = "<img class='bezahlart' id='bezahlart2' src='./images/bezahlart2.png'>";
             
             
 			td1.append(img);

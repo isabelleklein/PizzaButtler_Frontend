@@ -25,7 +25,7 @@ text-decoration:none;
 background:#fecc3f;
 height: 2.2em;
 width: 100%;
-margin-bottom: 45px;
+margin-bottom: 4em;
 }
 
 .head_left {
@@ -101,7 +101,7 @@ input.umkreissuche_header::-moz-placeholder {
 .body{
 background:#ce3d11;
 margin: 0;
-min-width: 8in;
+min-width: 11in;
 }
 
 #meine_Daten{
