@@ -211,6 +211,7 @@ input::-moz-placeholder {
     right: 5%;
     width: 25%;
     float: right;
+    padding: 1%;
 }
 .subContainer {
     height: 20%;
@@ -305,7 +306,88 @@ table {
 #oeffnungszeiten{
     width:288px;
 }
+<<<<<<< HEAD
 .sterne{
 	width:10em;
 	height:auto;
+=======
+#pizzarienlogo{
+	width: 100%;
+    height: auto;	
+}
+#containertitel{
+	font-weight: 900;
+}
+#haus{
+	height: 5%;
+	width: auto;
+	float: left
+}
+#uhr{
+	height: 5%;
+	width: auto;
+	float: left;
+	clear: left;
+}
+#schein{
+	height: 5%;
+	width: auto;
+	float: left;
+	clear: left;
+}
+#warenkorbContainer{
+    background-color: #ffffff;
+    border-radius: 12px;
+    border-width: 0;
+    color: #842002;
+    top: 60%;
+    height: 22%;
+    width: 25%;
+    left: 21.5%;
+    float: right;
+    padding: 1%;
+    position: relative;
+}
+#groesses{
+	width: 15%;
+}
+#groessem{
+	width: 20%;
+}
+#groessel{
+	width: 25%;
+}
+#pizzeriatabelle{
+	table-layout: fixed;
+	text-align: center;
+}
+.pspalte{
+	width: 20%;
+}
+.preisbutton{
+	background-color: #842002;
+	color: #ffffff;
+	border-radius: 6px;
+	width: 50%;
+	border-color: #842002;
+	
+}
+.preisbutton:hover{
+	border-color: #842002;
+	color: #842002;
+	background-color:#ffffff;
+}
+.spaltenname{	
+	font-weigth: bold;
+}
+.spaltenbezeichnung{
+	font-size:50%;
+}
+.spaltepizza{
+	margin: 0;
+}
+#bildwarenkorb{
+	width: 20%;
+	float: left;
+>>>>>>> 5ac5655534e07604497a28a4c0f7dea5193cbdb3
 }

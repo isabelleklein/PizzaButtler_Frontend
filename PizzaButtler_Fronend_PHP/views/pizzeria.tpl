@@ -10,10 +10,13 @@
     
     <body>
     	<div id="pizzerienContainer">
-		
+    	
     	</div>
     	<div id="infoContainer">
     		
+    	</div>
+    	<div id="warenkorbContainer">
+    	 <img id='bildwarenkorb' src='./images/cart.png'> <p> Warenkorb </p>
     	</div>
     </body>
 </html>
