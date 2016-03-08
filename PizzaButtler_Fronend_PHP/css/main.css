@@ -1,4 +1,3 @@
-
 .body{
 	font: 100% "Open Sans",sans-serif;
 }
@@ -128,7 +127,7 @@ input::-moz-placeholder {
     border-radius: 12px;
     border-width: 0;
     color: #842002;
-    left: 17%;
+    left: 15%;
     height: auto;
     position: relative;
     top: 0%;
@@ -181,7 +180,7 @@ input::-moz-placeholder {
     border-radius: 12px;
     border-width: 0;
     color: #842002;
-    left: 17%;
+    left: 15%;
     height: auto;
     position: relative;
     top: 0%;
@@ -376,4 +375,13 @@ table {
 #bildwarenkorb{
 	width: 20%;
 	float: left;
+}
+
+.sterne{
+	width: 10em;
+}
+
+.bezahlart{
+	width: 3em;
+	height: auto;
 }

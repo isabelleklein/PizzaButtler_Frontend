@@ -99,26 +99,29 @@ var buildSpeisekarte = function(data){
 		$("#pizzerienContainer").tabs();
 		
 		$(".preisbutton").click(function(){
-			var produkt;
-			
-			var preis = this.innerHTML;
-			var groesse = this.getAttribute("groesse");
-			var produktID = this.getAttribute("produktID");
-			for(var i = 0; i<speisekarte.length; i++){
-				for(var j = 0; j<speisekarte[i].produkte.length; j++){
-					if(speisekarte[i].produkte[j].produktID == produktID){
-						produkt = speisekarte[i].produkte[j];
-						produkt.preis = preis;
-						produkt.groesse = groesse;
-						break;
-					}
-				}
-			}
-			
-			warenkorb.push(produkt);
-			
+			addToWarenkorb(this);			
 		});
 	}
+}
+
+function addToWarenkorb(data){
+	var produkt;
+	
+	var preis = data.innerHTML;
+	var groesse = data.getAttribute("groesse");
+	var produktID = data.getAttribute("produktID");
+	for(var i = 0; i<speisekarte.length; i++){
+		for(var j = 0; j<speisekarte[i].produkte.length; j++){
+			if(speisekarte[i].produkte[j].produktID == produktID){
+				produkt = speisekarte[i].produkte[j];
+				produkt.preis = preis;
+				produkt.groesse = groesse;
+				break;
+			}
+		}
+	}
+	
+	warenkorb.push(produkt);
 }
 
 function parse(val) {
