@@ -122,6 +122,23 @@ function addToWarenkorb(data){
 	}
 	
 	warenkorb.push(produkt);
+	showWarenkorb();
+}
+
+function showWarenkorb(){
+
+	var ul = $("<ul></ul>");
+	
+	for(var i = 0; i < warenkorb.length; i++){
+		var bezeichnung = warenkorb[i].bezeichnung;
+		var groesse = warenkorb[i].groesse;
+		var preis = warenkorb[i].preis;
+		
+		var li = $("<li>" + bezeichnung + " Größe: " + groesse + " Preis: " + preis + "</li>");
+		ul.append(li);
+	}
+		
+	$("#showwarenkorb").html(ul);
 }
 
 function parse(val) {
