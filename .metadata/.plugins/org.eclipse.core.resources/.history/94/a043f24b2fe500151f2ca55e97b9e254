@@ -1,3 +1,4 @@
+
 .body{
 	font: 100% "Open Sans",sans-serif;
 }
@@ -294,9 +295,22 @@ table {
 	width:50px;
 }
 
+.bezahlart{
+	width: auto;
+	height: 2.5em;
+}
+#bezahlart2{
+
+}
+
 #oeffnungszeiten{
     width:288px;
 }
+<<<<<<< HEAD
+.sterne{
+	width:10em;
+	height:auto;
+=======
 #pizzarienlogo{
 	width: 100%;
     height: auto;	
@@ -375,4 +389,5 @@ table {
 #bildwarenkorb{
 	width: 20%;
 	float: left;
+>>>>>>> 5ac5655534e07604497a28a4c0f7dea5193cbdb3
 }
