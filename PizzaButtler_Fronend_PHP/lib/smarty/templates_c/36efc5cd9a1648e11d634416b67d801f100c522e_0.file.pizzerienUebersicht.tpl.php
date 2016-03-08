@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-01 11:16:55
+<?php /* Smarty version 3.1.27, created on 2016-03-05 00:43:18
          compiled from "views\pizzerienUebersicht.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:438956d56c17b69e52_33378886%%*/
+/*%%SmartyHeaderCode:17256da1d96b60fb9_97029213%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '36efc5cd9a1648e11d634416b67d801f100c522e' => 
     array (
       0 => 'views\\pizzerienUebersicht.tpl',
-      1 => 1456750666,
+      1 => 1457134897,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '438956d56c17b69e52_33378886',
+  'nocache_hash' => '17256da1d96b60fb9_97029213',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56d56c17bd3224_48930182',
+  'unifunc' => 'content_56da1d96ba4dc3_72455140',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56d56c17bd3224_48930182')) {
-function content_56d56c17bd3224_48930182 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56da1d96ba4dc3_72455140')) {
+function content_56da1d96ba4dc3_72455140 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '438956d56c17b69e52_33378886';
+$_smarty_tpl->properties['nocache_hash'] = '17256da1d96b60fb9_97029213';
 ?>
 <html>
     <head>
@@ -37,7 +37,7 @@ $_smarty_tpl->properties['nocache_hash'] = '438956d56c17b69e52_33378886';
     </head>
     
     <body>
-    	<div id="pizzerienContainer">
+    	<div class="maincontent" id="pizzerienContainer">
     	 <table>
 		  <tr class="line">
 		    <td class="iconspalte"><img class="pizzeriaIcon" id="samplePizzeria1" src="./images/samplePizzeria1.jpg" alt="Pizzeria1"></td>
@@ -74,7 +74,7 @@ $_smarty_tpl->properties['nocache_hash'] = '438956d56c17b69e52_33378886';
 		  </tr>
 		</table>
     	</div>
-    	<div id = "infoContainer">
+    	<div class = "infocontent" id = "infoContainer">
     		<p id="infoContainerText"> Der Butler Bringts!</p>
     		<img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
     	</div>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-02 12:14:44
+<?php /* Smarty version 3.1.27, created on 2016-03-08 12:56:26
          compiled from "layouts\header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2610856d6cb241d6910_03949797%%*/
+/*%%SmartyHeaderCode:779456debdea0a1c05_23868613%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '81642ba3eee9fbba8f86c992529eae4324888167' => 
     array (
       0 => 'layouts\\header.tpl',
-      1 => 1456917274,
+      1 => 1457438115,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2610856d6cb241d6910_03949797',
+  'nocache_hash' => '779456debdea0a1c05_23868613',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56d6cb242476a7_44007709',
+  'unifunc' => 'content_56debdea122638_16147687',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56d6cb242476a7_44007709')) {
-function content_56d6cb242476a7_44007709 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56debdea122638_16147687')) {
+function content_56debdea122638_16147687 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2610856d6cb241d6910_03949797';
+$_smarty_tpl->properties['nocache_hash'] = '779456debdea0a1c05_23868613';
 ?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
@@ -98,7 +98,7 @@ $_smarty_tpl->properties['nocache_hash'] = '2610856d6cb241d6910_03949797';
                 <div>
                     <span class="head_left">
                    		<a href="./index.php">
-                        	<img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="180" />
+                        	<img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="auto" width="60%" />
                     	</a>
                     </span>
                     <section class="head_right">

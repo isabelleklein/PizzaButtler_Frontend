@@ -1,6 +1,7 @@
 ﻿var rest;
 var speisekarte;
 var test;
+var warenkorb = new Array();
 $(document).ready(function(){
 	// GET-Parameter
 	var pizzeriaId = parse("id");
@@ -73,21 +74,50 @@ var buildSpeisekarte = function(data){
 		for(var j = 0; j<speisekarte[i].produkte.length; j++){
 			var li;
 			if(speisekarte[i].groessen.length == 3)
-				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + " </div> <div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> <td> <button class='preisbutton'>  "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> <td> <button class='preisbutton'> "+ speisekarte[i].produkte[j].preis[1] +" € </button> </td> <td> <button class='preisbutton'> "+ speisekarte[i].produkte[j].preis[2] +" € </button> </td> </tr>");
+				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + "</div> \
+						<div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
+						<td> <button groesse='klein' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'>  "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> \
+						<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[1] +" € </button> </td> \
+						<td> <button groesse='groß' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[2] +" € </button> </td> </tr>");
 			else if(speisekarte[i].groessen.length == 2)
-				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + " </div> <div class='spaltenbezeichnung'>" + speisekarte[i].produkte[j].beschreibung + " </div> </td> <td> <button class='preisbutton'> "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> <td> <button class='preisbutton'> "+ speisekarte[i].produkte[j].preis[1] +" € </button> </td> </tr>");
+				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + " </div> \
+						<div class='spaltenbezeichnung'>" + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
+						<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> \
+						<td> <button groesse='groß' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[1] +" € </button> </td> </tr>");
 			else if(speisekarte[i].groessen.length == 1)
-				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + "</div> <div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> <td> <button class='preisbutton'> "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> </tr>");
+				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + "</div> \
+						<div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
+						<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> </tr>");
 
 			list.append(li);
 			div.append(list);
 			}
 			div.append("</table>");
 			container.append(div);
-		}
-		
+		}		
 		
 		$("#pizzerienContainer").tabs();
+		
+		$(".preisbutton").click(function(){
+			var produkt;
+			
+			var preis = this.innerHTML;
+			var groesse = this.getAttribute("groesse");
+			var produktID = this.getAttribute("produktID");
+			for(var i = 0; i<speisekarte.length; i++){
+				for(var j = 0; j<speisekarte[i].produkte.length; j++){
+					if(speisekarte[i].produkte[j].produktID == produktID){
+						produkt = speisekarte[i].produkte[j];
+						produkt.preis = preis;
+						produkt.groesse = groesse;
+						break;
+					}
+				}
+			}
+			
+			warenkorb.push(produkt);
+			
+		});
 	}
 }
 

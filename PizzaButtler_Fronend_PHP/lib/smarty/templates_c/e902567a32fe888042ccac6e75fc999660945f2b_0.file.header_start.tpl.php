@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-02 14:01:38
+<?php /* Smarty version 3.1.27, created on 2016-03-08 12:56:21
          compiled from "layouts\header_start.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1740956d6e432d86337_72903731%%*/
+/*%%SmartyHeaderCode:2722556debde56a9f28_60176638%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e902567a32fe888042ccac6e75fc999660945f2b' => 
     array (
       0 => 'layouts\\header_start.tpl',
-      1 => 1456917274,
+      1 => 1457438115,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1740956d6e432d86337_72903731',
+  'nocache_hash' => '2722556debde56a9f28_60176638',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56d6e432dbaa60_27166089',
+  'unifunc' => 'content_56debde5781ef0_37826380',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56d6e432dbaa60_27166089')) {
-function content_56d6e432dbaa60_27166089 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56debde5781ef0_37826380')) {
+function content_56debde5781ef0_37826380 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1740956d6e432d86337_72903731';
+$_smarty_tpl->properties['nocache_hash'] = '2722556debde56a9f28_60176638';
 ?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
@@ -98,7 +98,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1740956d6e432d86337_72903731';
                 <div>
                     <span class="head_left">
                    		<a href="./index.php">
-                        	<img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="180" />
+                        	<img src="./images/pizzabutler_logo_weiß.png" alt="PizzaButler Logo" height="auto" width="60%"/>
                     	</a>
                     </span>
                     <section class="head_right">

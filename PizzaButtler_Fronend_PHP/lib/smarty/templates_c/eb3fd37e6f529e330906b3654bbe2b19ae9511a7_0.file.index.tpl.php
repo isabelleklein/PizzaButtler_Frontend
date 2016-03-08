@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-02 14:01:38
+<?php /* Smarty version 3.1.27, created on 2016-03-08 12:56:21
          compiled from "views\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2125956d6e432cea747_81575154%%*/
+/*%%SmartyHeaderCode:2012856debde54acbc8_89429439%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eb3fd37e6f529e330906b3654bbe2b19ae9511a7' => 
     array (
       0 => 'views\\index.tpl',
-      1 => 1456750666,
+      1 => 1457438115,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2125956d6e432cea747_81575154',
+  'nocache_hash' => '2012856debde54acbc8_89429439',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56d6e432d315f8_00671329',
+  'unifunc' => 'content_56debde56701f9_79073629',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56d6e432d315f8_00671329')) {
-function content_56d6e432d315f8_00671329 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56debde56701f9_79073629')) {
+function content_56debde56701f9_79073629 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2125956d6e432cea747_81575154';
+$_smarty_tpl->properties['nocache_hash'] = '2012856debde54acbc8_89429439';
 ?>
 
 
@@ -41,17 +41,16 @@ $_smarty_tpl->properties['nocache_hash'] = '2125956d6e432cea747_81575154';
            <div class="zweiterBereich">
            	<div>
                
-               <img class="paypal" id="bild1" src="./images/cart.png" alt="Einkaufswagen Symbol">
+               <img class="paypal" id="bild1" src="./images/pizzaStartseite.png" alt="Pizza Symbol Startseite">
             </div>
             </div>
-           	<div id="textbaustein"> Pizza Butler ist deine persönliche Plattform für Lieferdienste. Wir bringen dir dein favorisiertes Gericht direkt mit einem unserer Butler direkt nach Hause. Frisch für dich zubereitet – direkt zu dir geliefert. <br>
-Mit unseren zahlreichen Partnerlieferdiensten, bei denen einer auch in deiner Nähe ist, wird dir dein Lieblingsgericht direkt und ohne Umweg an dich zugestellt. Auf deiner eigenen Favoritenliste kannst du dir deine Lieblingsgerichte zusammenstellen und auf Wunsch mit unserer 1-Klick Bestellmöglichkeit sofort bestellen. Über unseren Zahlungsdienstleister PayPal kannst du deine Bestellung mit deinen bestehenden PayPal Zugangsdaten abwickeln, ohne diese extra neu bei uns verifizieren zu müssen. Bestell noch heute – und erhalte als Neukunde <b>15% Rabatt</b> auf deine gesamte Bestellung.
+           	<div id="textbaustein"> 
+               <h3> Warum Pizza Butler ?</h3>
+                
+                Pizza Butler ist Deine persönliche Plattform für Lieferdienste. Wir bringen Dir Dein favorisiertes Gericht direkt mit einem unserer Butler nach Hause. Frisch für Dich zubereitet – direkt zu Dir geliefert. <br>
+Auf Deiner eigenen Favoritenliste kannst Du Dir Deine Lieblingsgerichte zusammenstellen und sofort bestellen. Über unseren Zahlungsdienstleister PayPal kannst Du Deine Bestellung mit Deinen PayPal Zugangsdaten direkt bezahlen.
  <br> <br>
 Wir wünschen dir einen guten Appetit, euer Pizza Butler Team.
-
-               </br>
-               <img class="paypal" src="./images/stars.png" alt="5 Sterne fuer Paypal">
-               <img class="paypal" id="bild2" src="./images/paypal.png" alt="Paypal Symbol">
         </div><?php }
 }
 ?>
