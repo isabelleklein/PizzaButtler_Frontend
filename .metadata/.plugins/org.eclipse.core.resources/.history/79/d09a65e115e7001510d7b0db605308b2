@@ -136,12 +136,11 @@ function addToWarenkorb(data){
 	
 	warenkorb.push(produkt);
 	showWarenkorb();
-	summieren();
 }
 
 function showWarenkorb(){
 
-	var ul = $("<ul style='padding-left:15px'></ul>");
+	var ul = $("<ul></ul>");
 	
 	for(var i = 0; i < warenkorb.length; i++){
 		var bezeichnung = warenkorb[i].bezeichnung;
@@ -153,17 +152,6 @@ function showWarenkorb(){
 	}
 		
 	$("#showwarenkorb").html(ul);
-}
-
-function summieren()
-{
-	var summe = 0;
-	var p ="";
-	for(var i = 0; i < warenkorb.length; i++){
-		summe = summe + parseFloat(warenkorb[i].preis.substr(0, warenkorb[i].preis.length-3));
-	}
-	p = $("<p style='margin:0px'>" + "Gesamtpreis: " + summe + "</p>");
-	$("#summeWarenkorb").html(p);
 }
 
 function parse(val) {

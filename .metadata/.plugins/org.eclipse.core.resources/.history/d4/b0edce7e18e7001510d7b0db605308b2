@@ -393,10 +393,4 @@ table {
 
 #showWarenkorb{
 	overflow: auto;
-	height: 60%;
-}
-#summeWarenkorb{
-	border:0px;
-	border-top: 5px;
-	border-style: solid;
 }
