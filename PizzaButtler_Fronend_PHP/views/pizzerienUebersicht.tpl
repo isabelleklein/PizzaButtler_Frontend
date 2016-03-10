@@ -11,9 +11,11 @@
     <body>
     	<div class="maincontent" id="pizzerienContainer">
     	</div>
-    	<div class = "infocontent" id = "infoContainer">
-    		<p id="infoContainerText"> Der Butler Bringts!</p>
-    		<img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
-    	</div>
+    	<div id="rechterBereich">
+	    	<div class = "infocontent" id = "infoContainer">
+	    		<p id="infoContainerText"> Der Butler Bringts!</p>
+	    		<img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
+	    	</div>
+	    </div>
     </body>
 </html>

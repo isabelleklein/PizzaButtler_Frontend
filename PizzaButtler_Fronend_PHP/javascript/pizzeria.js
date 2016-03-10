@@ -23,6 +23,19 @@ $(document).ready(function(){
 	}
 });
 
+
+document.onscroll = function () {
+var pos = window.pageYOffset;
+var inf = document.getElementById('infoContainer').offsetHeight;
+console.log(pos + "   " + inf);
+pos = pos - inf - 160;
+if (pos > 0)
+document.getElementById('rechterBereich').style.top = pos + 'px';
+else
+document.getElementById('rechterBereich').style.top = '0px';
+}
+
+
 var buildpizzeriaSeite = function(data){
 	if(data == 0) {
 		$("#infoContainer").html("<h1>Es konnten leider keine Daten zur Pizzeria geladen werden</h1>");
