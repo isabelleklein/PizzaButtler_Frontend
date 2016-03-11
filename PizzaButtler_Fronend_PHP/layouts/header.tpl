@@ -121,7 +121,8 @@
 	                <input id="absenden" name="absenden" type="button" value="Kundenregistrierung abschliessen"/>
 	            </p>
 	            <label id="fehlerAbsenden"></label>
-            </form><br />
+            </form>
+            <a href="./pdfs/Registrierungsformular_Pizzerien_ausfuellbar_neu.pdf" target="blank">Restaurantregistrierung</a>
         </div>
         <div id="overlay"></div>
     
