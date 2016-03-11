@@ -27,7 +27,7 @@ $(document).ready(function(){
 document.onscroll = function () {
 var pos = window.pageYOffset;
 var inf = document.getElementById('infoContainer').offsetHeight;
-console.log(pos + "   " + inf);
+//console.log(pos + "   " + inf);
 pos = pos - inf - 160;
 if (pos > 0)
 document.getElementById('rechterBereich').style.top = pos + 'px';
@@ -37,6 +37,14 @@ document.getElementById('rechterBereich').style.top = '0px';
 
 
 var buildpizzeriaSeite = function(data){
+	var date = new Date();
+	var day = date.getDay();
+	var oeffnungszeit_von = data.oeffnungszeiten[day].von + "";
+	oeffnungszeit_von = oeffnungszeit_von.slice(0,2) + ":" + oeffnungszeit_von.slice(2,4);
+	var oeffnungszeit_bis = data.oeffnungszeiten[day].bis + "";
+	oeffnungszeit_bis = oeffnungszeit_bis.slice(0,2) + ":" + oeffnungszeit_bis.slice(2,4);
+	var oeffnungszeit = oeffnungszeit_von + " - " + oeffnungszeit_bis;
+	
 	if(data == 0) {
 		$("#infoContainer").html("<h1>Es konnten leider keine Daten zur Pizzeria geladen werden</h1>");
 	}
@@ -44,7 +52,7 @@ var buildpizzeriaSeite = function(data){
 		$("#infoContainer").html("<img id='pizzarienlogo' src='data:image/jpg;base64," + data.bild + "'><br>\
 		<input type='hidden' value='" + data.restaurantID + "'/>" + "<p id='containertitel'>" + data.name + "</p>" + "\
 		<img id='haus' src='./images/Haus_-_Vector-Icon.png'/>"  + data.strasse + " " + data.hausnummer + "<br>" + data.plz + " " + data.ort + "<br>\
-		<img id='uhr' src='./images/Uhr_-_Vector-Icon.png'/>" + data.oeffnungszeiten[0].tag + " " + data.oeffnungszeiten[0].von + " " + data.oeffnungszeiten[0].bis + "<br>"  + "<br>\
+		<img id='uhr' src='./images/Uhr_-_Vector-Icon.png'/> Heute geöffnet von " +  oeffnungszeit + "<br>"  + "<br>\
 		<img id='schein' src='./images/bezahlart2.png'/> " + "\ Mindestbestellwert: " + data.mindestbestellwert + "<br>\
 		Lieferkosten: " + " " + data.lieferkosten);
 	}

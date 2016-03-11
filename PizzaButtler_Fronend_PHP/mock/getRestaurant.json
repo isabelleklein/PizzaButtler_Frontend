@@ -2,13 +2,13 @@
 	"restaurantID":123,
 	"name":"Pizzeria Toni",
 	"oeffnungszeiten":[
-		{"tag": "so", "von": 1000, "bis": 2200},
-		{"tag": "mo", "von": 1000, "bis": 2200},
-		{"tag": "di", "von": 1000, "bis": 2200},
-		{"tag": "mi", "von": 1000, "bis": 2200},
-		{"tag": "do", "von": 1000, "bis": 2200},
-		{"tag": "fr", "von": 1000, "bis": 2200},
-		{"tag": "sa", "von": 1000, "bis": 2200}
+		{"tag": "so", "von": 1500, "bis": 2200},
+		{"tag": "mo", "von": 1500, "bis": 2200},
+		{"tag": "di", "von": 1500, "bis": 2200},
+		{"tag": "mi", "von": 1500, "bis": 2200},
+		{"tag": "do", "von": 1500, "bis": 2200},
+		{"tag": "fr", "von": 1500, "bis": 2200},
+		{"tag": "sa", "von": 1500, "bis": 2200}
 	],
 	"mindestbestellwert":12.50,
 	"strasse":"deine strasse",

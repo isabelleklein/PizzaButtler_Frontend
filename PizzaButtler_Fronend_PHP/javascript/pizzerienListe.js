@@ -50,8 +50,22 @@ var buildPizzerienListe = function(data){
 					<p class='listParagraph'></p>\
 					<p class='listParagraph'>Lieferkosten: " + data[i].lieferkosten + "&#8364</p>\
 					<p class='listParagraph'>Mindestbestellwert: " + data[i].mindestbestellwert + "&#8364</p>\
-					<p class='listParagraph'></p>\
-					<p class='listParagraph'>" + offen + "</p>";
+					<p class='listParagraph'></p>";
+			var date = new Date();
+			var day = date.getDay();
+			var oeffnungszeit_von = data[i].oeffnungszeiten[day].von + "";
+			oeffnungszeit_von = oeffnungszeit_von.slice(0,2) + ":" + oeffnungszeit_von.slice(2,4);
+			var oeffnungszeit_bis = data[i].oeffnungszeiten[day].bis + "";
+			oeffnungszeit_bis = oeffnungszeit_bis.slice(0,2) + ":" + oeffnungszeit_bis.slice(2,4);
+			var oeffnungszeit = oeffnungszeit_von + " - " + oeffnungszeit_bis;
+			if(offen == "Geöffnet")
+			{
+				content= content + "<div id='kreis' style='width:20px; height:20px; border-radius:10px; background-color:green'></div><div class='listParagraph'>" + offen + " " + oeffnungszeit + "</div>";
+			}
+			else
+			{
+				content= content +"<div id='kreis' style='width:20px; height:20px; border-radius:10px; background-color:red'></div><div class='listParagraph'>"+ offen + " " + oeffnungszeit + "</div>";
+			}		
 						//Spalte mit Bewertung
             var td3 = $("<td></td>");
             td3.addClass("bewertung");
@@ -86,7 +100,9 @@ var buildPizzerienListe = function(data){
 function hatOffen(oeffnungszeiten){
 	var date = new Date();
 	var day = date.getDay();
-	
+	//console.log(day);
+	//console.log(date.getHours());
+	//console.log(date.getMinutes());
 	var time;
 	var hours = date.getHours();
 	var minutes = date.getMinutes();
@@ -98,6 +114,7 @@ function hatOffen(oeffnungszeiten){
 	
 	if(time > oeffnungszeiten[day].von &&
 		time < oeffnungszeiten[day].bis){
+			//console.log(oeffnungszeiten[day].von + "-" + oeffnungszeiten[day].bis)
 			return true;
 		}
 	else {
