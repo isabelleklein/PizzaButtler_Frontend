@@ -3,6 +3,7 @@ background:#ce3d11;
 clear:both;
 height:4em;
 margin:-10;
+margin-right:0;
 padding-left:2em;
 padding-right:1em;
 position:relative;
@@ -38,7 +39,7 @@ margin-left: 5%;
 float:right;
 padding-top: .6em;
 width: 65%;
-margin-right: 5%;
+margin-right: 3.5%;
 }
 
 .head_right_start {
