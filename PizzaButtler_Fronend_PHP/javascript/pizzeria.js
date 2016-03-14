@@ -128,7 +128,7 @@ var buildSpeisekarte = function(data){
 function addToWarenkorb(data){
 	var produkt;
 	
-	var preis = data.innerHTML;
+	var preis = parseFloat(data.innerHTML);
 	var groesse = data.getAttribute("groesse");
 	var produktID = data.getAttribute("produktID");
 	for(var i = 0; i<speisekarte.length; i++){
@@ -141,6 +141,7 @@ function addToWarenkorb(data){
 			}
 		}
 	}
+	console.log(preis);
 	
 	warenkorb.push(produkt);
 	showWarenkorb();
@@ -168,7 +169,7 @@ function summieren()
 	var summe = 0;
 	var p ="";
 	for(var i = 0; i < warenkorb.length; i++){
-		summe = summe + parseFloat(warenkorb[i].preis.substr(0, warenkorb[i].preis.length-3));
+		summe += warenkorb[i].preis;
 	}
 	p = $("<p style='margin:0px'>" + "Gesamtpreis: " + summe + "</p>");
 	$("#summeWarenkorb").html(p);
