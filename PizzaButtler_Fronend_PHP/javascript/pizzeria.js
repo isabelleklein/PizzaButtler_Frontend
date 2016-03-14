@@ -171,7 +171,7 @@ function summieren()
 	for(var i = 0; i < warenkorb.length; i++){
 		summe += warenkorb[i].preis;
 	}
-	p = $("<p style='margin:0px'>" + "Gesamtpreis: " + summe + "</p>");
+	p = $("<p style='margin:0px'>" + "Gesamtpreis: " + summe.toFixed(2) + "</p>");
 	$("#summeWarenkorb").html(p);
 }
 
