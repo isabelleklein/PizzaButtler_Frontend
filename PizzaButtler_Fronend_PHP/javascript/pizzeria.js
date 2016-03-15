@@ -146,6 +146,7 @@ function addToWarenkorb(data){
 	warenkorb.push(produkt);
 	showWarenkorb();
 	summieren();
+	zurKasse();
 }
 
 function showWarenkorb(){
@@ -173,6 +174,13 @@ function summieren()
 	}
 	p = $("<p style='margin:0px'>" + "Gesamtpreis: " + summe.toFixed(2) + "</p>");
 	$("#summeWarenkorb").html(p);
+}
+
+function zurKasse()
+{
+	var q = $("<button class = 'zurKasseButton' > Zur Kasse </button>");
+	$("#zurKasse").html(q);
+	
 }
 
 function parse(val) {

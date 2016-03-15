@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-08 12:56:29
+<?php /* Smarty version 3.1.27, created on 2016-03-15 15:17:18
          compiled from "views\pizzeria.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2528356debded16bd16_77574815%%*/
+/*%%SmartyHeaderCode:1745956e8196e076d67_61752212%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f8be390f4ad3bbf367f4c192c00064c28322633d' => 
     array (
       0 => 'views\\pizzeria.tpl',
-      1 => 1457438115,
+      1 => 1458051427,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2528356debded16bd16_77574815',
+  'nocache_hash' => '1745956e8196e076d67_61752212',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56debded1b6f60_34912499',
+  'unifunc' => 'content_56e8196e0b5578_61031823',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56debded1b6f60_34912499')) {
-function content_56debded1b6f60_34912499 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56e8196e0b5578_61031823')) {
+function content_56e8196e0b5578_61031823 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2528356debded16bd16_77574815';
+$_smarty_tpl->properties['nocache_hash'] = '1745956e8196e076d67_61752212';
 ?>
 <html>
     <head>
@@ -40,11 +40,15 @@ $_smarty_tpl->properties['nocache_hash'] = '2528356debded16bd16_77574815';
     	<div id="pizzerienContainer">
     	
     	</div>
-    	<div id="infoContainer">
-    		
-    	</div>
-    	<div id="warenkorbContainer">
-    	 <img id='bildwarenkorb' src='./images/cart.png'> <p> Warenkorb </p>
+    	<div id ="rechterBereich">
+	    	<div id="infoContainer">
+	    		
+	    	</div>
+	    	<div id="warenkorbContainer">
+	    	 <img id='bildwarenkorb' src='./images/cart.png'> <p> Warenkorb </p>
+			 <div id='showwarenkorb'></div>
+			 <div id='summeWarenkorb'></div>
+			 <div id='zurKasse'></div>
     	</div>
     </body>
 </html><?php }

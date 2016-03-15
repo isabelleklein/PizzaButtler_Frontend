@@ -363,6 +363,14 @@ table {
 	border-color: #842002;
 	
 }
+.zurKasseButton{
+	background-color: #842002;
+	color: #ffffff;
+	border-radius: 6px;
+	width: 50%;
+	border-color: #842002;
+	
+}
 .preisbutton:hover{
 	border-color: #842002;
 	color: #842002;
