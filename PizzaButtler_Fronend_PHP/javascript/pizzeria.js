@@ -180,12 +180,18 @@ function zurKasse()
 {
 	var q = $("<button class = 'zurKasseButton' > Zur Kasse </button>");
 	$("#zurKasse").html(q);
+<<<<<<< HEAD
 	
 	$(".zurKasseButton").click(function(){
 			Cookies.set("Warenkorb",warenkorb);
 			window.location.href = "./warenkorb.php";
 		});
 	
+=======
+	$(".zurKasseButton").click(function(){
+			Cookies.set("Warenkorb",warenkorb);			
+		});
+>>>>>>> origin/PHP-branch
 }
 
 function parse(val) {
