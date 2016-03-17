@@ -9,9 +9,15 @@
     </head>
     
     <body>
+<<<<<<< HEAD
     	<div id = "warenkorbuebersicht">	<img id='bildwarenkorb' src='./images/cart.png'> <p> Warenkorb </p>
 		<div id="warenkorbAnzeigen"></div>
 		</div>
+=======
+    	<div id="warenkorbAnzeigen">
+    	
+    	</div>
+>>>>>>> origin/PHP-branch
     	<div id ="rechterBereich">
 	    	<div id="infoContainer">
 	    		
