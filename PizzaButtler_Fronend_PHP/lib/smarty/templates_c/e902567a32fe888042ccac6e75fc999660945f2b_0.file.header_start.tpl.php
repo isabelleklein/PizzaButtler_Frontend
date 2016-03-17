@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-08 12:56:21
+<?php /* Smarty version 3.1.27, created on 2016-03-15 14:34:30
          compiled from "layouts\header_start.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2722556debde56a9f28_60176638%%*/
+/*%%SmartyHeaderCode:1137356e80f667c6812_82649369%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e902567a32fe888042ccac6e75fc999660945f2b' => 
     array (
       0 => 'layouts\\header_start.tpl',
-      1 => 1457438115,
+      1 => 1458048534,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2722556debde56a9f28_60176638',
+  'nocache_hash' => '1137356e80f667c6812_82649369',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56debde5781ef0_37826380',
+  'unifunc' => 'content_56e80f6684b521_41100987',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56debde5781ef0_37826380')) {
-function content_56debde5781ef0_37826380 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56e80f6684b521_41100987')) {
+function content_56e80f6684b521_41100987 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2722556debde56a9f28_60176638';
+$_smarty_tpl->properties['nocache_hash'] = '1137356e80f667c6812_82649369';
 ?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
@@ -182,8 +182,9 @@ $_smarty_tpl->properties['nocache_hash'] = '2722556debde56a9f28_60176638';
 	                <input id="absenden" name="absenden" type="button" value="Kundenregistrierung abschliessen"/>
 	            </p>
 	            <label id="fehlerAbsenden"></label>
-            </form><br />
-        </div>
+            </form>
+            <a href="./pdfs/Registrierungsformular_Pizzerien_ausfuellbar_neu.pdf" target="blank">Restaurantregistrierung</a>
+        	</div>
         <div id="overlay"></div>
     
         <!-- Login -->
