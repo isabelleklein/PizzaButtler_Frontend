@@ -146,6 +146,7 @@ function addToWarenkorb(data){
 	warenkorb.push(produkt);
 	showWarenkorb();
 	summieren();
+	zurKasse();
 }
 
 function showWarenkorb(){
@@ -157,7 +158,7 @@ function showWarenkorb(){
 		var groesse = warenkorb[i].groesse;
 		var preis = warenkorb[i].preis;
 		
-		var li = $("<li>" + bezeichnung + " Größe: " + groesse + " Preis: " + preis + "</li>");
+		var li = $("<li>" + bezeichnung + " Größe: " + groesse + " Preis: " + preis + "€</li>");
 		ul.append(li);
 	}
 		
@@ -171,8 +172,20 @@ function summieren()
 	for(var i = 0; i < warenkorb.length; i++){
 		summe += warenkorb[i].preis;
 	}
-	p = $("<p style='margin:0px'>" + "Gesamtpreis: " + summe.toFixed(2) + "</p>");
+	p = $("<p style='margin:0px'>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");
 	$("#summeWarenkorb").html(p);
+}
+
+function zurKasse()
+{
+	var q = $("<button class = 'zurKasseButton' > Zur Kasse </button>");
+	$("#zurKasse").html(q);
+	
+	$(".zurKasseButton").click(function(){
+			Cookies.set("Warenkorb",warenkorb);
+			window.location.href = "./warenkorb.php";
+		});
+	
 }
 
 function parse(val) {

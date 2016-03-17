@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-08 12:56:26
+<?php /* Smarty version 3.1.27, created on 2016-03-15 14:34:38
          compiled from "layouts\header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:779456debdea0a1c05_23868613%%*/
+/*%%SmartyHeaderCode:2477356e80f6e35b6a2_81884515%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '81642ba3eee9fbba8f86c992529eae4324888167' => 
     array (
       0 => 'layouts\\header.tpl',
-      1 => 1457438115,
+      1 => 1458048534,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '779456debdea0a1c05_23868613',
+  'nocache_hash' => '2477356e80f6e35b6a2_81884515',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56debdea122638_16147687',
+  'unifunc' => 'content_56e80f6e3d4837_26639695',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56debdea122638_16147687')) {
-function content_56debdea122638_16147687 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56e80f6e3d4837_26639695')) {
+function content_56e80f6e3d4837_26639695 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '779456debdea0a1c05_23868613';
+$_smarty_tpl->properties['nocache_hash'] = '2477356e80f6e35b6a2_81884515';
 ?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
@@ -182,7 +182,8 @@ $_smarty_tpl->properties['nocache_hash'] = '779456debdea0a1c05_23868613';
 	                <input id="absenden" name="absenden" type="button" value="Kundenregistrierung abschliessen"/>
 	            </p>
 	            <label id="fehlerAbsenden"></label>
-            </form><br />
+            </form>
+            <a href="./pdfs/Registrierungsformular_Pizzerien_ausfuellbar_neu.pdf" target="blank">Restaurantregistrierung</a>
         </div>
         <div id="overlay"></div>
     

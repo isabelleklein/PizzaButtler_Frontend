@@ -20,6 +20,7 @@
 	    	 <img id='bildwarenkorb' src='./images/cart.png'> <p> Warenkorb </p>
 			 <div id='showwarenkorb'></div>
 			 <div id='summeWarenkorb'></div>
+			 <div id='zurKasse'></div>
     	</div>
     </body>
 </html>
