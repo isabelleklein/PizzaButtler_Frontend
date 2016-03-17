@@ -1,16 +1,9 @@
-
-
 $(document).ready(function(){
-<<<<<<< HEAD
-=======
-	console.log("Test");
->>>>>>> origin/PHP-branch
 	warenkorbAnzeigen();
 });
 
 function warenkorbAnzeigen(){
 	var warenkorb = new Array();
-<<<<<<< HEAD
 	warenkorb = Cookies.getJSON("Warenkorb");
 	
 	var ul = $("<ul style='padding-left:15px'></ul>");
@@ -33,9 +26,4 @@ function warenkorbAnzeigen(){
 	ul.append(p);
 	
 	$("#warenkorbAnzeigen").html(ul);
-
-=======
-	warenkorb[0] = Cookies.get("Warenkorb");
-	$("#warenkorbAnzeigen").html("Warenkorb: " +  warenkorb[0]);
->>>>>>> origin/PHP-branch
 }

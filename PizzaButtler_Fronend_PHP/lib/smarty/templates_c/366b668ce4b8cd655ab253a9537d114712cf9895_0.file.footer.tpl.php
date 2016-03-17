@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-15 14:34:30
+<?php /* Smarty version 3.1.27, created on 2016-03-17 23:22:18
          compiled from "layouts\footer.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2064256e80f66882032_42109332%%*/
+/*%%SmartyHeaderCode:1552756eb2e1a134fa8_81653270%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,27 +9,27 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '366b668ce4b8cd655ab253a9537d114712cf9895' => 
     array (
       0 => 'layouts\\footer.tpl',
-      1 => 1458048534,
+      1 => 1458253266,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2064256e80f66882032_42109332',
+  'nocache_hash' => '1552756eb2e1a134fa8_81653270',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56e80f66899745_33904204',
+  'unifunc' => 'content_56eb2e1a1d7ea2_18079950',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56e80f66899745_33904204')) {
-function content_56e80f66899745_33904204 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56eb2e1a1d7ea2_18079950')) {
+function content_56eb2e1a1d7ea2_18079950 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2064256e80f66882032_42109332';
+$_smarty_tpl->properties['nocache_hash'] = '1552756eb2e1a134fa8_81653270';
 ?>
     
     </div>
         <footer>
             <link href="./css/footer.css" rel="stylesheet" />
             <ul id="navi_bottom">
-                <li class="left"><a href="index.php">© 2015 PizzaButler</a></li>
+                <li class="left"><a href="index.php">© 2016 PizzaButler</a></li>
                 <li class="right"><a href="agb.php">AGB</a> </li>
                 <li class="right">|</li>
                 <li class="right"><a href="datenschutz.php">Datenschutzhinweis</a> </li>
