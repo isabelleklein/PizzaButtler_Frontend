@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-<?php /* Smarty version 3.1.27, created on 2016-03-17 11:31:24
+<?php /* Smarty version 3.1.27, created on 2016-03-17 23:36:44
          compiled from "views\warenkorb.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:3048456ea877cacd234_58594808%%*/
-=======
-<?php /* Smarty version 3.1.27, created on 2016-03-17 09:46:31
-         compiled from "views\warenkorb.tpl" */ ?>
-<?php
-/*%%SmartyHeaderCode:1382456ea6ee749f414_64261447%%*/
->>>>>>> origin/PHP-branch
+/*%%SmartyHeaderCode:160756eb317ccf9c27_50213478%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -16,37 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '563985881f6b448462e5e7933f77fd8a818e5369' => 
     array (
       0 => 'views\\warenkorb.tpl',
-<<<<<<< HEAD
-      1 => 1458210682,
+      1 => 1458253884,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3048456ea877cacd234_58594808',
+  'nocache_hash' => '160756eb317ccf9c27_50213478',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56ea877cb13748_06283496',
+  'unifunc' => 'content_56eb317cd49fd6_33791721',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56ea877cb13748_06283496')) {
-function content_56ea877cb13748_06283496 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56eb317cd49fd6_33791721')) {
+function content_56eb317cd49fd6_33791721 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '3048456ea877cacd234_58594808';
-=======
-      1 => 1458204389,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '1382456ea6ee749f414_64261447',
-  'has_nocache_code' => false,
-  'version' => '3.1.27',
-  'unifunc' => 'content_56ea6ee74f91a2_02940768',
-),false);
-/*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56ea6ee74f91a2_02940768')) {
-function content_56ea6ee74f91a2_02940768 ($_smarty_tpl) {
-
-$_smarty_tpl->properties['nocache_hash'] = '1382456ea6ee749f414_64261447';
->>>>>>> origin/PHP-branch
+$_smarty_tpl->properties['nocache_hash'] = '160756eb317ccf9c27_50213478';
 ?>
 <html>
     <head>
@@ -61,15 +37,9 @@ $_smarty_tpl->properties['nocache_hash'] = '1382456ea6ee749f414_64261447';
     </head>
     
     <body>
-<<<<<<< HEAD
     	<div id = "warenkorbuebersicht">	<img id='bildwarenkorb' src='./images/cart.png'> <p> Warenkorb </p>
 		<div id="warenkorbAnzeigen"></div>
 		</div>
-=======
-    	<div id="warenkorbAnzeigen">
-    	
-    	</div>
->>>>>>> origin/PHP-branch
     	<div id ="rechterBereich">
 	    	<div id="infoContainer">
 	    		
