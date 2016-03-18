@@ -19,7 +19,10 @@
 		<input type="radio" name="Zahlungsart"> EC-Cash </input>
 		</form>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<br><button class = 'bestellen' > Bestellen </button>
+=======
+>>>>>>> origin/PHP-branch
 =======
 >>>>>>> origin/PHP-branch
 		</div>
