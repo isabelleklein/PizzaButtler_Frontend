@@ -18,7 +18,10 @@
 		<input type="radio" name="Zahlungsart"> Bar <img id="bezahlart2" src="./images/bezahlart2.png" alt="Bezahlart 2"></input>
 		<input type="radio" name="Zahlungsart"> EC-Cash </input>
 		</form>
+<<<<<<< HEAD
 		<br><button class = 'bestellen' > Bestellen </button>
+=======
+>>>>>>> origin/PHP-branch
 		</div>
 		</div>
     	<div id ="rechterBereich">
