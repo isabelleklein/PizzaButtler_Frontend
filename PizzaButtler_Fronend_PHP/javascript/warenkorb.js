@@ -3,6 +3,10 @@ $(document).ready(function(){
 });
 
 function warenkorbAnzeigen(){
+	var zeit = Cookies.get("zeit");
+	var q = ("Warenkorb zur Bestellung vom " + zeit);
+	$("#bestellzeit").html(q);
+	
 	var warenkorb = new Array();
 	warenkorb = Cookies.getJSON("Warenkorb");
 	

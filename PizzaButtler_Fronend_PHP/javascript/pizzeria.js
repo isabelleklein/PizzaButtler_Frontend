@@ -182,6 +182,14 @@ function zurKasse()
 	$("#zurKasse").html(q);
 	
 	$(".zurKasseButton").click(function(){
+			var jetzt = new Date();
+			var tag = jetzt.getDate();
+			var monat = jetzt.getMonth()+1;
+			var jahr = jetzt.getFullYear();
+			var stunde = jetzt.getHours();
+			var minute = jetzt.getMinutes();
+			var zeit = (tag + "." + monat + "." + jahr + " " + stunde + ":" + minute);
+			Cookies.set("zeit", zeit);
 			Cookies.set("Warenkorb",warenkorb);
 			window.location.href = "./warenkorb.php";
 		});
