@@ -369,7 +369,6 @@ table {
 	border-radius: 6px;
 	width: 50%;
 	border-color: #842002;
-	
 }
 .preisbutton:hover{
 	border-color: #842002;
@@ -398,7 +397,14 @@ table {
 	width: 3em;
 	height: auto;
 }
-
+#bezahlart1{
+	width: 3em;
+	height: auto;
+}
+#bezahlart2{
+	width: 2em;
+	height: auto;
+}
 #showWarenkorb{
 	overflow: auto;
 	height: 60%;
@@ -434,3 +440,19 @@ table {
     float: left;
     margin-bottom: 4%;
 }
+#bezahlart {
+   background-color: #ffffff;
+    border-radius: 12px;
+    border-width: 0;
+    color: #842002;
+    left: 15%;
+    height: auto;
+    position: relative;
+    top: 0%;
+    width: 48%;
+    float: left;
+    margin-bottom: 4%;
+	line-height: 2;
+}
+
+
