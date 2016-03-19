@@ -56,6 +56,17 @@ $(function() {
 	            );
 	        }
 	    );
+    $('#delivery_userlogin').click(
+	        function() {
+	        	console.log("Öffnen angeklickt");
+	            $('#overlay').show('slow', 
+	                function() {
+	                    $('#containerx').fadeIn('slow');
+	                    $('#changeText').html('Dynamischer Inhalt');
+	                }
+	            );
+	        }
+	    );
 	$('#closex').click(
 	            function() {
 	                $('#containerx').hide('slow', 
