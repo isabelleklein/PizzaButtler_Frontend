@@ -6,3 +6,17 @@ $(document).ready(function(){
          document.getElementById("eingeloggt").style.display = "";
     }
 });
+
+$(function() {
+	$("input[type='radio'][name='lieferart']").change(
+	        function() {
+                if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
+                    document.getElementById("delivery_data").style.display = "none";
+                    document.getElementById("eingeloggt").style.display = "none";
+                } else {
+                    document.getElementById("delivery_data").style.display = "";
+                    document.getElementById("eingeloggt").style.display = "";
+                }
+	        }
+	    );     
+})

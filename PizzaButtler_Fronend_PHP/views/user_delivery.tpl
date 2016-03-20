@@ -8,9 +8,14 @@
     <body>
 		<div class="maincontent">
 			<form id='datenanzeigen' name="datenanzeigen" action="#">
-				<h3 class="contenthead"> Deine Lieferadresse </h3>
-				<div id="data">
+				<h3 class="contenthead"> Wähle eine Lieferart </h3>
+                <div>
+                    <input type="radio" id="abholung" name="lieferart" value="abholung"><label for="abholung">Abholung</label><br />
+                    <input type="radio" id="lieferung" name="lieferart" value="lieferung" checked><label for="lieferung">Lieferung</label>
+                </div>
 				
+                <div id="delivery_data">
+                    <h3 class="contenthead"> Deine Lieferadresse </h3>
                     <div class="fline">
                         <input type="text" name="vorname" id="userVorname" required title="Zwischen 3 und 25 Zeichen (Umlaute möglich)" 
                                onchange="vornamePruefen1()" placeholder="Vorname"/>
@@ -33,19 +38,20 @@
                         <input type="text" name="telefon" id="userTelefon" required onchange="telefonPruefen1()" placeholder="Telefon"/>
                         <input type="text" name="email" id="userEmail" required onchange="mailPruefen1()" placeholder="Email"/>
                     </div>
-                    
-					<p>
+                </div>
+                <div>
+                    <p>
 						<input class="userbutton" id="delivery_back" name="delivery_back" type="button" value="zur&uuml;ck" />
                         <input class="userbutton" id="delivery_next" name="delivery_next" type="button" value="weiter" />
 					</p>
-                    
-                    <div id="eingeloggt">
-                        <h3 class="contenthead"> oder weiter als registrierter User </h3>
-                        <p>
-						  <input class="userbutton" id="delivery_userlogin" name="delivery_userlogin" type="button" value="einloggen" />
-					   </p>
-                    </div>
-				</div>
+                </div>
+                <div id="eingeloggt">
+                    <h3 class="contenthead"> oder weiter als registrierter User </h3>
+                    <p>
+				        <input class="userbutton" id="delivery_userlogin" name="delivery_userlogin" type="button" value="einloggen" />
+				    </p>
+                </div>
+				
 			</form>
 		</div>
         <div class = "infocontent">
