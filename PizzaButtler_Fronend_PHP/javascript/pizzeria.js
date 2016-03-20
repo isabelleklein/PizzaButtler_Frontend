@@ -21,6 +21,8 @@ $(document).ready(function(){
 	else {
 		rest.fakeSend("./mock/null.json");
 	}
+
+
 });
 
 
@@ -118,12 +120,57 @@ var buildSpeisekarte = function(data){
 		}		
 		
 		$("#pizzerienContainer").tabs();
-		
-		$(".preisbutton").click(function(){
-			addToWarenkorb(this);			
-		});
+				
+			$(".preisbutton").click(function(){
+			extrasaufrufen();
+			console.log(data);
+				addToWarenkorb(this);
+				
+						$('#overlay').show('slow', 
+								function() {
+							$('#extrazutaten_container').fadeIn('slow');
+							$('#changeText').html('Dynamischer Inhalt');
+							});
+		  
+	
+				});
+			
+			
 	}
 }
+function extraslisten(data){
+	var statement = "";
+	for(var i = 0; i<data.length; i++){
+		statement = statement + (" <div class='extra'> " + data[i].name + "<button class='preisbutton' onclick='extrahinzufuegen()'>" + data[i].preis + " € </button>  </div>");
+	}
+	$('#extrazutaten').html(statement);
+}
+function extrasaufrufen() {
+	var pizzeriaId = parse("id");
+	rest = new RestInterface();
+	rest.setParameters("GET", "pizzeria/" + pizzeriaId, null, extraslisten);
+
+		if(pizzeriaId != ""){
+			console.log("erfolgreich");
+			// rest-Aufruf durchfuehren und Liste befuellen
+	rest.fakeSend("./mock/getExtrazutaten.json");
+			}
+		else {
+			console.log("fehler");
+	rest.fakeSend("./mock/null.json");
+			}
+}
+function extrahinzufuegen(){ // Hier muss die Funktion geschrieben werden, wie die Extrazutaten an den Warenkorb übergeben werden
+	console.log("Domme");
+}
+function schliessen(){
+	
+		      $('#extrazutaten_container').hide('slow', 
+		        function() {
+		        	
+		                $('#overlay').fadeOut();          
+		             });
+}	    
 
 function addToWarenkorb(data){
 	var produkt;
@@ -164,6 +211,7 @@ function showWarenkorb(){
 		
 	$("#showwarenkorb").html(ul);
 }
+
 
 function summieren()
 {

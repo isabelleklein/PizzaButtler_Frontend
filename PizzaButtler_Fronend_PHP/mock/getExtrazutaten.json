@@ -1,0 +1,33 @@
+[
+	{ 
+		"name":"Salami",
+		"preis":"1,00"
+  
+	},
+	{ 
+		"name":"Tomaten",
+		"preis":"4,00"
+  
+	},
+	{ 
+		"name":"Katzenfleisch",
+		"preis":"0,99"
+  
+	},
+	{ 
+		"name":"Ei",
+		"preis":"1222,00"
+  
+	},
+	{ 
+		"name":"Krabben",
+		"preis":"12,55"
+  
+	},
+	{ 
+		"name":"Tütensuppe",
+		"preis":"1,00"
+  
+	}
+	
+]
