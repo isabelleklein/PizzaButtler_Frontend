@@ -15,6 +15,31 @@ $(document).ready(function(){
 
 $(function() {
     $("#delivery_next").click(function(){
+			var lieferart ="";
+			if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
+				lieferart = "abholung";
+			} else {
+				lieferart = "lieferung";
+				}
+			var vorname = document.getElementById('userVorname').value
+			var nachname = document.getElementById('userNachname').value
+			var strasse = document.getElementById('userStrasse').value
+			var hausnummer = document.getElementById('userHausnummer').value
+			var plz = document.getElementById('userPlz').value
+			var ort = document.getElementById('userOrt').value
+			var telefon = document.getElementById('userTelefon').value
+			var email = document.getElementById('userEmail').value
+			
+			Cookies.set("lieferart", lieferart);
+			Cookies.set("vorname", vorname);
+			Cookies.set("nachname", nachname);
+			Cookies.set("strasse", strasse);
+			Cookies.set("hausnummer", hausnummer);
+			Cookies.set("plz", plz);
+			Cookies.set("ort", ort);
+			Cookies.set("telefon", telefon);
+			Cookies.set("email", email);
+			
 			window.location.href = "./warenkorb.php";
 		});
     
