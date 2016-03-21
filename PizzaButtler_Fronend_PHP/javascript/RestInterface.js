@@ -3,7 +3,7 @@
  */
 function RestInterface(){
     this.type = "GET";
-    var baseUrl = "http://pizzabutlerentwbak.krihi.com/entwicklung/rest/";
+    var baseUrl = "http://pizzaButlerBackend.krihi.com/";
     this.urlEnding = "";
     this.dataToSend = null;
     var contentType = "application/json";

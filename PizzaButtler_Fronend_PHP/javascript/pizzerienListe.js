@@ -5,14 +5,11 @@ $(document).ready(function(){
 	
 	// Rest-Aufruf vorbereiten
 	rest = new RestInterface();
-	rest.setParameters("GET", "pizzeria?q=" + plzOrt , null, buildPizzerienListe);
+	rest.setParameters("GET", "restaurant?plz=" + plzOrt , null, buildPizzerienListe);
 	
 	if(plzOrt != ""){
 		// Rest-Aufruf durchf�hren und Liste bef�llen
-		rest.fakeSend("./mock/getPizzerien.json");
-	}
-	else {
-		rest.fakeSend("./mock/null.json");
+		rest.send();
 	}
 });
 
