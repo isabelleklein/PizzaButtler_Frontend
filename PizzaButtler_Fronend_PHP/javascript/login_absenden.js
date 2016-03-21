@@ -9,7 +9,7 @@ $(document).ready(function() {
 		rest = new RestInterface();
 		
 		rest.setParameters("POST", "user/login", jsObj, callback);
-		rest.fakeSend("./mock/loginSuccess.json")
+		rest.fakeSend("./mock/loginSuccess.json");
 
 	});
 });
@@ -32,8 +32,11 @@ var callback = function(returnCode){
 			console.log("Restaurant");
 			Cookies.set("restaurantID", returnCode.restaurantID, {expires: expireTime});
 		}
-		
-		location.reload()
+		else{
+			alert("Weder User noch Pizzeria wurde erkannt");
+		}
+		console.log("vor neu laden");
+		location.reload();
 		//window.location.href = "."
 	}
 	else if(returnCode == -1){
@@ -58,7 +61,6 @@ $(function() {
 	    );
     $('#delivery_userlogin').click(
 	        function() {
-	        	console.log("Öffnen angeklickt");
 	            $('#overlay').show('slow', 
 	                function() {
 	                    $('#containerx').fadeIn('slow');

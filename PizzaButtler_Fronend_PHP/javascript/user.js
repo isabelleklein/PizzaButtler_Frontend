@@ -1,19 +1,24 @@
 /** Userdata zum User mit best. ID holen **/
 var rest;
 $(document).ready(function(){	
-	loadData();
-	$('#userdatenaendern').click(function(e) {
-		$('.maincontent').load("./views/changeuserdata.tpl", function(){
+	var userID = Cookies.get('userID');
+	if(typeof userID != 'undefined')
+		{
 			loadData();
-			setClickListener();
-		});
-	});
-    $('#userpwaendern').click(function(e) {
-		$('.maincontent').load("./views/changeuserpassword.tpl", function(){
-			loadData();
-			setClickListener();
-		});
-	});
+			$('#userdatenaendern').click(function(e) {
+				$('.maincontent').load("./views/changeuserdata.tpl", function(){
+					loadData();
+					setClickListener();
+				});
+			});
+		    $('#userpwaendern').click(function(e) {
+				$('.maincontent').load("./views/changeuserpassword.tpl", function(){
+					loadData();
+					setClickListener();
+				});
+			});
+		}
+	
 });
 
 
@@ -21,12 +26,12 @@ var loadData = function(){
 	var userID = Cookies.get("userID");
 	if(typeof userID != 'undefined') {
 		rest = new RestInterface();
-		rest.setParameters("GET", "user/" + userID, null, callback);
+		rest.setParameters("GET", "user/" + userID, null, callback_user);
 		rest.fakeSend("./mock/getUser.json");
 	}
 }
 
-var callback = function(data){
+var callback_user = function(data){
 	if($('#userAnrede').prop("tagName") == "SELECT") {
 		$('#userAnrede').val(data.anrede);
 	}
