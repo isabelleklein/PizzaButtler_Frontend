@@ -91,35 +91,26 @@ function checkForm()
   //Eingabefehler werden nacheinander geprueft. 
   //Dies ist in Ordnung, da bei Fuellung der Felder eine eigene Pruefung gestartet wird.
   //Das Pop-Up-Fenster wird damit bei auftreten einer Vielzahl von Fehlern nicht zu groß
-    strFehler += anredePruefen();
+    strFehler += anredePruefen_user();
     if(strFehler.length==0){
-    	strFehler += vornamePruefen();
+    	strFehler += vornamePruefen_user();
         if(strFehler.length==0){
-        	strFehler += nachnamePruefen();
+        	strFehler += nachnamePruefen_user();
         	//Wird nach Vorgabe der Fachlichkeit aktuell nicht in der Registrierung benötigt.
         	//if(strFehler.length==0){
 	        //	strFehler += datumPruefen();
 	            if(strFehler.length==0){
-	            	strFehler += strassePruefen();
+	            	strFehler += strassePruefen_user();
 	                if(strFehler.length==0){
-	                	strFehler += hausnummerPruefen();
+	                	strFehler += hausnummerPruefen_user();
 	                    if(strFehler.length==0){
-	                    	strFehler += plzPruefen();
+	                    	strFehler += plzPruefen_user();
 	                        if(strFehler.length==0){
-	                        	strFehler += wohnortPruefen();
+	                        	strFehler += wohnortPruefen_user();
 	                            if(strFehler.length==0){
-	                            	strFehler += mailPruefen();
+	                            	strFehler += mailPruefen_user();
 	                                if(strFehler.length==0){
-	                                	strFehler += telefonnummerPruefen();
-	                                    if(strFehler.length==0){
-	                                    	strFehler += passwortPruefen1();
-	                                    	if(strFehler.length==0){
-	                                        	strFehler += passwortPruefen2();
-		                                        if(strFehler.length==0)
-		                                        	strFehler += agbPruefen();
-	                                    		}
-	                                    	}
-	                                    }
+	                                	strFehler += telefonPruefen_user();
 	                                }
 	                            }
 	                        }
