@@ -119,7 +119,7 @@ var buildSpeisekarte = function(data){
 			container.append(div);
 		}		
 		
-		$("#pizzerienContainer").tabs();
+		$("#pizzerienContainer").tabs({active: 2});
 				
 		$(".preisbutton").click(function(){
 			extrasaufrufen();
