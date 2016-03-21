@@ -506,4 +506,9 @@ table {
     font-size: small;
 }
 
-
+.fehler{
+	margin-top:0px;
+	margin-bottom:10px;
+	color: #842002;
+	display:none;
+}

@@ -100,7 +100,7 @@ var setClickListener = function(){
 	/** Aktionsinformationen f�r den Absenden-Button **/
 	
 	$('#datenspeichern').click(function(e) {
-		if(true){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen
+		if(checkForm_Aendern()==true){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen
 			e.preventDefault(); /** cancel form submit **/
 			var json = JSON.parse(jsonErzeugen());
 			//var daten = $('#datenaendern_daten').serializeObject();
@@ -143,5 +143,186 @@ function jsonErzeugen(){
 	jsonString = jsonString.concat("\"}");
 	//console.log(jsonString);
 	return jsonString;
+	}
 }
+
+function checkForm_Aendern()//Prüfung zum Ändern von Daten einer Pizzeria
+{
+	var strFehler='';
+	strFehler += name_piz_pruefen();
+	if(strFehler.length==0){
+		strFehler += strasse_piz_pruefen();
+		if(strFehler.length==0){
+			strFehler += hausnummer_piz_pruefen();
+			if(strFehler.length==0){
+				strFehler += plz_piz_pruefen();
+				if(strFehler.length==0){
+					strFehler += ort_piz_pruefen();
+					if(strFehler.length==0)
+					{
+						strFehler += uhrzeit_piz_pruefen("sonntag_piz_aend", "fehlerSonntag_piz_aend");
+						strFehler += uhrzeit_piz_pruefen("sonntag_piz_aend_bis", "fehlerSonntag_piz_aend");
+						if(strFehler.length==0)
+						{
+							strFehler += uhrzeit_piz_pruefen("montag_piz_aend", "fehlerMontag_piz_aend");
+							strFehler += uhrzeit_piz_pruefen("montag_piz_aend_bis", "fehlerMontag_piz_aend");
+							if(strFehler.length==0)
+							{
+								strFehler += uhrzeit_piz_pruefen("dienstag_piz_aend", "fehlerDienstag_piz_aend");
+								strFehler += uhrzeit_piz_pruefen("dienstag_piz_aend_bis", "fehlerDienstag_piz_aend");
+								if(strFehler.length==0)
+								{
+									strFehler += uhrzeit_piz_pruefen("mittwoch_piz_aend", "fehlerMittwoch_piz_aend");
+									strFehler += uhrzeit_piz_pruefen("mittwoch_piz_aend_bis", "fehlerMittwoch_piz_aend");
+									if(strFehler.length==0)
+									{
+										strFehler += uhrzeit_piz_pruefen("donnerstag_piz_aend", "fehlerDonnerstag_piz_aend");
+										strFehler += uhrzeit_piz_pruefen("donnerstag_piz_aend_bis", "fehlerDonnerstag_piz_aend");
+										if(strFehler.length==0)
+										{
+											strFehler += uhrzeit_piz_pruefen("freitag_piz_aend", "fehlerFreitag_piz_aend");
+											strFehler += uhrzeit_piz_pruefen("freitag_piz_aend_bis", "fehlerFreitag_piz_aend");
+											if(strFehler.length==0)
+											{
+												strFehler += uhrzeit_piz_pruefen("samstag_piz_aend", "fehlerSamstag_piz_aend");
+												strFehler += uhrzeit_piz_pruefen("samstag_piz_aend_bis", "fehlerSamstag_piz_aend");
+												if(strFehler.length==0){
+													strFehler += telefonnummer_piz_pruefen();
+													if(strFehler.length==0){
+														strFehler += mail_piz_pruefen();
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
+
+function name_piz_pruefen()
+{
+	var vorname=document.getElementById("name_piz_aend").value;
+    if(checkGrammatik("^[A-Za-zÀ-Üß-ü_ ]{2,40}$", vorname)==false)
+  	  {
+  	  fehlerAusgeben("fehlerName_piz_aend", "name_piz_aend");
+        return "Das Feld 'Pizzerienname' entspricht nicht der typischen Form! Form: nur Buchstaben oder Leerzeichen, mindestens 2 maximal 40 Zeichen, Umlaute möglich\n";
+  	  }
+    hinweisVerbergen("fehlerName_piz_aend", "name_piz_aend");
+    return "";
+	}
+
+function strasse_piz_pruefen()
+{
+	 var strasse=document.getElementById("strasse_piz_aend").value;
+	  if(checkGrammatik("^([Ss]{1}[t]{1}[r]{1}[\.]{0,1}[ ]{0,1}){0,1}[A-Za-zÀ-Üß-ü_]{2,25}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,25}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,25}$", strasse)==false)
+		  {
+		  fehlerAusgeben("fehlerStrasse_piz_aend", "strasse_piz_aend");
+	      	return "Das Feld 'Strasse' entspricht nicht der typischen Form! Form: nur Buchstaben, maximal 2 Leerzeichen\n";
+		  }
+	  hinweisVerbergen("fehlerStrasse_piz_aend", "strasse_piz_aend");
+     return"";
+	}
+
+function hausnummer_piz_pruefen()
+{
+	 var hnr=document.getElementById("hausnummer_piz_aend").value;
+	  if(checkGrammatik("^[0-9-_\.]{1,4}[a-zA-Z]{0,1}$", hnr)==false)
+		  {
+		    fehlerAusgeben("fehlerHausnummer_piz_aend", "hausnummer_piz_aend");
+	    	return "Das Feld 'Hausnummer' entspricht nicht der typischen Form! Form:1-10 Ziffern, 1 Buchstabe\n";
+		  }
+	  hinweisVerbergen("fehlerHausnummer_piz_aend", "hausnummer_piz_aend");
+	  return "";
+	}
+
+function plz_piz_pruefen()
+{
+	var plz=document.getElementById("plz_piz_aend").value;
+    
+	  /** Pruefung, dass nur Zahlen in der PLZ enthalten sind **/
+    if(checkGrammatik("^[0-9]{5,5}$", plz)==false)
+  	  {
+  	  	  fehlerAusgeben("fehlerPlz_piz_aend", "plz_piz_aend");
+	          return "Das Feld 'plz' entspricht nicht der typischen Form! Form: 5 Ziffern \n";
+  	  }
+    hinweisVerbergen("fehlerPlz_piz_aend", "plz_piz_aend"); 
+    return "";
+	}
+
+function ort_piz_pruefen()
+{
+
+	var wohnort=document.getElementById("ort_piz_aend").value;
+          if(checkGrammatik("^[A-Za-zÀ-Üß-ü_]{2,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}$", wohnort)==false)
+        	  {
+        	  	  fehlerAusgeben("fehlerOrt_piz_aend", "ort_piz_aend");
+	        	  return "Das Feld 'Wohnort' entspricht nicht der typischen Form! \n";
+        	  }
+          hinweisVerbergen("fehlerOrt_piz_aend", "ort_piz_aend");
+      return "";
+}
+
+function telefonnummer_piz_pruefen()
+{
+    var tel=document.getElementById("telefon_piz_aend").value;
+	  /** Pruefung, dass nur Zahlen in der Tel enthalten sind **/
+      if(checkGrammatik("^[0-9-_\.]{5,20}$", tel)==false)
+    	  {
+    	      fehlerAusgeben("fehlerTel_piz_aend", "telefon_piz_aend");
+	          return "Das Feld 'Telefonnummer' entspricht nicht der typischen Form! Form: mindestens 5 maximal 20 Ziffern \n";
+    	  }
+      hinweisVerbergen("fehlerTel_piz_aend", "telefon_piz_aend"); 
+      return "";
+}
+
+function mail_piz_pruefen()
+{
+    var email=document.getElementById("email_piz_aend").value;
+	  /**  Pruefung ob eine gueltige Mail-Adresse eingegeben wurde **/
+      if(checkGrammatik("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", email)==false)
+    	  {
+    	      fehlerAusgeben("fehlerEmail_piz_aend", "email_piz_aend");
+	          return "Das Feld 'Email' entspricht nicht der typischen Form einer Email!\n";
+    	  }
+      hinweisVerbergen("fehlerEmail_piz_aend", "email_piz_aend");
+ 
+      return ""
+}
+
+function uhrzeit_piz_pruefen(tag, fehler_tag)
+{
+	var tage = "" + tag;
+	var fehl = "" + fehler_tag;
+	var zeit=document.getElementById(tage).value;
+	  /**  Pruefung ob eine gueltige Mail-Adresse eingegeben wurde **/
+    if(checkGrammatik("^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$", zeit)==false)
+  	  {
+  	      fehlerAusgeben(fehl, tage);
+	          return "Die Uhrzeit entspricht nicht der typischen Form einer Uhrzeit!\n";
+  	  }
+    hinweisVerbergen(fehl, tage);
+
+    return ""
+}
+
+
+function fehlerAusgeben(fehl, feld)
+{
+    document.getElementById("" + fehl).style.display="inline"; //Fehlerhinweis wird angezeigt
+    document.getElementById("" + feld).style.background="#842002"; //Fehlerhaftes Feld wird markiert
+    document.getElementById("" + feld).style.color="#ffffff"; //Schriftfarbe des fehlerhaften Feldes wird dem neuen Hintergrund angepasst
+    //document.getElementById("container").style.height="320"; //Pop-Up wird zur Angabe des Fehlers vergrößert
+	}
+function hinweisVerbergen(fehl, feld)
+{
+	  document.getElementById("" + fehl).style.display="none"; //Fehlerhinweis wird ausgeblendet
+	  document.getElementById("" + feld).style.background="#ffffff"; //Fehlerhaftes Feld wird farblich in Ausgangszustand gebracht
+	  document.getElementById("" + feld).style.color="#842002"; //Schriftfarbe wird farblich in Ausgangszustand gebracht
+	 // document.getElementById("container").style.height="300"; //Die Größe des Pop-Ups wird in Ausgangszustand gebracht
+	}
