@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-17 23:22:25
+<?php /* Smarty version 3.1.27, created on 2016-03-21 09:54:42
          compiled from "views\pizzeria.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1725256eb2e21d458b2_18245282%%*/
+/*%%SmartyHeaderCode:2940456efb6d2883fa0_99110227%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f8be390f4ad3bbf367f4c192c00064c28322633d' => 
     array (
       0 => 'views\\pizzeria.tpl',
-      1 => 1458125066,
+      1 => 1458548314,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1725256eb2e21d458b2_18245282',
+  'nocache_hash' => '2940456efb6d2883fa0_99110227',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56eb2e21d836e8_95172759',
+  'unifunc' => 'content_56efb6d28ce332_13306946',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56eb2e21d836e8_95172759')) {
-function content_56eb2e21d836e8_95172759 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56efb6d28ce332_13306946')) {
+function content_56efb6d28ce332_13306946 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1725256eb2e21d458b2_18245282';
+$_smarty_tpl->properties['nocache_hash'] = '2940456efb6d2883fa0_99110227';
 ?>
 <html>
     <head>
@@ -49,6 +49,17 @@ $_smarty_tpl->properties['nocache_hash'] = '1725256eb2e21d458b2_18245282';
 			 <div id='showwarenkorb'></div>
 			 <div id='summeWarenkorb'></div>
 			 <div id='zurKasse'></div>
+    	</div>
+    	<div 
+    	<div id="extrazutaten_container">
+    	  	<input type="button"  id="close" value="X" onclick ="schliessen()"></input>
+    	 	
+    	 	<div id="extrazutaten"></div>
+    	 	<input type= "button" value="Bestaetigen" onclick="schliessen()"></input>
+    	 	<div id="overlay">
+    	 	
+    	 			
+    	 	</div>
     	</div>
     </body>
 </html><?php }

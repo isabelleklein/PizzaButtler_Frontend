@@ -13,11 +13,13 @@
 		<div id="warenkorbAnzeigen"></div>
 		<div id="bezahlart">
 		<p>Bezahlart wählen</p>
+		<div id="bezahlartradio">
 		<form action="radio.html">
-		<input type="radio" name="Zahlungsart"> Paypal <img id="bezahlart1" src="./images/bezahlart1.png" alt="Bezahlart 1"></input>
-		<input type="radio" name="Zahlungsart"> Bar <img id="bezahlart2" src="./images/bezahlart2.png" alt="Bezahlart 2"></input>
-		<input type="radio" name="Zahlungsart"> EC-Cash </input>
+		<input type="radio" name="Zahlungsart" class="zahlungsart"> Paypal <img id="bezahlart1" src="./images/bezahlart1.png" alt="Bezahlart 1"></input><br>
+		<input type="radio" name="Zahlungsart" class="zahlungsart"> Bar <img id="bezahlart2" src="./images/bezahlart2.png" alt="Bezahlart 2"></input><br>
+		<input type="radio" name="Zahlungsart" class="zahlungsart"> EC-Cash </input>
 		</form>
+		</div>
 		<br><button class = 'bestellen' > Bestellen </button>
 		</div>
 		</div>

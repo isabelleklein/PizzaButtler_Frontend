@@ -461,21 +461,23 @@ table {
     margin-bottom: 4%;
 }
 #bezahlart {
-   background-color: #ffffff;
-    border-radius: 12px;
+    background-color: #ffffff;
     border-width: 0;
     color: #842002;
-    left: 15%;
+    left: 2.5%;
     height: auto;
     position: relative;
     top: 0%;
-    width: 48%;
+    width: 95%;
     float: left;
     margin-bottom: 4%;
 	line-height: 2;
+	border:0px;
+	border-top: 5px;
+	border-style: solid;
 }
 #extrazutaten_container{
-	 position:fixed!important;
+	position:fixed!important;
     position:absolute;
     height:auto;
     width:320px;
@@ -488,6 +490,14 @@ table {
     display:none;
     z-index:1002;
     padding:10px;
+}
+#bezahlartradio{
+	left: 5%;
+	position: relative;
+	width: auto;
+}
+.zahlungsart{
+	width: auto;
 }
 
 
