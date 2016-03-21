@@ -91,26 +91,35 @@ function checkForm()
   //Eingabefehler werden nacheinander geprueft. 
   //Dies ist in Ordnung, da bei Fuellung der Felder eine eigene Pruefung gestartet wird.
   //Das Pop-Up-Fenster wird damit bei auftreten einer Vielzahl von Fehlern nicht zu groß
-    strFehler += anredePruefen_user();
+    strFehler += anredePruefen();
     if(strFehler.length==0){
-    	strFehler += vornamePruefen_user();
+    	strFehler += vornamePruefen();
         if(strFehler.length==0){
-        	strFehler += nachnamePruefen_user();
+        	strFehler += nachnamePruefen();
         	//Wird nach Vorgabe der Fachlichkeit aktuell nicht in der Registrierung benötigt.
         	//if(strFehler.length==0){
 	        //	strFehler += datumPruefen();
 	            if(strFehler.length==0){
-	            	strFehler += strassePruefen_user();
+	            	strFehler += strassePruefen();
 	                if(strFehler.length==0){
-	                	strFehler += hausnummerPruefen_user();
+	                	strFehler += hausnummerPruefen();
 	                    if(strFehler.length==0){
-	                    	strFehler += plzPruefen_user();
+	                    	strFehler += plzPruefen();
 	                        if(strFehler.length==0){
-	                        	strFehler += wohnortPruefen_user();
+	                        	strFehler += wohnortPruefen();
 	                            if(strFehler.length==0){
-	                            	strFehler += mailPruefen_user();
+	                            	strFehler += mailPruefen();
 	                                if(strFehler.length==0){
-	                                	strFehler += telefonPruefen_user();
+	                                	strFehler += telefonnummerPruefen();
+	                                    if(strFehler.length==0){
+	                                    	strFehler += passwortPruefen1();
+	                                    	if(strFehler.length==0){
+	                                        	strFehler += passwortPruefen2();
+		                                        if(strFehler.length==0)
+		                                        	strFehler += agbPruefen();
+	                                    		}
+	                                    	}
+	                                    }
 	                                }
 	                            }
 	                        }

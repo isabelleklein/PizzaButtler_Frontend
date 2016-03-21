@@ -36,31 +36,39 @@ function checkForm()
   //Dies ist in Ordnung, da bei Fuellung der Felder eine eigene Pruefung gestartet wird.
   //Das Pop-Up-Fenster wird damit bei auftreten einer Vielzahl von Fehlern nicht zu groß
 
-    	strFehler += vornamePruefen_delivery();
+    	strFehler += vornamePruefen();
         if(strFehler.length==0){
-        	strFehler += nachnamePruefen_delivery();
+        	strFehler += nachnamePruefen();
         	//Wird nach Vorgabe der Fachlichkeit aktuell nicht in der Registrierung benötigt.
         	//if(strFehler.length==0){
 	        //	strFehler += datumPruefen();
 	        if(strFehler.length==0){
-                strFehler += strassePruefen_delivery();
+                strFehler += strassePruefen();
                 if(strFehler.length==0){
-	            	strFehler += hausnummerPruefen_delivery();
+	            	strFehler += hausnummerPruefen();
 	                if(strFehler.length==0){
 	                   	strFehler += plzPruefen();
                         if(strFehler.length==0){
-                            strFehler += wohnortPruefen_delivery();
+                            strFehler += wohnortPruefen();
 	                        if(strFehler.length==0){
-                                strFehler += mailPruefen_delivery();
+                                strFehler += mailPruefen();
 	                            if(strFehler.length==0){
-	                               	strFehler += telefonPruefen_delivery();
-                                }
-                            }
-                        }
-                    } 
-                }
+	                               	strFehler += telefonnummerPruefen();
+	                                if(strFehler.length==0){
+                                        strFehler += passwortPruefen1();
+                                        if(strFehler.length==0){
+	                                     	strFehler += passwortPruefen2();
+		                                    if(strFehler.length==0)
+		                                    	strFehler += agbPruefen();
+	                                   		}
+                                        }
+                                 }
+                             }
+                         }
+                     }
+                 }
+         	}
     		//}
-            }
         }
     	
     
