@@ -231,6 +231,7 @@ function zurKasse()
 			var jahr = jetzt.getFullYear();
 			var stunde = jetzt.getHours();
 			var minute = jetzt.getMinutes();
+			if(minute < 10) minute = "0" + minute;
 			var zeit = (tag + "." + monat + "." + jahr + " " + stunde + ":" + minute);
 			Cookies.set("zeit", zeit);
 			Cookies.set("Warenkorb",warenkorb);

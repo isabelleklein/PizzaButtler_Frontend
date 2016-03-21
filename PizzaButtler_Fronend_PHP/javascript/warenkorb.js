@@ -18,11 +18,11 @@ function warenkorbAnzeigen(){
 	var ul = $("<ul style='padding-left:15px'></ul>");
 	
 	for (var i=0; i<warenkorb.length; i++){
-		var bezeichnung = warenkorb[i].bezeichnung;
+		var name = warenkorb[i].name;
 		var groesse = warenkorb[i].groesse;
 		var preis = warenkorb[i].preis;
 	
-		var li = $("<li>" + bezeichnung + " Größe: " + groesse + " Preis: " + preis + "€</li>");
+		var li = $("<li>" + name + " Größe: " + groesse + " Preis: " + preis + "€</li>");
 		ul.append(li);
 	}
 	
