@@ -27,14 +27,14 @@ $(document).ready(function(){
 
 
 document.onscroll = function () {
-var pos = window.pageYOffset;
-var inf = document.getElementById('infoContainer').offsetHeight;
-//console.log(pos + "   " + inf);
-pos = pos - inf - 160;
-if (pos > 0)
-document.getElementById('rechterBereich').style.top = pos + 'px';
-else
-document.getElementById('rechterBereich').style.top = '0px';
+	var pos = window.pageYOffset;
+	var inf = document.getElementById('infoContainer').offsetHeight;
+	//console.log(pos + "   " + inf);
+	pos = pos - inf - 160;
+	if (pos > 0)
+		document.getElementById('rechterBereich').style.top = pos + 'px';
+	else
+		document.getElementById('rechterBereich').style.top = '0px';
 }
 
 
@@ -85,35 +85,35 @@ var buildSpeisekarte = function(data){
 		container.append(ul);		
 		
 		for(var i = 0; i<speisekarte.length; i++){
-		var div = $("<div id='tabs-" + i + "'></div>");
-			
-		var list;
-		if(speisekarte[i].groessen.length == 3)
-				list = $("<table id='pizzeriatabelle'> <tr> <th class='pspalte'> </th> <th class='pspalte'> <img id='groesses' src='./images/s.png'/> </th> <th class='pspalte'> <img id='groessem' src='./images/m.png'/> </th> <th class='pspalte'> <img id='groessel' src='./images/l.png'/> </th> </tr>");
-		else if(speisekarte[i].groessen.length == 2)
-			list = $("<table id='pizzeriatabelle'> <tr> <th class='pspalte'></th> <th class='pspalte'> <img id='groessem' src='./images/m.png'/> </th> <th class='pspalte'> <img id='groessel' src='./images/l.png'/> </th> <th class='pspalte'> </th> </tr>");
-		else if(speisekarte[i].groessen.length == 1)
-			list = $("<table id='pizzeriatabelle'> <tr> <th class='pspalte'></th> <th class='pspalte'> <img id='groessem' src='./images/m.png'/> </th> <th class='pspalte'> </th> <th class='pspalte'> </th>  </tr>");
-		for(var j = 0; j<speisekarte[i].produkte.length; j++){
-			var li;
+			var div = $("<div id='tabs-" + i + "'></div>");
+				
+			var list;
 			if(speisekarte[i].groessen.length == 3)
-				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + "</div> \
-						<div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
-						<td> <button groesse='klein' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'>  "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> \
-						<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[1] +" € </button> </td> \
-						<td> <button groesse='groß' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[2] +" € </button> </td> </tr>");
+					list = $("<table id='pizzeriatabelle'> <tr> <th class='pspalte'> </th> <th class='pspalte'> <img id='groesses' src='./images/s.png'/> </th> <th class='pspalte'> <img id='groessem' src='./images/m.png'/> </th> <th class='pspalte'> <img id='groessel' src='./images/l.png'/> </th> </tr>");
 			else if(speisekarte[i].groessen.length == 2)
-				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + " </div> \
-						<div class='spaltenbezeichnung'>" + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
-						<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> \
-						<td> <button groesse='groß' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[1] +" € </button> </td> </tr>");
+				list = $("<table id='pizzeriatabelle'> <tr> <th class='pspalte'></th> <th class='pspalte'> <img id='groessem' src='./images/m.png'/> </th> <th class='pspalte'> <img id='groessel' src='./images/l.png'/> </th> <th class='pspalte'> </th> </tr>");
 			else if(speisekarte[i].groessen.length == 1)
-				li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + "</div> \
-						<div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
-						<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> </tr>");
+				list = $("<table id='pizzeriatabelle'> <tr> <th class='pspalte'></th> <th class='pspalte'> <img id='groessem' src='./images/m.png'/> </th> <th class='pspalte'> </th> <th class='pspalte'> </th>  </tr>");
+			for(var j = 0; j<speisekarte[i].produkte.length; j++){
+				var li;
+				if(speisekarte[i].groessen.length == 3)
+					li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + "</div> \
+							<div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
+							<td> <button groesse='klein' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'>  "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> \
+							<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[1] +" € </button> </td> \
+							<td> <button groesse='groß' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[2] +" € </button> </td> </tr>");
+				else if(speisekarte[i].groessen.length == 2)
+					li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + " </div> \
+							<div class='spaltenbezeichnung'>" + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
+							<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> \
+							<td> <button groesse='groß' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[1] +" € </button> </td> </tr>");
+				else if(speisekarte[i].groessen.length == 1)
+					li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].bezeichnung + "</div> \
+							<div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
+							<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preis[0] + " € </button> </td> </tr>");
 
-			list.append(li);
-			div.append(list);
+				list.append(li);
+				div.append(list);
 			}
 			div.append("</table>");
 			container.append(div);
@@ -121,23 +121,19 @@ var buildSpeisekarte = function(data){
 		
 		$("#pizzerienContainer").tabs();
 				
-			$(".preisbutton").click(function(){
+		$(".preisbutton").click(function(){
 			extrasaufrufen();
-			console.log(data);
-				addToWarenkorb(this);
+			addToWarenkorb(this);
 				
-						$('#overlay').show('slow', 
-								function() {
-							$('#extrazutaten_container').fadeIn('slow');
-							$('#changeText').html('Dynamischer Inhalt');
-							});
-		  
-	
-				});
-			
-			
+			$('#overlay').show('slow',	function() {
+				$('#extrazutaten_container').fadeIn('slow');
+				$('#changeText').html('Dynamischer Inhalt');
+			});
+		});
 	}
 }
+
+
 function extraslisten(data){
 	var statement = "";
 	for(var i = 0; i<data.length; i++){
@@ -145,35 +141,36 @@ function extraslisten(data){
 	}
 	$('#extrazutaten').html(statement);
 }
+
+
 function extrasaufrufen() {
 	var pizzeriaId = parse("id");
 	rest = new RestInterface();
 	rest.setParameters("GET", "pizzeria/" + pizzeriaId, null, extraslisten);
 
-		if(pizzeriaId != ""){
-			console.log("erfolgreich");
-			// rest-Aufruf durchfuehren und Liste befuellen
-	rest.fakeSend("./mock/getExtrazutaten.json");
-			}
-		else {
-			console.log("fehler");
-	rest.fakeSend("./mock/null.json");
-			}
+	if(pizzeriaId != ""){
+		console.log("erfolgreich");
+		// rest-Aufruf durchfuehren und Liste befuellen
+		rest.fakeSend("./mock/getExtrazutaten.json");
+	}
+	else {
+		console.log("fehler");
+		rest.fakeSend("./mock/null.json");
+	}
 }
+
 function extrahinzufuegen(){ // Hier muss die Funktion geschrieben werden, wie die Extrazutaten an den Warenkorb übergeben werden
 	console.log("Domme");
 }
-function schliessen(){
-	
-		      $('#extrazutaten_container').hide('slow', 
-		        function() {
-		        	
-		                $('#overlay').fadeOut();          
-		             });
+
+function schliessen(){	
+	$('#extrazutaten_container').hide('slow', function() {
+	    $('#overlay').fadeOut();          
+	});
 }	    
 
 function addToWarenkorb(data){
-	var produkt;
+	var produkt = null;
 	
 	var preis = parseFloat(data.innerHTML);
 	var groesse = data.getAttribute("groesse");
@@ -181,15 +178,13 @@ function addToWarenkorb(data){
 	for(var i = 0; i<speisekarte.length; i++){
 		for(var j = 0; j<speisekarte[i].produkte.length; j++){
 			if(speisekarte[i].produkte[j].produktID == produktID){
-				produkt = speisekarte[i].produkte[j];
+				produkt = jQuery.extend({}, speisekarte[i].produkte[j]);
 				produkt.preis = preis;
 				produkt.groesse = groesse;
 				break;
 			}
 		}
-	}
-	console.log(preis);
-	
+	}	
 	warenkorb.push(produkt);
 	showWarenkorb();
 	summieren();
