@@ -500,4 +500,10 @@ table {
 	width: auto;
 }
 
+.placeholder_fehler{
+    color: #842002;
+    display: none;
+    font-size: small;
+}
+
 
