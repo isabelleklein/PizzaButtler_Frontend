@@ -21,10 +21,9 @@
 		<br><button class = 'bestellen' > Bestellen </button>
 		</div>
 		</div>
-    	<div id ="rechterBereich">
-	    	<div id="infoContainer">
-	    		
-	    	</div>
+    	<div class = "infocontent">
+    		<p id="infoContainerText"> Der Butler Bringts!</p>
+    		<img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
     	</div>
     </body>
 </html>

@@ -1,8 +1,8 @@
 <html>
     <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<script type="text/javascript" src="../javascript/user_pizzeria.js"></script>
-		<script type="text/javascript" src="../javascript/kundenregistrierung.js"></script>
+		<script type="text/javascript" src="./javascript/user_pizzeria.js"></script>
+		<script type="text/javascript" src="./javascript/kundenregistrierung.js"></script>
 		
     </head>
     

@@ -8,6 +8,10 @@ $(document).ready(function(){
 });
 
 $(function() {
+    $("#delivery_next").click(function(){
+			window.location.href = "./warenkorb.php";
+		});
+    
 	$("input[type='radio'][name='lieferart']").change(
 	        function() {
                 if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
@@ -19,4 +23,5 @@ $(function() {
                 }
 	        }
 	    );     
-})
+});
+

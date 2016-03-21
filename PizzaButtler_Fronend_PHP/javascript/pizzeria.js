@@ -1,4 +1,4 @@
-﻿var rest;
+var rest;
 var speisekarte;
 var test;
 var warenkorb = new Array();
@@ -234,7 +234,7 @@ function zurKasse()
 			var zeit = (tag + "." + monat + "." + jahr + " " + stunde + ":" + minute);
 			Cookies.set("zeit", zeit);
 			Cookies.set("Warenkorb",warenkorb);
-			window.location.href = "./warenkorb.php";
+			window.location.href = "./delivery.php";
 		});
 }
 

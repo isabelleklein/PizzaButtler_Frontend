@@ -1,6 +1,11 @@
 $(document).ready(function(){
 	warenkorbAnzeigen();
+        $(".bestellen").click(function(){
+			window.location.href = "./finish.php";
+		});
 });
+
+
 
 function warenkorbAnzeigen(){
 	var zeit = Cookies.get("zeit");
@@ -30,4 +35,8 @@ function warenkorbAnzeigen(){
 	ul.append(p);
 	
 	$("#warenkorbAnzeigen").html(ul);
+    
 }
+
+
+
