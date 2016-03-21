@@ -17,7 +17,7 @@ function RestInterface(){
         this.successCallback = successCallback;
     };
 
-    this.send = function(){
+    this.send = function(param){
         var ajaxObj = {
             type: this.type,
             url: baseUrl + this.urlEnding,
@@ -25,6 +25,9 @@ function RestInterface(){
             contentType: contentType,
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("Error in 'RestInterface.js' " + jqXHR.getAllResponseHeaders() + " " + errorThrown);
+				var r = new RestInterface();
+				r.successCallback = this.successCallback;
+				r.fakeSend(param);
             },
             success: function(data){
                 if(this.successCallback != null){
@@ -38,7 +41,6 @@ function RestInterface(){
             dataType: dataType,
 			successCallback: this.successCallback
         };
-
         $.ajax(ajaxObj);
     };
 

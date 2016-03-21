@@ -1,50 +1,145 @@
-[
-	{
-		"bezeichnung": "Pizza",
-		"groessen": ["24cm", "28cm", "32cm"],
-		"produkte": [
-			{
-				"produktID": 1,	
-				"bezeichnung": "Pizza Salami",
-				"beschreibung": "Salami, Kaese, Tomatensosse",
-				"preis": [5, 6, 7]
-			},
-			{
-				"produktID": 2,
-				"bezeichnung": "Pizza Tonno",
-				"beschreibung": "Thunfisch, Kaese, Tomatensosse",
-				"preis": [5, 6, 7]
-			},
-			{
-				"produktID": 3,
-				"bezeichnung": "Pizza Asiate",
-				"beschreibung":"Katzenfleisch, Kaese, Tomatensosse",
-				"preis": [5, 6, 7]
-			}
-		]
-	},
-	{
-		"bezeichnung":"Pasta",
-		"groessen":["Mittel", "Gross"],
-		"produkte": [
-			{
-				"produktID": 1002,
-				"bezeichnung": "karottensalat",
-				"beschreibung":"Feldsalat, Karotten, Currywurstpulver",
-				"preis": [6, 9]
-			}
-		]
-	},
-	{
-		"bezeichnung":"Aktion",
-		"groessen":["Mittel"],
-		"produkte": [
-			{
-				"produktID": 3001,
-				"bezeichnung": "Grosser Karottensalat",
-				"beschreibung":"Feldsalat, Karotten, Currywurstpulver",
-				"preis": [3.99]
-			}
-		]
-	}
-]
+{
+    "kategorien":[
+        {
+            "kategorieID":1,
+            "name": "Pizza",
+            "variante": ["24cm", "28cm", "32cm"],
+            "produkte": [
+                {
+                    "produktID": 1,
+                    "name": "Pizza Salami",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                },
+                {
+                    "produktID": 2,
+                    "name": "Pizza Tonno",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                },
+                {
+                    "produktID": 3,
+                    "name": "Pizza Asiate",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                },
+				{
+                    "produktID": 4,
+                    "name": "Pizza Salami",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                },
+                {
+                    "produktID": 5,
+                    "name": "Pizza Tonno",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                },
+                {
+                    "produktID": 6,
+                    "name": "Pizza Asiate",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                },
+				{
+                    "produktID": 7,
+                    "name": "Pizza Salami",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                },
+                {
+                    "produktID": 8,
+                    "name": "Pizza Tonno",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                },
+                {
+                    "produktID": 9,
+                    "name": "Pizza Asiate",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                },
+				{
+                    "produktID": 10,
+                    "name": "Pizza Salami",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                },
+                {
+                    "produktID": 11,
+                    "name": "Pizza Tonno",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                },
+                {
+                    "produktID": 12,
+                    "name": "Pizza Asiate",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [5, 6, 7]
+                }
+            ],
+            "zusatzbelaege": [
+                {
+                    "zusatzbelagID":1,
+                    "name": "Paprika",
+                    "preis":1.09
+                },
+                {
+                    "zusatzbelagID":2,
+                    "name": "Katzenfleisch",
+                    "preis":5.99
+                },
+                {
+                    "zusatzbelagID":3,
+                    "name": "Kääse",
+                    "preis":0.99
+                }
+                
+            ]
+        },
+        {
+            "kategorieID":2,
+            "name":"Pasta",
+            "variante":["Mittel", "Groß"],
+            "produkte": [
+                {
+                    "produktID": 1002,
+                    "name": "Nudelauflauf",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [6, 9]
+                }
+            ],
+            "zusatzbelaege": [
+                {
+                    "zusatzbelagID":3,
+                    "name": "Kääse",
+                    "preis":0.99
+                },
+                {
+                    "zusatzbelagID":4,
+                    "name": "Parmesan",
+                    "preis":1.99
+                },
+                {
+                    "zusatzbelagID":5,
+                    "name": "Zwiebeln",
+                    "preis":1.99
+                }
+                
+            ]
+        },
+        {
+            "kategorieID":3,
+            "name":"Aktion",
+            "variante":["Mittel"],
+            "produkte": [
+                {
+                    "produktID": 3001,
+                    "name": "Großer Karottensalat",
+                    "beschreibung":"Käse, Tomate, etc.",
+                    "preis": [3.99]
+                }
+            ]
+        }
+    ]
+}

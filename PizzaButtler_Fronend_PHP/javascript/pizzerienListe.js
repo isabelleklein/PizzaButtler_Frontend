@@ -9,7 +9,7 @@ $(document).ready(function(){
 	
 	if(plzOrt != ""){
 		// Rest-Aufruf durchf�hren und Liste bef�llen
-		rest.send();
+		rest.send("./mock/getPizzerien.json");
 	}
 });
 

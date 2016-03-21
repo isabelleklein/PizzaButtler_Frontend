@@ -12,11 +12,11 @@ $(document).ready(function(){
 	
 	if(pizzeriaId != ""){
 		// rest-Aufruf durchfuehren und Liste befuellen
-		rest.send();
+		rest.send("./mock/getRestaurant.json");
 		
 		// Abrufen der Speisekarte
 		rest.setParameters("GET", "restaurant/" + pizzeriaId + "/speisekarte", null, buildSpeisekarte);
-		rest.send();
+		rest.send("./mock/getSpeisekarte.json");
 	}
 	else {
 		rest.fakeSend("./mock/null.json");
