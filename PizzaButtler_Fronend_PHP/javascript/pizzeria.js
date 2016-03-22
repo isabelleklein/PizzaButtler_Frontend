@@ -227,12 +227,14 @@ function zurKasse()
 	$(".zurKasseButton").click(function(){
 			var jetzt = new Date();
 			var tag = jetzt.getDate();
+			if(tag < 10) tag = "0" + tag;
 			var monat = jetzt.getMonth()+1;
+			if(monat < 10) monat = "0" + monat;
 			var jahr = jetzt.getFullYear();
 			var stunde = jetzt.getHours();
 			var minute = jetzt.getMinutes();
 			if(minute < 10) minute = "0" + minute;
-			var zeit = (tag + "." + monat + "." + jahr + " " + stunde + ":" + minute);
+			var zeit = (tag + "." + monat + "." + jahr + ", " + stunde + ":" + minute);
 			Cookies.set("zeit", zeit);
 			Cookies.set("Warenkorb",warenkorb);
 			window.location.href = "./delivery.php";
