@@ -199,8 +199,18 @@ function showWarenkorb(){
 		var name = warenkorb[i].name;
 		var groesse = warenkorb[i].groesse;
 		var preis = warenkorb[i].preis;
+		var kurzgroesse = "";
 		
-		var li = $("<li>" + name + " Größe: " + groesse + " Preis: " + preis + "€</li>");
+		if (groesse == "groß"){
+			kurzgroesse = "L";
+		}	else if (groesse == "mittel"){
+			kurzgroesse = "M";
+		}	else if (groesse == "klein"){
+			kurzgroesse = "S";
+		}
+			
+		
+		var li = $("<li>" + name + ", " + kurzgroesse + ", " + preis + "€</li>");
 		ul.append(li);
 	}
 		

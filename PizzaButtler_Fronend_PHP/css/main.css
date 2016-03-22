@@ -415,6 +415,7 @@ table {
 #showWarenkorb{
 	overflow: auto;
 	height: 60%;
+	width: 95%;	
 }
 #summeWarenkorb{
 	border:0px;
