@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-21 22:05:49
+<?php /* Smarty version 3.1.27, created on 2016-03-22 13:59:44
          compiled from "views\warenkorb.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1687256f0622d093a86_84874005%%*/
+/*%%SmartyHeaderCode:3155856f141c0eaf554_66337605%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '563985881f6b448462e5e7933f77fd8a818e5369' => 
     array (
       0 => 'views\\warenkorb.tpl',
-      1 => 1458552204,
+      1 => 1458651474,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1687256f0622d093a86_84874005',
+  'nocache_hash' => '3155856f141c0eaf554_66337605',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56f0622d0dde16_71784852',
+  'unifunc' => 'content_56f141c0efd765_02217023',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56f0622d0dde16_71784852')) {
-function content_56f0622d0dde16_71784852 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56f141c0efd765_02217023')) {
+function content_56f141c0efd765_02217023 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1687256f0622d093a86_84874005';
+$_smarty_tpl->properties['nocache_hash'] = '3155856f141c0eaf554_66337605';
 ?>
 <html>
     <head>
@@ -48,8 +48,8 @@ $_smarty_tpl->properties['nocache_hash'] = '1687256f0622d093a86_84874005';
 		<input type="radio" name="Zahlungsart" class="zahlungsart"> EC-Cash </input>
 		</form>
 		</div>
-		<br><button class = 'bestellen' > Bestellen </button>
 		</div>
+		<div id="lieferadresseAnzeigen"></div>
 		</div>
     	<div class = "infocontent">
     		<p id="infoContainerText"> Der Butler Bringts!</p>

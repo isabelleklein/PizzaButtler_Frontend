@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	warenkorbAnzeigen();
+	lieferadresseAnzeigen();
         $(".bestellen").click(function(){
 			window.location.href = "./finish.php";
 		});
@@ -36,6 +37,30 @@ function warenkorbAnzeigen(){
 	
 	$("#warenkorbAnzeigen").html(ul);
     
+}
+
+function lieferadresseAnzeigen(){
+	var vorname = Cookies.get("vorname");
+	var nachname = Cookies.get("nachname");
+	var strasse = Cookies.get("strasse");
+	var hausnummer = Cookies.get("hausnummer");
+	var plz = Cookies.get("plz");
+	var ort = Cookies.get("ort");
+	var telefon = Cookies.get("telefon");
+	var email = Cookies.get("email");
+	var lieferart = Cookies.get("lieferart");
+	var p = ("Bestellung per " + lieferart + ".<br>");
+		$("#lieferadresseAnzeigen").html(p);
+	
+	if (lieferart == "Lieferung"){
+		var j = ("Lieferadresse:<br><br>" + "Name: " + vorname + " " + nachname + "<br>"
+				+"Straße: " + strasse + " " + hausnummer + "<br>"
+				+"PLZ/Ort: " + plz + " " + ort + "<br>"
+				+"Telefon: " + telefon + "<br>Mail: " + email );
+				$("#lieferadresseAnzeigen").append(j);
+	}
+	
+	$("#lieferadresseAnzeigen").append("<br><br><br><button class = 'bestellen' > Bestellen </button>");
 }
 
 

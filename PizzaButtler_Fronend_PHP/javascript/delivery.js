@@ -17,9 +17,9 @@ $(function() {
     $("#delivery_next").click(function(){
 			var lieferart ="";
 			if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
-				lieferart = "abholung";
+				lieferart = "Abholung";
 			} else {
-				lieferart = "lieferung";
+				lieferart = "Lieferung";
 				}
 			var vorname = document.getElementById('userVorname').value
 			var nachname = document.getElementById('userNachname').value

@@ -512,3 +512,19 @@ table {
 	color: #842002;
 	display:none;
 }
+#lieferadresseAnzeigen {
+    background-color: #ffffff;
+    border-width: 0;
+    color: #842002;
+    left: 2.5%;
+    height: auto;
+    position: relative;
+    top: 0%;
+    width: 95%;
+    float: left;
+    margin-bottom: 4%;
+	border:0px;
+	border-top: 5px;
+	border-style: solid;
+}
+
