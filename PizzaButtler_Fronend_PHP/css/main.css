@@ -529,3 +529,15 @@ table {
 	border-style: solid;
 }
 
+.hinzufuegen{
+	width: 2em;
+	height: 2em;
+	background-color: #00CC00;
+}
+
+.reduzieren{
+	width: 2em;
+	height: 2em;
+	background-color: #FF0000;
+}
+

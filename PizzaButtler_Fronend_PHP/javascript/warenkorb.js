@@ -22,15 +22,16 @@ function warenkorbAnzeigen(){
 		var name = warenkorb[i].name;
 		var groesse = warenkorb[i].groesse;
 		var preis = warenkorb[i].preis;
+		var anzahl = warenkorb[i].anzahl;
 	
-		var li = $("<li>" + name + " Größe: " + groesse + " Preis: " + preis + "€</li>");
+		var li = $("<li>" + anzahl + " " + name + " Größe: " + groesse + " Preis: " + preis + "€</li>");
 		ul.append(li);
 	}
 	
 	var summe = 0;
 	var p ="";
 	for(var i = 0; i < warenkorb.length; i++){
-		summe += warenkorb[i].preis;
+		summe += warenkorb[i].preis * warenkorb[i].anzahl;
 	}
 	p = $("<p style='margin:0px'><br>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");
 	ul.append(p);

@@ -222,7 +222,7 @@ function showWarenkorb(){
 		}
 			
 		
-		var li = $("<li>" + anzahl + " " + name + ", " + kurzgroesse + ", " + preis + "€ <button class='hinzufuegen' onclick='hinzufuegen(" + i + ")'>+</button><button class='entfernen' onclick='reduzieren(" + i + ")'>-</button></li>");
+		var li = $("<li>" + anzahl + " " + name + ", " + kurzgroesse + ", " + preis + "€ <button class='hinzufuegen' onclick='hinzufuegen(" + i + ")'>+</button><button class='reduzieren' onclick='reduzieren(" + i + ")'>-</button></li>");
 		ul.append(li);
 	}
 		
@@ -232,6 +232,7 @@ function showWarenkorb(){
 function hinzufuegen(i){
 	warenkorb[i].anzahl++;
 	showWarenkorb();
+	summieren();
 
 }
 
@@ -241,6 +242,7 @@ function reduzieren(i){
 		warenkorb.splice(i,1);
 	}
 	showWarenkorb();
+	summieren();
 
 }
 
@@ -249,7 +251,7 @@ function summieren()
 	var summe = 0;
 	var p ="";
 	for(var i = 0; i < warenkorb.length; i++){
-		summe += warenkorb[i].preis;
+		summe += warenkorb[i].preis * warenkorb[i].anzahl;
 	}
 	p = $("<p style='margin:0px'>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");
 	$("#summeWarenkorb").html(p);
