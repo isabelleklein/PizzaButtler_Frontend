@@ -20,8 +20,8 @@
 		<input type="radio" name="Zahlungsart" class="zahlungsart"> EC-Cash </input>
 		</form>
 		</div>
-		<br><button class = 'bestellen' > Bestellen </button>
 		</div>
+		<div id="lieferadresseAnzeigen"></div>
 		</div>
     	<div class = "infocontent">
     		<p id="infoContainerText"> Der Butler Bringts!</p>

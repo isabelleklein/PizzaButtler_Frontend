@@ -1,6 +1,6 @@
 {
-  "userID": "null",
-  "pizzeriaID": "123",
+  "userID": "123",
+  "pizzeriaID": "null",
   "vorname" : "TestVorname",
   "nachname": "TestNachname",
   "anrede": "TestAnrede",

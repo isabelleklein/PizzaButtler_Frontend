@@ -175,17 +175,28 @@ function addToWarenkorb(data){
 	var preis = parseFloat(data.innerHTML);
 	var groesse = data.getAttribute("groesse");
 	var produktID = data.getAttribute("produktID");
-	for(var i = 0; i<speisekarte.length; i++){
-		for(var j = 0; j<speisekarte[i].produkte.length; j++){
-			if(speisekarte[i].produkte[j].produktID == produktID){
-				produkt = jQuery.extend({}, speisekarte[i].produkte[j]);
-				produkt.preis = preis;
-				produkt.groesse = groesse;
-				break;
-			}
+	var vorhanden = false;
+	warenkorb.forEach(function(produktImWarenkorb){
+		if (produktImWarenkorb.preis == preis && produktImWarenkorb.groesse == groesse && produktImWarenkorb.produktID == produktID) {
+			produktImWarenkorb.anzahl++;
+			vorhanden = true;
 		}
-	}	
-	warenkorb.push(produkt);
+	
+	});
+	if (vorhanden == false){
+		for(var i = 0; i<speisekarte.length; i++){
+			for(var j = 0; j<speisekarte[i].produkte.length; j++){
+				if(speisekarte[i].produkte[j].produktID == produktID){
+					produkt = jQuery.extend({}, speisekarte[i].produkte[j]);
+					produkt.preis = preis;
+					produkt.groesse = groesse;
+					produkt.anzahl = 1;
+					break;
+				}
+			}
+		}	
+		warenkorb.push(produkt);
+	}
 	showWarenkorb();
 	summieren();
 	zurKasse();
@@ -199,14 +210,39 @@ function showWarenkorb(){
 		var name = warenkorb[i].name;
 		var groesse = warenkorb[i].groesse;
 		var preis = warenkorb[i].preis;
+		var kurzgroesse = "";
+		var anzahl = warenkorb[i].anzahl;
 		
-		var li = $("<li>" + name + " Größe: " + groesse + " Preis: " + preis + "€</li>");
+		if (groesse == "groß"){
+			kurzgroesse = "L";
+		}	else if (groesse == "mittel"){
+			kurzgroesse = "M";
+		}	else if (groesse == "klein"){
+			kurzgroesse = "S";
+		}
+			
+		
+		var li = $("<li>" + anzahl + " " + name + ", " + kurzgroesse + ", " + preis + "€ <button class='hinzufuegen' onclick='hinzufuegen(" + i + ")'>+</button><button class='entfernen' onclick='reduzieren(" + i + ")'>-</button></li>");
 		ul.append(li);
 	}
 		
 	$("#showwarenkorb").html(ul);
 }
 
+function hinzufuegen(i){
+	warenkorb[i].anzahl++;
+	showWarenkorb();
+
+}
+
+function reduzieren(i){
+	warenkorb[i].anzahl--;
+	if (warenkorb[i].anzahl == 0){
+		warenkorb.splice(i,1);
+	}
+	showWarenkorb();
+
+}
 
 function summieren()
 {
@@ -227,12 +263,14 @@ function zurKasse()
 	$(".zurKasseButton").click(function(){
 			var jetzt = new Date();
 			var tag = jetzt.getDate();
+			if(tag < 10) tag = "0" + tag;
 			var monat = jetzt.getMonth()+1;
+			if(monat < 10) monat = "0" + monat;
 			var jahr = jetzt.getFullYear();
 			var stunde = jetzt.getHours();
 			var minute = jetzt.getMinutes();
 			if(minute < 10) minute = "0" + minute;
-			var zeit = (tag + "." + monat + "." + jahr + " " + stunde + ":" + minute);
+			var zeit = (tag + "." + monat + "." + jahr + ", " + stunde + ":" + minute);
 			Cookies.set("zeit", zeit);
 			Cookies.set("Warenkorb",warenkorb);
 			window.location.href = "./delivery.php";
