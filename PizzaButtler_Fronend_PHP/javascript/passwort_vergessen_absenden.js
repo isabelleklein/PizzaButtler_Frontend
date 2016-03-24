@@ -15,10 +15,10 @@ $(document).ready(function() {
 		{
 			e.preventDefault(); /** cancel form submit **/
 			var jsObj = $pwvergessen.serializeObject();
-
+			
 			rest = new RestInterface();
-			rest.setParameters("POST", "passwortvergessen", jsObj, success);
-			rest.fakeSend("./mock/pwVergessen.json");
+			rest.setParameters("POST", "resetPassword", jsObj, success);
+			rest.send("./mock/pwVergessen.json");
 		}
 	});
 	
@@ -43,10 +43,20 @@ $(document).ready(function() {
             );
         }
     );
+    
+    // wird das hier benötigt?
+  	/*$(function() {
+	    $( '#datepicker' ).datepicker({
+	      changeMonth: true,
+	      changeYear: true
+	    });
+	 });*/
+});
 
-	var success = function(data) { 														/**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
+/**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
+function success(data) {  
 	console.log(data);
-		if(data ==0) {
+		if(data == 0) {
 			console.log("if-Abschnitt durchlaufen");
 			$('#container_pwvergessen').hide('slow',
 				function() {
@@ -65,15 +75,5 @@ $(document).ready(function() {
 			console.log("if-Abschnitt durchlaufen");
 		}
 	}
-    
-    // wird das hier benötigt?
-  	/*$(function() {
-	    $( '#datepicker' ).datepicker({
-	      changeMonth: true,
-	      changeYear: true
-	    });
-	 });*/
-});
-
 
 

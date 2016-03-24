@@ -8,6 +8,6 @@ $data = array(
 );
 
 $tpl = new SMTemplate();
-$tpl->render('warenkorb', $data, 'page', 'Warenkorb7');
+$tpl->render('warenkorb', $data, 'page', 'Warenkorb');
 
 ?>
