@@ -281,15 +281,13 @@ function reduzieren(i){
 function summieren()
 {
 	var summe = 0;
-	var p ="";
 	for(var i = 0; i < warenkorb.length; i++){
 		summe += warenkorb[i].preis * warenkorb[i].anzahl;
 		warenkorb[i].zusatzbelaege.forEach(function(belag){
 			summe += belag.preis * warenkorb[i].anzahl;
 		});
 	}
-	p = $("<p style='margin:0px'>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");
-	$("#summeWarenkorb").html(p);
+	$("#summeWarenkorb").html("<p style='margin:0px'>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");
 }
 
 function zurKasse()

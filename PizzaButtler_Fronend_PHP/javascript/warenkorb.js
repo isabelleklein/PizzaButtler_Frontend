@@ -1,9 +1,20 @@
+var rest;
 $(document).ready(function(){
 	warenkorbAnzeigen();
 	lieferadresseAnzeigen();
-        $(".bestellen").click(function(){
-			window.location.href = "./finish.php";
-		});
+    $(".bestellen").click(function(){
+		var bestellung = new Object();
+		
+		/*
+		bestellung.warenkorb = warenkorb;
+		bestellung.zeitpunkt = ...
+		...
+		
+		*/
+		rest = new RestInterface();
+		rest.setParameters("POST", "bestellung/", bestellung, verarbeiteBestellung, bestellungNichtErfolgreich);
+		rest.send();
+	});
 });
 
 
@@ -13,8 +24,7 @@ function warenkorbAnzeigen(){
 	var q = ("Warenkorb zur Bestellung vom " + zeit);
 	$("#bestellzeit").html(q);
 	
-	var warenkorb = new Array();
-	warenkorb = Cookies.getJSON("Warenkorb");
+	var warenkorb = Cookies.getJSON("Warenkorb");
 	
 	var ul = $("<ul style='padding-left:15px'></ul>");
 	
@@ -23,18 +33,30 @@ function warenkorbAnzeigen(){
 		var groesse = warenkorb[i].groesse;
 		var preis = warenkorb[i].preis;
 		var anzahl = warenkorb[i].anzahl;
+		
+		// Zusatzbelägestring + Preis für die Zusatzbeläge
+		var zusatz = "";
+		warenkorb[i].zusatzbelaege.forEach(function(belag){
+			zusatz += belag.name+ ", ";
+			preis += belag.preis;
+		});		
+		zusatz = zusatz.substr(0, zusatz.length - 2); // Letztes ", " entfernen
 	
-		var li = $("<li>" + anzahl + " " + name + " Größe: " + groesse + " Preis: " + preis + "€</li>");
+		var li = $("<li>" + anzahl + " " + name + " Größe: " + groesse + " Preis: " + preis + "€\
+					<div>" + zusatz + "</div></li>");
 		ul.append(li);
 	}
 	
 	var summe = 0;
-	var p ="";
+
 	for(var i = 0; i < warenkorb.length; i++){
 		summe += warenkorb[i].preis * warenkorb[i].anzahl;
+		warenkorb[i].zusatzbelaege.forEach(function(belag){
+			summe += belag.preis * warenkorb[i].anzahl;
+		});
 	}
-	p = $("<p style='margin:0px'><br>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");
-	ul.append(p);
+	
+	ul.append("<p style='margin:0px'><br>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");
 	
 	$("#warenkorbAnzeigen").html(ul);
     
@@ -50,19 +72,27 @@ function lieferadresseAnzeigen(){
 	var telefon = Cookies.get("telefon");
 	var email = Cookies.get("email");
 	var lieferart = Cookies.get("lieferart");
-	var p = ("Bestellung per " + lieferart + ".<br>");
-		$("#lieferadresseAnzeigen").html(p);
+		
+	$("#lieferadresseAnzeigen").html("Bestellung per " + lieferart + ".<br>");
 	
+	// Bei lieferung die Lieferadresse anzeigen
 	if (lieferart == "Lieferung"){
-		var j = ("Lieferadresse:<br><br>" + "Name: " + vorname + " " + nachname + "<br>"
+		$("#lieferadresseAnzeigen").append("Lieferadresse:<br><br>" + "Name: " + vorname + " " + nachname + "<br>"
 				+"Straße: " + strasse + " " + hausnummer + "<br>"
 				+"PLZ/Ort: " + plz + " " + ort + "<br>"
-				+"Telefon: " + telefon + "<br>Mail: " + email );
-				$("#lieferadresseAnzeigen").append(j);
+				+"Telefon: " + telefon + "<br>Mail: " + email);
 	}
 	
-	$("#lieferadresseAnzeigen").append("<br><br><br><button class = 'bestellen' > Bestellen </button>");
+	$("#lieferadresseAnzeigen").append("<br><br><br><button class='bestellen'> Bestellen </button>");
 }
 
+function verarbeiteBestellung(data){
+	console.log("Erfolgreich");
+	console.log(data);
+	window.location.href = "./finish.php";
+}
 
+function bestellungNichtErfolgreich(){
+	console.log("Fehler, Bestellungsserver ist nicht erreichbar");
+}
 
