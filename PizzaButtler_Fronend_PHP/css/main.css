@@ -412,11 +412,15 @@ table {
 	width: 2em;
 	height: auto;
 }
-#showWarenkorb{
+#showwarenkorb{
 	overflow: auto;
 	height: 60%;
 	width: 95%;	
 }
+#showwarenkorb ul{
+	margin-top:0;
+}
+
 #summeWarenkorb{
 	border:0px;
 	border-top: 5px;
@@ -530,14 +534,36 @@ table {
 }
 
 .hinzufuegen{
-	width: 2em;
-	height: 2em;
 	background-color: #00CC00;
+	border-color: #0C0;
+}
+.hinzufuegen:hover{
+	background-color: #FFF;
 }
 
 .reduzieren{
+	background-color: #FF0000;
+	border-color: #F00;
+}
+.reduzieren:hover{
+	background-color: #FFF;
+}
+
+.warenkorbelement{
+	list-style-type: none;
+	font-size: 90%;
+}
+
+.warenkorbelement button{
 	width: 2em;
 	height: 2em;
-	background-color: #FF0000;
+	font-size: 60%;
+	border-width: 2px;
+	border-radius: 3px;
+	float: right;
+}
+
+.warenkorbelement .zusatz {
+	font-size: 75%;
 }
 

@@ -122,8 +122,23 @@ var buildSpeisekarte = function(data){
 		$("#pizzerienContainer").tabs({active: 2});
 				
 		$(".preisbutton").click(function(){
+			/* Pseudo muss so ablaufen:
+				var extras = waehleExtras();
+				addToWarenkorb(this, extras);			
+			*/
+			
+			var extras = [{
+						"zusatzbelagID":1,
+						"name": "Paprika",
+						"preis":1.09
+					},
+					{
+						"zusatzbelagID":2,
+						"name": "Katzenfleisch",
+						"preis":5.99
+					}];
 			extrasaufrufen();
-			addToWarenkorb(this);
+			addToWarenkorb(this, extras);
 				
 			$('#overlay').show('slow',	function() {
 				$('#extrazutaten_container').fadeIn('slow');
@@ -169,28 +184,36 @@ function schliessen(){
 	});
 }	    
 
-function addToWarenkorb(data){
+function addToWarenkorb(produktButton, zusatzbelaege){
 	var produkt = null;
 	
-	var preis = parseFloat(data.innerHTML);
-	var groesse = data.getAttribute("groesse");
-	var produktID = data.getAttribute("produktID");
+	var preis = parseFloat(produktButton.innerHTML);
+	var groesse = produktButton.getAttribute("groesse");
+	var produktID = produktButton.getAttribute("produktID");
 	var vorhanden = false;
-	warenkorb.forEach(function(produktImWarenkorb){
-		if (produktImWarenkorb.preis == preis && produktImWarenkorb.groesse == groesse && produktImWarenkorb.produktID == produktID) {
-			produktImWarenkorb.anzahl++;
-			vorhanden = true;
-		}
 	
+	// Prüfen, ob das Produkt mit entspr. Zusatzbelägen schon im Warenkorb ist
+	warenkorb.forEach(function(produktImWarenkorb){		
+		if (produktImWarenkorb.preis == preis && 
+			produktImWarenkorb.groesse == groesse && 
+			produktImWarenkorb.produktID == produktID &&
+			JSON.stringify(produktImWarenkorb.zusatzbelaege) == JSON.stringify(zusatzbelaege)) {
+				produktImWarenkorb.anzahl++;
+				vorhanden = true;
+		}
 	});
-	if (vorhanden == false){
+	
+	// Produkt neu zur Speisekarte hinzufügen
+	if (!vorhanden){
 		for(var i = 0; i<speisekarte.length; i++){
 			for(var j = 0; j<speisekarte[i].produkte.length; j++){
 				if(speisekarte[i].produkte[j].produktID == produktID){
+					// Produkt aus der Speisekarte kopieren und anpassen
 					produkt = jQuery.extend({}, speisekarte[i].produkte[j]);
 					produkt.preis = preis;
 					produkt.groesse = groesse;
 					produkt.anzahl = 1;
+					produkt.zusatzbelaege = zusatzbelaege;
 					break;
 				}
 			}
@@ -203,7 +226,6 @@ function addToWarenkorb(data){
 }
 
 function showWarenkorb(){
-
 	var ul = $("<ul style='padding-left:15px'></ul>");
 	
 	for(var i = 0; i < warenkorb.length; i++){
@@ -221,11 +243,21 @@ function showWarenkorb(){
 			kurzgroesse = "S";
 		}
 			
+		// Zusatzbelägestring + Preis für die Zusatzbeläge
+		var zusatz = "";
+		warenkorb[i].zusatzbelaege.forEach(function(belag){
+			zusatz += belag.name+ ", ";
+			preis += belag.preis;
+		});		
+		zusatz = zusatz.substr(0, zusatz.length - 2); // Letztes ", " entfernen
 		
-		var li = $("<li>" + anzahl + " " + name + ", " + kurzgroesse + ", " + preis + "€ <button class='hinzufuegen' onclick='hinzufuegen(" + i + ")'>+</button><button class='reduzieren' onclick='reduzieren(" + i + ")'>-</button></li>");
+		var li = $("<li class='warenkorbelement'>" + anzahl + " " + name + ", " + kurzgroesse + ", " + preis + "€ \
+					<button class='hinzufuegen' onclick='hinzufuegen(" + i + ")'>+</button>\
+					<button class='reduzieren' onclick='reduzieren(" + i + ")'>-</button>\
+					<div class='zusatz'>" + zusatz + "</li></div>");
 		ul.append(li);
 	}
-		
+	
 	$("#showwarenkorb").html(ul);
 }
 
@@ -252,6 +284,9 @@ function summieren()
 	var p ="";
 	for(var i = 0; i < warenkorb.length; i++){
 		summe += warenkorb[i].preis * warenkorb[i].anzahl;
+		warenkorb[i].zusatzbelaege.forEach(function(belag){
+			summe += belag.preis * warenkorb[i].anzahl;
+		});
 	}
 	p = $("<p style='margin:0px'>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");
 	$("#summeWarenkorb").html(p);
@@ -263,20 +298,20 @@ function zurKasse()
 	$("#zurKasse").html(q);
 	
 	$(".zurKasseButton").click(function(){
-			var jetzt = new Date();
-			var tag = jetzt.getDate();
-			if(tag < 10) tag = "0" + tag;
-			var monat = jetzt.getMonth()+1;
-			if(monat < 10) monat = "0" + monat;
-			var jahr = jetzt.getFullYear();
-			var stunde = jetzt.getHours();
-			var minute = jetzt.getMinutes();
-			if(minute < 10) minute = "0" + minute;
-			var zeit = (tag + "." + monat + "." + jahr + ", " + stunde + ":" + minute);
-			Cookies.set("zeit", zeit);
-			Cookies.set("Warenkorb",warenkorb);
-			window.location.href = "./delivery.php";
-		});
+		var jetzt = new Date();
+		var tag = jetzt.getDate();
+		if(tag < 10) tag = "0" + tag;
+		var monat = jetzt.getMonth()+1;
+		if(monat < 10) monat = "0" + monat;
+		var jahr = jetzt.getFullYear();
+		var stunde = jetzt.getHours();
+		var minute = jetzt.getMinutes();
+		if(minute < 10) minute = "0" + minute;
+		var zeit = (tag + "." + monat + "." + jahr + ", " + stunde + ":" + minute);
+		Cookies.set("zeit", zeit);
+		Cookies.set("Warenkorb",warenkorb);
+		window.location.href = "./delivery.php";
+	});
 }
 
 function parse(val) {
