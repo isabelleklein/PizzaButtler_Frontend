@@ -108,3 +108,7 @@ min-width: 11in;
 #meine_Daten{
 	width: auto;
 }
+
+.form-error{
+	font-size: 80%;
+}

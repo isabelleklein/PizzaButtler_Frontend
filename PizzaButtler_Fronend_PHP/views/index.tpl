@@ -7,11 +7,13 @@
 					<img class="logo" src="./images/butler.png" alt="Logo Pizzabutler">
 				</p>
 			
-				<form action="./pizzerienSuche.php" name="pizzerienListeButton">
+				<form action="./pizzerienSuche.php" name="pizzerienListeButton" id='pizzerienSucheGross'>
 					<p>
-						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" />
+						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" 
+							data-suggestions="Mannheim, Münster, M'urica, 68161, 68159, 68123"/>
 					</p>
 				</form>
+				<script>$.validate('#pizzerienSucheGross')</script>
            <div class="zweiterBereich">
            	<div>
                

@@ -6,7 +6,8 @@
 		<script type="text/javascript" src="./lib/jquery/js.cookie.js"></script>
  	 	<script type="text/javascript" src="./lib/sugar.min.js"></script>
         <script type="text/javascript" src="./lib/jquery-ui-1.11.4/jquery-ui.js"></script>
- 	 	<script type="text/javascript" src="./lib/jquerymy-1.2.2.min.js"></script>
+ 	 	<script type="text/javascript" src="./lib/jquerymy-1.2.2.min.js"></script>		
+		<script type="text/javascript" src="./lib/form-validator/jquery.form-validator.min.js"></script>
 		<script type="text/javascript" src="./javascript/lib/polyfill.js"></script>
 		<script type="text/javascript" src="./javascript/RestInterface.js"></script>
     
@@ -130,12 +131,14 @@
         <div id="containerx">
 			<form id='login' name="login" action="#">
 				<div class="fline">
-					<input type="text" class="in2" name="email" id="email" placeholder="Email-Adresse" required onchange="mailPruefen()" />
-					<input class="in2" type="password" name="passwort" id="passwort" placeholder="Passwort" required onchange="passwortPruefen()" />
+					<input data-validation="email"	  data-validation-error-msg="Bitte geben Sie eine gülte E-Mail-Adresse an"
+							type="text"     class="in2" name="email"    id="email" placeholder="Email-Adresse" required/>
+					<input data-validation="required" data-validation-error-msg="Bitte geben Sie ein Passwort ein" 
+							type="password" class="in2" name="passwort" id="passwort" placeholder="Passwort" required"/>
 					<input type="button" id="closex" value="X">
 				</div>
 				<div id="merken">
-					<input class="in2" name="merken" id="merken" type="checkbox"><label>Logindaten merken</label></input>
+					<input class="in2" name="merken" id="cbmerken" type="checkbox"><label>Logindaten merken</label></input>
 				</div>
 				<div id="passwortvergessen"><a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a></div>
 				<input id="absenden_login" name="absenden" type="button" value="Login" />

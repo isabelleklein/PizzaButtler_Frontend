@@ -34,12 +34,12 @@ inputx{
     margin-right: 27px;
 }
 
-#merken{
+#merken, #cbmerken{
 	position: relative;
     top: 0px;  
     width: auto;
 }
-#merken input:hover{
+#merken input:hover, #cbmerken input:hover{
 	cursor: pointer;
 }
 

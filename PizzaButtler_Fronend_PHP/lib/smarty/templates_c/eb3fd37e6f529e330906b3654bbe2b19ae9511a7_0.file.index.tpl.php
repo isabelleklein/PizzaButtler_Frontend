@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-15 14:34:30
+<?php /* Smarty version 3.1.27, created on 2016-03-25 03:29:22
          compiled from "views\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1295156e80f665caa96_68546572%%*/
+/*%%SmartyHeaderCode:3037056f4a2820b1ec4_13553533%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eb3fd37e6f529e330906b3654bbe2b19ae9511a7' => 
     array (
       0 => 'views\\index.tpl',
-      1 => 1458048534,
+      1 => 1458872958,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1295156e80f665caa96_68546572',
+  'nocache_hash' => '3037056f4a2820b1ec4_13553533',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56e80f666b1243_87181952',
+  'unifunc' => 'content_56f4a2820f17c2_68158555',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56e80f666b1243_87181952')) {
-function content_56e80f666b1243_87181952 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56f4a2820f17c2_68158555')) {
+function content_56f4a2820f17c2_68158555 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1295156e80f665caa96_68546572';
+$_smarty_tpl->properties['nocache_hash'] = '3037056f4a2820b1ec4_13553533';
 ?>
 
 
@@ -33,11 +33,15 @@ $_smarty_tpl->properties['nocache_hash'] = '1295156e80f665caa96_68546572';
 					<img class="logo" src="./images/butler.png" alt="Logo Pizzabutler">
 				</p>
 			
-				<form action="./pizzerienSuche.php" name="pizzerienListeButton">
+				<form action="./pizzerienSuche.php" name="pizzerienListeButton" id='pizzerienSucheGross'>
 					<p>
-						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" />
+						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" 
+							data-suggestions="Mannheim, Münster, M'urica, 68161, 68159, 68123"/>
 					</p>
 				</form>
+				<?php echo '<script'; ?>
+>$.validate('#pizzerienSucheGross')<?php echo '</script'; ?>
+>
            <div class="zweiterBereich">
            	<div>
                

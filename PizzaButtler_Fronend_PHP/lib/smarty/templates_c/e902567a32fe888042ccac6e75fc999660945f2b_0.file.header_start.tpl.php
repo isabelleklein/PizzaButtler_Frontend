@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-15 14:34:30
+<?php /* Smarty version 3.1.27, created on 2016-03-25 03:17:33
          compiled from "layouts\header_start.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1137356e80f667c6812_82649369%%*/
+/*%%SmartyHeaderCode:1137556f49fbda03285_22629666%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e902567a32fe888042ccac6e75fc999660945f2b' => 
     array (
       0 => 'layouts\\header_start.tpl',
-      1 => 1458048534,
+      1 => 1458872173,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1137356e80f667c6812_82649369',
+  'nocache_hash' => '1137556f49fbda03285_22629666',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56e80f6684b521_41100987',
+  'unifunc' => 'content_56f49fbda89880_81244989',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56e80f6684b521_41100987')) {
-function content_56e80f6684b521_41100987 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56f49fbda89880_81244989')) {
+function content_56f49fbda89880_81244989 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1137356e80f667c6812_82649369';
+$_smarty_tpl->properties['nocache_hash'] = '1137556f49fbda03285_22629666';
 ?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
@@ -46,6 +46,9 @@ $_smarty_tpl->properties['nocache_hash'] = '1137356e80f667c6812_82649369';
 >
  	    <?php echo '<script'; ?>
  type="text/javascript" src="./lib/jquerymy-1.2.2.min.js"><?php echo '</script'; ?>
+>
+		<?php echo '<script'; ?>
+ type="text/javascript" src="./lib/form-validator/jquery.form-validator.min.js"><?php echo '</script'; ?>
 >
 		<?php echo '<script'; ?>
  type="text/javascript" src="./javascript/lib/polyfill.js"><?php echo '</script'; ?>
@@ -191,12 +194,14 @@ $_smarty_tpl->properties['nocache_hash'] = '1137356e80f667c6812_82649369';
         <div id="containerx">
 			<form id='login' name="login" action="#">
 				<div class="fline">
-					<input type="text" class="in2" name="email" id="email" placeholder="Email-Adresse" required onchange="mailPruefen()" />
-					<input class="in2" type="password" name="passwort" id="passwort" placeholder="Passwort" required onchange="passwortPruefen()" />
+					<input data-validation="email"	  data-validation-error-msg="Bitte geben Sie eine gülte E-Mail-Adresse an"
+							type="text"     class="in2" name="email"    id="email" placeholder="Email-Adresse" required/>
+					<input data-validation="required" data-validation-error-msg="Bitte geben Sie ein Passwort ein" 
+							type="password" class="in2" name="passwort" id="passwort" placeholder="Passwort" required"/>
 					<input type="button" id="closex" value="X">
 				</div>
 				<div id="merken">
-					<input class="in2" name="merken" id="merken" type="checkbox"><label>Logindaten merken</label></input>
+					<input class="in2" name="merken" id="cbmerken" type="checkbox"><label>Logindaten merken</label></input>
 				</div>
 				<div id="passwortvergessen"><a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a></div>
 				<input id="absenden_login" name="absenden" type="button" value="Login" />
