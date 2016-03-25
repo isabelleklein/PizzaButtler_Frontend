@@ -13,7 +13,7 @@ $(document).ready(function() {
 			
 			rest = new RestInterface();
 			
-			rest.setParameters("POST", "user/login", jsObj, loginSuccess, loginFailure);
+			rest.setParameters("POST", "login", jsObj, loginSuccess, loginFailure);
 			rest.send("./mock/loginSuccess.json");
 		}
 	});

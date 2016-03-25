@@ -13,8 +13,10 @@ function RestInterface(){
 
     this.setParameters = function(type, urlEnding, dataToSend, successCallback = null, failureCallback = null){
         this.type = type;
+		if(type === "PUT") dataType = "";
         this.urlEnding = urlEnding;
         this.dataToSend = dataToSend;
+		if(dataToSend === null) delete this.dataToSend;
         this.successCallback = successCallback;
 		this.failureCallback = failureCallback;
     };

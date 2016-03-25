@@ -12,6 +12,7 @@
 		<script type="text/javascript" src="./javascript/RestInterface.js"></script>
     
 	    <script type="text/javascript" src="./javascript/registrierung.js"></script>
+		<script type="text/javascript" src="./javascript/inputSuggestions.js"></script>
         <script type="text/javascript" src="./javascript/kundenregistrierung.js"></script>
         <script type="text/javascript" src="./javascript/login_absenden.js"></script>
 		<script type="text/javascript" src="./javascript/header.js"></script>

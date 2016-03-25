@@ -9,8 +9,7 @@
 			
 				<form action="./pizzerienSuche.php" name="pizzerienListeButton" id='pizzerienSucheGross'>
 					<p>
-						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" 
-							data-suggestions="Mannheim, Münster, M'urica, 68161, 68159, 68123"/>
+						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" />
 					</p>
 				</form>
 				<script>$.validate('#pizzerienSucheGross')</script>
@@ -28,3 +27,4 @@ Auf Deiner eigenen Favoritenliste kannst Du Dir Deine Lieblingsgerichte zusammen
  <br> <br>
 Wir wünschen dir einen guten Appetit, euer Pizza Butler Team.
         </div>
+		<script src="./javascript/inputSuggestions.js"></script>

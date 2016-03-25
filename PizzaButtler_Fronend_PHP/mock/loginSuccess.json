@@ -1,13 +1,12 @@
 {
-  "userID": "123",
-  "pizzeriaID": "null",
+  "userID": 12,
   "vorname" : "TestVorname",
   "nachname": "TestNachname",
   "anrede": "TestAnrede",
   "strasse": "Testerweg",
-  "hausnr": "13a",
+  "hausnummer": "13a",
   "plz": "12345",
   "ort": "Testhausen",
   "email": "test@test.de",
-  "telefon": "0009899110"
+  "telefonnummer": "0621/123456"
 }

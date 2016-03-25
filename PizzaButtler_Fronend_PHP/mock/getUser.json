@@ -1,12 +1,12 @@
 {
-  "anrede":"Herr",
-  "vorname":"chris",
-  "nachname":"flick",
-  "strasse":"asdf strasse",
-  "hausnummer":"3",
-  "plz":"48149",
-  "ort":"MS",
-  "email":"asdf@asdf.de",
-  "telefon":"0912233213",
-  "geburtsdatum":"01.01.2001"
+  "userID": 12,
+  "anrede": "Herr",
+  "vorname" : "TestVorname",
+  "nachname": "TestNachname",
+  "strasse": "Testerweg",
+  "hausnummer": "13a",
+  "plz": "12345",
+  "ort": "Testhausen",
+  "email": "test@test.de",
+  "telefonnummer": "0621/123456"
 }
