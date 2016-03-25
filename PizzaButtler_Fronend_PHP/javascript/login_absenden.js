@@ -3,21 +3,21 @@ $(document).ready(function() {
 	setClickListeners();
 	
 	$.validate({
-		form: '#login'
+		form: '#login',
+		onSuccess: function(){sendLogin();}
 	});
 	
-	$('#absenden_login').click(function(e) {
-		e.preventDefault(); /** cancel form submit **/
-		if($('#login').isValid()){
-			var jsObj = $('#login').serializeObject();
-			
-			rest = new RestInterface();
-			
-			rest.setParameters("POST", "login", jsObj, loginSuccess, loginFailure);
-			rest.send("./mock/loginSuccess.json");
-		}
-	});
+	$('#login').submit(function(e) {return false;});
 });
+
+function sendLogin(){
+	var jsObj = $('#login').serializeObject();
+			
+	rest = new RestInterface();
+			
+	rest.setParameters("POST", "login", jsObj, loginSuccess, loginFailure);
+	rest.send("./mock/loginSuccess.json");
+}
 
 function loginSuccess(userData){
 	// User oder Pizzeria wurden angemeldet

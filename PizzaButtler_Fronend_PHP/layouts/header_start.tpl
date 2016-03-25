@@ -141,7 +141,7 @@
 					<input class="in2" name="merken" id="cbmerken" type="checkbox"><label>Logindaten merken</label></input>
 				</div>
 				<div id="passwortvergessen"><a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a></div>
-				<input id="absenden_login" name="absenden" type="button" value="Login" />
+				<input id="absenden_login" name="absenden" type="submit" value="Login" />
 			</form>
         </div>
         <div id="overlay"></div>
