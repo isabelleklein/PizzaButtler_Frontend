@@ -1,7 +1,7 @@
 /**
  * @author Dominik Terlau
  * @Version 2.1
- */
+ */ 
 var rest;
 
 /** Übermittlung der eingegebenen Daten an das Backend **/
@@ -62,4 +62,4 @@ function registrierenSendenSuccess(returnCode) {
 		document.getElementById("fehlerAbsenden").style.display = "inline";
 		console.log("if-Abschnitt durchlaufen");
 	}
-};
+}

@@ -3,7 +3,7 @@ $(document).ready(function(){
 	warenkorbAnzeigen();
 	lieferadresseAnzeigen();
     $(".bestellen").click(function(){
-		var bestellung = new Object();
+		var bestellung = {};
 		
 		/*
 		bestellung.warenkorb = warenkorb;
@@ -77,10 +77,9 @@ function lieferadresseAnzeigen(){
 	
 	// Bei lieferung die Lieferadresse anzeigen
 	if (lieferart == "Lieferung"){
-		$("#lieferadresseAnzeigen").append("Lieferadresse:<br><br>" + "Name: " + vorname + " " + nachname + "<br>"
-				+"Straße: " + strasse + " " + hausnummer + "<br>"
-				+"PLZ/Ort: " + plz + " " + ort + "<br>"
-				+"Telefon: " + telefon + "<br>Mail: " + email);
+		$("#lieferadresseAnzeigen").append("Lieferadresse:<br><br>" + "Name: " + vorname + " " + nachname + "<br>" +
+				"Straße: " + strasse + " " + hausnummer + "<br>" + "PLZ/Ort: " + plz + " " + ort + "<br>" + 
+				"Telefon: " + telefon + "<br>Mail: " + email);
 	}
 	
 	$("#lieferadresseAnzeigen").append("<br><br><br><button class='bestellen'> Bestellen </button>");

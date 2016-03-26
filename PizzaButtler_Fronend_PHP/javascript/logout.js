@@ -13,14 +13,12 @@ $(document).ready(function () {
 				var aktURL = window.location.href.toString();
 				aktURL = aktURL.toString().slice(-8);
 				console.log("" + aktURL);
-				if(aktURL.toString().localeCompare("user.php") != 0)
-				{
+				if(aktURL.toString().localeCompare("user.php") != 0){
 					location.reload();
-					//window.location.href= "./index.php";
 				}
-				else
+				else{
 					window.location.href= "./index.php";
-				//window.location.href = "./";
+				}
 			});
 			
             rest.fakeSend("./mock/logout.json");
@@ -33,14 +31,12 @@ $(document).ready(function () {
 				var aktURL = window.location.href.toString();
 				aktURL = aktURL.toString().slice(-17);
 				console.log("" + aktURL);
-				if(aktURL.toString().localeCompare("user_pizzeria.php") != 0)
-				{
+				if(aktURL.toString().localeCompare("user_pizzeria.php") != 0){
 					location.reload();
-					//window.location.href= "./index.php";
 				}
-				else
+				else{
 					window.location.href= "./index.php";
-				//window.location.href = "./";
+				}
 			});
 			
             rest.fakeSend("./mock/logout.json");

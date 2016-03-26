@@ -8,7 +8,7 @@ $(document).ready(function(){
 	rest.setParameters("GET", "restaurant?plz=" + plzOrt , null, buildPizzerienListe);
 	
 	if(plzOrt != ""){
-		// Rest-Aufruf durchf�hren und Liste bef�llen
+		// Rest-Aufruf durchfuehren und Liste befuellen
 		rest.send("./mock/getPizzerien.json");
 	}
 });

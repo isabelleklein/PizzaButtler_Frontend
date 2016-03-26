@@ -24,7 +24,7 @@ var loadData = function(){
 		rest.setParameters("GET", "user/" + restaurantID, null, callback);
 		rest.fakeSend("./mock/getRestaurant.json");
 	}
-}
+};
 
 var callback = function(data){
 	$('#name_data_anz').text(data.name).val(data.name);
@@ -97,10 +97,10 @@ function datumAngabe(tagId, data){
 }
 
 var setClickListener = function(){
-	/** Aktionsinformationen f�r den Absenden-Button **/
+	/** Aktionsinformationen fuer den Absenden-Button **/
 	
 	$('#datenspeichern').click(function(e) {
-		if(checkForm_Aendern()==true){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen
+		if(checkForm_Aendern()){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen
 			e.preventDefault(); /** cancel form submit **/
 			var json = JSON.parse(jsonErzeugen());
 			//var daten = $('#datenaendern_daten').serializeObject();
@@ -120,7 +120,7 @@ var setClickListener = function(){
 			}
 		}
 	});	
-	
+}
 function jsonErzeugen(){
 	var jsonString = "{";
 	jsonString = jsonString.concat("\"name\":\"" + document.getElementById('name_piz_aend').value + "\",");
@@ -143,7 +143,6 @@ function jsonErzeugen(){
 	jsonString = jsonString.concat("\"}");
 	//console.log(jsonString);
 	return jsonString;
-	}
 }
 
 function checkForm_Aendern()//Prüfung zum Ändern von Daten einer Pizzeria

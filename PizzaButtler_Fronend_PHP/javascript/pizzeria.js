@@ -1,7 +1,7 @@
 var rest;
 var speisekarte;
 var test;
-var warenkorb = new Array();
+var warenkorb = [];
 $(document).ready(function(){
 	// GET-Parameter
 	var pizzeriaId = parse("id");
@@ -10,7 +10,7 @@ $(document).ready(function(){
 	rest = new RestInterface();
 	rest.setParameters("GET", "restaurant/" + pizzeriaId , null, buildpizzeriaSeite);
 	
-	if(pizzeriaId != ""){
+	if(pizzeriaId !== ""){
 		// rest-Aufruf durchfuehren und Liste befuellen
 		rest.send("./mock/getRestaurant.json");
 		
@@ -35,7 +35,7 @@ document.onscroll = function () {
 		document.getElementById('rechterBereich').style.top = pos + 'px';
 	else
 		document.getElementById('rechterBereich').style.top = '0px';
-}
+};
 
 
 var buildpizzeriaSeite = function(data){
@@ -56,9 +56,10 @@ var buildpizzeriaSeite = function(data){
 		<img id='haus' src='./images/Haus_-_Vector-Icon.png'/>"  + "<p class='containerinhalt'>" + data.strasse + " " + data.hausnummer + "<br>" + data.plz + " " + data.ort + "</p>" +"\
 		<img id='uhr' src='./images/Uhr_-_Vector-Icon.png'/> " + "<p class='containerinhalt'>" + " " + " Heute geöffnet von " +  oeffnungszeit + "<br>"  + "</p>" + "\
 		<img id='schein' src='./images/bezahlart2.png'/> " + "<p class='containerinhalt'>" + "\ Mindestbestellwert: " + data.mindestbestellwert + " €" + "<br>\
-		Lieferkosten: " + " " + data.lieferkosten + " €") + "</p>" ;
+		Lieferkosten: " + " " + data.lieferkosten + " €" + "</p>");
 	}
-}
+};
+
 var buildpizzaeriaSeite = function(data){
 	if (data == 0) {
 		$("#warenkorbContainer").html("<h1>Es konnten leider keine Daten zur Pizzeria geladen werden</h1>");

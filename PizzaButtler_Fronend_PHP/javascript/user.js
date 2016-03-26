@@ -60,7 +60,7 @@ function setClickListener(){
 			var userID = Cookies.get("userID");
 
 			if(typeof userID != 'undefined') {
-				rest = new RestInterface()
+				rest = new RestInterface();
 				rest.setParameters("PUT", "user/" + userID, daten, function(data){
 					window.location.href = "./user.php"; 
 				});
@@ -76,7 +76,7 @@ function setClickListener(){
 			var userID = Cookies.get("userID");
 
 			if(typeof userID != 'undefined') {
-				rest = new RestInterface()
+				rest = new RestInterface();
 				rest.setParameters("PUT", "user/" + userID, daten, function(data){
 					window.location.href = "./user.php"; 
 				});
