@@ -89,42 +89,14 @@ function setClickListener(){
 //Prüfung der Eingabeinformationen
 //wird ausschließlich bei klicken des Absenden-Buttons aufgerufen
 function checkForm_user(){ 
+	var pruefungen = [anredePruefen_user, vornamePruefen_user, nachnamePruefen_user, strassePruefen_user, hausnummerPruefen_user,
+					  plzPruefen_user, wohnortPruefen_user, mailPruefen_user, telefonPruefen_user];
     var strFehler='';
-    
-	//Eingabefehler werden nacheinander geprueft. 
-	//Dies ist in Ordnung, da bei Fuellung der Felder eine eigene Pruefung gestartet wird.
-	//Das Pop-Up-Fenster wird damit bei auftreten einer Vielzahl von Fehlern nicht zu groß
-    strFehler += anredePruefen_user();
-    if(strFehler.length==0){
-    	strFehler += vornamePruefen_user();
-        if(strFehler.length==0){
-        	strFehler += nachnamePruefen_user();
-        	//Wird nach Vorgabe der Fachlichkeit aktuell nicht in der Registrierung benötigt.
-        	//if(strFehler.length==0){
-	        //	strFehler += datumPruefen();
-	            if(strFehler.length==0){
-	            	strFehler += strassePruefen_user();
-	                if(strFehler.length==0){
-	                	strFehler += hausnummerPruefen_user();
-	                    if(strFehler.length==0){
-	                    	strFehler += plzPruefen_user();
-	                        if(strFehler.length==0){
-	                        	strFehler += wohnortPruefen_user();
-	                            if(strFehler.length==0){
-	                            	strFehler += mailPruefen_user();
-	                                if(strFehler.length==0){
-	                                	strFehler += telefonPruefen_user();
-	                                }
-	                            }
-	                        }
-	                    }
-	            	}
-        		//}
-        	}
-        }
-    }
-    	
-    
+
+	pruefungen.forEach(function(func){
+		strFehler += func();
+    });
+	
     /** Ausgabe/Rueckgabe falls min 1 Fehler aufgetreten ist. 
      * Der Text wird in der Konsole des Browsers ausgegeben. Ansonsten ist er nicht sichtbar
      *   **/
@@ -152,10 +124,9 @@ function anredePruefen_user(){
 }
 
 /** Pruefen des Vornamens  **/
-function vornamePruefen_user()
-{
+function vornamePruefen_user(){
     var vorname=document.getElementById("userVorname").value.trim();
-    if(!new RegExp(/^(\w|[-]){2,25}$/).test(vorname)){
+    if(!new RegExp(/^([A-Za-zÄÖÜäöüß-]){2,25}$/).test(vorname)){
     	fehlerAusgeben_user("fehleruserVorname", "userVorname");
         return "Das Feld 'Vorname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 2 maximal 32 Buchstaben, Umlaute möglich\n";
     }
@@ -164,10 +135,9 @@ function vornamePruefen_user()
 }
 
 /** Pruefen des Nachnamens  **/
-function nachnamePruefen_user()
-{
+function nachnamePruefen_user(){
     var nachname = document.getElementById("userNachname").value.trim();
-    if(!new RegExp(/^(\w|[-]){3,25}$/).test(nachname)){
+    if(!new RegExp(/^([A-Za-zÄÖÜäöüß-]){3,25}$/).test(nachname)){
 		fehlerAusgeben_user("fehleruserName", "userNachname");
       	return "Das Feld 'Nachname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 3 maximal 32 Buchstaben, Umlaute möglich\n";
 	}
@@ -178,7 +148,7 @@ function nachnamePruefen_user()
 /** Pruefung der Strasse **/
 function strassePruefen_user(){
 	var strasse = document.getElementById("userStrasse").value.trim();
-	if(!new RegExp(/^(\w|[- ]){3,60}$/).test(strasse)){
+	if(!new RegExp(/^([A-Za-zÄÖÜäöüß]|[- ]){3,60}$/).test(strasse)){
 		fehlerAusgeben_user("fehleruserStrasse", "userStrasse");
 		return "Das Feld 'Strasse' entspricht nicht der typischen Form!\n";
 	}
@@ -189,7 +159,7 @@ function strassePruefen_user(){
 /** Pruefung der hausnummer **/
 function hausnummerPruefen_user(){
 	var hnr = document.getElementById("userHausnummer").value.trim();
-	if(!new RegExp(/^[0-9-_\.]{1,4}\w?$/).test(hnr)){
+	if(!new RegExp(/^[0-9-_\.]{1,10}[A-Za-z]?$/).test(hnr)){
 		fehlerAusgeben_user("fehleruserHnr", "userHausnummer");
 	    return "Das Feld 'Hausnummer' entspricht nicht der typischen Form! Form:1-10 Ziffern, 1 Buchstabe\n";
 	}
@@ -200,7 +170,7 @@ function hausnummerPruefen_user(){
 /** Pruefung des Wohnorts **/
 function wohnortPruefen_user(){
 	var wohnort = document.getElementById("userOrt").value.trim();
-    if(!new RegExp(/^(\w|[-]){2,60}$/).test(wohnort)){
+    if(!new RegExp(/^([A-Za-zÄÖÜäöüß-]){2,60}$/).test(wohnort)){
         fehlerAusgeben_user("fehleruserOrt", "userOrt");
 	    return "Das Feld 'Wohnort' entspricht nicht der typischen Form! \n";
     }

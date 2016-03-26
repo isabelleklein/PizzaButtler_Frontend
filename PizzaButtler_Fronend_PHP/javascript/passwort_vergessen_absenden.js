@@ -17,7 +17,7 @@ $(document).ready(function() {
 			var jsObj = $pwvergessen.serializeObject();
 			
 			rest = new RestInterface();
-			rest.setParameters("POST", "resetPassword", jsObj, success);
+			rest.setParameters("POST", "resetPassword", jsObj, pwSendSuccess);
 			rest.send("./mock/pwVergessen.json");
 		}
 	});
@@ -54,8 +54,7 @@ $(document).ready(function() {
 });
 
 /**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
-function success(data) {  
-	console.log(data);
+function pwSendSuccess(data) {  
 		if(data == 0) {
 			console.log("if-Abschnitt durchlaufen");
 			$('#container_pwvergessen').hide('slow',
