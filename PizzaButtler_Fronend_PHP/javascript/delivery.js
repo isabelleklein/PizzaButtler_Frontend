@@ -4,96 +4,76 @@ $(document).ready(function(){
     if(typeof userID != 'undefined') {
         document.getElementById("eingeloggt").style.display = "none";
     } 
-    else if(typeof restaurantID != 'undefined')
-	{
+    else if(typeof restaurantID != 'undefined'){
     	alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu können.");
     }
     else {
          document.getElementById("eingeloggt").style.display = "";
     }
-});
+	
+	
+	$("#delivery_next").click(function(){		
+		var lieferart ="";
+		if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
+			lieferart = "Abholung";
 
-$(function() {
-    $("#delivery_next").click(function(){
-			var lieferart ="";
-			if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
-				lieferart = "Abholung";
-			} else {
-				lieferart = "Lieferung";
-				}
-			var vorname = document.getElementById('userVorname').value
-			var nachname = document.getElementById('userNachname').value
-			var strasse = document.getElementById('userStrasse').value
-			var hausnummer = document.getElementById('userHausnummer').value
-			var plz = document.getElementById('userPlz').value
-			var ort = document.getElementById('userOrt').value
-			var telefon = document.getElementById('userTelefon').value
-			var email = document.getElementById('userEmail').value
+			// Bei Abholung werden keine weiteren Daten benötigt (bis jetzt) = direkte weiterleitung
+			weiterleiten(lieferart);
+		} else {
+			lieferart = "Lieferung";
 			
-			Cookies.set("lieferart", lieferart);
-			Cookies.set("vorname", vorname);
-			Cookies.set("nachname", nachname);
-			Cookies.set("strasse", strasse);
-			Cookies.set("hausnummer", hausnummer);
-			Cookies.set("plz", plz);
-			Cookies.set("ort", ort);
-			Cookies.set("telefon", telefon);
-			Cookies.set("email", email);
-			
-			window.location.href = "./warenkorb.php";
-		});
+			// Testen, ob korrekte Daten eingegeben wurden
+			if(checkForm_delivery())
+				weiterleiten(lieferart);
+		}
+	});
     
 	$("input[type='radio'][name='lieferart']").change(
-	        function() {
-                if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
-                    document.getElementById("delivery_data").style.display = "none";
-                    document.getElementById("eingeloggt").style.display = "none";
-                } else {
-                    document.getElementById("delivery_data").style.display = "";
-                    document.getElementById("eingeloggt").style.display = "";
-                }
-	        }
-	    );     
+	    function() {
+			if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
+				document.getElementById("delivery_data").style.display = "none";
+				document.getElementById("eingeloggt").style.display = "none";
+			} else {
+				document.getElementById("delivery_data").style.display = "";
+				document.getElementById("eingeloggt").style.display = "";
+			}	
+		}
+   );  
 });
+
+function weiterleiten(lieferart){
+	var vorname = document.getElementById('userVorname').value
+	var nachname = document.getElementById('userNachname').value
+	var strasse = document.getElementById('userStrasse').value
+	var hausnummer = document.getElementById('userHausnummer').value
+	var plz = document.getElementById('userPlz').value
+	var ort = document.getElementById('userOrt').value
+	var telefon = document.getElementById('userTelefon').value
+	var email = document.getElementById('userEmail').value
+	
+	Cookies.set("lieferart", lieferart);
+	Cookies.set("vorname", vorname);
+	Cookies.set("nachname", nachname);
+	Cookies.set("strasse", strasse);
+	Cookies.set("hausnummer", hausnummer);
+	Cookies.set("plz", plz);
+	Cookies.set("ort", ort);
+	Cookies.set("telefon", telefon);
+	Cookies.set("email", email);
+	
+	window.location.href = "./warenkorb.php";	
+}
 
 //Prüfung der Eingabeinformationen
 //wird ausschließlich bei klicken des Absenden-Buttons aufgerufen
-function checkForm() 
-{ 
-	//return true; // NUR DEBUG!!!!!
+function checkForm_delivery() { 
+	var pruefungen = [vornamePruefen_delivery, nachnamePruefen_delivery, strassePruefen_delivery, hausnummerPruefen_delivery,
+						plzPruefen_delivery, wohnortPruefen_delivery, mailPruefen_delivery, telefonPruefen_delivery];
     var strFehler='';
-    
-  //Eingabefehler werden nacheinander geprueft. 
-  //Dies ist in Ordnung, da bei Fuellung der Felder eine eigene Pruefung gestartet wird.
-  //Das Pop-Up-Fenster wird damit bei auftreten einer Vielzahl von Fehlern nicht zu groß
 
-    	strFehler += vornamePruefen_delivery();
-        if(strFehler.length==0){
-        	strFehler += nachnamePruefen_delivery();
-        	//Wird nach Vorgabe der Fachlichkeit aktuell nicht in der Registrierung benötigt.
-        	//if(strFehler.length==0){
-	        //	strFehler += datumPruefen();
-	        if(strFehler.length==0){
-                strFehler += strassePruefen_delivery();
-                if(strFehler.length==0){
-	            	strFehler += hausnummerPruefen_delivery();
-	                if(strFehler.length==0){
-	                   	strFehler += plzPruefen();
-                        if(strFehler.length==0){
-                            strFehler += wohnortPruefen_delivery();
-	                        if(strFehler.length==0){
-                                strFehler += mailPruefen_delivery();
-	                            if(strFehler.length==0){
-	                               	strFehler += telefonPruefen_delivery();
-                                }
-                            }
-                        }
-                    } 
-                }
-    		//}
-            }
-        }
-    	
+	pruefungen.forEach(function(func){
+		strFehler += func();
+    });
     
     /** Ausgabe/Rueckgabe falls min 1 Fehler aufgetreten ist. 
      * Der Text wird in der Konsole des Browsers ausgegeben. Ansonsten ist er nicht sichtbar
@@ -102,7 +82,7 @@ function checkForm()
     	//Der Text wird fuer entwicklungszwecke in der Konsole des Browsers ausgegeben. Ansonsten ist er nicht sichtbar.
     	console.log("Folgendes Problem wurde festgestellt: \n\n"+strFehler);
     	//Rueckgabe=false, wenn die Pruefung einen Fehler ermittelt hat
-  	  return(false);
+		return(false);
     }
     else{
 		return(true);
@@ -110,113 +90,95 @@ function checkForm()
 }
 
 /** Pruefen des Vornamens  **/
-function vornamePruefen_delivery()
-{
-      var vorname=document.getElementById("userVorname").value;
-      if(checkGrammatik("^[A-Za-zÀ-Üß-ü_]{2,25}$", vorname)==false)
-    	  {
-    	  fehlerAusgeben_delivery("fehleruserVorname", "userVorname");
-          return "Das Feld 'Vorname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 2 maximal 32 Buchstaben, Umlaute möglich\n";
-    	  }
-      hinweisVerbergen_delivery("fehleruserVorname", "userVorname");
-      return "";
+function vornamePruefen_delivery(){
+    var vorname = document.getElementById("userVorname").value.trim();
+    if(!new RegExp(/^([A-Za-zÄÖÜäöüß-]){2,25}$/).test(vorname)){
+		fehlerAusgeben_delivery("fehlerVorname", "vorname");
+		return "Das Feld 'Vorname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 2 maximal 32 Buchstaben, Umlaute möglich\n";
+	}
+	hinweisVerbergen("fehlerVorname", "vorname");
+	return "";
 }
 
 /** Pruefen des Nachnamens  **/
-function nachnamePruefen_delivery()
-{
-      var nachname=document.getElementById("userNachname").value;
-      if(checkGrammatik("^[A-Za-zÀ-Üß-ü_]{3,25}$", nachname)==false)
-	  {
+function nachnamePruefen_delivery(){
+    var nachname = document.getElementById("userNachname").value.trim()
+	if(!new RegExp(/^([A-Za-zÄÖÜäöüß-]){2,25}$/).test(nachname)){
     	fehlerAusgeben_delivery("fehleruserName", "userNachname");
       	return "Das Feld 'Nachname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 3 maximal 32 Buchstaben, Umlaute möglich\n";
-	  }
-      hinweisVerbergen_delivery("fehleruserName", "userNachname");
-      return "";
+	}
+    hinweisVerbergen_delivery("fehleruserName", "userNachname");
+    return "";
 }
 
 /** Pruefung der Strasse **/
-function strassePruefen_delivery()
-{
-	  var strasse=document.getElementById("userStrasse").value;
-	  if(checkGrammatik("^([Ss]{1}[t]{1}[r]{1}[\.]{0,1}[ ]{0,1}){0,1}[A-Za-zÀ-Üß-ü_]{2,25}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,25}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,25}$", strasse)==false)
-		  {
-		  fehlerAusgeben_delivery("fehleruserStrasse", "userStrasse");
-	      	return "Das Feld 'Strasse' entspricht nicht der typischen Form! Form: nur Buchstaben, maximal 2 Leerzeichen\n";
-		  }
-	  hinweisVerbergen_delivery("fehleruserStrasse", "userStrasse");
-      return"";
+function strassePruefen_delivery(){
+	var strasse=document.getElementById("userStrasse").value.trim();
+	if(!new RegExp(/^([A-Za-zÄÖÜäöüß]|[- ]){3,60}$/).test(strasse)){
+		fehlerAusgeben_delivery("fehleruserStrasse", "userStrasse");
+	    return "Das Feld 'Strasse' entspricht nicht der typischen Form! Form: nur Buchstaben, maximal 2 Leerzeichen\n";
+	}
+	hinweisVerbergen_delivery("fehleruserStrasse", "userStrasse");
+    return"";
 }
 
 /** Pruefung der hausnummer **/
-function hausnummerPruefen_delivery()
-{
-	  var hnr=document.getElementById("userHausnummer").value;
-	  if(checkGrammatik("^[0-9-_\.]{1,4}[a-zA-Z]{0,1}$", hnr)==false)
-		  {
-		    fehlerAusgeben_delivery("fehleruserHnr", "userHausnummer");
-	    	return "Das Feld 'Hausnummer' entspricht nicht der typischen Form! Form:1-10 Ziffern, 1 Buchstabe\n";
-		  }
-	  hinweisVerbergen_delivery("fehleruserHnr", "userHausnummer");
-	  return "";
+function hausnummerPruefen_delivery(){
+	var hnr=document.getElementById("userHausnummer").value;
+	if(!new RegExp(/^[0-9-_\.]{1,10}[A-Za-zÄÖÜäöüß]?$/).test(hnr)){
+		fehlerAusgeben_delivery("fehleruserHnr", "userHausnummer");
+	    return "Das Feld 'Hausnummer' entspricht nicht der typischen Form! Form:1-10 Ziffern, 1 Buchstabe\n";
+	}
+	hinweisVerbergen_delivery("fehleruserHnr", "userHausnummer");
+	return "";
 }
 
 /** Pruefung des Wohnorts **/
-function wohnortPruefen_delivery()
-{
-
-	var wohnort=document.getElementById("userOrt").value;
-          if(checkGrammatik("^[A-Za-zÀ-Üß-ü_]{2,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}[ ]{0,1}[A-Za-zÀ-Üß-ü_]{0,35}$", wohnort)==false)
-        	  {
-        	  	  fehlerAusgeben_delivery("fehleruserOrt", "userOrt");
-	        	  return "Das Feld 'Wohnort' entspricht nicht der typischen Form! \n";
-        	  }
-          hinweisVerbergen_delivery("fehleruserOrt", "userOrt");
-      return "";
+function wohnortPruefen_delivery(){
+	var wohnort=document.getElementById("userOrt").value.trim();
+	if(!new RegExp(/^([A-Za-zÄÖÜäöüß-]){2,60}$/).test(wohnort)){
+        fehlerAusgeben_delivery("fehleruserOrt", "userOrt");
+	    return "Das Feld 'Wohnort' entspricht nicht der typischen Form! \n";
+    }
+    hinweisVerbergen_delivery("fehleruserOrt", "userOrt");
+    return "";
 }
 
 /** Pruefung der PLZ **/
-function plzPruefen_delivery()
-{
-  	var plz=document.getElementById("userPlz").value;
+function plzPruefen_delivery(){
+  	var plz=document.getElementById("userPlz").value.trim();
       
 	  /** Pruefung, dass nur Zahlen in der PLZ enthalten sind **/
-      if(checkGrammatik("^[0-9]{5,5}$", plz)==false)
-    	  {
-    	  	  fehlerAusgeben_delivery("fehleruserPlz", "userPlz");
-	          return "Das Feld 'plz' entspricht nicht der typischen Form! Form: 5 Ziffern \n";
-    	  }
-      hinweisVerbergen_delivery("fehleruserPlz", "userPlz"); 
-      return "";
+	if(!new RegExp(/^\d{5}$/).test(plz)){
+    	fehlerAusgeben_delivery("fehleruserPlz", "userPlz");
+	    return "Das Feld 'plz' entspricht nicht der typischen Form! Form: 5 Ziffern \n";
+    }
+    hinweisVerbergen_delivery("fehleruserPlz", "userPlz"); 
+    return "";
 }
 
 /** Pruefen der Telefonnummer  **/ 
-function telefonPruefen_delivery()
-{
-    var tel=document.getElementById("userTelefon").value;
+function telefonPruefen_delivery(){
+    var tel=document.getElementById("userTelefon").value.trim();
 	  /** Pruefung, dass nur Zahlen in der Tel enthalten sind **/
-      if(checkGrammatik("^[0-9-_\.]{5,20}$", tel)==false)
-    	  {
-    	      fehlerAusgeben_delivery("fehleruserTel", "userTelefon");
-	          return "Das Feld 'Telefonnummer' entspricht nicht der typischen Form! Form: mindestens 5 maximal 20 Ziffern \n";
-    	  }
-      hinweisVerbergen_delivery("fehleruserTel", "userTelefon"); 
-      return "";
+	if(!new RegExp(/^[0-9-_/\\\.]{5,20}$/).test(tel)){
+    	fehlerAusgeben_delivery("fehleruserTel", "userTelefon");
+	    return "Das Feld 'Telefonnummer' entspricht nicht der typischen Form! Form: mindestens 5 maximal 20 Ziffern \n";
+    }
+    hinweisVerbergen_delivery("fehleruserTel", "userTelefon"); 
+    return "";
 }
 
 /** Pruefen der Mail-Adresse  **/
-function mailPruefen_delivery()
-{
-    var email=document.getElementById("userEmail").value;
+function mailPruefen_delivery(){
+    var email=document.getElementById("userEmail").value.trim();
 	  /**  Pruefung ob eine gueltige Mail-Adresse eingegeben wurde **/
-      if(checkGrammatik("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", email)==false)
-    	  {
-    	      fehlerAusgeben_delivery("fehleruserEmail", "userEmail");
-	          return "Das Feld 'Email' entspricht nicht der typischen Form einer Email!\n";
-    	  }
-      hinweisVerbergen_delivery("fehleruserEmail", "userEmail");
- 
-      return ""
+    if(!new RegExp(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/).test(email)){
+    	fehlerAusgeben_delivery("fehleruserEmail", "userEmail");
+	    return "Das Feld 'Email' entspricht nicht der typischen Form einer Email!\n";
+    }
+    hinweisVerbergen_delivery("fehleruserEmail", "userEmail");
+	return ""
 }
 
 /** Ausgabe eines Fehlerhinweises je nach betroffenem Feld
@@ -232,23 +194,8 @@ function fehlerAusgeben_delivery(fehl, feld)
 	}
 function hinweisVerbergen_delivery(fehl, feld)
 {
-	  document.getElementById("" + fehl).style.display="none"; //Fehlerhinweis wird ausgeblendet
-	  document.getElementById("" + feld).style.background="#ffffff"; //Fehlerhaftes Feld wird farblich in Ausgangszustand gebracht
-	  document.getElementById("" + feld).style.color="#842002"; //Schriftfarbe wird farblich in Ausgangszustand gebracht
-	 // document.getElementById("container").style.height="300"; //Die Größe des Pop-Ups wird in Ausgangszustand gebracht
-	}
-
-/** Pruefung auf korrektheit nach der Gramattik, welche fuer die Eingabefelder gueltig ist  
- *  Wird bei jeder Pruefung (Vorname, Nachname, Geburtstag, Strasse, Hausnummer, PLZ, Ort, Email, Telefonnummer, Passwort) ausgefuehrt**/
-//Die jeweilige Gramattik wird als Parameter uebergeben
-//"feld" liefert das zu ueberpruefende feld mit
-function checkGrammatik(patter, feld)
-{
-	var strReg = "" + patter;
-	var regex = new RegExp(strReg);
-	if(regex.test(feld)==false)
-	{
-	    return false;
-	}
-	return true;
+	document.getElementById("" + fehl).style.display="none"; //Fehlerhinweis wird ausgeblendet
+	document.getElementById("" + feld).style.background="#ffffff"; //Fehlerhaftes Feld wird farblich in Ausgangszustand gebracht
+	document.getElementById("" + feld).style.color="#842002"; //Schriftfarbe wird farblich in Ausgangszustand gebracht
+	// document.getElementById("container").style.height="300"; //Die Größe des Pop-Ups wird in Ausgangszustand gebracht
 }

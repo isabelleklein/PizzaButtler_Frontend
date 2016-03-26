@@ -259,6 +259,11 @@ function showWarenkorb(){
 	}
 	
 	$("#showwarenkorb").html(ul);
+	
+	// Kein Warenkorb = kein "Zur Kasse"-Button
+	if(warenkorb.length === 0){
+		$("#zurKasse").html("");
+	}
 }
 
 function hinzufuegen(i){
