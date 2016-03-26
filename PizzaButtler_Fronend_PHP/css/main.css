@@ -307,24 +307,36 @@ table {
     height: auto;	
 }
 #containertitel{
-	font-weight: 900;
+	font-weight: bold;
+    margin-left: 2%;
 }
+
+.containerinhalt{
+	font-size: small;
+    margin-left: 20%;
+}
+
 #haus{
-	height: 5%;
+	height: 4%;
 	width: auto;
-	float: left
+	float: left;
+    margin-left: 1%;
 }
 #uhr{
-	height: 5%;
+	height: 4%;
 	width: auto;
 	float: left;
 	clear: left;
+    margin-top: -1%;
+    margin-left: 3%;
 }
 #schein{
-	height: 5%;
+	height: 4%;
 	width: auto;
 	float: left;
 	clear: left;
+    margin-top: 3%;
+    margin-left: 3%;
 }
 #warenkorbContainer{
     background-color: #ffffff;

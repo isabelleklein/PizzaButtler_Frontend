@@ -53,10 +53,10 @@ var buildpizzeriaSeite = function(data){
 	else {
 		$("#infoContainer").html("<img id='pizzarienlogo' src='data:image/jpg;base64," + data.bild + "'><br>\
 		<input type='hidden' value='" + data.restaurantID + "'/>" + "<p id='containertitel'>" + data.name + "</p>" + "\
-		<img id='haus' src='./images/Haus_-_Vector-Icon.png'/>"  + data.strasse + " " + data.hausnummer + "<br>" + data.plz + " " + data.ort + "<br>\
-		<img id='uhr' src='./images/Uhr_-_Vector-Icon.png'/> Heute geöffnet von " +  oeffnungszeit + "<br>"  + "<br>\
-		<img id='schein' src='./images/bezahlart2.png'/> " + "\ Mindestbestellwert: " + data.mindestbestellwert + "<br>\
-		Lieferkosten: " + " " + data.lieferkosten);
+		<img id='haus' src='./images/Haus_-_Vector-Icon.png'/>"  + "<p class='containerinhalt'>" + data.strasse + " " + data.hausnummer + "<br>" + data.plz + " " + data.ort + "</p>" +"\
+		<img id='uhr' src='./images/Uhr_-_Vector-Icon.png'/> " + "<p class='containerinhalt'>" + " " + " Heute geöffnet von " +  oeffnungszeit + "<br>"  + "</p>" + "\
+		<img id='schein' src='./images/bezahlart2.png'/> " + "<p class='containerinhalt'>" + "\ Mindestbestellwert: " + data.mindestbestellwert + " €" + "<br>\
+		Lieferkosten: " + " " + data.lieferkosten + " €") + "</p>" ;
 	}
 }
 var buildpizzaeriaSeite = function(data){
