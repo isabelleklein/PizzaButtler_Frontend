@@ -84,10 +84,11 @@ margin: 0.05in;
     float: left;
     font: "Open Sans", sans-serif;
     font-weight: bold;
-    margin-top: 0.4em;
+    margin-top: 0.7em;
     text-align: right;
     width: 45%;
     margin-left: 8%;
+    font-size: smaller;
 }
 
 input.umkreissuche_header::-webkit-input-placeholder {
