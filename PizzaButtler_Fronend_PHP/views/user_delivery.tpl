@@ -13,6 +13,7 @@
                     <input class="zahlungsart" type="radio" id="abholung" name="lieferart" value="abholung"><label for="abholung"> Abholung</label><br />
                     <input class="zahlungsart" type="radio" id="lieferung" name="lieferart" value="lieferung" checked><label 
                         for="lieferung"> Lieferung</label>
+                    <p></p>
                 </div>
 				
                 <div id="delivery_data">
@@ -42,14 +43,15 @@
                         <label class="placeholder_fehler" id="fehleruserPlz"><br />Bitte geben Sie eine g&uumlltige Postleitzahl an</label>
                         <label class="placeholder_fehler" id="fehleruserOrt"><br />Bitte geben Sie einen g&uumlltigen Ort an</label>
                     </div>
+                </div>
+                <div>
                     <div class="fline">
                         <input type="text" name="telefon" id="userTelefon" required onchange="telefonPruefen_delivery()" placeholder="Telefon"/>
                         <input type="text" name="email" id="userEmail" required onchange="mailPruefen_delivery()" placeholder="Email"/>
                         <label class="placeholder_fehler" id="fehleruserEmail"><br />Bitte geben Sie eine g&uumlltige Email-Adresse an</label>
                         <label class="placeholder_fehler" id="fehleruserTel"><br />Bitte geben Sie eine g&uumlltige Telefonnummer an</label>
                     </div>
-                </div>
-                <div>
+                
                     <p>
 						<input class="userbutton" id="delivery_back" name="delivery_back" type="button" value="zur&uuml;ck" />
                         <input class="userbutton" id="delivery_next" name="delivery_next" type="button" value="weiter" />

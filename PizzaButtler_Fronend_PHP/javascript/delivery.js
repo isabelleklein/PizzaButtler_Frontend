@@ -11,6 +11,13 @@ $(document).ready(function(){
          document.getElementById("eingeloggt").style.display = "";
     }
 	
+    if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
+        document.getElementById("delivery_data").style.display = "none";
+        document.getElementById("eingeloggt").style.display = "none";
+    } else {
+        document.getElementById("delivery_data").style.display = "";
+        document.getElementById("eingeloggt").style.display = "";
+    }	
 	
 	$("#delivery_next").click(function(){		
 		var lieferart ="";
@@ -18,7 +25,7 @@ $(document).ready(function(){
 			lieferart = "Abholung";
 
 			// Bei Abholung werden keine weiteren Daten benötigt (bis jetzt) = direkte weiterleitung
-			weiterleiten(lieferart);
+			if(checkForm_abholung()) weiterleiten(lieferart);
 		} else {
 			lieferart = "Lieferung";
 			
@@ -89,11 +96,35 @@ function checkForm_delivery() {
 	}
 }
 
+function checkForm_abholung() { 
+	var pruefungen = [mailPruefen_delivery, telefonPruefen_delivery];
+    var strFehler='';
+
+	pruefungen.forEach(function(func){
+		strFehler += func();
+    });
+    
+    /** Ausgabe/Rueckgabe falls min 1 Fehler aufgetreten ist. 
+     * Der Text wird in der Konsole des Browsers ausgegeben. Ansonsten ist er nicht sichtbar
+     *   **/
+    if (strFehler.length>0) {
+    	//Der Text wird fuer entwicklungszwecke in der Konsole des Browsers ausgegeben. Ansonsten ist er nicht sichtbar.
+    	console.log("Folgendes Problem wurde festgestellt: \n\n"+strFehler);
+    	//Rueckgabe=false, wenn die Pruefung einen Fehler ermittelt hat
+		return(false);
+    }
+    else{
+		return(true);
+	}
+}
+
+
+
 /** Pruefen des Vornamens  **/
 function vornamePruefen_delivery(){
     var vorname = document.getElementById("userVorname").value.trim();
     if(!new RegExp(/^([A-Za-zÄÖÜäöüß-]){2,25}$/).test(vorname)){
-		fehlerAusgeben_delivery("fehlerVorname", "vorname");
+		fehlerAusgeben_delivery("fehleruserVorname", "userVorname");
 		return "Das Feld 'Vorname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 2 maximal 32 Buchstaben, Umlaute möglich\n";
 	}
 	hinweisVerbergen("fehlerVorname", "vorname");
