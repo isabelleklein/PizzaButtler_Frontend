@@ -137,6 +137,22 @@ input::-moz-placeholder {
     padding: 20px;
 }
 
+.maincontent_static {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border-width: 0;
+    color: #842002;
+    left: 15%;
+    height: 73%;
+    overflow: scroll;
+    position: relative;
+    top: 0%;
+    width: 48%;
+    float: left;
+    margin-bottom: 2%;
+    padding: 20px;
+}
+
 .infocontent {
     background-color: #ffffff;
     border-radius: 12px;

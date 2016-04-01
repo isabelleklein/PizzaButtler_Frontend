@@ -1,4 +1,4 @@
-    <div class="maincontent">
+    <div class="maincontent_static">
         <h3 class="contenthead"> Datenschutzerkl&aumlrung </h3>       
         <div class="static_text1">§ 1 Zweck der Erhebung und Verwendung der Daten gemäß § 13 Abs. 1 Telemediengesetz</div>
         <div class="static_text2"><br />Wir erfassen Daten im Rahmen des Betriebs unserer Website und unserer angebotenen Dienste, beispielsweise Ihre E-Mail-Adresse, Ihr Name oder Ihre private oder geschäftliche Adresse bzw. Telefonnummer. Möglicherweise werden auch demografische Informationen erfasst, wie Postleitzahl, Alter, Geschlecht, Präferenzen, Interessen und Favoriten. Wenn Sie eine Bestellung tätigen werden weitere Informationen erfasst, z.B. Ihre Kreditkartennummer und Rechnungsadresse. <br />
