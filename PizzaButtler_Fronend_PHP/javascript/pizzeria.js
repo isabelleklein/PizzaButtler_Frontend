@@ -1,7 +1,8 @@
 var rest;
 var speisekarte;
-var test;
 var warenkorb = [];
+var aktuellePizza;
+
 $(document).ready(function(){
 	// GET-Parameter
 	var pizzeriaId = parse("id");
@@ -121,77 +122,65 @@ var buildSpeisekarte = function(data){
 		}		
 		
 		$("#pizzerienContainer").tabs({active: 2});
+		
+		extraslisten(speisekarte[0].zusatzbelaege);
 				
 		$(".preisbutton").click(function(){
-			/* Pseudo muss so ablaufen:
-				var extras = waehleExtras();
-				addToWarenkorb(this, extras);			
-			*/
-			
-			var extras = [{
-						"zusatzbelagID":1,
-						"name": "Paprika",
-						"preis":1.09
-					},
-					{
-						"zusatzbelagID":2,
-						"name": "Katzenfleisch",
-						"preis":5.99
-					}];
-			extrasaufrufen();
-			addToWarenkorb(this, extras);
-				
+
 			$('#overlay').show('slow',	function() {
 				$('#extrazutaten_container').fadeIn('slow');
 				$('#changeText').html('Dynamischer Inhalt');
 			});
+			
+			aktuellePizza = this;			
 		});
 	}
 }
 
+function waehleExtras(pizza){
+	
+}
 
 function extraslisten(data){
 	var statement = ("<p id='anmerkungenue'> Bitte wähle Deine Extrabeilagen </p> <table>");
 	for(var i = 0; i<data.length; i++){
-		statement = statement + ("<div class='extra'> <tr> <td> <input type='checkbox' id='extracheckbox' class='extratabelle'> " + data[i].name +"</td>" + " <td> " + data[i].preis + " € </td> ");
+		statement = statement + ("<div class='extra'> <tr> <td> <input type='checkbox' zusatzbelagID='" + data[i].zusatzbelagID + "' \
+								name='" + data[i].name + "' preis='" + data[i].preis + "'\
+								id='extracheckbox' class='extratabelle'> " + data[i].name + " " + data[i].preis + " € </td> ");
 		if(i+1<data.length){
 			i++;
-			statement = statement +("<td> <input type='checkbox' id='extracheckbox' class='extratabelle'> " + data[i].name +"</td>" + " <td> " + data[i].preis + " € </td>");
+			statement = statement +("<td> <input type='checkbox' id='extracheckbox' zusatzbelagID='" + data[i].zusatzbelagID + "' \
+									name='" + data[i].name + "' preis='" + data[i].preis + "'\
+									class='extratabelle'> " + data[i].name + " " + data[i].preis + " € </td>");
 		}
 		statement = statement + ("</tr> </div>");
 	}
 	
 	statement = statement + ("</table> <p id='anmerkungentext'> Anmerkungen </p> <textarea id='anmerkungen'> </textarea>");
 	
-	$('#extrazutaten').html(statement);
-	
-}
-
-
-function extrasaufrufen() {
-	var pizzeriaId = parse("id");
-	rest = new RestInterface();
-	rest.setParameters("GET", "pizzeria/" + pizzeriaId, null, extraslisten);
-
-	if(pizzeriaId != ""){
-		console.log("erfolgreich");
-		// rest-Aufruf durchfuehren und Liste befuellen
-		rest.fakeSend("./mock/getExtrazutaten.json");
-	}
-	else {
-		console.log("fehler");
-		rest.fakeSend("./mock/null.json");
-	}
-}
-
-function extrahinzufuegen(){ // Hier muss die Funktion geschrieben werden, wie die Extrazutaten an den Warenkorb übergeben werden
-	console.log("Domme");
+	$('#extrazutaten').html(statement);	
 }
 
 function schliessen(){	
+	var extraTabelle = $()
+	var extras = [];
+	
+	$(".extratabelle").each(function(x,y){
+		if($(this).prop("checked")){
+			var extra = {};
+			extra.zusatzbelagID = $(this).attr("zusatzbelagID");
+			extra.name = $(this).prop("name");
+			extra.preis = $(this).attr("preis");
+			extras.add(extra);
+		}
+	});
+		
 	$('#extrazutaten_container').hide('slow', function() {
 	    $('#overlay').fadeOut();          
 	});
+	
+	addToWarenkorb(aktuellePizza, extras);
+	aktuellePizza = "";
 }	    
 
 function addToWarenkorb(produktButton, zusatzbelaege){
@@ -260,7 +249,7 @@ function showWarenkorb(){
 		var zusatz = "";
 		warenkorb[i].zusatzbelaege.forEach(function(belag){
 			zusatz += belag.name+ ", ";
-			preis += belag.preis;
+			preis += parseFloat(belag.preis);
 		});		
 		zusatz = zusatz.substr(0, zusatz.length - 2); // Letztes ", " entfernen
 		
@@ -302,7 +291,7 @@ function summieren()
 	for(var i = 0; i < warenkorb.length; i++){
 		summe += warenkorb[i].preis * warenkorb[i].anzahl;
 		warenkorb[i].zusatzbelaege.forEach(function(belag){
-			summe += belag.preis * warenkorb[i].anzahl;
+			summe += parseFloat(belag.preis) * warenkorb[i].anzahl;
 		});
 	}
 	$("#summeWarenkorb").html("<p style='margin:0px'>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");

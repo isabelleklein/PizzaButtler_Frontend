@@ -38,7 +38,7 @@ function warenkorbAnzeigen(){
 		var zusatz = "";
 		warenkorb[i].zusatzbelaege.forEach(function(belag){
 			zusatz += belag.name+ ", ";
-			preis += belag.preis;
+			preis += parseFloat(belag.preis);
 		});		
 		zusatz = zusatz.substr(0, zusatz.length - 2); // Letztes ", " entfernen
 	
