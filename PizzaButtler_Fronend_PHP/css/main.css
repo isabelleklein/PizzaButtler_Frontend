@@ -658,12 +658,8 @@ table {
 .smalltext{
     font-size: small;
 }
-<<<<<<< HEAD
-#close{
-=======
 
-#closex{
->>>>>>> origin/PHP-branch
+#close{
 	position: absolute;
 	border-radius:18px;
 	border-width:2px;
