@@ -79,6 +79,6 @@
                 info@pizza-butler.de
             </div>
         </div>
-          <div class="design"> <img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler"> </div> 
+          <div class="design"> <img id="logo_uebersicht2" src="./images/butler.png" alt="Logo Pizzabutler"> </div> 
 
     </div>

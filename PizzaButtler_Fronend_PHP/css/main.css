@@ -214,6 +214,17 @@ input::-moz-placeholder {
 
 #logo_uebersicht {
     bottom: 0;
+    width: 50%;
+    height: auto;
+    overflow: auto;
+    position: relative;
+    top: 0%;
+    right: 0%;
+    margin-left: 50%;
+}
+
+#logo_uebersicht2 {
+    bottom: 0;
     width: 90%;
     height: auto;
     overflow: auto;
@@ -223,6 +234,7 @@ input::-moz-placeholder {
     margin-left: 10%;
     margin-top: 1%;
 }
+
 #infoContainer {
     background-color: #ffffff;
     border-radius: 12px;
