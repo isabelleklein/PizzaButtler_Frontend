@@ -151,11 +151,20 @@ var buildSpeisekarte = function(data){
 
 
 function extraslisten(data){
-	var statement = "";
+	var statement = ("<p id='anmerkungenue'> Bitte wähle Deine Extrabeilagen </p> <table>");
 	for(var i = 0; i<data.length; i++){
-		statement = statement + (" <div class='extra'> " + data[i].name + "<button class='preisbutton' onclick='extrahinzufuegen()'>" + data[i].preis + " € </button>  </div>");
+		statement = statement + ("<div class='extra'> <tr> <td> <input type='checkbox' id='extracheckbox' class='extratabelle'> " + data[i].name +"</td>" + " <td> " + data[i].preis + " € </td> ");
+		if(i+1<data.length){
+			i++;
+			statement = statement +("<td> <input type='checkbox' id='extracheckbox' class='extratabelle'> " + data[i].name +"</td>" + " <td> " + data[i].preis + " € </td>");
+		}
+		statement = statement + ("</tr> </div>");
 	}
+	
+	statement = statement + ("</table> <p id='anmerkungentext'> Anmerkungen </p> <textarea id='anmerkungen'> </textarea>");
+	
 	$('#extrazutaten').html(statement);
+	
 }
 
 
