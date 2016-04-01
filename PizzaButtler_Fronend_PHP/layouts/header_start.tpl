@@ -134,7 +134,7 @@
 					<input data-validation="email"	  data-validation-error-msg="Bitte geben Sie eine gülte E-Mail-Adresse an"
 							type="text"     class="in2" name="email"    id="email" placeholder="Email-Adresse" required/>
 					<input data-validation="required" data-validation-error-msg="Bitte geben Sie ein Passwort ein" 
-							type="password" class="in2" name="passwort" id="passwort" placeholder="Passwort" required"/>
+							type="password" class="in2" name="passwort" id="passwort" placeholder="Passwort" required/>
 					<input type="button" id="closex" value="X">
 				</div>
 				<div id="merken">

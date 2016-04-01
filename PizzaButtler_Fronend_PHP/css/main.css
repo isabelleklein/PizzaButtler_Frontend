@@ -579,3 +579,22 @@ table {
 	font-size: 75%;
 }
 
+.static_text2 {
+    font-size: small;
+    text-align: justify;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.static_text1 {
+    font-size: medium;
+    font-weight: bold;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.infoContainer_content {
+    font-size: 75%;
+    margin-left: 8%;
+    width: 35%;
+}
