@@ -115,7 +115,7 @@
 	            <label id="fehlerPw_1">Bitte geben Sie eine sicheres Passwort ein</label>
 	            <label id="fehlerPw_2">Die Passw&oumlrter stimmen nicht &uumlberein</label>
 	            <div class="fline">
-	            	<input class="in2" name="agb" id="agb" type="checkbox" />Ich bin mit den <a href="./agb.php">AGB</a> und dem Datenschutz einverstanden
+	            	<input name="agb" id="agb" type="checkbox" /><label class="smalltext" for="agb">Ich bin mit den <a href="./agb.php">AGB</a> und dem Datenschutz einverstanden</label>
 	            </div>
 	            <label id="fehlerAgb">Bitte stimmen Sie unseren AGBs und Datenschutzbestimmungen zu</label>
 	            <p>
@@ -123,7 +123,7 @@
 	            </p>
 	            <label id="fehlerAbsenden"></label>
             </form>
-            <a href="./pdfs/Registrierungsformular_Pizzerien_ausfuellbar_neu.pdf" target="blank">Restaurantregistrierung</a>
+            <a href="./pdfs/Registrierungsformular_Pizzerien_ausfuellbar_neu.pdf" class="smalltext" target="blank">Restaurantregistrierung</a>
         	</div>
         <div id="overlay"></div>
     
@@ -138,7 +138,7 @@
 					<input type="button" id="closex" value="X">
 				</div>
 				<div id="merken">
-					<input name="merken" id="cbmerken" type="checkbox"><label class="smalltext">Logindaten merken</label></input>
+					<input name="merken" id="cbmerken" type="checkbox"><label class="smalltext" for="cbmerken">Logindaten merken</label></input>
 				</div>
 				<div id="passwortvergessen" class="smalltext">
                     <a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a>
