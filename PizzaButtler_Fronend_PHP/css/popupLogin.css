@@ -38,6 +38,7 @@ inputx{
 	position: relative;
     top: 0px;  
     width: auto;
+    margin-bottom: 2%;
 }
 #merken input:hover, #cbmerken input:hover{
 	cursor: pointer;
