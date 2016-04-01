@@ -70,12 +70,15 @@
     </div>
     <div class = "infocontent">
         <p id="infoContainerText"> Der Butler Bringts!</p>
-        <div class="infoContainer_content">
-            Pizza Butler GmbH<br />
-            Coblitzallee 1-9<br />
-            68163 Mannheim <br /><br />
-            0177/9542759<br />
-            info@pizza-butler.de
+        <div class="design">
+            <div class="infoContainer_content">
+                Pizza Butler GmbH<br />
+                Coblitzallee 1-9<br />
+                68163 Mannheim <br /><br />
+                0177/9542759<br />
+                info@pizza-butler.de
+            </div>
         </div>
-        <img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
+          <div class="design"> <img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler"> </div> 
+
     </div>
