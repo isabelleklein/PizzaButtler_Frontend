@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-25 03:17:33
+<?php /* Smarty version 3.1.27, created on 2016-04-01 14:29:30
          compiled from "layouts\header_start.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1137556f49fbda03285_22629666%%*/
+/*%%SmartyHeaderCode:1824856fe69aa353517_51597449%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e902567a32fe888042ccac6e75fc999660945f2b' => 
     array (
       0 => 'layouts\\header_start.tpl',
-      1 => 1458872173,
+      1 => 1459513274,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1137556f49fbda03285_22629666',
+  'nocache_hash' => '1824856fe69aa353517_51597449',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56f49fbda89880_81244989',
+  'unifunc' => 'content_56fe69aa3ff333_38157667',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56f49fbda89880_81244989')) {
-function content_56f49fbda89880_81244989 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56fe69aa3ff333_38157667')) {
+function content_56fe69aa3ff333_38157667 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1137556f49fbda03285_22629666';
+$_smarty_tpl->properties['nocache_hash'] = '1824856fe69aa353517_51597449';
 ?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
@@ -178,7 +178,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1137556f49fbda03285_22629666';
 	            <label id="fehlerPw_1">Bitte geben Sie eine sicheres Passwort ein</label>
 	            <label id="fehlerPw_2">Die Passw&oumlrter stimmen nicht &uumlberein</label>
 	            <div class="fline">
-	            	<input class="in2" name="agb" id="agb" type="checkbox" />Ich bin mit den <a href="./agb.php">AGB</a> und dem Datenschutz einverstanden
+	            	<input name="agb" id="agb" type="checkbox" /><label class="smalltext" for="agb">Ich bin mit den <a href="./agb.php">AGB</a> und dem Datenschutz einverstanden</label>
 	            </div>
 	            <label id="fehlerAgb">Bitte stimmen Sie unseren AGBs und Datenschutzbestimmungen zu</label>
 	            <p>
@@ -186,7 +186,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1137556f49fbda03285_22629666';
 	            </p>
 	            <label id="fehlerAbsenden"></label>
             </form>
-            <a href="./pdfs/Registrierungsformular_Pizzerien_ausfuellbar_neu.pdf" target="blank">Restaurantregistrierung</a>
+            <a href="./pdfs/Registrierungsformular_Pizzerien_ausfuellbar_neu.pdf" class="smalltext" target="blank">Restaurantregistrierung</a>
         	</div>
         <div id="overlay"></div>
     
@@ -197,14 +197,16 @@ $_smarty_tpl->properties['nocache_hash'] = '1137556f49fbda03285_22629666';
 					<input data-validation="email"	  data-validation-error-msg="Bitte geben Sie eine gülte E-Mail-Adresse an"
 							type="text"     class="in2" name="email"    id="email" placeholder="Email-Adresse" required/>
 					<input data-validation="required" data-validation-error-msg="Bitte geben Sie ein Passwort ein" 
-							type="password" class="in2" name="passwort" id="passwort" placeholder="Passwort" required"/>
+							type="password" class="in2" name="passwort" id="passwort" placeholder="Passwort" required/>
 					<input type="button" id="closex" value="X">
 				</div>
 				<div id="merken">
-					<input class="in2" name="merken" id="cbmerken" type="checkbox"><label>Logindaten merken</label></input>
+					<input name="merken" id="cbmerken" type="checkbox"><label class="smalltext" for="cbmerken">Logindaten merken</label></input>
 				</div>
-				<div id="passwortvergessen"><a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a></div>
-				<input id="absenden_login" name="absenden" type="button" value="Login" />
+				<div id="passwortvergessen" class="smalltext">
+                    <a href="#" id="open_pwvergessen" onclick="textEinblenden('box2','box1')">Passwort vergessen</a>
+                </div>
+                <input id="absenden_login" name="absenden" type="submit" value="Login" />
 			</form>
         </div>
         <div id="overlay"></div>

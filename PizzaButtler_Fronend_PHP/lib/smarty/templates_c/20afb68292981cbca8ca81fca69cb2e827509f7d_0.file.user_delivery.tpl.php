@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-24 09:59:28
+<?php /* Smarty version 3.1.27, created on 2016-04-01 14:29:46
          compiled from "views\user_delivery.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1445256f3ac70e75735_92959021%%*/
+/*%%SmartyHeaderCode:3060856fe69bab32ba7_49574367%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '20afb68292981cbca8ca81fca69cb2e827509f7d' => 
     array (
       0 => 'views\\user_delivery.tpl',
-      1 => 1458645661,
+      1 => 1459509496,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1445256f3ac70e75735_92959021',
+  'nocache_hash' => '3060856fe69bab32ba7_49574367',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56f3ac70ef7425_72577844',
+  'unifunc' => 'content_56fe69babb78b4_51040647',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56f3ac70ef7425_72577844')) {
-function content_56f3ac70ef7425_72577844 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56fe69babb78b4_51040647')) {
+function content_56fe69babb78b4_51040647 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1445256f3ac70e75735_92959021';
+$_smarty_tpl->properties['nocache_hash'] = '3060856fe69bab32ba7_49574367';
 ?>
 <html>
     <head>
@@ -45,6 +45,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1445256f3ac70e75735_92959021';
                     <input class="zahlungsart" type="radio" id="abholung" name="lieferart" value="abholung"><label for="abholung"> Abholung</label><br />
                     <input class="zahlungsart" type="radio" id="lieferung" name="lieferart" value="lieferung" checked><label 
                         for="lieferung"> Lieferung</label>
+                    <p></p>
                 </div>
 				
                 <div id="delivery_data">
@@ -75,14 +76,15 @@ $_smarty_tpl->properties['nocache_hash'] = '1445256f3ac70e75735_92959021';
                         <label class="placeholder_fehler" id="fehleruserPlz"><br />Bitte geben Sie eine g&uumlltige Postleitzahl an</label>
                         <label class="placeholder_fehler" id="fehleruserOrt"><br />Bitte geben Sie einen g&uumlltigen Ort an</label>
                     </div>
+                </div>
+                <div>
                     <div class="fline">
                         <input type="text" name="telefon" id="userTelefon" required onchange="telefonPruefen_delivery()" placeholder="Telefon"/>
                         <input type="text" name="email" id="userEmail" required onchange="mailPruefen_delivery()" placeholder="Email"/>
                         <label class="placeholder_fehler" id="fehleruserEmail"><br />Bitte geben Sie eine g&uumlltige Email-Adresse an</label>
                         <label class="placeholder_fehler" id="fehleruserTel"><br />Bitte geben Sie eine g&uumlltige Telefonnummer an</label>
                     </div>
-                </div>
-                <div>
+                
                     <p>
 						<input class="userbutton" id="delivery_back" name="delivery_back" type="button" value="zur&uuml;ck" />
                         <input class="userbutton" id="delivery_next" name="delivery_next" type="button" value="weiter" />

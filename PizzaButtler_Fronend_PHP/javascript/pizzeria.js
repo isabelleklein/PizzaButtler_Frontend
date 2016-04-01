@@ -237,6 +237,9 @@ function addToWarenkorb(produktButton, zusatzbelaege){
 
 function showWarenkorb(){
 	var ul = $("<ul style='padding-left:15px'></ul>");
+	if (Cookies.get("warenkorb") != null) {
+		warenkorb = Cookies.get("warenkorb");
+		}
 	
 	for(var i = 0; i < warenkorb.length; i++){
 		var name = warenkorb[i].name;

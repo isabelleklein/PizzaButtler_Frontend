@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-25 03:29:22
+<?php /* Smarty version 3.1.27, created on 2016-04-01 14:29:30
          compiled from "views\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:3037056f4a2820b1ec4_13553533%%*/
+/*%%SmartyHeaderCode:2404356fe69aa26cd64_12154506%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eb3fd37e6f529e330906b3654bbe2b19ae9511a7' => 
     array (
       0 => 'views\\index.tpl',
-      1 => 1458872958,
+      1 => 1459332694,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3037056f4a2820b1ec4_13553533',
+  'nocache_hash' => '2404356fe69aa26cd64_12154506',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56f4a2820f17c2_68158555',
+  'unifunc' => 'content_56fe69aa2fd605_30468288',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56f4a2820f17c2_68158555')) {
-function content_56f4a2820f17c2_68158555 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56fe69aa2fd605_30468288')) {
+function content_56fe69aa2fd605_30468288 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '3037056f4a2820b1ec4_13553533';
+$_smarty_tpl->properties['nocache_hash'] = '2404356fe69aa26cd64_12154506';
 ?>
 
 
@@ -35,8 +35,7 @@ $_smarty_tpl->properties['nocache_hash'] = '3037056f4a2820b1ec4_13553533';
 			
 				<form action="./pizzerienSuche.php" name="pizzerienListeButton" id='pizzerienSucheGross'>
 					<p>
-						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" 
-							data-suggestions="Mannheim, Münster, M'urica, 68161, 68159, 68123"/>
+						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" />
 					</p>
 				</form>
 				<?php echo '<script'; ?>
@@ -55,6 +54,9 @@ $_smarty_tpl->properties['nocache_hash'] = '3037056f4a2820b1ec4_13553533';
 Auf Deiner eigenen Favoritenliste kannst Du Dir Deine Lieblingsgerichte zusammenstellen und sofort bestellen. Über unseren Zahlungsdienstleister PayPal kannst Du Deine Bestellung mit Deinen PayPal Zugangsdaten direkt bezahlen.
  <br> <br>
 Wir wünschen dir einen guten Appetit, euer Pizza Butler Team.
-        </div><?php }
+        </div>
+		<?php echo '<script'; ?>
+ src="./javascript/inputSuggestions.js"><?php echo '</script'; ?>
+><?php }
 }
 ?>
