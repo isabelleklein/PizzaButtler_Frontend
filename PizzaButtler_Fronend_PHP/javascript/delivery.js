@@ -1,22 +1,20 @@
 $(document).ready(function(){
 	var userID = Cookies.get('userID');
 	var restaurantID = Cookies.get('restaurantID');
-    if(typeof userID != 'undefined') {
-        document.getElementById("eingeloggt").style.display = "none";
-    } 
-    else if(typeof restaurantID != 'undefined'){
-    	alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu können.");
-    }
-    else {
-         document.getElementById("eingeloggt").style.display = "";
-    }
-	
+    
     if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
         document.getElementById("delivery_data").style.display = "none";
         document.getElementById("eingeloggt").style.display = "none";
     } else {
         document.getElementById("delivery_data").style.display = "";
-        document.getElementById("eingeloggt").style.display = "";
+        if(typeof userID != 'undefined') {
+            document.getElementById("eingeloggt").style.display = "none";
+        } else {
+            if(typeof restaurantID != 'undefined'){
+    	       alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu können.");
+            }
+            document.getElementById("eingeloggt").style.display = "";
+        }
     }	
 	
 	$("#delivery_next").click(function(){		
@@ -42,7 +40,14 @@ $(document).ready(function(){
 				document.getElementById("eingeloggt").style.display = "none";
 			} else {
 				document.getElementById("delivery_data").style.display = "";
-				document.getElementById("eingeloggt").style.display = "";
+				if(typeof userID != 'undefined') {
+                    document.getElementById("eingeloggt").style.display = "none";
+                } else {
+                    if(typeof restaurantID != 'undefined'){
+    	               alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu können.");
+                    }
+                    document.getElementById("eingeloggt").style.display = "";
+                }
 			}	
 		}
    );  
