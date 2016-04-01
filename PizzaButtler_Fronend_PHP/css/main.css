@@ -654,3 +654,13 @@ table {
 #anmerkungentext{
 	margin-bottom: 0px;
 }
+#closex{
+	position: absolute;
+	border-radius:18px;
+	border-width:2px;
+	right: 3px;
+	top: 3px;
+	background-color: #ffffff;
+	font-weight: 900;
+	width: 30px;
+}

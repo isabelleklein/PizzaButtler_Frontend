@@ -23,10 +23,10 @@
 			 <div id='zurKasse'></div>
     	</div>
     	<div id="extrazutaten_container">
-    	  	<input type="button"  id="close" value="X" onclick ="schliessen()"></input>
+    	  	<input type="button"  id="closex" value="X" onclick ="schliessen()"></input>
     	 	
     	 	<div id="extrazutaten"></div>
-    	 	<input type= "button" value="Bestaetigen" onclick="schliessen()"></input>
+    	 	<input type= "button" class="preisbutton" value="Bestaetigen" onclick="schliessen()"></input>
     	 	<div id="overlay">
     	 	
     	 			
