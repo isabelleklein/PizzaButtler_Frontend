@@ -12,7 +12,7 @@
     	<div class="maincontent" id="pizzerienContainer">
     	</div>
     	<div id="rechterBereich">
-	    	<div class = "infocontent" id = "infoContainer">
+	    	<div  id = "infoContainer">
 	    		<p id="infoContainerText"> Der Butler Bringts!</p>
 	    		<img id="logo_uebersicht" src="./images/butler.png" alt="Logo Pizzabutler">
 	    	</div>

@@ -10,18 +10,28 @@
     
     <body>
     	<div id = "warenkorbuebersicht"> <img id='bildwarenkorb' src='./images/cart.png'> <p id="bestellzeit"></p>
-		<div id="warenkorbAnzeigen"></div>
-		<div id="bezahlart">
-		<p>Bezahlart wählen</p>
-		<div id="bezahlartradio">
-		<form action="radio.html">
-		<input type="radio" name="Zahlungsart" class="zahlungsart"> Paypal <img id="bezahlart1" src="./images/bezahlart1.png" alt="Bezahlart 1"></input><br>
-		<input type="radio" name="Zahlungsart" class="zahlungsart"> Bar <img id="bezahlart2" src="./images/bezahlart2.png" alt="Bezahlart 2"></input><br>
-		<input type="radio" name="Zahlungsart" class="zahlungsart"> EC-Cash </input>
-		</form>
-		</div>
-		</div>
-		<div id="lieferadresseAnzeigen"></div>
+            <div id="warenkorbAnzeigen"></div>
+            <div id="bezahlart">
+                <p>Bitte wähle Deine Bezahlart! </p>
+                <div id="bezahlartradio">
+                    <form action="radio.html">
+                        <div class="bezahlartdesign">
+                            <label>
+                                <img id="bezahlart3" src="./images/bezahlart1.png" alt="Bezahlart 1"> <br>
+                                <input type="radio" name="Zahlungsart" class="zahlungsart2"> </input>
+                            </label>
+                        </div>
+                        <div class="bezahlartdesign">
+                            <label>
+                                <img id="bezahlart4" src="./images/bezahlart2.png" alt="Bezahlart 2"></input><br>
+                                <input type="radio" name="Zahlungsart" class="zahlungsart2"> <br>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="lieferadresseAnzeigen"></div>
+
 		</div>
     	<div class = "infocontent">
     		<p id="infoContainerText"> Der Butler Bringts!</p>
