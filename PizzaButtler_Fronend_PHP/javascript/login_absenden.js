@@ -16,7 +16,8 @@ function sendLogin(){
 	rest = new RestInterface();
 			
 	rest.setParameters("POST", "login", jsObj, loginSuccess, loginFailure);
-	rest.send("./mock/loginSuccess.json");
+	rest.send();
+	//rest.send("./mock/loginSuccess.json");
 }
 
 function loginSuccess(userData){
@@ -30,11 +31,13 @@ function loginSuccess(userData){
 		if(typeof(userData.userID) !== 'undefined')	
 		{
 			console.log("Privatkunde");
+			console.log(userData.userID);
 			Cookies.set("userID", userData.userID, {expires: expireTime});
 		}
 		else if(typeof(userData.restaurantID) !== 'undefined')
 		{
 			console.log("Restaurant");
+			console.log(userData.restaurantID);
 			Cookies.set("restaurantID", userData.restaurantID, {expires: expireTime});
 		}
 		else{

@@ -26,6 +26,7 @@ var loadData = function(){
 	if(typeof userID != 'undefined') {
 		rest = new RestInterface();
 		rest.setParameters("GET", "user/" + userID, null, callback_user);
+		rest.send();
 		rest.send("./mock/getUser.json");
 	}
 }
@@ -64,6 +65,7 @@ function setClickListener(){
 				rest.setParameters("PUT", "user/" + userID, daten, function(data){
 					window.location.href = "./user.php"; 
 				});
+				rest.send();
 				rest.send("./mock/putUser.json");
 			}
 		}
@@ -80,6 +82,7 @@ function setClickListener(){
 				rest.setParameters("PUT", "user/" + userID, daten, function(data){
 					window.location.href = "./user.php"; 
 				});
+				rest.send();
 				rest.send("./mock/putUser.json");
 			}
 		}
