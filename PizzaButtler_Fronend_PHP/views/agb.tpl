@@ -1,4 +1,4 @@
-<div class="maincontent">
+<div class="maincontent_static">
     <h3 class="contenthead"> Allgemeine Gesch&auml;ftsbedingungen </h3>       
     <div class="static_text1">1. Vertragsgegenstand, Parteien</div>
     <div class="static_text2"><br />1.1. PizzaButtler.de ist ein vom Anbieter betriebener Online-Marktplatz für die von Unternehmen u.a. aus den Bereichen Lieferservices, Catering und Supermärkte angebotenen Produkte und Dienstleistungen (Speisen, Getränke, Lebensmittel und Mitarbeiterverpflegung), auf dem die registrierten gewerblichen Händler und Dienstleister (im Folgenden „Dienstleister“ genannt) die betreffenden Produkte und Dienstleistungen anbieten und an Verbraucher wie Unternehmer (im Folgenden „Abnehmer“ genannt) verkaufen können. Der Marktplatz dient dabei der Vermittlung des Vertragsschlusses zwischen den Abnehmern und den Dienstleistern sowie der Abwicklung dieser Verkäufe. <br /><br />
