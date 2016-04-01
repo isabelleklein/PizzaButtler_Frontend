@@ -82,8 +82,9 @@ function lieferadresseAnzeigen(){
 				"Telefon: " + telefon + "<br>Mail: " + email);
 	}
 	
-	$("#lieferadresseAnzeigen").append("<br><br><br><button class='bestellen'> Bestellen </button>");
+	$("#lieferadresseAnzeigen").append("<br><br><br><button class='userbutton' id='warenkorb_back'> zurück </button> <button class='userbutton' id='warenkorb_next'> Bestellen </button>");
 }
+
 
 function verarbeiteBestellung(data){
 	console.log("Erfolgreich");
