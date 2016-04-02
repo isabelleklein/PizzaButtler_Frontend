@@ -22,6 +22,8 @@ $(document).ready(function(){
 	else {
 		rest.fakeSend("./mock/null.json");
 	}
+	
+	showWarenkorb();
 
 
 });
@@ -59,6 +61,16 @@ var buildpizzeriaSeite = function(data){
 		<img id='schein' src='./images/bezahlart2.png'/> " + "<p class='containerinhalt'>" + "\ Mindestbestellwert: " + data.mindestbestellwert + " €" + "<br>\
 		Lieferkosten: " + " " + data.lieferkosten + " €" + "</p>");
 	}
+	Cookies.set("restaurantID", data.restaurantID);
+	Cookies.set("restaurantName", data.name);
+	Cookies.set("restaurantStrasse", data.strasse);
+	Cookies.set("restaurantHausnummer", data.hausnummer);
+	Cookies.set("restaurantPLZ", data.plz);
+	Cookies.set("restaurantOrt", data.ort);
+	Cookies.set("restaurantOeffnungszeit", data.oeffnungszeit);
+	Cookies.set("restaurantMindestbestellwert", data.mindestbestellwert);
+	Cookies.set("restaurantLieferkosten", data.lieferkosten);
+	
 };
 
 var buildpizzaeriaSeite = function(data){
