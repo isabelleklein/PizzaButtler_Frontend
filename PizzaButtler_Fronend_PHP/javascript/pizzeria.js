@@ -307,6 +307,7 @@ function summieren()
 		});
 	}
 	$("#summeWarenkorb").html("<p style='margin:0px'>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");
+	Cookies.set("warenkorbGesamtsumme", summe);
 }
 
 function zurKasse()
@@ -314,7 +315,15 @@ function zurKasse()
 	var q = $("<button class = 'zurKasseButton' > Zur Kasse </button>");
 	$("#zurKasse").html(q);
 	
+
+	
 	$(".zurKasseButton").click(function(){
+		var lieferkosten = parseFloat(Cookies.get("restaurantLieferkosten"));
+		if (Cookies.get("warenkorbGesamtsumme") < lieferkosten){
+			$('.zurKasseButton').disable = true;
+			window.alert("Sie müssen den Mindestbestellwert erreichen!");
+		}	
+		else {
 		var jetzt = new Date();
 		var tag = jetzt.getDate();
 		if(tag < 10) tag = "0" + tag;
@@ -328,6 +337,7 @@ function zurKasse()
 		Cookies.set("zeit", zeit);
 		Cookies.set("Warenkorb",warenkorb);
 		window.location.href = "./delivery.php";
+		}
 	});
 }
 
