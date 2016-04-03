@@ -19,7 +19,7 @@ var buildPizzerienListe = function(data){
 	}
 	else {
 		// Tabelle an sich
-		var table = $("<table class='pizzerienuebersicht'></table>");
+		var table = $("<table class='pizzerienuebersicht'><tr class='line'> <th colspan='2' align=left><b> Pizza und Lieferbestellung <b> </th> <th align=left> <b> Bewertung <b> </th> <th align=left> <b> Bezahlung <b> </th></tr></table>");
 		
 		// Empfangene Daten durchgehen
 		for(var i = 0; i < data.length; i++){
@@ -36,7 +36,7 @@ var buildPizzerienListe = function(data){
 			var tr = $("<tr data-href='./pizzeria.php?id=" + data[i].restaurantID + "'></tr>");
 			tr.addClass ("line");
 			// Spalte mit Bild
-			var td1 = $("<td></td>");
+			var td1 = $("<td> </td>");
 			td1.addClass("iconspalte");
 			var img = "<img class='pizzeriaIcon' id='samplePizzeria1' src='data:image/jpg;base64," + data[i].bild + "' alt='Pizzeria1'>";
 			// Spalte mit Textinfos
