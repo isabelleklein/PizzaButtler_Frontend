@@ -24,8 +24,6 @@ $(document).ready(function(){
 	}
 	
 	showWarenkorb();
-
-
 });
 
 
@@ -67,7 +65,7 @@ var buildpizzeriaSeite = function(data){
 	Cookies.set("restaurantHausnummer", data.hausnummer);
 	Cookies.set("restaurantPLZ", data.plz);
 	Cookies.set("restaurantOrt", data.ort);
-	Cookies.set("restaurantOeffnungszeit", data.oeffnungszeit);
+	Cookies.set("restaurantOeffnungszeiten", data.oeffnungszeiten);
 	Cookies.set("restaurantMindestbestellwert", data.mindestbestellwert);
 	Cookies.set("restaurantLieferkosten", data.lieferkosten);
 	
@@ -318,27 +316,47 @@ function zurKasse()
 
 	
 	$(".zurKasseButton").click(function(){
-		var lieferkosten = parseFloat(Cookies.get("restaurantLieferkosten"));
-		if (Cookies.get("warenkorbGesamtsumme") < lieferkosten){
-			$('.zurKasseButton').disable = true;
-			window.alert("Sie müssen den Mindestbestellwert erreichen!");
-		}	
-		else {
-		var jetzt = new Date();
-		var tag = jetzt.getDate();
-		if(tag < 10) tag = "0" + tag;
-		var monat = jetzt.getMonth()+1;
-		if(monat < 10) monat = "0" + monat;
-		var jahr = jetzt.getFullYear();
-		var stunde = jetzt.getHours();
-		var minute = jetzt.getMinutes();
-		if(minute < 10) minute = "0" + minute;
-		var zeit = (tag + "." + monat + "." + jahr + ", " + stunde + ":" + minute);
-		Cookies.set("zeit", zeit);
-		Cookies.set("Warenkorb",warenkorb);
-		window.location.href = "./delivery.php";
+		
+		// Prüfung, ob das Restaurant geöffnet hatOffen
+		if(hatOffen(Cookies.getJSON("restaurantOeffnungszeiten"))){	
+			// Lieferkosten erreicht?
+			var lieferkosten = parseFloat(Cookies.get("restaurantLieferkosten"));
+			if (Cookies.get("warenkorbGesamtsumme") > lieferkosten){
+				var jetzt = new Date();
+				var tag = jetzt.getDate();
+				if(tag < 10) tag = "0" + tag;
+				var monat = jetzt.getMonth()+1;
+				if(monat < 10) monat = "0" + monat;
+				var jahr = jetzt.getFullYear();
+				var stunde = jetzt.getHours();
+				var minute = jetzt.getMinutes();
+				if(minute < 10) minute = "0" + minute;
+				var zeit = (tag + "." + monat + "." + jahr + ", " + stunde + ":" + minute);
+				Cookies.set("zeit", zeit);
+				Cookies.set("Warenkorb",warenkorb);
+				window.location.href = "./delivery.php";
+			} else {
+				window.alert("Sie müssen den Mindestbestellwert erreichen");
+			}
+		} else {
+			window.alert("Das Restaurant hat zur Zeit leider geschlossen");
 		}
 	});
+}
+
+function hatOffen(oeffnungszeiten){
+	var date = new Date();
+	var day = date.getDay();
+	var time;
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	if(minutes < 10){
+		time = hours + "0" + minutes;
+	} else {
+		time = hours + "" + minutes;
+	}
+	
+	return (time > oeffnungszeiten[day].von && time < oeffnungszeiten[day].bis);	
 }
 
 function parse(val) {

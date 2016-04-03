@@ -97,9 +97,6 @@ var buildPizzerienListe = function(data){
 function hatOffen(oeffnungszeiten){
 	var date = new Date();
 	var day = date.getDay();
-	//console.log(day);
-	//console.log(date.getHours());
-	//console.log(date.getMinutes());
 	var time;
 	var hours = date.getHours();
 	var minutes = date.getMinutes();
@@ -109,15 +106,7 @@ function hatOffen(oeffnungszeiten){
 		time = hours + "" + minutes;
 	}
 	
-	if(time > oeffnungszeiten[day].von &&
-		time < oeffnungszeiten[day].bis){
-			//console.log(oeffnungszeiten[day].von + "-" + oeffnungszeiten[day].bis)
-			return true;
-		}
-	else {
-		return false;
-	}
-	
+	return (time > oeffnungszeiten[day].von && time < oeffnungszeiten[day].bis);	
 }
 
 function parse(val) {
