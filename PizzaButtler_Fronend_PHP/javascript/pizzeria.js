@@ -59,7 +59,8 @@ var buildpizzeriaSeite = function(data){
 		<img id='schein' src='./images/bezahlart2.png'/> " + "<p class='containerinhalt'>" + "\ Mindestbestellwert: " + data.mindestbestellwert + " €" + "<br>\
 		Lieferkosten: " + " " + data.lieferkosten + " €" + "</p>");
 	}
-	Cookies.set("restaurantID", data.restaurantID);
+	// restaurantID ist schon für die Anmeldung als Pizzeria vorgesehen
+	Cookies.set("restaurantIdBestellung", data.restaurantID);
 	Cookies.set("restaurantName", data.name);
 	Cookies.set("restaurantStrasse", data.strasse);
 	Cookies.set("restaurantHausnummer", data.hausnummer);

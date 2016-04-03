@@ -47,6 +47,11 @@ function warenkorbAnzeigen(){
 		ul.append(li);
 	}
 	
+	if(Cookies.get("lieferart") === "Lieferung"){
+		ul.append("<li>Lieferkosten: " + Cookies.get("restaurantLieferkosten") + "€ </li>");
+	}
+	
+	
 	var summe = 0;
 
 	for(var i = 0; i < warenkorb.length; i++){
@@ -54,6 +59,10 @@ function warenkorbAnzeigen(){
 		warenkorb[i].zusatzbelaege.forEach(function(belag){
 			summe += belag.preis * warenkorb[i].anzahl;
 		});
+	}
+	
+	if(Cookies.get("lieferart") === "Lieferung"){
+		summe += parseFloat(Cookies.get("restaurantLieferkosten"));
 	}
 	
 	ul.append("<p style='margin:0px'><br>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");
@@ -83,7 +92,11 @@ function lieferadresseAnzeigen(){
 	}
 	
 	$("#lieferadresseAnzeigen").append("<br><br><br><button class='userbutton' id='warenkorb_back'> zurück </button> <button class='userbutton' id='warenkorb_next'> Bestellen </button>");
+
+	// Zurück-Button
+	$("#warenkorb_back").attr("onclick", "location.href='delivery.php'");
 }
+	
 
 
 function verarbeiteBestellung(data){

@@ -1,6 +1,9 @@
 $(document).ready(function(){
 	var userID = Cookies.get('userID');
-	var restaurantID = Cookies.get('restaurantID');
+	var restaurantID = Cookies.get('restaurantIdBestellung');
+	
+	// Zurück-Button
+	$("#delivery_back").attr("onclick", "location.href='pizzeria.php?id=" + Cookies.get("restaurantLieferkosten") + "'")
     
     if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
         document.getElementById("delivery_data").style.display = "none";
