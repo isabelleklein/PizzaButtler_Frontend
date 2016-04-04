@@ -331,9 +331,11 @@ table {
 .Text3 {
     color: #842002;
     font-weight: bold;
+    font-size: medium;
 }
 .Text4 {
     color: #842002;
+    font-size: small;
 }
 
 #userstrasse{
@@ -658,9 +660,7 @@ table {
 .bezahlartdesign{
     float: left;
 }
-.extratabelle{
-	width: auto;
-}
+
 #anmerkungen{
 	font: 100% "Open Sans",sans-serif;
 	border-radius: 7px;
@@ -715,5 +715,5 @@ table {
 }
 .extratabelle{
 	padding-right: 10px;
-	
+	width: auto;
 }
