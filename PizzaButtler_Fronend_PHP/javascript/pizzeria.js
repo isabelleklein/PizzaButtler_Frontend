@@ -157,14 +157,14 @@ function extraslisten(data){
 
 	var statement = ("<p id='anmerkungenue'> Bitte wähle Deine Extrabeilagen </p> <table>");
 	for(var i = 0; i<data.length; i++){
-		statement = statement + ("<div class='extra'> <tr> <td> <input type='checkbox' zusatzbelagID='" + data[i].zusatzbelagID + "' \
-								name='" + data[i].name + "' preis='" + data[i].preis + "'\
-								id='extracheckbox' class='extratabelle'> " + data[i].name + " " + data[i].preis + " € </td> ");
+		statement = statement + ("<div class='extra'> <tr> <td> <input type='checkbox' zusatzbelagID=''" + data[i].zusatzbelagID + "' \
+								name='" + data[i].name + "' id='" + data[i].name + "' preis=' " + data[i].preis + "'\
+								id='extracheckbox' class='extratabelle'><label for='"+ data[i].name +"'> " + data[i].name + " " + data[i].preis + " € </label> </td> ");
 		if(i+1<data.length){
 			i++;
-			statement = statement +("<td> <input type='checkbox' id='extracheckbox' zusatzbelagID='" + data[i].zusatzbelagID + "' \
-									name='" + data[i].name + "' preis='" + data[i].preis + "'\
-									class='extratabelle'> " + data[i].name + " " + data[i].preis + " € </td>");
+			statement = statement +("<td> <input type='checkbox'zusatzbelagID='" + data[i].zusatzbelagID + "' \
+									name='" + data[i].name + "'id='" + data[i].name + "' preis='" + data[i].preis + "'\
+									class='extratabelle'> <label for='"+data[i].name+"'> " + data[i].name + " " + data[i].preis + " € </label> </td>");
 		}
 		statement = statement + ("</tr> </div>");
 	}
