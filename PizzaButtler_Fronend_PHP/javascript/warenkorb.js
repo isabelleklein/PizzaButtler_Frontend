@@ -27,7 +27,7 @@ function warenkorbAnzeigen(){
 	
 	warenkorb = Cookies.getJSON("Warenkorb");
 	
-	var ul = $("<ul style='padding-left:15px'></ul>");
+	var ul = $("<ul style='padding-left:15px;margin-left: -30%;'></ul>");
 	
 	for (var i=0; i<warenkorb.length; i++){
 		var name = warenkorb[i].name;
