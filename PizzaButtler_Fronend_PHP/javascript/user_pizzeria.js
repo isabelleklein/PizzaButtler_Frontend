@@ -276,16 +276,8 @@ function fehlerAusgeben(fehl, feld)
 }
 function hinweisVerbergen(fehl, feld)
 {
-<<<<<<< HEAD
 	  document.getElementById("" + fehl).style.display="none"; //Fehlerhinweis wird ausgeblendet
 	  document.getElementById("" + feld).style.background="#ffffff"; //Fehlerhaftes Feld wird farblich in Ausgangszustand gebracht
 	  document.getElementById("" + feld).style.color="#842002"; //Schriftfarbe wird farblich in Ausgangszustand gebracht
 	 // document.getElementById("container").style.height="300"; //Die Größe des Pop-Ups wird in Ausgangszustand gebracht
 	}
-=======
-	document.getElementById("" + fehl).style.display="none"; //Fehlerhinweis wird ausgeblendet
-	document.getElementById("" + feld).style.background="#ffffff"; //Fehlerhaftes Feld wird farblich in Ausgangszustand gebracht
-	document.getElementById("" + feld).style.color="#842002"; //Schriftfarbe wird farblich in Ausgangszustand gebracht
-	// document.getElementById("container").style.height="300"; //Die Größe des Pop-Ups wird in Ausgangszustand gebracht
-}
->>>>>>> 081ca78fbc8cc3302c276d06534bf091572229f5
