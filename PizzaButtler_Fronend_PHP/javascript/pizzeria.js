@@ -186,8 +186,7 @@ function schliessen(){
 			extra.preis = $(this).attr("preis");
 			extras.add(extra);
 		}
-	});
-		
+	});	
 	$('#extrazutaten_container').hide('slow', function() {
 	    $('#overlay').fadeOut();          
 	});
@@ -195,7 +194,7 @@ function schliessen(){
 	addToWarenkorb(aktuellePizza, extras);
 	aktuellePizza = "";
 	 $(':checkbox:checked').prop('checked',false);
-	
+	 document.getElementById("anmerkungen").value= " ";
  
 }
 
