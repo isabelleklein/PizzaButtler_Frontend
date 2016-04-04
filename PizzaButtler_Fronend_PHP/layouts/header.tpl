@@ -45,7 +45,7 @@
                     <section class="head_right">
                     	<span class="head_right_buttons">
                     		<form action="./pizzerienSuche.php" name="pizzerienListeButton">
-									<input class="umkreissuche_header" type="text" name="plz-ort" id="plz_ort" placeholder="Wo wohnst du?" />
+									<input class="umkreissuche_header" type="text" name="plz-ort" id="plz_ort" placeholder="Wo wohnst Du?" />
 							</form>
 							<span class="head_right_button_ersetzen">
                         		<button class="header_button" id="openx">Anmelden</button>
