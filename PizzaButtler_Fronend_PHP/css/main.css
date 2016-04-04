@@ -105,6 +105,12 @@ input::-moz-placeholder {
     width: 140px;
 }
 
+.button:hover{
+	background-color: #842002;
+    color: #ffffff;
+    cursor: pointer;
+}
+
 .userbutton{
     border-radius: 7px;
     border-color: #842002;
@@ -115,6 +121,12 @@ input::-moz-placeholder {
     color: #ffffff;
     background-color: #842002; 
     font-size: small;
+}
+
+.userbutton:hover{
+	background-color: #ffffff;
+    color: #842002;
+    cursor: pointer;
 }
 
 .userdaten{
@@ -687,4 +699,8 @@ table {
 .Wochentag_feld
 {
 	width:2em;
+}
+.bewertung{
+    text-align: center;
+    font-size: 200%;
 }
