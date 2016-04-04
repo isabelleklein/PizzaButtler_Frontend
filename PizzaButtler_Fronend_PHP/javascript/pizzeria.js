@@ -240,9 +240,9 @@ function addToWarenkorb(produktButton, zusatzbelaege){
 
 function showWarenkorb(){
 	var ul = $("<ul style='padding-left:15px'></ul>");
-	if (Cookies.get("warenkorb") != null) {
-		warenkorb = Cookies.get("warenkorb");
-		}
+	if (typeof Cookies.get("Warenkorb") !== undefined) {
+		warenkorb = Cookies.getJSON("Warenkorb");
+	}
 	
 	for(var i = 0; i < warenkorb.length; i++){
 		var name = warenkorb[i].name;
@@ -279,6 +279,8 @@ function showWarenkorb(){
 	// Kein Warenkorb = kein "Zur Kasse"-Button
 	if(warenkorb.length === 0){
 		$("#zurKasse").html("");
+	} else {
+		zurKasse();
 	}
 }
 
