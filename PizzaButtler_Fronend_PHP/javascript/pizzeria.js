@@ -57,7 +57,7 @@ var buildpizzeriaSeite = function(data){
 		<input type='hidden' value='" + data.restaurantID + "'/>" + "<p id='containertitel'>" + data.name + "</p>" + "\
 		<img id='haus' src='./images/Haus_-_Vector-Icon.png'/>"  + "<p class='containerinhalt'>" + data.strasse + " " + data.hausnummer + "<br>" + data.plz + " " + data.ort + "</p>" +"\
 		<img id='uhr' src='./images/Uhr_-_Vector-Icon.png'/> " + "<p class='containerinhalt'>" + " " + " Heute geöffnet von " +  oeffnungszeit + "<br>"  + "</p>" + "\
-		<img id='schein' src='./images/bezahlart2.png'/> " + "<p class='containerinhalt'>" + "\ Mindestbestellwert: " + data.mindestbestellwert + " €" + "<br>\
+		<img id='schein' src='./images/bezahlart.png'/> " + "<p class='containerinhalt'>" + "\ Mindestbestellwert: " + data.mindestbestellwert + " €" + "<br>\
 		Lieferkosten: " + " " + data.lieferkosten + " €" + "</p>");
 	}
 	// restaurantID ist schon für die Anmeldung als Pizzeria vorgesehen
