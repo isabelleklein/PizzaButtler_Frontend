@@ -10,14 +10,23 @@
 			<form id='datenanzeigen' name="datenanzeigen" action="#">
 				<h3 class="contenthead"> Wähle eine Lieferart </h3>
                 <div>
-                    <input class="zahlungsart" type="radio" id="abholung" name="lieferart" value="abholung"><label for="abholung"> Abholung</label><br />
-                    <input class="zahlungsart" type="radio" id="lieferung" name="lieferart" value="lieferung" checked><label 
-                        for="lieferung"> Lieferung</label>
+                    <input class="zahlungsart" type="radio" id="Abholung" name="lieferart" value="Abholung"><label for="Abholung"> Abholung</label><br />
+                    <input class="zahlungsart" type="radio" id="Lieferung" name="lieferart" value="Lieferung" checked><label 
+                        for="Lieferung"> Lieferung</label>
                     <p></p>
                 </div>
 				
-                <div id="delivery_data">
+                <div>
                     <h3 class="contenthead"> Deine Lieferadresse </h3>
+					<div class="fline">
+	                <select name="anrede" id="userAnrede" size="1" required autofocus>
+                        <option value="keine" selected disabled> bitte wählen</option>
+                        <option value="Herr"> Herr </option>
+                        <option value="Frau"> Frau </option>
+                    </select>
+					<label class="placeholder_fehler" id="fehleruserAnrede"><br />Bitte geben Sie eine Anrede an</label>
+	            </div>
+					
                     <div class="fline">
                         <input type="text" name="vorname" id="userVorname" required title="Zwischen 3 und 25 Zeichen (Umlaute möglich)" 
                                onchange="vornamePruefen_delivery()" placeholder="Vorname"/>
@@ -43,8 +52,6 @@
                         <label class="placeholder_fehler" id="fehleruserPlz"><br />Bitte geben Sie eine g&uumlltige Postleitzahl an</label>
                         <label class="placeholder_fehler" id="fehleruserOrt"><br />Bitte geben Sie einen g&uumlltigen Ort an</label>
                     </div>
-                </div>
-                <div>
                     <div class="fline">
                         <input type="text" name="telefon" id="userTelefon" required onchange="telefonPruefen_delivery()" placeholder="Telefon"/>
                         <input type="text" name="email" id="userEmail" required onchange="mailPruefen_delivery()" placeholder="Email"/>

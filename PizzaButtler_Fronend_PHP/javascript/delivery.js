@@ -5,66 +5,33 @@ $(document).ready(function(){
 	// Zurück-Button
 	$("#delivery_back").attr("onclick", "location.href='pizzeria.php?id=" + Cookies.get("restaurantLieferkosten") + "'")
     
-    if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
-        document.getElementById("delivery_data").style.display = "none";
-        document.getElementById("eingeloggt").style.display = "none";
-    } else {
-        document.getElementById("delivery_data").style.display = "";
-        if(typeof userID != 'undefined') {
-            document.getElementById("eingeloggt").style.display = "none";
-        } else {
-            if(typeof restaurantID != 'undefined'){
-    	       alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu können.");
-            }
-            document.getElementById("eingeloggt").style.display = "";
-        }
-    }	
+    if(typeof userID != 'undefined') {
+		document.getElementById("eingeloggt").style.display = "none";
+	} else {
+		if(typeof restaurantID != 'undefined'){
+		   alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu können.");
+		}
+		document.getElementById("eingeloggt").style.display = "";
+	}	
 	
 	$("#delivery_next").click(function(){		
-		var lieferart ="";
-		if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
-			lieferart = "Abholung";
-
-			// Bei Abholung werden keine weiteren Daten benötigt (bis jetzt) = direkte weiterleitung
-			if(checkForm_abholung()) weiterleiten(lieferart);
-		} else {
-			lieferart = "Lieferung";
-			
-			// Testen, ob korrekte Daten eingegeben wurden
-			if(checkForm_delivery())
-				weiterleiten(lieferart);
-		}
-	});
-    
-	$("input[type='radio'][name='lieferart']").change(
-	    function() {
-			if($("input[type='radio'][name='lieferart']:checked").val() == "abholung") {
-				document.getElementById("delivery_data").style.display = "none";
-				document.getElementById("eingeloggt").style.display = "none";
-			} else {
-				document.getElementById("delivery_data").style.display = "";
-				if(typeof userID != 'undefined') {
-                    document.getElementById("eingeloggt").style.display = "none";
-                } else {
-                    if(typeof restaurantID != 'undefined'){
-    	               alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu können.");
-                    }
-                    document.getElementById("eingeloggt").style.display = "";
-                }
-			}	
-		}
-   );  
+		var lieferart = $("input[type='radio'][name='lieferart']:checked").val();
+		
+		if(checkForm_delivery())
+			weiterleiten(lieferart);
+	});  
 });
 
 function weiterleiten(lieferart){
-	var vorname = document.getElementById('userVorname').value
-	var nachname = document.getElementById('userNachname').value
-	var strasse = document.getElementById('userStrasse').value
-	var hausnummer = document.getElementById('userHausnummer').value
-	var plz = document.getElementById('userPlz').value
-	var ort = document.getElementById('userOrt').value
-	var telefon = document.getElementById('userTelefon').value
-	var email = document.getElementById('userEmail').value
+	var anrede = document.getElementById('userAnrede').value;
+	var vorname = document.getElementById('userVorname').value;
+	var nachname = document.getElementById('userNachname').value;
+	var strasse = document.getElementById('userStrasse').value;
+	var hausnummer = document.getElementById('userHausnummer').value;
+	var plz = document.getElementById('userPlz').value;
+	var ort = document.getElementById('userOrt').value;
+	var telefon = document.getElementById('userTelefon').value;
+	var email = document.getElementById('userEmail').value;
 	
 	Cookies.set("lieferart", lieferart);
 	Cookies.set("vorname", vorname);
@@ -82,13 +49,16 @@ function weiterleiten(lieferart){
 //Prüfung der Eingabeinformationen
 //wird ausschließlich bei klicken des Absenden-Buttons aufgerufen
 function checkForm_delivery() { 
-	var pruefungen = [vornamePruefen_delivery, nachnamePruefen_delivery, strassePruefen_delivery, hausnummerPruefen_delivery,
+	var pruefungen = [anredePruefen_delivery, vornamePruefen_delivery, nachnamePruefen_delivery, strassePruefen_delivery, hausnummerPruefen_delivery,
 						plzPruefen_delivery, wohnortPruefen_delivery, mailPruefen_delivery, telefonPruefen_delivery];
     var strFehler='';
 
-	pruefungen.forEach(function(func){
-		strFehler += func();
-    });
+	try{
+		pruefungen.forEach(function(func){
+			strFehler += func();
+			if(strFehler !== '') throw {};
+		});
+	} catch(e){}
     
     /** Ausgabe/Rueckgabe falls min 1 Fehler aufgetreten ist. 
      * Der Text wird in der Konsole des Browsers ausgegeben. Ansonsten ist er nicht sichtbar
@@ -104,29 +74,16 @@ function checkForm_delivery() {
 	}
 }
 
-function checkForm_abholung() { 
-	var pruefungen = [mailPruefen_delivery, telefonPruefen_delivery];
-    var strFehler='';
-
-	pruefungen.forEach(function(func){
-		strFehler += func();
-    });
-    
-    /** Ausgabe/Rueckgabe falls min 1 Fehler aufgetreten ist. 
-     * Der Text wird in der Konsole des Browsers ausgegeben. Ansonsten ist er nicht sichtbar
-     *   **/
-    if (strFehler.length>0) {
-    	//Der Text wird fuer entwicklungszwecke in der Konsole des Browsers ausgegeben. Ansonsten ist er nicht sichtbar.
-    	console.log("Folgendes Problem wurde festgestellt: \n\n"+strFehler);
-    	//Rueckgabe=false, wenn die Pruefung einen Fehler ermittelt hat
-		return(false);
-    }
-    else{
-		return(true);
+function anredePruefen_delivery(){
+	var anrede = document.getElementById("userAnrede").value.trim();  
+    if(anrede === "keine" || anrede === ""){
+		console.log("anredefehler");
+    	fehlerAusgeben_user("fehleruserAnrede", "userAnrede");
+		return "Das Feld 'Anrede' ist nicht ausgewählt\n";
 	}
+    hinweisVerbergen_user("fehleruserAnrede", "userAnrede");
+    return "";
 }
-
-
 
 /** Pruefen des Vornamens  **/
 function vornamePruefen_delivery(){
