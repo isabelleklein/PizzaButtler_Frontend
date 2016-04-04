@@ -154,22 +154,22 @@ function waehleExtras(pizza){
 }
 
 function extraslisten(data){
-
+	var text = (" ");
 	var statement = ("<p id='anmerkungenue'> Bitte wähle Deine Extrabeilagen </p> <table>");
 	for(var i = 0; i<data.length; i++){
 		statement = statement + ("<div class='extra'> <tr> <td> <input type='checkbox' zusatzbelagID=''" + data[i].zusatzbelagID + "' \
-								name='" + data[i].name + "' id='" + data[i].name + "' preis=' " + data[i].preis + "'\
-								id='extracheckbox' class='extratabelle'><label for='"+ data[i].name +"'> " + data[i].name + " " + data[i].preis + " € </label> </td> ");
+								name='" + data[i].name + "' id='" + data[i].name + "'preis=' " + data[i].preis + "'\
+								id='extracheckbox' class='extratabelle'><label for='"+ data[i].name +"'> " + data[i].name + " </td> "+ "<td class='extratabelle'> " + data[i].preis + " € </label> </td> ");
 		if(i+1<data.length){
 			i++;
 			statement = statement +("<td> <input type='checkbox'zusatzbelagID='" + data[i].zusatzbelagID + "' \
 									name='" + data[i].name + "'id='" + data[i].name + "' preis='" + data[i].preis + "'\
-									class='extratabelle'> <label for='"+data[i].name+"'> " + data[i].name + " " + data[i].preis + " € </label> </td>");
+									class='extratabelle'> <label for='"+data[i].name+"'> " + data[i].name + "</td> " + " <td align='left'> " + data[i].preis + " € </label> </td>");
 		}
 		statement = statement + ("</tr> </div>");
 	}
 	
-	statement = statement + ("</table> <p id='anmerkungentext'> Anmerkungen </p> <textarea id='anmerkungen' placeholder =' '> </textarea>");
+	statement = statement + ("</table> <p id='anmerkungentext'> Anmerkungen </p> <textarea id='anmerkungen' placeholder=' '></textarea>");
 	
 	$('#extrazutaten').html(statement);	
 }
@@ -195,7 +195,10 @@ function schliessen(){
 	addToWarenkorb(aktuellePizza, extras);
 	aktuellePizza = "";
 	 $(':checkbox:checked').prop('checked',false);
-}	    
+	
+ 
+}
+
 
 function addToWarenkorb(produktButton, zusatzbelaege){
 	if(warenkorb == undefined){
