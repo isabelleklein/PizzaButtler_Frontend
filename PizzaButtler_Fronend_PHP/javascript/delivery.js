@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var userID = Cookies.get('userID');
-	var restaurantID = Cookies.get('restaurantIdBestellung');
+	var restaurantID = Cookies.get('restaurantID');
 	
 	// Zurück-Button
 	$("#delivery_back").attr("onclick", "location.href='pizzeria.php?id=" + Cookies.get("restaurantLieferkosten") + "'")
