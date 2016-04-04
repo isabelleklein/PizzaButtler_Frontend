@@ -9,7 +9,7 @@
 			
 				<form action="./pizzerienSuche.php" name="pizzerienListeButton" id='pizzerienSucheGross'>
 					<p>
-						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" />
+						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst Du?" />
 					</p>
 				</form>
 				<script>$.validate('#pizzerienSucheGross')</script>
@@ -25,6 +25,6 @@
                 Pizza Butler ist Deine persönliche Plattform für Lieferdienste. Wir bringen Dir Dein favorisiertes Gericht direkt mit einem unserer Butler nach Hause. Frisch für Dich zubereitet – direkt zu Dir geliefert. <br>
 Auf Deiner eigenen Favoritenliste kannst Du Dir Deine Lieblingsgerichte zusammenstellen und sofort bestellen. Über unseren Zahlungsdienstleister PayPal kannst Du Deine Bestellung mit Deinen PayPal Zugangsdaten direkt bezahlen.
  <br> <br>
-Wir wünschen dir einen guten Appetit, euer Pizza Butler Team.
+Wir wünschen Dir einen guten Appetit, euer Pizza Butler Team.
         </div>
 		<script src="./javascript/inputSuggestions.js"></script>
