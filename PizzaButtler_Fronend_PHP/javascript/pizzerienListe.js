@@ -19,7 +19,9 @@ var buildPizzerienListe = function(data){
 	}
 	else {
 		// Tabelle an sich
-		var table = $("<table class='pizzerienuebersicht'><tr class='line'> <th colspan='2' align=left><b> Pizza- und Lieferdienst <b> </th> <th align=left> <b> Bewertung <b> </th> <th align=left> <b> Bezahlung <b> </th></tr></table>");
+		var table = $("<table class='pizzerienuebersicht'><tr class='line'> \
+					<th colspan='2' align=left><b> Pizza- und Lieferdienst <b> </th> <th align=left> \
+					<b> Bewertung <b> </th> <th align=left> <b> Bezahlung <b> </th></tr></table>");
 		
 		// Empfangene Daten durchgehen
 		for(var i = 0; i < data.length; i++){
@@ -89,7 +91,9 @@ var buildPizzerienListe = function(data){
 		$("#pizzerienContainer").html(table);
 		
 		$(".line").click(function() {
-			window.document.location = $(this).data("href");
+			if($(this).data("href") !== undefined){
+				window.document.location = $(this).data("href");
+			}
 		});
 	}
 }

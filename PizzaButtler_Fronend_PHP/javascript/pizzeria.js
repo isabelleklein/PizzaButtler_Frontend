@@ -320,9 +320,9 @@ function zurKasse()
 		
 		// Prüfung, ob das Restaurant geöffnet hatOffen
 		if(hatOffen(Cookies.getJSON("restaurantOeffnungszeiten"))){	
-			// Lieferkosten erreicht?
-			var lieferkosten = parseFloat(Cookies.get("restaurantLieferkosten"));
-			if (Cookies.get("warenkorbGesamtsumme") > lieferkosten){
+			// Mindestbestellwert erreicht?
+			var mindestbestellwert = parseFloat(Cookies.get("restaurantMindestbestellwert"));
+			if (Cookies.get("warenkorbGesamtsumme") > mindestbestellwert){
 				var jetzt = new Date();
 				var tag = jetzt.getDate();
 				if(tag < 10) tag = "0" + tag;
