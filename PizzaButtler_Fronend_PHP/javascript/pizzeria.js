@@ -169,7 +169,7 @@ function extraslisten(data){
 		statement = statement + ("</tr> </div>");
 	}
 	
-	statement = statement + ("</table> <p id='anmerkungentext'> Anmerkungen </p> <textarea id='anmerkungen'> </textarea>");
+	statement = statement + ("</table> <p id='anmerkungentext'> Anmerkungen </p> <textarea id='anmerkungen' placeholder =' '> </textarea>");
 	
 	$('#extrazutaten').html(statement);	
 }
