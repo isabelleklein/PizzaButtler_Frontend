@@ -152,13 +152,13 @@
         <div id="container_impressum"> 
             <form id='impressum' name="impressum" action="#">
                 <div>
-                    <h1>Impressum</h1>
+                    <h2 class="contenthead">Impressum</h2>
                     <div class="Text3">Betreiber der Website von PizzaButtler.de:</div>
                     <div class="Text4"></br>WWI13AMB</br>info@PizzaButtler.de</br></br></div>
                     <div class="Text3">Geschäftsführer:</div>
                     <div class="Text4"></br>Alexander Zur, Christoph Flick</br></br></div>
                     <div class="Text3"> Rechtliche Hinweise: </div>
-                    <div class="Text4"></br>Die yd. yourdelivery GmbH behält sich alle Rechte an den eigenen redaktionellen Texten, eigenen Bildern, eigenen Grafiken, sowie an dem gesamten Design inklusive Layout-, Schrift- und Farbgestaltung der Websites vor. Die Vervielfältigung und Verwendung dieser Informationen und/oder Daten, sowie jegliche Art von Kopie oder Reproduktion bedarf der vorherigen schriftlichen Zustimmung der yd. yourdelivery GmbH. Zuwiderhandlungen werden rechtlich verfolgt. Die rechtlichen Rahmenbedingungen unserer Webseiten entnehmen Sie bitte unseren Allgemeinen Geschäftsbedingungen.</br></br>
+                    <div class="Text4"></br>Pizza Butler behält sich alle Rechte an den eigenen redaktionellen Texten, eigenen Bildern, eigenen Grafiken, sowie an dem gesamten Design inklusive Layout-, Schrift- und Farbgestaltung der Websites vor. Die Vervielfältigung und Verwendung dieser Informationen und/oder Daten, sowie jegliche Art von Kopie oder Reproduktion bedarf der vorherigen schriftlichen Zustimmung von Pizza Butler. Zuwiderhandlungen werden rechtlich verfolgt. Die rechtlichen Rahmenbedingungen unserer Webseiten entnehmen Sie bitte unseren Allgemeinen Geschäftsbedingungen.</br></br>
                     </div>  
                     <input type="button_impressum"  class="close_impressum" value="X"/> 
                 </div>	
