@@ -329,8 +329,8 @@ function zurKasse()
 	
 	$(".zurKasseButton").click(function(){
 		
-		// Prüfung, ob das Restaurant geöffnet hatOffen
-		//if(hatOffen(Cookies.getJSON("restaurantOeffnungszeiten"))){	
+		//Prüfung, ob das Restaurant geöffnet hatOffen
+		if(hatOffen(Cookies.getJSON("restaurantOeffnungszeiten"))){	
 			// Mindestbestellwert erreicht?
 			var mindestbestellwert = parseFloat(Cookies.get("restaurantMindestbestellwert"));
 			if (Cookies.get("warenkorbGesamtsumme") > mindestbestellwert){
@@ -350,9 +350,9 @@ function zurKasse()
 			} else {
 				window.alert("Sie müssen den Mindestbestellwert erreichen");
 			}
-		//} else {
-		//	window.alert("Das Restaurant hat zur Zeit leider geschlossen");
-		//}
+		} else {
+			window.alert("Das Restaurant hat zur Zeit leider geschlossen");
+		}
 	});
 }
 
@@ -367,7 +367,9 @@ function hatOffen(oeffnungszeiten){
 	} else {
 		time = hours + "" + minutes;
 	}
-	
+	//console.log(time);
+	//console.log(oeffnungszeiten[day].von);
+	//console.log(time > oeffnungszeiten[day].von && time < oeffnungszeiten[day].bis);
 	return (time > oeffnungszeiten[day].von && time < oeffnungszeiten[day].bis);	
 }
 
