@@ -96,9 +96,12 @@ function checkForm_user(){
 					  plzPruefen_user, wohnortPruefen_user, mailPruefen_user, telefonPruefen_user];
     var strFehler='';
 
-	pruefungen.forEach(function(func){
-		strFehler += func();
-    });
+	try{
+		pruefungen.forEach(function(func){
+			strFehler += func();
+			if(strFehler !== '') throw {};
+		});
+	} catch(e){}
 	
     /** Ausgabe/Rueckgabe falls min 1 Fehler aufgetreten ist. 
      * Der Text wird in der Konsole des Browsers ausgegeben. Ansonsten ist er nicht sichtbar

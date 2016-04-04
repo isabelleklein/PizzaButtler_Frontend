@@ -160,10 +160,12 @@ function checkForm_Aendern()//Prüfung zum Ändern von Daten einer Pizzeria
 					  
     var strFehler='';
 
-	pruefungen.forEach(function(func){
-		strFehler += func();
-		if(!strFehler.empty())return;
-    });
+	try{
+		pruefungen.forEach(function(func){
+			strFehler += func();
+			if(strFehler !== '') throw {};
+		});
+	} catch(e){}
 	
 	
 }
