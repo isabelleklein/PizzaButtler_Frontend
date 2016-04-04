@@ -700,7 +700,15 @@ table {
 {
 	width:2em;
 }
-.bewertung{
-    text-align: center;
+.bewertung2{
     font-size: 200%;
+    margin-left: 2%;
+}
+.bewertung_text{
+    font-size: 50%;
+    margin-left: 2%;
+    width: 90%;
+}
+#ueberschrift_bewertung{
+    margin-left: 2%;
 }

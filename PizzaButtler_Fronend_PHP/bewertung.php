@@ -8,6 +8,6 @@ $data = array(
 );
 
 $tpl = new SMTemplate();
-$tpl->render('bewertung', $data, 'page_start', 'Bewerung PizzaButler');
+$tpl->render('bewertung', $data, 'page_start', 'Bewertung PizzaButler');
 
 ?>
