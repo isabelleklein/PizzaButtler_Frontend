@@ -191,7 +191,9 @@ function schliessen(){
 	    $('#overlay').fadeOut();          
 	});
 	
-	addToWarenkorb(aktuellePizza, extras);
+	var anmerkungen = $('#anmerkungen').val();
+	
+	addToWarenkorb(aktuellePizza, extras, anmerkungen);
 	aktuellePizza = "";
 	 $(':checkbox:checked').prop('checked',false);
 	 document.getElementById("anmerkungen").value= " ";
@@ -199,7 +201,7 @@ function schliessen(){
 }
 
 
-function addToWarenkorb(produktButton, zusatzbelaege){
+function addToWarenkorb(produktButton, zusatzbelaege, anmerkungen){
 	if(warenkorb == undefined){
 		warenkorb = [];
 	}
@@ -232,6 +234,7 @@ function addToWarenkorb(produktButton, zusatzbelaege){
 					produkt.groesse = groesse;
 					produkt.anzahl = 1;
 					produkt.zusatzbelaege = zusatzbelaege;
+					produkt.anmerkungen = anmerkungen;
 					break;
 				}
 			}

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-04-01 14:29:41
+<?php /* Smarty version 3.1.27, created on 2016-04-04 16:31:19
          compiled from "views\pizzeria.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:59556fe69b55d2878_63356416%%*/
+/*%%SmartyHeaderCode:2488657027ab74087f9_14174641%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f8be390f4ad3bbf367f4c192c00064c28322633d' => 
     array (
       0 => 'views\\pizzeria.tpl',
-      1 => 1459513723,
+      1 => 1459779744,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '59556fe69b55d2878_63356416',
+  'nocache_hash' => '2488657027ab74087f9_14174641',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56fe69b57880e4_56504588',
+  'unifunc' => 'content_57027ab7452b84_61815118',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56fe69b57880e4_56504588')) {
-function content_56fe69b57880e4_56504588 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_57027ab7452b84_61815118')) {
+function content_57027ab7452b84_61815118 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '59556fe69b55d2878_63356416';
+$_smarty_tpl->properties['nocache_hash'] = '2488657027ab74087f9_14174641';
 ?>
 <html>
     <head>
@@ -54,7 +54,7 @@ $_smarty_tpl->properties['nocache_hash'] = '59556fe69b55d2878_63356416';
     	  	<input type="button"  id="close" value="X" onclick ="schliessen()"></input>
     	 	
     	 	<div id="extrazutaten"></div>
-    	 	<input type= "button" value="Bestaetigen" onclick="schliessen()"></input>
+    	 	<input type= "button" class="userbutton" value="Bestaetigen" onclick="schliessen()"></input>
     	 	<div id="overlay">
     	 	
     	 			

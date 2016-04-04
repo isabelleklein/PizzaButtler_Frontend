@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-04-01 14:29:46
+<?php /* Smarty version 3.1.27, created on 2016-04-04 16:38:41
          compiled from "views\user_delivery.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:3060856fe69bab32ba7_49574367%%*/
+/*%%SmartyHeaderCode:2909257027c71e5a5e0_51631035%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '20afb68292981cbca8ca81fca69cb2e827509f7d' => 
     array (
       0 => 'views\\user_delivery.tpl',
-      1 => 1459509496,
+      1 => 1459764844,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3060856fe69bab32ba7_49574367',
+  'nocache_hash' => '2909257027c71e5a5e0_51631035',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56fe69babb78b4_51040647',
+  'unifunc' => 'content_57027c71f06417_97081474',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56fe69babb78b4_51040647')) {
-function content_56fe69babb78b4_51040647 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_57027c71f06417_97081474')) {
+function content_57027c71f06417_97081474 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '3060856fe69bab32ba7_49574367';
+$_smarty_tpl->properties['nocache_hash'] = '2909257027c71e5a5e0_51631035';
 ?>
 <html>
     <head>
@@ -42,14 +42,23 @@ $_smarty_tpl->properties['nocache_hash'] = '3060856fe69bab32ba7_49574367';
 			<form id='datenanzeigen' name="datenanzeigen" action="#">
 				<h3 class="contenthead"> Wähle eine Lieferart </h3>
                 <div>
-                    <input class="zahlungsart" type="radio" id="abholung" name="lieferart" value="abholung"><label for="abholung"> Abholung</label><br />
-                    <input class="zahlungsart" type="radio" id="lieferung" name="lieferart" value="lieferung" checked><label 
-                        for="lieferung"> Lieferung</label>
+                    <input class="zahlungsart" type="radio" id="Abholung" name="lieferart" value="Abholung"><label for="Abholung"> Abholung</label><br />
+                    <input class="zahlungsart" type="radio" id="Lieferung" name="lieferart" value="Lieferung" checked><label 
+                        for="Lieferung"> Lieferung</label>
                     <p></p>
                 </div>
 				
-                <div id="delivery_data">
+                <div>
                     <h3 class="contenthead"> Deine Lieferadresse </h3>
+					<div class="fline">
+	                <select name="anrede" id="userAnrede" size="1" required autofocus>
+                        <option value="keine" selected disabled> bitte wählen</option>
+                        <option value="Herr"> Herr </option>
+                        <option value="Frau"> Frau </option>
+                    </select>
+					<label class="placeholder_fehler" id="fehleruserAnrede"><br />Bitte geben Sie eine Anrede an</label>
+	            </div>
+					
                     <div class="fline">
                         <input type="text" name="vorname" id="userVorname" required title="Zwischen 3 und 25 Zeichen (Umlaute möglich)" 
                                onchange="vornamePruefen_delivery()" placeholder="Vorname"/>
@@ -76,8 +85,6 @@ $_smarty_tpl->properties['nocache_hash'] = '3060856fe69bab32ba7_49574367';
                         <label class="placeholder_fehler" id="fehleruserPlz"><br />Bitte geben Sie eine g&uumlltige Postleitzahl an</label>
                         <label class="placeholder_fehler" id="fehleruserOrt"><br />Bitte geben Sie einen g&uumlltigen Ort an</label>
                     </div>
-                </div>
-                <div>
                     <div class="fline">
                         <input type="text" name="telefon" id="userTelefon" required onchange="telefonPruefen_delivery()" placeholder="Telefon"/>
                         <input type="text" name="email" id="userEmail" required onchange="mailPruefen_delivery()" placeholder="Email"/>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-04-01 14:29:34
+<?php /* Smarty version 3.1.27, created on 2016-04-04 16:31:19
          compiled from "layouts\header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1556756fe69ae6e6538_28150338%%*/
+/*%%SmartyHeaderCode:210357027ab7489683_34627113%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,24 +9,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '81642ba3eee9fbba8f86c992529eae4324888167' => 
     array (
       0 => 'layouts\\header.tpl',
-      1 => 1459513274,
+      1 => 1459780066,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1556756fe69ae6e6538_28150338',
+  'nocache_hash' => '210357027ab7489683_34627113',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56fe69ae7ccce7_91143992',
+  'unifunc' => 'content_57027ab75160a6_63629222',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56fe69ae7ccce7_91143992')) {
-function content_56fe69ae7ccce7_91143992 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_57027ab75160a6_63629222')) {
+function content_57027ab75160a6_63629222 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1556756fe69ae6e6538_28150338';
+$_smarty_tpl->properties['nocache_hash'] = '210357027ab7489683_34627113';
 ?>
 <html>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
@@ -110,7 +110,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1556756fe69ae6e6538_28150338';
                     <section class="head_right">
                     	<span class="head_right_buttons">
                     		<form action="./pizzerienSuche.php" name="pizzerienListeButton">
-									<input class="umkreissuche_header" type="text" name="plz-ort" id="plz_ort" placeholder="Wo wohnst du?" />
+									<input class="umkreissuche_header" type="text" name="plz-ort" id="plz_ort" placeholder="Wo wohnst Du?" />
 							</form>
 							<span class="head_right_button_ersetzen">
                         		<button class="header_button" id="openx">Anmelden</button>
@@ -218,13 +218,13 @@ $_smarty_tpl->properties['nocache_hash'] = '1556756fe69ae6e6538_28150338';
         <div id="container_impressum"> 
             <form id='impressum' name="impressum" action="#">
                 <div>
-                    <h1>Impressum</h1>
+                    <h2 class="contenthead">Impressum</h2>
                     <div class="Text3">Betreiber der Website von PizzaButtler.de:</div>
                     <div class="Text4"></br>WWI13AMB</br>info@PizzaButtler.de</br></br></div>
                     <div class="Text3">Geschäftsführer:</div>
                     <div class="Text4"></br>Alexander Zur, Christoph Flick</br></br></div>
                     <div class="Text3"> Rechtliche Hinweise: </div>
-                    <div class="Text4"></br>Die yd. yourdelivery GmbH behält sich alle Rechte an den eigenen redaktionellen Texten, eigenen Bildern, eigenen Grafiken, sowie an dem gesamten Design inklusive Layout-, Schrift- und Farbgestaltung der Websites vor. Die Vervielfältigung und Verwendung dieser Informationen und/oder Daten, sowie jegliche Art von Kopie oder Reproduktion bedarf der vorherigen schriftlichen Zustimmung der yd. yourdelivery GmbH. Zuwiderhandlungen werden rechtlich verfolgt. Die rechtlichen Rahmenbedingungen unserer Webseiten entnehmen Sie bitte unseren Allgemeinen Geschäftsbedingungen.</br></br>
+                    <div class="Text4"></br>Pizza Butler behält sich alle Rechte an den eigenen redaktionellen Texten, eigenen Bildern, eigenen Grafiken, sowie an dem gesamten Design inklusive Layout-, Schrift- und Farbgestaltung der Websites vor. Die Vervielfältigung und Verwendung dieser Informationen und/oder Daten, sowie jegliche Art von Kopie oder Reproduktion bedarf der vorherigen schriftlichen Zustimmung von Pizza Butler. Zuwiderhandlungen werden rechtlich verfolgt. Die rechtlichen Rahmenbedingungen unserer Webseiten entnehmen Sie bitte unseren Allgemeinen Geschäftsbedingungen.</br></br>
                     </div>  
                     <input type="button_impressum"  class="close_impressum" value="X"/> 
                 </div>	
