@@ -10,11 +10,14 @@
     
     <body>
     	<div class="maincontent">
-            <h3 class="contenthead"> Vielen Dank für Deine Bestellung bei PizzaButler </h3>
+            <h3 class="contenthead"> Vielen Dank für Deine Bestellung bei PizzaButler! </h3>
             
             <div>
-                </br></br>
-                Du erhälst in kürze eine Bestellbestätigung per E-Mail.
+                </br>
+        Vielen Dank für die Bezahlung per PayPal. Deine Zahlung in Höhe von X-Euro ist eingegangen!<br> </br>    
+        In Kürze erhälst Du eine Bestellbestätigung per E-Mail.<br><br>
+        
+        Guten Appetit!
             </div>
         </div>
     	<div class = "infocontent">

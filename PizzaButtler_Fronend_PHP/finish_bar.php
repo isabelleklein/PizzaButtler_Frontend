@@ -8,6 +8,6 @@ $data = array(
 );
 
 $tpl = new SMTemplate();
-$tpl->render('finish', $data, 'page', 'Vielen Dank');
+$tpl->render('finish_bar', $data, 'page', 'Vielen Dank');
 
 ?>
