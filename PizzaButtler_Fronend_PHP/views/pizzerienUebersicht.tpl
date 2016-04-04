@@ -9,7 +9,7 @@
     </head>
     
     <body>
-    	<div class="maincontent" id="pizzerienContainer">
+    	<div id="pizzerienContainer">
     	</div>
     	<div id="rechterBereich">
 	    	<div  id = "infoContainer">

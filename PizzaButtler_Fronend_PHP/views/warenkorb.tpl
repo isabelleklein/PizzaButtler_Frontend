@@ -9,7 +9,7 @@
     </head>
     
     <body>
-    	<div id = "warenkorbuebersicht"> <img id='bildwarenkorb' src='./images/cart.png'> <p id="bestellzeit"></p>
+    	<div id = "warenkorbuebersicht" class="maincontent"> <img id='bildwarenkorb' src='./images/cart.png'> <p id="bestellzeit"></p>
             <div id="warenkorbAnzeigen"></div>
             <div id="bezahlart">
                 <p>Bitte wähle Deine Bezahlart! </p>
