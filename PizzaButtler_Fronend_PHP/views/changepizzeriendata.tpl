@@ -9,8 +9,8 @@
     
     <body>
     	<div id=datenContainer>
-			<form id='datenaendern_daten' name="datenaendern_daten" action="#">
-				<h3 class="contenthead"> Deine Daten / Daten ändern </h3>				
+			<form id='datenndern_daten' name="datenaendern_daten" action="#">
+				<h3 class="contenthead"> Deine Daten / Daten &aumlndern </h3>				
                 <div class="fline">
 	                <input type="text" name="name" id="name_piz_aend" required title="Zwischen 3 und 25 Zeichen (Umlaute möglich)" onchange="vornamePruefen1()" placeholder="Name"/>
 	                <label class="fehler" id="fehlerName_piz_aend">Bitte geben Sie einen g&uumlltigen Pizzeriennamen an</label>
@@ -29,33 +29,41 @@
 	            </div>
                 <p></p>
 	            <div class="fline">
-	            	<p>Oeffnungszeiten</p>
+	            	<p>&Oumlffnungszeiten</p>
+	            	
                     <input type="time" name="sonntag" id="sonntag_piz_aend" placeholder="Sonntag"></input>
-                    <input type="time" name="sonntag" id="sonntag_piz_aend_bis" placeholder="Sonntag"></input></br>
+                    <input type="time" name="sonntag" id="sonntag_piz_aend_bis" placeholder="Sonntag"></input>
+                    <label class='Wochentag_feld'>Sonntag</label></br>
                     <label class="fehler" id="fehlerSonntag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
 	            	<input type="time" name="montag" id="montag_piz_aend" placeholder="Montag"></input>
-                    <input type="time" name="montag" id="montag_piz_aend_bis" placeholder="Montag"></input></br>
+                    <input type="time" name="montag" id="montag_piz_aend_bis" placeholder="Montag"></input>
+                    <label class='Wochentag_feld'>Montag</label></br>
                     <label class="fehler" id="fehlerMontag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
 	            	<input type="time" name="dienstag" id="dienstag_piz_aend" placeholder="Dienstag"></input>
-                    <input type="time" name="dienstag" id="dienstag_piz_aend_bis" placeholder="Dienstag"></input></br>
+                    <input type="time" name="dienstag" id="dienstag_piz_aend_bis" placeholder="Dienstag"></input>
+                    <label class='Wochentag_feld'>Dienstag</label></br>
                     <label class="fehler" id="fehlerDienstag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
 	            	<input type="time" name="mittwoch" id="mittwoch_piz_aend" placeholder="Mittwoch"></input>
-                    <input type="time" name="mittwoch" id="mittwoch_piz_aend_bis" placeholder="Mittwoch"></input></br>
+                    <input type="time" name="mittwoch" id="mittwoch_piz_aend_bis" placeholder="Mittwoch"></input>
+                    <label class='Wochentag_feld'>Mittwoch</label></br>
                     <label class="fehler" id="fehlerMittwoch_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
 	            	<input type="time" name="donnerstag" id="donnerstag_piz_aend" placeholder="Donnerstag"></input>
-                    <input type="time" name="donnerstag" id="donnerstag_piz_aend_bis" placeholder="Donnerstag"></input></br>
+                    <input type="time" name="donnerstag" id="donnerstag_piz_aend_bis" placeholder="Donnerstag"></input>
+                    <label class='Wochentag_feld'>Donnerstag</label></br>
                     <label class="fehler" id="fehlerDonnerstag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
 	            	<input type="time" name="freitag" id="freitag_piz_aend" placeholder="Freitag"></input>
-                    <input type="time" name="freitag" id="freitag_piz_aend_bis" placeholder="Freitag"></input></br>
+                    <input type="time" name="freitag" id="freitag_piz_aend_bis" placeholder="Freitag"></input>
+                    <label class='Wochentag_feld'>Freitag</label></br>
                     <label class="fehler" id="fehlerFreitag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
 	            	<input type="time" name="samstag" id="samstag_piz_aend" placeholder="Samstag"></input>
-                    <input type="time" name="samstag" id="samstag_piz_aend_bis" placeholder="Samstag"></input></br>
+                    <input type="time" name="samstag" id="samstag_piz_aend_bis" placeholder="Samstag"></input>
+                    <label class='Wochentag_feld'>Samstag</label></br>
                     <label class="fehler" id="fehlerSamstag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
 		        </div>
