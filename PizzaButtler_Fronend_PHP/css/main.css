@@ -462,11 +462,12 @@ table {
 	height: auto;
 }
 #bezahlart1{
-	width: 3em;
+	width: 5em;
 	height: auto;
+    margin-left: -7%;
 }
 #bezahlart2{
-	width: 2em;
+	width: 3em;
 	height: auto;
 }
 #bezahlart3{
