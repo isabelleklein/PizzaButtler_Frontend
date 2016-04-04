@@ -1,6 +1,6 @@
 var rest;
 var speisekarte;
-var warenkorb = [];
+var warenkorb;
 var aktuellePizza;
 
 
@@ -174,8 +174,8 @@ function extraslisten(data){
 	$('#extrazutaten').html(statement);	
 }
 
-function schliessen(){	
-	var extraTabelle = $()
+function schliessen(){
+	var extraTabelle = $();
 	var extras = [];
 	
 	$(".extratabelle").each(function(x,y){
@@ -198,6 +198,9 @@ function schliessen(){
 }	    
 
 function addToWarenkorb(produktButton, zusatzbelaege){
+	if(warenkorb == undefined){
+		warenkorb = [];
+	}
 	var produkt = null;
 	
 	var preis = parseFloat(produktButton.innerHTML);
@@ -240,8 +243,10 @@ function addToWarenkorb(produktButton, zusatzbelaege){
 
 function showWarenkorb(){
 	var ul = $("<ul style='padding-left:15px'></ul>");
-	if (typeof Cookies.get("Warenkorb") !== undefined) {
-		warenkorb = Cookies.getJSON("Warenkorb");
+	if (warenkorb == undefined) {
+		if (Cookies.getJSON("Warenkorb") != undefined){
+			warenkorb = Cookies.getJSON("Warenkorb");
+		} 
 	}
 	
 	for(var i = 0; i < warenkorb.length; i++){
@@ -288,7 +293,6 @@ function hinzufuegen(i){
 	warenkorb[i].anzahl++;
 	showWarenkorb();
 	summieren();
-
 }
 
 function reduzieren(i){
