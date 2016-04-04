@@ -1,4 +1,5 @@
 var rest;
+var warenkorb;
 $(document).ready(function(){
 	warenkorbAnzeigen();
 	lieferadresseAnzeigen();
@@ -24,7 +25,7 @@ function warenkorbAnzeigen(){
 	var q = ("Warenkorb zur Bestellung vom " + zeit);
 	$("#bestellzeit").html(q);
 	
-	var warenkorb = Cookies.getJSON("Warenkorb");
+	warenkorb = Cookies.getJSON("Warenkorb");
 	
 	var ul = $("<ul style='padding-left:15px'></ul>");
 	
@@ -34,6 +35,14 @@ function warenkorbAnzeigen(){
 		var preis = warenkorb[i].preis;
 		var anzahl = warenkorb[i].anzahl;
 		
+		if (groesse == "groß"){
+			kurzgroesse = "L";
+		}	else if (groesse == "mittel"){
+			kurzgroesse = "M";
+		}	else if (groesse == "klein"){
+			kurzgroesse = "S";
+		}
+		
 		// Zusatzbelägestring + Preis für die Zusatzbeläge
 		var zusatz = "";
 		warenkorb[i].zusatzbelaege.forEach(function(belag){
@@ -42,13 +51,17 @@ function warenkorbAnzeigen(){
 		});		
 		zusatz = zusatz.substr(0, zusatz.length - 2); // Letztes ", " entfernen
 	
-		var li = $("<li>" + anzahl + " " + name + " Größe: " + groesse + " Preis: " + preis + "€\
-					<div>" + zusatz + "</div></li>");
+	//	var li = $("<li>" + anzahl + " " + name + " Größe: " + groesse + " Preis: " + preis + "€\
+	//				<div>" + zusatz + "</div></li>");
+		var li = $("<li class='warenkorbelement'>" + anzahl + " " + name + ", " + kurzgroesse + ", " + preis + "€ \
+					<button class='hinzufuegen' onclick='hinzufuegen(" + i + ")'>+</button>\
+					<button class='reduzieren' onclick='reduzieren(" + i + ")'>-</button>\
+					<div class='zusatz'>" + zusatz + "</li></div>");
 		ul.append(li);
 	}
 	
 	if(Cookies.get("lieferart") === "Lieferung"){
-		ul.append("<li>Lieferkosten: " + Cookies.get("restaurantLieferkosten") + "€ </li>");
+		ul.append("<li class='warenkorbelement'>Lieferkosten: " + Cookies.get("restaurantLieferkosten") + "€ </li>");
 	}
 	
 	
@@ -69,6 +82,25 @@ function warenkorbAnzeigen(){
 	
 	$("#warenkorbAnzeigen").html(ul);
     
+}
+
+function hinzufuegen(i){
+	warenkorb[i].anzahl++;
+	Cookies.set("Warenkorb",warenkorb);
+	warenkorbAnzeigen();
+	summieren();
+
+}
+
+function reduzieren(i){
+	warenkorb[i].anzahl--;
+	if (warenkorb[i].anzahl == 0){
+		warenkorb.splice(i,1);
+	}
+	Cookies.set("Warenkorb",warenkorb);
+	warenkorbAnzeigen();
+	summieren();
+
 }
 
 function lieferadresseAnzeigen(){
