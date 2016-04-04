@@ -3,6 +3,7 @@ var speisekarte;
 var warenkorb = [];
 var aktuellePizza;
 
+
 $(document).ready(function(){
 	// GET-Parameter
 	var pizzeriaId = parse("id");
@@ -153,6 +154,7 @@ function waehleExtras(pizza){
 }
 
 function extraslisten(data){
+
 	var statement = ("<p id='anmerkungenue'> Bitte wähle Deine Extrabeilagen </p> <table>");
 	for(var i = 0; i<data.length; i++){
 		statement = statement + ("<div class='extra'> <tr> <td> <input type='checkbox' zusatzbelagID='" + data[i].zusatzbelagID + "' \
@@ -192,6 +194,7 @@ function schliessen(){
 	
 	addToWarenkorb(aktuellePizza, extras);
 	aktuellePizza = "";
+	 $(':checkbox:checked').prop('checked',false);
 }	    
 
 function addToWarenkorb(produktButton, zusatzbelaege){
