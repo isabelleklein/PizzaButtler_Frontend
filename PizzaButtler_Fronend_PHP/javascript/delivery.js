@@ -2,24 +2,82 @@ $(document).ready(function(){
 	var userID = Cookies.get('userID');
 	var restaurantID = Cookies.get('restaurantID');
 	
-	// Zurück-Button
-	$("#delivery_back").attr("onclick", "location.href='pizzeria.php?id=" + Cookies.get("restaurantLieferkosten") + "'")
+	// Zurueck-Button
+	$("#delivery_back").attr("onclick", "location.href='pizzeria.php?id=" + Cookies.get("restaurantLieferkosten") + "'");
     
+    /**
+    * Ueberprueft beim aufrufen der Seite welche Lieferart ausgewaehlt ist (bsp. aus dem Cache) und 
+    * blendet die Bereiche aus die fuer diese Lieferart nicht benoetigt werden
+    * genauere Beschreibung: Moeglichkeit zum Login ausgeblendet wenn eingeloggt, Anschrift bei Abholung nicht erforderlich
+    **/
+    if($("input[type='radio'][name='lieferart']:checked").val() == "Abholung") {
+        document.getElementById("delivery_data").style.display = "none";
+        document.getElementById("eingeloggt").style.display = "none";
+    } else {
+        document.getElementById("delivery_data").style.display = "";
+        if(typeof userID != 'undefined') {
+            document.getElementById("eingeloggt").style.display = "none";
+        } else {
+            document.getElementById("eingeloggt").style.display = "";
+        }
+    }	
+    
+    /**
+    * Prueft den Loginstatus des Nutzers und blendet entsprechend den Loginbereich aus
+    * Alert: Sollte der Nutzer als Pizzeria eingeloggt werden, erhält er eine Meldung
+    **/
     if(typeof userID != 'undefined') {
 		document.getElementById("eingeloggt").style.display = "none";
 	} else {
 		if(typeof restaurantID != 'undefined'){
-		   alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu können.");
+		   alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu k&ouml;nnen.");
 		}
 		document.getElementById("eingeloggt").style.display = "";
 	}	
 	
+    /**
+    * Ueberprueft die Lieferart beim click auf den "weiter"-Button und fuehrt entsprechende Prueffunktion aus
+    **/
 	$("#delivery_next").click(function(){		
 		var lieferart = $("input[type='radio'][name='lieferart']:checked").val();
-		
-		if(checkForm_delivery())
-			weiterleiten(lieferart);
-	});  
+        if($("input[type='radio'][name='lieferart']:checked").val() == "Abholung") {
+			// Bei Abholung werden nur bestimmte Daten benötigt, daher gesonderte checkForm_abholung() und nicht checkForm_delivery()
+			if(checkForm_abholung()) weiterleiten(lieferart);
+		} else {
+			// Testen, ob korrekte Daten eingegeben wurden
+			if(checkForm_delivery()) weiterleiten(lieferart);
+		}
+	});
+	
+    /**
+    * Beim wechsel der Lieferart werden Bereiche ausgeblendet die fuer diese Lieferart nicht benoetigt werden
+    * genauere Beschreibung: Anschrift und Login sind bei Abholung nicht erforderlich
+    * Alert: Sollte der Nutzer als Pizzeria eingeloggt werden, erhält er eine Meldung
+    **/
+    $("input[type='radio'][name='lieferart']").change(
+	    function() {
+			if($("input[type='radio'][name='lieferart']:checked").val() == "Abholung") {
+				document.getElementById("delivery_data").style.display = "none";
+				document.getElementById("eingeloggt").style.display = "none";
+			} else {
+				document.getElementById("delivery_data").style.display = "";
+				if(typeof userID != 'undefined') {
+                    document.getElementById("eingeloggt").style.display = "none";
+                } else {
+                    document.getElementById("eingeloggt").style.display = "";
+                }
+			}	
+		}
+    );
+    
+    /**
+    * Ergaenzt die eventuell anfallenden Lieferkosten
+    **/
+    if(Cookies.get("restaurantLieferkosten") !== undefined) {
+        $("#anzeige_lieferkosten").html("(f&uuml;r die Lieferung fallen zus&auml;tzliche Kosten in H&ouml;he von "+ Cookies.get("restaurantLieferkosten") +" EUR an)");
+    }
+    
+    
 });
 
 function weiterleiten(lieferart){
@@ -30,10 +88,10 @@ function weiterleiten(lieferart){
 	var hausnummer = document.getElementById('userHausnummer').value;
 	var plz = document.getElementById('userPlz').value;
 	var ort = document.getElementById('userOrt').value;
-	var telefon = document.getElementById('userTelefon').value;
 	var email = document.getElementById('userEmail').value;
 	
-	Cookies.set("lieferart", lieferart);
+	Cookies.set("anrede", anrede);
+    Cookies.set("lieferart", lieferart);
 	Cookies.set("vorname", vorname);
 	Cookies.set("nachname", nachname);
 	Cookies.set("strasse", strasse);
@@ -46,8 +104,8 @@ function weiterleiten(lieferart){
 	window.location.href = "./warenkorb.php";	
 }
 
-//Prüfung der Eingabeinformationen
-//wird ausschließlich bei klicken des Absenden-Buttons aufgerufen
+//Pruefung der Eingabeinformationen
+//wird ausschließlich bei klicken des "weiter"-Buttons aufgerufen, wenn "Lieferung" als Lieferart gewaehlt ist
 function checkForm_delivery() { 
 	var pruefungen = [anredePruefen_delivery, vornamePruefen_delivery, nachnamePruefen_delivery, strassePruefen_delivery, hausnummerPruefen_delivery,
 						plzPruefen_delivery, wohnortPruefen_delivery, mailPruefen_delivery, telefonPruefen_delivery];
@@ -74,6 +132,31 @@ function checkForm_delivery() {
 	}
 }
 
+//Pruefung der Eingabeinformationen
+//wird ausschließlich bei klicken des "weiter"-Buttons aufgerufen, wenn "Abholung" als Lieferart gewaehlt ist
+function checkForm_abholung() { 
+	var pruefungen = [anredePruefen_delivery, vornamePruefen_delivery, nachnamePruefen_delivery, mailPruefen_delivery, telefonPruefen_delivery];
+    var strFehler='';
+
+	pruefungen.forEach(function(func){
+		strFehler += func();
+    });
+    
+    /** Ausgabe/Rueckgabe falls min 1 Fehler aufgetreten ist. 
+     * Der Text wird in der Konsole des Browsers ausgegeben. Ansonsten ist er nicht sichtbar
+     *   **/
+    if (strFehler.length>0) {
+    	//Der Text wird fuer entwicklungszwecke in der Konsole des Browsers ausgegeben. Ansonsten ist er nicht sichtbar.
+    	console.log("Folgendes Problem wurde festgestellt: \n\n"+strFehler);
+    	//Rueckgabe=false, wenn die Pruefung einen Fehler ermittelt hat
+		return(false);
+    }
+    else{
+		return(true);
+    }
+}
+
+
 function anredePruefen_delivery(){
 	var anrede = document.getElementById("userAnrede").value.trim();  
     if(anrede === "keine" || anrede === ""){
@@ -92,7 +175,7 @@ function vornamePruefen_delivery(){
 		fehlerAusgeben_delivery("fehleruserVorname", "userVorname");
 		return "Das Feld 'Vorname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 2 maximal 32 Buchstaben, Umlaute möglich\n";
 	}
-	hinweisVerbergen("fehlerVorname", "vorname");
+	hinweisVerbergen("fehleruserVorname", "userVorname");
 	return "";
 }
 

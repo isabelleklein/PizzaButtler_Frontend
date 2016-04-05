@@ -10,23 +10,22 @@
 			<form id='datenanzeigen' name="datenanzeigen" action="#">
 				<h3 class="contenthead"> Wähle eine Lieferart </h3>
                 <div>
-                    <input class="zahlungsart" type="radio" id="Abholung" name="lieferart" value="Abholung"><label for="Abholung"> Abholung</label><br />
-                    <input class="zahlungsart" type="radio" id="Lieferung" name="lieferart" value="Lieferung" checked><label 
-                        for="Lieferung"> Lieferung</label>
+                    <input class="zahlungsart" type="radio" id="abholung" name="lieferart" value="Abholung"><label for="abholung"> Abholung</label><br />
+                    <input class="zahlungsart" type="radio" id="lieferung" name="lieferart" value="Lieferung" checked><label 
+                        for="lieferung"> Lieferung <a id="anzeige_lieferkosten"></a></label>
                     <p></p>
                 </div>
-				
                 <div>
-                    <h3 class="contenthead"> Deine Lieferadresse </h3>
-					<div class="fline">
-	                <select name="anrede" id="userAnrede" size="1" required autofocus>
-                        <option value="keine" selected disabled> bitte wählen</option>
-                        <option value="Herr"> Herr </option>
-                        <option value="Frau"> Frau </option>
-                    </select>
-					<label class="placeholder_fehler" id="fehleruserAnrede"><br />Bitte geben Sie eine Anrede an</label>
-	            </div>
-					
+                    <h3 class="contenthead"> Deine Bestelldaten </h3>
+                    <div class="fline">
+                        <select name="anrede" id="userAnrede" size="1" required autofocus>
+                            <option value="keine" selected disabled> bitte wählen</option>
+                            <option value="Herr"> Herr </option>
+                            <option value="Frau"> Frau </option>
+                        </select>
+                        <label class="placeholder_fehler" id="fehleruserAnrede"><br />Bitte geben Sie eine Anrede an</label>
+                    </div>
+
                     <div class="fline">
                         <input type="text" name="vorname" id="userVorname" required title="Zwischen 3 und 25 Zeichen (Umlaute möglich)" 
                                onchange="vornamePruefen_delivery()" placeholder="Vorname"/>
@@ -35,22 +34,23 @@
                         <label class="placeholder_fehler" id="fehleruserVorname"><br />Bitte geben Sie einen g&uumlltigen Vornamen an</label>
                         <label class="placeholder_fehler" id="fehleruserName"><br />Bitte geben Sie einen g&uumlltigen Nachnamen an</label>
                     </div>
-
-                    <div class="fline">
-                        <input type="text" name="strasse" id="userStrasse" required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" 
-                               onchange="strassePruefen_delivery()" placeholder="Strasse"/>
-                        <input type="text" name="hausnummer" id="userHausnummer" required title="4 stellige Hausnummer mit maximal einem Zusatzbuchstaben a-z 
-                                ohne Umlaute " onchange="hausnummerPruefen_delivery()"/ placeholder="Nr.">
-                        <label class="placeholder_fehler" id="fehleruserStrasse"><br />Bitte geben Sie eine g&uumlltige Strasse an</label>
-                        <label class="placeholder_fehler" id="fehleruserHnr"><br />Bitte geben Sie eine g&uumlltige Hausnummer an</label>
-                    </div>
-                    <div class="fline">
-                        <input type="text" name="plz" id="userPlz" pattern="[0-9]{5}" required title="5 Zahlen" onchange="plzPruefen_delivery()" 
-                               placeholder="PLZ"/>
-                        <input type="text" name="ort" id="userOrt" required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" 
-                               onchange="wohnortPruefen_delivery()" placeholder="Ort"/>
-                        <label class="placeholder_fehler" id="fehleruserPlz"><br />Bitte geben Sie eine g&uumlltige Postleitzahl an</label>
-                        <label class="placeholder_fehler" id="fehleruserOrt"><br />Bitte geben Sie einen g&uumlltigen Ort an</label>
+                    <div id="delivery_data">
+                        <div class="fline">
+                            <input type="text" name="strasse" id="userStrasse" required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" 
+                                   onchange="strassePruefen_delivery()" placeholder="Strasse"/>
+                            <input type="text" name="hausnummer" id="userHausnummer" required title="4 stellige Hausnummer mit maximal einem 
+                                    Zusatzbuchstaben a-z ohne Umlaute " onchange="hausnummerPruefen_delivery()"/ placeholder="Nr.">
+                            <label class="placeholder_fehler" id="fehleruserStrasse"><br />Bitte geben Sie eine g&uumlltige Strasse an</label>
+                            <label class="placeholder_fehler" id="fehleruserHnr"><br />Bitte geben Sie eine g&uumlltige Hausnummer an</label>
+                        </div>
+                        <div class="fline">
+                            <input type="text" name="plz" id="userPlz" pattern="[0-9]{5}" required title="5 Zahlen" onchange="plzPruefen_delivery()" 
+                                   placeholder="PLZ"/>
+                            <input type="text" name="ort" id="userOrt" required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" 
+                                   onchange="wohnortPruefen_delivery()" placeholder="Ort"/>
+                            <label class="placeholder_fehler" id="fehleruserPlz"><br />Bitte geben Sie eine g&uumlltige Postleitzahl an</label>
+                            <label class="placeholder_fehler" id="fehleruserOrt"><br />Bitte geben Sie einen g&uumlltigen Ort an</label>
+                        </div>
                     </div>
                     <div class="fline">
                         <input type="text" name="telefon" id="userTelefon" required onchange="telefonPruefen_delivery()" placeholder="Telefon"/>
