@@ -11,6 +11,8 @@ $(document).ready(function(){
 		// Rest-Aufruf durchfuehren und Liste befuellen
 		rest.send("./mock/getPizzerien.json");
 	}
+	
+	Cookies.remove("Warenkorb");
 });
 
 var buildPizzerienListe = function(data){
