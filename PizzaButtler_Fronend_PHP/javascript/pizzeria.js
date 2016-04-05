@@ -251,7 +251,9 @@ function showWarenkorb(){
 	if (warenkorb == undefined) {
 		if (Cookies.getJSON("Warenkorb") != undefined){
 			warenkorb = Cookies.getJSON("Warenkorb");
-		} 
+		} else {
+			warenkorb = [];
+		}
 	}
 	
 	for(var i = 0; i < warenkorb.length; i++){
