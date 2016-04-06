@@ -349,7 +349,9 @@ function zurKasse()
 				var minute = jetzt.getMinutes();
 				if(minute < 10) minute = "0" + minute;
 				var zeit = (tag + "." + monat + "." + jahr + ", " + stunde + ":" + minute);
+				var zeit2 = jahr + monat + tag + "-" + stunde + ":" + minute;
 				Cookies.set("zeit", zeit);
+				Cookies.set("zeit2", zeit2);
 				Cookies.set("Warenkorb",warenkorb);
 				window.location.href = "./delivery.php";
 			} else {

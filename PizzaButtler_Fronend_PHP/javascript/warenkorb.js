@@ -3,15 +3,55 @@ var warenkorb;
 $(document).ready(function(){
 	warenkorbAnzeigen();
 	lieferadresseAnzeigen();
-    $(".bestellen").click(function(){
+    $("#warenkorb_next").click(function(){
 		var bestellung = {};
+		bestellung.userID = Cookies.get("userID");
+		bestellung.gastID = Cookies.get("gastID");
+		bestellung.email = Cookies.get("email");
+		bestellung.bestellzeitpunkt = Cookies.get("zeit2");
+		bestellung.rechnungsbetrag = Cookies.get("warenkorbGesamtsumme");
+		bestellung.strasse = Cookies.get("strasse");
+		bestellung.hausnummer = Cookies.get("hausnummer");
+		bestellung.plz = Cookies.get("plz");
+		bestellung.ort = Cookies.get("ort");
+		bestellung.bestellinfo = ""; // Wird noch benötigt!
+		bestellung.lieferung = Cookies.get("lieferart") == "Lieferung" ? true : false;
 		
-		/*
-		bestellung.warenkorb = warenkorb;
-		bestellung.zeitpunkt = ...
-		...
+		bestellung.bestellpositionen = [];
 		
-		*/
+		for(var i = 0; i<warenkorb.length; i++){
+			bestellung.bestellpositionen[i] = {};
+			bestellung.bestellpositionen[i].bestellpositionID = i;
+			bestellung.bestellpositionen[i].anzahl = warenkorb[i].anzahl;
+			
+			var bestellpositionpreis = 0;
+			bestellpositionpreis += warenkorb[i].preis * warenkorb[i].anzahl;
+			warenkorb[i].zusatzbelaege.forEach(function(belag){
+				bestellpositionpreis += belag.preis * warenkorb[i].anzahl;
+			});
+			
+			bestellung.bestellpositionen[i].preis = bestellpositionpreis;
+			
+			bestellung.bestellpositionen[i].produkt = {};
+			bestellung.bestellpositionen[i].produkt.produktID = warenkorb[i].produktID;
+			bestellung.bestellpositionen[i].produkt.bezeichnung = warenkorb[i].name;
+			bestellung.bestellpositionen[i].produkt.beschreibung = warenkorb[i].beschreibung;
+			bestellung.bestellpositionen[i].produkt.varianten = "";
+			
+			var variante = {};
+			if(warenkorb[i].groesse == "klein") variante.varianteID = 1;
+			else if(warenkorb[i].groesse == "mittel") variante.varianteID = 2;
+			else if(warenkorb[i].groesse == "groß") variante.varianteID = 3;
+			variante.bezeichnung = "";
+			
+			bestellung.bestellpositionen[i].variante = variante;
+			
+			bestellung.bestellpositionen[i].zusatzbelag = warenkorb[i].zusatzbelaege;
+		}
+		
+		console.log(bestellung);
+		console.table(bestellung);
+		
 		rest = new RestInterface();
 		rest.setParameters("POST", "bestellung/", bestellung, verarbeiteBestellung, bestellungNichtErfolgreich);
 		rest.send();
@@ -78,6 +118,8 @@ function warenkorbAnzeigen(){
 		summe += parseFloat(Cookies.get("restaurantLieferkosten"));
 	}
 	
+	Cookies.set("warenkorbGesamtsumme", summe);
+	
 	ul.append("<p style='margin:0px'><br>" + "Gesamtpreis: " + summe.toFixed(2) + "€</p>");
 	
 	$("#warenkorbAnzeigen").html(ul);
@@ -88,8 +130,6 @@ function hinzufuegen(i){
 	warenkorb[i].anzahl++;
 	Cookies.set("Warenkorb",warenkorb);
 	warenkorbAnzeigen();
-	summieren();
-
 }
 
 function reduzieren(i){
@@ -99,8 +139,6 @@ function reduzieren(i){
 	}
 	Cookies.set("Warenkorb",warenkorb);
 	warenkorbAnzeigen();
-	summieren();
-
 }
 
 function lieferadresseAnzeigen(){

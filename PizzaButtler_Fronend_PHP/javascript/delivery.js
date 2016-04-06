@@ -89,6 +89,7 @@ function weiterleiten(lieferart){
 	var plz = document.getElementById('userPlz').value;
 	var ort = document.getElementById('userOrt').value;
 	var email = document.getElementById('userEmail').value;
+	var telefon = document.getElementById('userTelefon').value;
 	
 	Cookies.set("anrede", anrede);
     Cookies.set("lieferart", lieferart);
