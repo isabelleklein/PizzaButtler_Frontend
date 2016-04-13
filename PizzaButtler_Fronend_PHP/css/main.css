@@ -634,7 +634,10 @@ table {
 	border-radius: 3px;
 	float: right;
 }
-
+.warenkorbpreis {
+	float:right;
+	margin-right:1em;
+}
 .warenkorbelement .zusatz {
 	font-size: 75%;
 }

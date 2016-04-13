@@ -6,7 +6,8 @@ var rest;
 
 /** Übermittlung der eingegebenen Daten an das Backend **/
 $(document).ready(function() {
-	var restaurantID = parse("pizzeria");
+	var restaurantID = parse("Pizzeria");
+	var bestellungID = parse("Bestellung");
 	
 	rest = new RestInterface();
 	rest.setParameters("GET", "restaurant/" + restaurantID, null, getRestaurant);
@@ -36,12 +37,13 @@ $(document).ready(function() {
     .click(function(){
         // Nummer = Bewertung des aktuellen Sterns herausfinden (in der id gespeichert)
         var bewertung = parseInt($(this).attr('id'));
-		
+
 		var post = {};
 		post.restaurantID = restaurantID;
-		post.bewertung = bewertung;
-		
-		console.log(post);
+		post.wertung = bewertung;
+		post.bestellungID = bestellungID;
+		post.userID = "";
+		post.beschreibung = "";
 
         rest = new RestInterface();
 		rest.setParameters("POST", "restaurant/" + restaurantID + "/bewertung", post, bewertungErfolgreich);
