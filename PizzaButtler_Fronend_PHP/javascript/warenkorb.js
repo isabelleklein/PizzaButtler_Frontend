@@ -93,9 +93,10 @@ function warenkorbAnzeigen(){
 	
 	//	var li = $("<li>" + anzahl + " " + name + " Größe: " + groesse + " Preis: " + preis + "€\
 	//				<div>" + zusatz + "</div></li>");
-		var li = $("<li class='warenkorbelement'>" + anzahl + " " + name + ", " + kurzgroesse + ", " + preis + "€ \
+		var li = $("<li class='warenkorbelement'>" + anzahl + " " + name + ", " + kurzgroesse + ",\
 					<button class='hinzufuegen' onclick='hinzufuegen(" + i + ")'>+</button>\
 					<button class='reduzieren' onclick='reduzieren(" + i + ")'>-</button>\
+					<span class='warenkorbpreis'>" + preis + "€</span>\
 					<div class='zusatz'>" + zusatz + "</li></div>");
 		ul.append(li);
 	}
