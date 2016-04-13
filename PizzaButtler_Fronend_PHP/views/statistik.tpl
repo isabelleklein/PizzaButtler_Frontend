@@ -7,6 +7,10 @@
     	<div class="maincontent">
     		<h2 class='contenthead'>meine Statistik</h2>
     		<div>
+    			<h3>Anzahl Kunden</h3>
+    			<p id='anzahlKunden'></p>
+    		</div>
+    		<div>
     			<h3>monatliche Bestellungen insgesamt:</h3>
     			<p id='anzahlBestellungen'></p>
     		</div>

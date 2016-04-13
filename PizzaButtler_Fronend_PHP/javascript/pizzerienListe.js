@@ -5,11 +5,12 @@ $(document).ready(function(){
 	
 	// Rest-Aufruf vorbereiten
 	rest = new RestInterface();
-	rest.setParameters("GET", "restaurant?plz=" + plzOrt , null, buildPizzerienListe);
+	rest.setParameters("GET", "restaurant/restaurantliste/" + plzOrt , null, buildPizzerienListe);
 	
 	if(plzOrt != ""){
 		// Rest-Aufruf durchfuehren und Liste befuellen
-		rest.send("./mock/getPizzerien.json");
+		rest.send();
+		//rest.send("./mock/getPizzerien.json");
 	}
 	
 	Cookies.remove("Warenkorb");
@@ -54,7 +55,19 @@ var buildPizzerienListe = function(data){
 					<p class='listParagraph'></p>";
 			var date = new Date();
 			var day = date.getDay();
+			console.log(day);
+			day = (day + 6);
+			day = day%7;
+			console.log(day);
 			var oeffnungszeit_von = data[i].oeffnungszeiten[day].von + "";
+			console.log(data[i].oeffnungszeiten[0].von);
+			console.log(data[i].oeffnungszeiten[1].von);
+			console.log(data[i].oeffnungszeiten[2].von);
+			console.log(data[i].oeffnungszeiten[3].von);
+			console.log(data[i].oeffnungszeiten[4].von);
+			console.log(data[i].oeffnungszeiten[5].von);
+			console.log(data[i].oeffnungszeiten[6].von);
+			
 			oeffnungszeit_von = oeffnungszeit_von.slice(0,2) + ":" + oeffnungszeit_von.slice(2,4);
 			var oeffnungszeit_bis = data[i].oeffnungszeiten[day].bis + "";
 			oeffnungszeit_bis = oeffnungszeit_bis.slice(0,2) + ":" + oeffnungszeit_bis.slice(2,4);
@@ -103,6 +116,7 @@ var buildPizzerienListe = function(data){
 function hatOffen(oeffnungszeiten){
 	var date = new Date();
 	var day = date.getDay();
+	day = (day+6)%7;
 	var time;
 	var hours = date.getHours();
 	var minutes = date.getMinutes();

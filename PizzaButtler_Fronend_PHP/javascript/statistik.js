@@ -4,15 +4,18 @@ var rest;
 $(document).ready(function() {
 	var restaurantID = Cookies.get('restaurantID');
 	rest = new RestInterface();
-	rest.setParameters("GET", "statistik?id=" + restaurantID , null, statistikAufrufen);
-	rest.send("./mock/statistik.json");
+	rest.setParameters("GET", "statistik/" + restaurantID , null, statistikAufrufen);
+	rest.send();
 	
 });
 
 var statistikAufrufen = function(data){
-	var brutto = data.bruttoUmsatz;
-	var bestellungen = data.anzahlBestellungen;
+	var brutto = data.umsatzSUM;
+	var bestellungen = data.bestellungSUM;
+	var anzKunden = data.kundenSUM;
+	var umsavg = data.umsatzAVG;
 	
+	$("#anzahlKunden").html(anzKunden + "Kunden");
 	$("#anzahlBestellungen").html(bestellungen + " Bestellungen im aktuellen Monat");
 	$("#monUmsBrt").html(brutto + "€ im aktuellen Monat");
 	/** aktuell wird davon ausgegangen, dass einfach bei jeder Bestellung 19% Mehrwertsteuer fällig ist. 
@@ -20,7 +23,7 @@ var statistikAufrufen = function(data){
 	 */
 	var netto = brutto/1.19
 	$("#monUmsNet").html(netto.toFixed(2) + "€ im aktuellen Monat"); 
-	$("#schnittBestWert").html(brutto/bestellungen + "€ pro Bestellung")
+	$("#schnittBestWert").html(umsavg + "€ pro Bestellung")
 	if(brutto < 500){
 		$("#gebuehren").html(brutto*0.125 + "€");
 	}
