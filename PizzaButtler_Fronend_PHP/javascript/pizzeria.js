@@ -279,9 +279,10 @@ function showWarenkorb(){
 		});		
 		zusatz = zusatz.substr(0, zusatz.length - 2); // Letztes ", " entfernen
 		
-		var li = $("<li class='warenkorbelement'>" + anzahl + " " + name + ", " + kurzgroesse + ", " + preis + "€ \
+		var li = $("<li class='warenkorbelement'>" + anzahl + " " + name + ", " + kurzgroesse + ",\
 					<button class='hinzufuegen' onclick='hinzufuegen(" + i + ")'>+</button>\
 					<button class='reduzieren' onclick='reduzieren(" + i + ")'>-</button>\
+					<span class='warenkorbpreis'>" + preis + "€</span>\
 					<div class='zusatz'>" + zusatz + "</li></div>");
 		ul.append(li);
 	}
