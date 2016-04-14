@@ -102,7 +102,31 @@ function weiterleiten(lieferart){
 	Cookies.set("telefon", telefon);
 	Cookies.set("email", email);
 	
-	window.location.href = "./warenkorb.php";	
+	if(typeof userID != 'undefined'){
+		window.location.href = "./warenkorb.php";
+	} else {
+		rest = new RestInterface();
+		
+		var data = {
+			"anrede":anrede,
+			"vorname":vorname,
+			"nachname":nachname,
+			"strasse":strasse,
+			"hausnummer":hausnummer,
+			"ort":ort,
+			"plz":plz,
+			"email":email,
+			"telefonnummer":telefon
+		};
+		
+		rest.setParameters("POST", "gast", data, createGast);
+		rest.send();
+	}
+}
+
+function createGast(data){
+	Cookies.set("gastID", data.gastID);
+	window.location.href = "./warenkorb.php";
 }
 
 //Pruefung der Eingabeinformationen
