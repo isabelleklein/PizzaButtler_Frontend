@@ -16,7 +16,7 @@ $(document).ready(function() {
 			var jsObj = $registrieren.serializeObject();
 			
 			rest = new RestInterface();
-			rest.setParameters("POST", "user/", jsObj, registrierenSendenSuccess);
+			rest.setParameters("POST", "user/reguser", jsObj, registrierenSendenSuccess);
 			rest.send("./mock/postUser.json");
 		}
 	});
@@ -37,29 +37,12 @@ $(document).ready(function() {
 
 
 
-// TODO: Sollte richtig gebaut werden, akt: returnCode 0 = success, sollte mit backend abgesprochen werden
-function registrierenSendenSuccess(returnCode) {
-	returnCode = 0;
-	/**Ermittlung von Erfolgreicher übertragung --> Rückgabe User-ID**/
-	if (returnCode == 0) { // Erfolgreiche Registrierung
-		// UserID setzen == angemeldet
-		Cookies.set("userID", returnCode, {expires: 0.2});			
-		
-		$('#container').hide('slow',
-			function () {
-				$('#overlay').fadeOut();
-				document.location.href = ".";
-			}
-		);
-	}
-	else if (returnCode == -1) {
-		document.getElementById("fehlerAbsenden").innerHTML = "Ein oder mehr Eingabedaten sind ungültig";
-		document.getElementById("fehlerAbsenden").style.display = "inline";
-		console.log("if-Abschnitt durchlaufen");
-	}
-	else if (returnCode == -2) {
-		document.getElementById("fehlerAbsenden").innerHTML = "Die Email-Adresse wird bereits verwendet";
-		document.getElementById("fehlerAbsenden").style.display = "inline";
-		console.log("if-Abschnitt durchlaufen");
-	}
+function registrierenSendenSuccess(data) {
+	Cookies.set("userID", data.userID, {expires: 0.2});
+	$('#container').hide('slow',
+		function () {
+			$('#overlay').fadeOut();
+			document.location.href = ".";
+		}
+	);
 }

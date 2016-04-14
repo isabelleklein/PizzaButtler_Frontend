@@ -50,9 +50,6 @@ $(document).ready(function(){
 			bestellung.bestellpositionen[i].zusatzbelag = warenkorb[i].zusatzbelaege = [];
 		}
 		
-		console.table(bestellung);
-		console.log(JSON.stringify(bestellung));
-		
 		rest = new RestInterface();
 		rest.setParameters("POST", "bestellung/send", bestellung, verarbeiteBestellung, bestellungNichtErfolgreich);
 		rest.send();
@@ -172,12 +169,11 @@ function lieferadresseAnzeigen(){
 
 
 function verarbeiteBestellung(data){
-	console.log("Erfolgreich");
-	console.log(data);
+	//console.log("Erfolgreich");
 	//window.location.href = "./finish.php";
 }
 
 function bestellungNichtErfolgreich(){
-	console.log("Fehler, Bestellungsserver ist nicht erreichbar");
+	//console.log("Fehler, Bestellungsserver ist nicht erreichbar");
 }
 

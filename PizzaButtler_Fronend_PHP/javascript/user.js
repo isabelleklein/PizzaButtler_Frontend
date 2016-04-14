@@ -136,7 +136,7 @@ function anredePruefen_user(){
 /** Pruefen des Vornamens  **/
 function vornamePruefen_user(){
     var vorname=document.getElementById("userVorname").value.trim();
-    if(!new RegExp(/^([A-Za-zÄÖÜäöüß-]){2,25}$/).test(vorname)){
+    if(!new RegExp(/^([A-Za-zÄÖÜäöüß\-\ ]){2,25}$/).test(vorname)){
     	fehlerAusgeben_user("fehleruserVorname", "userVorname");
         return "Das Feld 'Vorname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 2 maximal 32 Buchstaben, Umlaute möglich\n";
     }
@@ -147,7 +147,7 @@ function vornamePruefen_user(){
 /** Pruefen des Nachnamens  **/
 function nachnamePruefen_user(){
     var nachname = document.getElementById("userNachname").value.trim();
-    if(!new RegExp(/^([A-Za-zÄÖÜäöüß-]){3,25}$/).test(nachname)){
+    if(!new RegExp(/^([A-Za-zÄÖÜäöüß\-\ ]){3,25}$/).test(nachname)){
 		fehlerAusgeben_user("fehleruserName", "userNachname");
       	return "Das Feld 'Nachname' entspricht nicht der typischen Form! Form: nur Buchstaben, mindestens 3 maximal 32 Buchstaben, Umlaute möglich\n";
 	}

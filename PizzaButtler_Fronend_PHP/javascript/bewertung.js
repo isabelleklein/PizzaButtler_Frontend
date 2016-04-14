@@ -8,6 +8,7 @@ var rest;
 $(document).ready(function() {
 	var restaurantID = parse("Pizzeria");
 	var bestellungID = parse("Bestellung");
+	var bewUserID = parse("User");
 	
 	rest = new RestInterface();
 	rest.setParameters("GET", "restaurant/" + restaurantID, null, getRestaurant);
@@ -39,14 +40,15 @@ $(document).ready(function() {
         var bewertung = parseInt($(this).attr('id'));
 
 		var post = {};
-		post.restaurantID = restaurantID;
-		post.wertung = bewertung;
-		post.bestellungID = bestellungID;
-		post.userID = "";
+		post.restaurantID = parseInt(restaurantID);
+		post.wertung = parseInt(bewertung);
+		post.bestellungID = parseInt(bestellungID);
+		post.userID = parseInt(bewUserID);
 		post.beschreibung = "";
-
+	
+		console.log(JSON.stringify(post));	
         rest = new RestInterface();
-		rest.setParameters("POST", "restaurant/" + restaurantID + "/bewertung", post, bewertungErfolgreich);
+		rest.setParameters("POST", "bewertung", post, bewertungErfolgreich);
 		rest.send();
     });
 });
