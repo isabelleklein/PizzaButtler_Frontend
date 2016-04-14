@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var restaurantID = Cookies.get('restaurantID');
 	
 	// Zurueck-Button
-	$("#delivery_back").attr("onclick", "location.href='pizzeria.php?id=" + Cookies.get("restaurantLieferkosten") + "'");
+	$("#delivery_back").attr("onclick", "location.href='pizzeria.php?id=" + Cookies.get("restaurantIdBestellung") + "'");
     
     /**
     * Ueberprueft beim aufrufen der Seite welche Lieferart ausgewaehlt ist (bsp. aus dem Cache) und 

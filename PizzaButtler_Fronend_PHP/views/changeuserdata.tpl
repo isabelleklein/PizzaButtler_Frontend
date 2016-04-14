@@ -48,7 +48,7 @@
                     <label class="placeholder_fehler" id="fehleruserOrt"><br />Bitte geben Sie einen g&uumlltigen Ort an</label>
 		        </div>
 	            <div class="fline">
-	                <input type="text" name="telefon" id="userTelefon" required onchange="telefonPruefen_user()" placeholder="Telefon"/>
+	                <input type="text" name="telefonnummer" id="userTelefon" required onchange="telefonPruefen_user()" placeholder="Telefon"/>
                     <input type="text" name="email" id="userEmail" required onchange="mailPruefen_user()" placeholder="Email"/>
                     <label class="placeholder_fehler" id="fehleruserEmail"><br />Bitte geben Sie eine g&uumlltige Email-Adresse an</label>
                     <label class="placeholder_fehler" id="fehleruserTel"><br />Bitte geben Sie eine g&uumlltige Telefonnummer an</label>

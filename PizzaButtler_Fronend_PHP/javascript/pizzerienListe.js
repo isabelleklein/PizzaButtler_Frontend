@@ -55,18 +55,9 @@ var buildPizzerienListe = function(data){
 					<p class='listParagraph'></p>";
 			var date = new Date();
 			var day = date.getDay();
-			console.log(day);
 			day = (day + 6);
 			day = day%7;
-			console.log(day);
 			var oeffnungszeit_von = data[i].oeffnungszeiten[day].von + "";
-			console.log(data[i].oeffnungszeiten[0].von);
-			console.log(data[i].oeffnungszeiten[1].von);
-			console.log(data[i].oeffnungszeiten[2].von);
-			console.log(data[i].oeffnungszeiten[3].von);
-			console.log(data[i].oeffnungszeiten[4].von);
-			console.log(data[i].oeffnungszeiten[5].von);
-			console.log(data[i].oeffnungszeiten[6].von);
 			
 			oeffnungszeit_von = oeffnungszeit_von.slice(0,2) + ":" + oeffnungszeit_von.slice(2,4);
 			var oeffnungszeit_bis = data[i].oeffnungszeiten[day].bis + "";

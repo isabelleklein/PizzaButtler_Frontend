@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-04-01 14:29:30
+<?php /* Smarty version 3.1.27, created on 2016-04-13 14:02:40
          compiled from "views\index.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2404356fe69aa26cd64_12154506%%*/
+/*%%SmartyHeaderCode:9939570e3560d6e610_21879858%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eb3fd37e6f529e330906b3654bbe2b19ae9511a7' => 
     array (
       0 => 'views\\index.tpl',
-      1 => 1459332694,
+      1 => 1459771992,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2404356fe69aa26cd64_12154506',
+  'nocache_hash' => '9939570e3560d6e610_21879858',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56fe69aa2fd605_30468288',
+  'unifunc' => 'content_570e3561018c66_19014579',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56fe69aa2fd605_30468288')) {
-function content_56fe69aa2fd605_30468288 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_570e3561018c66_19014579')) {
+function content_570e3561018c66_19014579 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2404356fe69aa26cd64_12154506';
+$_smarty_tpl->properties['nocache_hash'] = '9939570e3560d6e610_21879858';
 ?>
 
 
@@ -35,7 +35,7 @@ $_smarty_tpl->properties['nocache_hash'] = '2404356fe69aa26cd64_12154506';
 			
 				<form action="./pizzerienSuche.php" name="pizzerienListeButton" id='pizzerienSucheGross'>
 					<p>
-						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst du?" />
+						<input class="button_startseite" type="text" name="plz-ort" id="plz-ort" placeholder="Wo wohnst Du?" />
 					</p>
 				</form>
 				<?php echo '<script'; ?>
@@ -53,7 +53,7 @@ $_smarty_tpl->properties['nocache_hash'] = '2404356fe69aa26cd64_12154506';
                 Pizza Butler ist Deine persönliche Plattform für Lieferdienste. Wir bringen Dir Dein favorisiertes Gericht direkt mit einem unserer Butler nach Hause. Frisch für Dich zubereitet – direkt zu Dir geliefert. <br>
 Auf Deiner eigenen Favoritenliste kannst Du Dir Deine Lieblingsgerichte zusammenstellen und sofort bestellen. Über unseren Zahlungsdienstleister PayPal kannst Du Deine Bestellung mit Deinen PayPal Zugangsdaten direkt bezahlen.
  <br> <br>
-Wir wünschen dir einen guten Appetit, euer Pizza Butler Team.
+Wir wünschen Dir einen guten Appetit, euer Pizza Butler Team.
         </div>
 		<?php echo '<script'; ?>
  src="./javascript/inputSuggestions.js"><?php echo '</script'; ?>

@@ -1,5 +1,6 @@
 /** Userdata zum User mit best. ID holen **/
 var rest;
+var user;
 $(document).ready(function(){	
 	var userID = Cookies.get('userID');
 	if(typeof userID != 'undefined'){
@@ -32,6 +33,7 @@ var loadData = function(){
 }
 
 var callback_user = function(data){
+	user = data;
 	if($('#userAnrede').prop("tagName") == "SELECT") {
 		$('#userAnrede').val(data.anrede);
 	}
@@ -61,8 +63,10 @@ function setClickListener(){
 			var userID = Cookies.get("userID");
 
 			if(typeof userID != 'undefined') {
+				daten.userID = userID;
+				daten.geburtsdatum = user.geburtsdatum;
 				rest = new RestInterface();
-				rest.setParameters("PUT", "user/" + userID, daten, function(data){
+				rest.setParameters("PUT", "user/update", daten, function(data){
 					window.location.href = "./user.php"; 
 				});
 				rest.send();

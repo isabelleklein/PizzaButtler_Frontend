@@ -6,20 +6,18 @@ var rest;
 
 /** Übermittlung der eingegebenen Daten an das Backend **/
 $(document).ready(function() {
-	var $pwvergessen = $('#pwvergessen');
 	/** Aktionsinformationen für den Absenden-Button **/
 	
 	$('#absenden_pwvergessen').click(function(e) {
-		console.log("Abschicken Button wurde geklickt");
-		if(checkForm()==true)
-		{
+		//if(checkForm()==true)
+		//{
 			e.preventDefault(); /** cancel form submit **/
-			var jsObj = $pwvergessen.serializeObject();
 			
+			var email = {"email":$("#email_pwvergessen").val()};
 			rest = new RestInterface();
-			rest.setParameters("POST", "resetPassword", jsObj, pwSendSuccess);
+			rest.setParameters("POST", "resetPassword", email, pwSendSuccess);
 			rest.send("./mock/pwVergessen.json");
-		}
+		//}
 	});
 	
     $('#open_pwvergessen').click(

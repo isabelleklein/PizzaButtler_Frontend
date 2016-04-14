@@ -5,11 +5,12 @@ $(document).ready(function(){
 	lieferadresseAnzeigen();
     $("#warenkorb_next").click(function(){
 		var bestellung = {};
-		bestellung.userID = Cookies.get("userID");
-		bestellung.gastID = Cookies.get("gastID");
+		bestellung.userID = Boolean(Cookies.get("userID")) ? parseInt(Cookies.get("userID")) : 0;
+		bestellung.gastID = Boolean(Cookies.get("gastID")) ? parseInt(Cookies.get("gastID")) : 0;
+		bestellung.restaurantID = parseInt(Cookies.get("restaurantIdBestellung"));
 		bestellung.email = Cookies.get("email");
 		bestellung.bestellzeitpunkt = Cookies.get("zeit2");
-		bestellung.rechnungsbetrag = Cookies.get("warenkorbGesamtsumme");
+		bestellung.rechnungsbetrag = parseFloat(Cookies.get("warenkorbGesamtsumme"));
 		bestellung.strasse = Cookies.get("strasse");
 		bestellung.hausnummer = Cookies.get("hausnummer");
 		bestellung.plz = Cookies.get("plz");
@@ -36,7 +37,7 @@ $(document).ready(function(){
 			bestellung.bestellpositionen[i].produkt.produktID = warenkorb[i].produktID;
 			bestellung.bestellpositionen[i].produkt.bezeichnung = warenkorb[i].name;
 			bestellung.bestellpositionen[i].produkt.beschreibung = warenkorb[i].beschreibung;
-			bestellung.bestellpositionen[i].produkt.varianten = "";
+			bestellung.bestellpositionen[i].produkt.varianten = [];
 			
 			var variante = {};
 			if(warenkorb[i].groesse == "klein") variante.varianteID = 1;
@@ -46,14 +47,14 @@ $(document).ready(function(){
 			
 			bestellung.bestellpositionen[i].variante = variante;
 			
-			bestellung.bestellpositionen[i].zusatzbelag = warenkorb[i].zusatzbelaege;
+			bestellung.bestellpositionen[i].zusatzbelag = warenkorb[i].zusatzbelaege = [];
 		}
 		
-		console.log(bestellung);
 		console.table(bestellung);
+		console.log(JSON.stringify(bestellung));
 		
 		rest = new RestInterface();
-		rest.setParameters("POST", "bestellung/", bestellung, verarbeiteBestellung, bestellungNichtErfolgreich);
+		rest.setParameters("POST", "bestellung/send", bestellung, verarbeiteBestellung, bestellungNichtErfolgreich);
 		rest.send();
 	});
 });
@@ -173,7 +174,7 @@ function lieferadresseAnzeigen(){
 function verarbeiteBestellung(data){
 	console.log("Erfolgreich");
 	console.log(data);
-	window.location.href = "./finish.php";
+	//window.location.href = "./finish.php";
 }
 
 function bestellungNichtErfolgreich(){

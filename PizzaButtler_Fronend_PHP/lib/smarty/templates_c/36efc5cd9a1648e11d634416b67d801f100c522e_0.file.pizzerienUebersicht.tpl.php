@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-04-02 08:09:07
+<?php /* Smarty version 3.1.27, created on 2016-04-14 18:43:14
          compiled from "views\pizzerienUebersicht.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:3120156ff6203191698_63641251%%*/
+/*%%SmartyHeaderCode:27706570fc8a264b2a3_45790503%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '36efc5cd9a1648e11d634416b67d801f100c522e' => 
     array (
       0 => 'views\\pizzerienUebersicht.tpl',
-      1 => 1459577252,
+      1 => 1459841729,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3120156ff6203191698_63641251',
+  'nocache_hash' => '27706570fc8a264b2a3_45790503',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56ff62031d7ba4_11773942',
+  'unifunc' => 'content_570fc8a2690da0_75679104',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56ff62031d7ba4_11773942')) {
-function content_56ff62031d7ba4_11773942 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_570fc8a2690da0_75679104')) {
+function content_570fc8a2690da0_75679104 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '3120156ff6203191698_63641251';
+$_smarty_tpl->properties['nocache_hash'] = '27706570fc8a264b2a3_45790503';
 ?>
 <html>
     <head>
@@ -37,7 +37,7 @@ $_smarty_tpl->properties['nocache_hash'] = '3120156ff6203191698_63641251';
     </head>
     
     <body>
-    	<div class="maincontent" id="pizzerienContainer">
+    	<div id="pizzerienContainer">
     	</div>
     	<div id="rechterBereich">
 	    	<div  id = "infoContainer">
