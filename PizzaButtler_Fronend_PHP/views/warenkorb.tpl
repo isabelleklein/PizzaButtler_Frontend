@@ -14,17 +14,17 @@
             <div id="bezahlart">
                 <p>Bitte wähle Deine Bezahlart! </p>
                 <div id="bezahlartradio">
-                    <form action="radio.html">
+                    <form action="radio.html>
                         <div class="bezahlartdesign">
                             <label>
                                 <img id="bezahlart3" src="./images/bezahlart1.png" alt="Bezahlart 1"> <br>
-                                <input type="radio" name="Zahlungsart" class="zahlungsart2"> </input>
+                                <input type="radio" name="Zahlungsart" class="zahlungsart2" id="paypal"> </input>
                             </label>
                         </div>
                         <div class="bezahlartdesign">
                             <label>
                                 <img id="bezahlart4" src="./images/bezahlart2.png" alt="Bezahlart 2"></input><br>
-                                <input type="radio" name="Zahlungsart" class="zahlungsart2"> <br>
+                                <input type="radio" name="Zahlungsart" class="zahlungsart2" id="bar"> <br>
                             </label>
                         </div>
                     </form>

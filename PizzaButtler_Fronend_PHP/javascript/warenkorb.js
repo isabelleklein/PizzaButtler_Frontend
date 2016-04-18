@@ -164,6 +164,14 @@ function lieferadresseAnzeigen(){
 
 	// Zurück-Button
 	$("#warenkorb_back").attr("onclick", "location.href='delivery.php'");
+	
+	if(document.getElementById('paypal').checked){
+		$("#warenkorb_next").attr("onclick", "location.href='finish_bar.php'");
+	}
+	else{
+		$("#warenkorb_next").attr("onclick", "location.href='finish_paypal.php'");
+	}
+	
 }
 	
 
@@ -176,4 +184,5 @@ function verarbeiteBestellung(data){
 function bestellungNichtErfolgreich(){
 	//console.log("Fehler, Bestellungsserver ist nicht erreichbar");
 }
+
 
