@@ -126,7 +126,7 @@ function telefonnummerPruefen(){
 function mailPruefen(){
     var email=document.getElementById("email").value.trim();
 	/**  Pruefung ob eine gueltige Mail-Adresse eingegeben wurde **/
-    if(!new RegExp(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/).test(email)){
+    if(!new RegExp(/^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/).test(email)){
 		fehlerAusgeben("fehlerEmail", "email");
 		return "Das Feld 'Email' entspricht nicht der typischen Form einer Email!\n";
 	}
@@ -154,7 +154,7 @@ function datumPruefen()
 function passwortPruefen1(){
     var pw1=document.getElementById("passwort").value;
 	/**  Pruefung ob sicheres Passwort eingegeben wurde **/
-	if(!new RegExp(/^[A-Za-zÄÖÜäöüß]{8,30}$/).test(pw1)){
+	if(!new RegExp(/^.{8,12}$/).test(pw1)){
 		fehlerAusgeben("fehlerPw_1", "passwort");
 		return "Das Feld 'Passwort' hat nicht die erforderliche Sicherheit! Bitte mind. 8 stelliges Passwort verwenden\n";
 	}
