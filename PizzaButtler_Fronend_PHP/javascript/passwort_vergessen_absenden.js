@@ -1,7 +1,3 @@
-/**
- * @author Dominik Terlau
- * @Version 2.1
- */
 var rest;
 
 /** Übermittlung der eingegebenen Daten an das Backend **/
@@ -49,7 +45,35 @@ $(document).ready(function() {
 	      changeYear: true
 	    });
 	 });*/
+     
 });
+
+function dataAbrufen(){
+	var userID = Cookies.get("userID");
+	if(typeof userID != 'undefined') {
+		rest = new RestInterface();
+		rest.setParameters("GET", "user/" + userID, null, pwaendern);
+		rest.send();
+		rest.send("./mock/getUser.json");
+	}
+}
+
+function pwaendern(data){
+		var email = {"email": data.email};
+		console.log(email);
+		rest = new RestInterface();
+		rest.setParameters("POST", "resetPassword", email, pwAendSuccess);
+		rest.send("./mock/pwVergessen.json");
+}
+
+function pwAendSuccess(data){
+	if(data == 0) {
+		window.alert("Passwort erfolgreich angefordert. Du erhälst demnächst eine E-Mail mit deinem neuen Passwort.");
+	}
+		else if(data == -1){
+			window.alert("Ein oder mehr Eingabedaten sind ungültig");
+		}
+}
 
 /**Ermittlung von Erfolgreicher übertragung --> Das Backend sendet den HTTP-Code 200**/
 function pwSendSuccess(data) {  

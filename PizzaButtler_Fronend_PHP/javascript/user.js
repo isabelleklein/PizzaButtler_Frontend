@@ -11,14 +11,7 @@ $(document).ready(function(){
 				setClickListener();
 			});
 		});
-		$('#userpwaendern').click(function(e) {
-			$('.maincontent').load("./views/changeuserpassword.tpl", function(){
-				loadData();
-				setClickListener();
-			});
-		});
 	}
-	
 });
 
 
@@ -74,23 +67,18 @@ function setClickListener(){
 			}
 		}
 	});
-    $('#userpwspeichern').click(function(e) {
-		if(true){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen
-			e.preventDefault(); /** cancel form submit **/
+}
 
-			var daten = $('#userpwaendern').serializeObject();
-			var userID = Cookies.get("userID");
 
-			if(typeof userID != 'undefined') {
-				rest = new RestInterface();
-				rest.setParameters("PUT", "user/" + userID, daten, function(data){
-					window.location.href = "./user.php"; 
-				});
-				rest.send();
-				rest.send("./mock/putUser.json");
-			}
-		}
-	});
+function passwortPruefenaend(){
+    var pw1=document.getElementById("userpw_alt").value;
+	/**  Pruefung ob sicheres Passwort eingegeben wurde **/
+	if(!new RegExp(/^.{8,12}$/).test(pw1)){
+		fehlerAusgeben("fehlerPw_1", "userpw_alt");
+		return "Das Feld 'Passwort' hat nicht die erforderliche Sicherheit! Bitte mind. 8 stelliges Passwort verwenden\n";
+	}
+	hinweisVerbergen("fehleruserpw_alt", "userpw_alt");
+	return "";
 }
 
 //Prüfung der Eingabeinformationen
