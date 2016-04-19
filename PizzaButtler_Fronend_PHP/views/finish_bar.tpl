@@ -4,7 +4,7 @@
         <title>Vielen Dank für Ihren Einkauf</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link href="./css/main.css" rel="stylesheet" /> 
-		<script type="text/javascript" src="./javascript/warenkorb.js"></script>
+		<script type="text/javascript" src="./javascript/finish.js"></script>
 		
     </head>
     
@@ -14,7 +14,7 @@
             
             <div>
                 </br>
-        Bitte halte den Gesamtpreis im Wert von: XXX-Euro für den Fahrer bereit! <br> </br>    
+        Bitte halte den Gesamtpreis im Wert von <span id="gesamtsumme"></span>€ für den Fahrer bereit! <br> </br>    
        
         In Kürze erhälst Du eine Bestellbestätigung per E-Mail.<br><br>
         
