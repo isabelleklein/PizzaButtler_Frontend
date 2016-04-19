@@ -18,15 +18,6 @@
 	            <div class="fline">
 	                <input type="password" name="pw_alt" id="pw_alt" required onchange="passwortPruefen1()"  placeholder="altes Passwort"/>
 	            </div>
-                <div class="fline">
-                    <input type="password" name="pw_neu" id="pw_neu" required title="Mindestens 8-stelliges Passwort" 
-                           onchange="passwortPruefen1()" placeholder="neues Passwort"/>
-                </div>
-                <div class="fline">
-                    <input type="password" name="pw_neu2" id="pw_neu2" required onchange="passwortPruefen2()"  placeholder="Passwort wdh."/>
-                </div>
-	            
-				<p>
 	                <input class="userbutton" id="pwspeichern" name="pwspeichern" type="button" value="&Auml;nderungen speichern"/>
                     <a href="user_pizzeria.php"><input class="userbutton" id="datenspeichern_abbr" name="datenspeichern_abbr" type="button" value="abbrechen"/>
                     </a>

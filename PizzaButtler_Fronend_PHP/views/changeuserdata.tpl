@@ -56,7 +56,7 @@
 	
 	            
 				<p>
-	                <input class="userbutton" id="userdatenspeichern" name="userdatenspeichern" type="button" value="&Auml;nderungen speichern"/>
+	                <input class="userbutton" id="userdatenspeichern" name="userdatenspeichern" type="button" value="&Auml;nderungen speichern" onClick='userdatenspeichern()' />
                     <a href="user.php"><input class="userbutton" id="datenspeichern_abbr" name="datenspeichern_abbr" type="button" value="abbrechen"/></a>
                 </p>
 			</form>

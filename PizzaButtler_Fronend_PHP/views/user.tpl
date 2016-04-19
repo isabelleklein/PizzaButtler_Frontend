@@ -4,7 +4,9 @@
         <title>Benutzer</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link href="./css/main.css" rel="stylesheet" /> 
+        <script type="text/javascript" src="./javascript/passwort_vergessen_absenden.js"></script>
 		<script type="text/javascript" src="./javascript/user.js"></script>
+		
 		
     </head>
     
@@ -49,7 +51,7 @@
 						<input class="userbutton" id="userdatenaendern" name="userdatenaendern" type="button" value="Daten &auml;ndern" />
 					</p>
                     <p>
-						<input class="userbutton" id="userpwaendern" name="userpwaendern" type="button" value="Passwort &auml;ndern" />
+						<input class="userbutton" id="userpwaendern" name="userpwaendern" type="button" value="Passwort &auml;ndern" onclick="dataAbrufen()"/>
 					</p>
 				</div>
 			</form>
