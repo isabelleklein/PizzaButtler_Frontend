@@ -47,7 +47,7 @@ $(document).ready(function(){
 			
 			bestellung.bestellpositionen[i].variante = variante;
 			
-			bestellung.bestellpositionen[i].zusatzbelag = warenkorb[i].zusatzbelaege;
+			bestellung.bestellpositionen[i].zusatzbelag = warenkorb[i].zusatzbelaege = [];
 		}
 		
 		rest = new RestInterface();

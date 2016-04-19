@@ -21,11 +21,8 @@ function sendLogin(){
 }
 
 function loginSuccess(userData){
-	if(!Boolean(userData)){
-		alert("Username-Passwort-Kombination nicht vorhanden");
-	}
 	// User oder Pizzeria wurden angemeldet
-	else if (typeof(userData.userID) !== 'undefined' ||
+	if (typeof(userData.userID) !== 'undefined' ||
 		typeof(userData.restaurantID) !== 'undefined'){
 
 		var expireTime = ($('#cbmerken').prop('checked'))? 7 : 0.2;
@@ -50,7 +47,7 @@ function loginSuccess(userData){
 	}
 	// Anmeldung fehlgeschlagen
 	else{
-		console.log("Fehler");
+		console.log("Fehler: Falsche Eingaben / Nicht vorhanden");
 	}
 }
 
