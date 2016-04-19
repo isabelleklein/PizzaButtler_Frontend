@@ -14,11 +14,9 @@
             
             <div>
                 </br>
-        Bitte halte den Gesamtpreis im Wert von: XXX-Euro für den Fahrer bereit! <br> </br>    
-       
-        In Kürze erhälst Du eine Bestellbestätigung per E-Mail.<br><br>
-        
-        Guten Appetit!
+
+Bitte halte das Bargeld für den Fahrer bereit, wir werden Deine Bestellung schnellstmöglich bearbeiten und wünschen Dir guten Appetit. <br><br>
+            Alle weiteren Informationen zu Deiner Bestellung erhälst Du in Deiner Bestätigungsmail.
             </div>
         </div>
     	<div class = "infocontent">
