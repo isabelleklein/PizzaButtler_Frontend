@@ -14,7 +14,7 @@
             <div id="bezahlart">
                 <p>Bitte wähle Deine Bezahlart! </p>
                 <div id="bezahlartradio">
-                    <form action="radio.html">
+                    <form action="radio.html>
                         <div class="bezahlartdesign">
                             <label>
                                 <img id="bezahlart3" src="./images/bezahlart1.png" alt="Bezahlart 1"> <br>
