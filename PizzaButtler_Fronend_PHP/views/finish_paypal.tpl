@@ -14,8 +14,9 @@
             
             <div>
                 </br>
-        Vielen Dank für die Bezahlung per PayPal. Deine Zahlung in Höhe von <span id="gesamtsumme"></span>€ ist eingegangen!<br> </br>    
-        In Kürze erhälst Du eine Bestellbestätigung per E-Mail.<br><br>
+		Deine Bezahlung von <span id="gesamtsumme"></span>€ über Paypal ist bei uns eingegangen. Wir werden Deine Bestellung
+		schnellstmöglich bearbeiten und wünschen Dir guten Appetit!<br>
+		Alle weiteren Informationen zu Deiner Bestellung erhälst Du in Deiner Bestätigungsmail.<br><br>
         
         Guten Appetit!
             </div>

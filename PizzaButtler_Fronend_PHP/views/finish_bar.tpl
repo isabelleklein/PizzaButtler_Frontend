@@ -14,9 +14,10 @@
             
             <div>
                 </br>
-        Bitte halte den Gesamtpreis im Wert von <span id="gesamtsumme"></span>€ für den Fahrer bereit! <br> </br>    
-       
-        In Kürze erhälst Du eine Bestellbestätigung per E-Mail.<br><br>
+        Bitte halte das Bargeld in Höhe von <span id="gesamtsumme"></span>€ bereit, wir werden Deine Bestellung
+
+		schnellstmöglich bearbeiten und wünschen Dir guten Appetit!<br>
+		Alle weiteren Informationen zu Deiner Bestellung erhälst Du in Deiner Bestätigungsmail.<br> </br>    
         
         Guten Appetit!
             </div>

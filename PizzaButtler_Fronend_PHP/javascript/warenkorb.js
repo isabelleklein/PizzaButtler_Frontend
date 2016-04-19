@@ -165,12 +165,18 @@ function lieferadresseAnzeigen(){
 	// Zurück-Button
 	$("#warenkorb_back").attr("onclick", "location.href='delivery.php'");
 	
-	if(document.getElementById('paypal').checked){
-		$("#warenkorb_next").attr("onclick", "location.href='finish_bar.php'");
-	}
-	else{
-		$("#warenkorb_next").attr("onclick", "location.href='finish_paypal.php'");
-	}
+	$("#warenkorb_next").click(function(){
+		if(document.getElementById('paypal').checked){
+			window.location.href = 'finish_paypal.php';
+		}
+		else if (document.getElementById('bar').checked){
+			window.location.href = 'finish_bar.php';
+		}
+		else {
+		window.alert("Bitte geben Sie eine Bezahlart an");
+		}
+	});
+
 	
 }
 	
