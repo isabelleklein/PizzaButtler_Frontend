@@ -94,7 +94,7 @@ function warenkorbAnzeigen(){
 		var li = $("<li class='warenkorbelement'>" + anzahl + " " + name + ", " + kurzgroesse + ",\
 					<button class='hinzufuegen' onclick='hinzufuegen(" + i + ")'>+</button>\
 					<button class='reduzieren' onclick='reduzieren(" + i + ")'>-</button>\
-					<span class='warenkorbpreis'>" + preis + "€</span>\
+					<span class='warenkorbpreis'>" + preis.toFixed(2) + "€</span>\
 					<div class='zusatz'>" + zusatz + "</li></div>");
 		ul.append(li);
 	}
