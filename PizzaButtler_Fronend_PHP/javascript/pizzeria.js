@@ -119,21 +119,30 @@ var buildSpeisekarte = function(data){
 			}
 			for(var j = 0; j<speisekarte[i].produkte.length; j++){
 				var li;
-				if(speisekarte[i].variante.length == 3)
+				if(speisekarte[i].variante.length == 3) {
+					var preis1 = Boolean(speisekarte[i].produkte[j].preise[0]) ? speisekarte[i].produkte[j].preise[0].preise : "";
+					var preis2 = Boolean(speisekarte[i].produkte[j].preise[1]) ? speisekarte[i].produkte[j].preise[1].preise : "";
+					var preis3 = Boolean(speisekarte[i].produkte[j].preise[2]) ? speisekarte[i].produkte[j].preise[2].preise : "";
 					li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].name + "</div> \
 							<div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
-							<td> <button groesse='klein' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'>  "+ speisekarte[i].produkte[j].preise[0].preise + " € </button> </td> \
-							<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preise[1].preise +" € </button> </td> \
-							<td> <button groesse='groß' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preise[2].preise +" € </button> </td> </tr>");
-				else if(speisekarte[i].variante.length == 2)
+							<td> <button groesse='klein' produktID='" + speisekarte[i].produkte[j].produktID + "' class='preisbutton'>  " + preis1 + " € </button> </td> \
+							<td> <button groesse='mittel' produktID='" + speisekarte[i].produkte[j].produktID + "' class='preisbutton'> " + preis2 + " € </button> </td> \
+							<td> <button groesse='groß' produktID='" + speisekarte[i].produkte[j].produktID + "' class='preisbutton'> " + preis3 + " € </button> </td> </tr>");
+				}
+				else if(speisekarte[i].variante.length == 2){
+					var preis1 = Boolean(speisekarte[i].produkte[j].preise[0]) ? speisekarte[i].produkte[j].preise[0].preise : "";
+					var preis2 = Boolean(speisekarte[i].produkte[j].preise[1]) ? speisekarte[i].produkte[j].preise[1].preise : "";
 					li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].name + " </div> \
 							<div class='spaltenbezeichnung'>" + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
-							<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preise[0].preise + " € </button> </td> \
-							<td> <button groesse='groß' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preise[1].preise +" € </button> </td> </tr>");
-				else if(speisekarte[i].variante.length == 1)
+							<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ preis1 + " € </button> </td> \
+							<td> <button groesse='groß' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ preis2 +" € </button> </td> </tr>");
+				}
+				else if(speisekarte[i].variante.length == 1) {
+					var preis1 = Boolean(speisekarte[i].produkte[j].preise[0]) ? speisekarte[i].produkte[j].preise[0].preise : "";
 					li = $("<tr> <td> <div class='spaltenname'> " + speisekarte[i].produkte[j].name + "</div> \
 							<div class='spaltenbezeichnung'> " + speisekarte[i].produkte[j].beschreibung + " </div> </td> \
-							<td> <button groesse='mittel' produktID='"+ speisekarte[i].produkte[j].produktID + "' class='preisbutton'> "+ speisekarte[i].produkte[j].preise[0].preise + " € </button> </td> </tr>");
+							<td> <button groesse='mittel' produktID='" + speisekarte[i].produkte[j].produktID + "' class='preisbutton'> " + preis1 + " € </button> </td> </tr>");
+				}
 
 				list.append(li);
 				div.append(list);

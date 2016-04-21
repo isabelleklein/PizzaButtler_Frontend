@@ -54,8 +54,8 @@ $(document).ready(function() {
 });
 
 function bewertungErfolgreich(){
-	console.log("Bewertung erfolgreich abgegeben");
-	// Redirect hierher
+	alert("Danke für deine Bewertung!");
+    window.location = "./index.php";
 }
 
 function getRestaurant(data){
