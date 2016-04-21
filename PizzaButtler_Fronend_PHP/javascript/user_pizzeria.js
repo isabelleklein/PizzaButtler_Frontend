@@ -21,8 +21,8 @@ var loadData = function(){
 	var restaurantID = Cookies.get("restaurantID");
 	if(typeof restaurantID != 'undefined') {
 		rest = new RestInterface();
-		rest.setParameters("GET", "user/" + restaurantID, null, callback);
-		rest.fakeSend("./mock/getRestaurant.json");
+		rest.setParameters("GET", "restaurant/" + restaurantID, null, callback);
+		rest.send("./mock/getRestaurant.json");
 	}
 };
 
@@ -55,7 +55,6 @@ var callback = function(data){
 	$('#mindestbestellwert_data_anz').text(data.mindestbestellwert + " €").val(data.mindestbestellwert + " €");
 	$('#strasse_data_anz').text(data.strasse).val(data.strasse);
 	$('#hausnummer_data_anz').text(data.hausnummer).val(data.hausnummer);
-	console.log(data);
 	$('#plz_data_anz').text(data.plz).val(data.plz);
 	$('#ort_data_anz').text(data.ort).val(data.ort);	
 	
