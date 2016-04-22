@@ -5,8 +5,13 @@ $(document).ready(function(){
 	lieferadresseAnzeigen();
     $("#warenkorb_next").click(function(){
 		var bestellung = {};
-		bestellung.userID = Boolean(Cookies.get("userID")) ? parseInt(Cookies.get("userID")) : 0;
-		bestellung.gastID = Boolean(Cookies.get("gastID")) ? parseInt(Cookies.get("gastID")) : 0;
+		if(Boolean(Cookies.get("userID"))){
+			bestellung.userID = parseInt(Cookies.get("userID"));
+			bestellung.gastID = 0;
+		} else {
+			bestellung.userID = 0;
+			bestellung.gastID = parseInt(Cookies.get("gastID"));
+		}
 		bestellung.restaurantID = parseInt(Cookies.get("restaurantIdBestellung"));
 		bestellung.email = Cookies.get("email");
 		bestellung.bestellzeitpunkt = Cookies.get("zeit2");

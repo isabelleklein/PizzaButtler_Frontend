@@ -398,7 +398,8 @@ function hatOffen(oeffnungszeiten){
 	//console.log(time);
 	//console.log(oeffnungszeiten[day].von);
 	//console.log(time > oeffnungszeiten[day].von && time < oeffnungszeiten[day].bis);
-	return (time > oeffnungszeiten[day].von && time < oeffnungszeiten[day].bis);	
+	return (parseInt(time) > parseInt(oeffnungszeiten[day].von) && 
+			parseInt(time) < parseInt(oeffnungszeiten[day].bis));	
 }
 
 function parse(val) {
