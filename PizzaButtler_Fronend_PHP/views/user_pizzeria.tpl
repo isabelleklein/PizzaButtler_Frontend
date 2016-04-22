@@ -63,7 +63,10 @@
 						<input class="userbutton" id="pwaendern" name="pwaendern" type="button" value="Passwort &auml;ndern" />
 					</p>
 					<p>
-                        	<input type='button' class='userbutton' onclick="window.location.href='./statistik.php'"value="meine Statistik"/>
+                        <input type='button' class='userbutton' onclick="window.location.href='./statistik.php'"value="Meine Statistik"/>
+                    </p>
+					<p>
+                        <input type='button' class='userbutton' onclick="window.location.href='./bestellungen.php'"value="Meine Bestellungen"/>
                     </p>
 				</div>
 			</form>
