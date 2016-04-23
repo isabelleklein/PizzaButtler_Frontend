@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 var buildPizzerienListe = function(data){
 	if(data == 0) {
-		$("#pizzerienContainer").html("<h1>Es gibt in deiner N&auml;he leider keine teilnehmende Pizzeria, tut uns leid!</h1>");
+		$("#pizzerienContainer").html("<h1>Es gibt in deiner N&auml;he leider keine teilnehmende Pizzeria, tut uns leid!</h1><form action='./pizzerienSuche.php' name='pizzerienListeButton' id='pizzerienSucheGross'><p><input class='button_startseite' type='text' name='plz-ort' id='plz-ort' placeholder='Neue Suche' /></p></form>");
 	}
 	else {
 		// Tabelle an sich
