@@ -44,7 +44,7 @@
                             <label class="placeholder_fehler" id="fehleruserHnr"><br />Bitte geben Sie eine g&uumlltige Hausnummer an</label>
                         </div>
                         <div class="fline">
-                            <input type="text" name="plz" id="userPlz" pattern="[0-9]{5}" required title="5 Zahlen" onchange="plzPruefen_delivery()" 
+                            <input type="text" name="plz" id="userPlz" required title="5 Zahlen" onchange="plzPruefen_delivery()" 
                                    placeholder="PLZ"/>
                             <input type="text" name="ort" id="userOrt" required title="Nur Buchstaben inklusive Umlaute und maximal 2 Leerzeichen" 
                                    onchange="wohnortPruefen_delivery()" placeholder="Ort"/>

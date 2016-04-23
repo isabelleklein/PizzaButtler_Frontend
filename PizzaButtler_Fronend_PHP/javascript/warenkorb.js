@@ -8,6 +8,7 @@ $(document).ready(function(){
 		if(Boolean(Cookies.get("userID"))){
 			bestellung.userID = parseInt(Cookies.get("userID"));
 			bestellung.gastID = 0;
+			Cookies.remove("gastID");
 		} else {
 			bestellung.userID = 0;
 			bestellung.gastID = parseInt(Cookies.get("gastID"));
@@ -62,7 +63,6 @@ $(document).ready(function(){
 		if(document.getElementById('paypal').checked || document.getElementById('bar').checked){
 			if(checkMinBestellwert()){
 				rest.send();
-				window.location = document.getElementById('paypal').checked ? 'finish_paypal.php' : 'finish_bar.php';
 			} else {
 				alert("Bestellung konnte nicht abgesendet werden, da der Mindestbestellwert nicht erreicht wurde");
 			}
@@ -74,11 +74,22 @@ $(document).ready(function(){
 
 
 function checkMinBestellwert() {
-	return (parseFloat(Cookies.get("warenkorbGesamtsumme")) - parseFloat(Cookies.get("restaurantLieferkosten"))) > parseFloat(Cookies.get("restaurantMindestbestellwert"));
+	if(Cookies.get("lieferart") === "Lieferung"){
+		return (parseFloat(Cookies.get("warenkorbGesamtsumme")) - parseFloat(Cookies.get("restaurantLieferkosten"))) > parseFloat(Cookies.get("restaurantMindestbestellwert"));
+	} else {
+		return parseFloat(Cookies.get("warenkorbGesamtsumme")) > parseFloat(Cookies.get("restaurantMindestbestellwert"));
+	}	
 }
 
 function bestellungSuccess(){
 	Cookies.remove("Warenkorb");
+	Cookies.remove("restaurantIdBestellung");
+	Cookies.remove("restaurantLieferkosten");
+	Cookies.remove("restaurantMindestbestellwert");
+	Cookies.remove("zeit");
+	Cookies.remove("zeit2");
+	Cookies.remove("gastID");
+	window.location = document.getElementById('paypal').checked ? 'finish_paypal.php' : 'finish_bar.php';
 }
 
 
