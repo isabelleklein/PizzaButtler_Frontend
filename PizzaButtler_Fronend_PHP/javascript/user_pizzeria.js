@@ -280,7 +280,7 @@ function mail_piz_pruefen()
 {
     var email=document.getElementById("email_piz_aend").value;
 	/**  Pruefung ob eine gueltige Mail-Adresse eingegeben wurde **/
-    if(!new RegExp(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/).test(email)){
+    if(!new RegExp(/^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/).test(email)){
     	fehlerAusgeben("fehlerEmail_piz_aend", "email_piz_aend");
 	    return "Das Feld 'Email' entspricht nicht der typischen Form einer Email!\n";
     }

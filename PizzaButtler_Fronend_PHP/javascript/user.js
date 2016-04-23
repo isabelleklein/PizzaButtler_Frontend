@@ -236,7 +236,7 @@ function mailPruefen_user(){
     var email=document.getElementById("userEmail").value.trim();
 	/**  Pruefung ob eine gueltige Mail-Adresse eingegeben wurde **/
 	// Regex ist der von Stackoverflow, der vorherige hat nicht immer funktioniert
-    if(!new RegExp(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/).test(email)){
+    if(!new RegExp(/^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/).test(email)){
     	fehlerAusgeben_user("fehleruserEmail", "userEmail");
 	    return "Das Feld 'Email' entspricht nicht der typischen Form einer Email!\n";
     }
