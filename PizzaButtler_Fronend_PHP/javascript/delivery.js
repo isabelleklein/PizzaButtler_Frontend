@@ -30,7 +30,7 @@ $(document).ready(function(){
 		document.getElementById("eingeloggt").style.display = "none";
 	} else {
 		if(typeof restaurantID != 'undefined'){
-		   alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu k&ouml;nnen.");
+		   alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu können.");
 		}
 		document.getElementById("eingeloggt").style.display = "";
 	}	
@@ -38,14 +38,18 @@ $(document).ready(function(){
     /**
     * Ueberprueft die Lieferart beim click auf den "weiter"-Button und fuehrt entsprechende Prueffunktion aus
     **/
-	$("#delivery_next").click(function(){		
-		var lieferart = $("input[type='radio'][name='lieferart']:checked").val();
-        if($("input[type='radio'][name='lieferart']:checked").val() == "Abholung") {
-			// Bei Abholung werden nur bestimmte Daten benötigt, daher gesonderte checkForm_abholung() und nicht checkForm_delivery()
-			if(checkForm_abholung()) weiterleiten(lieferart);
+	$("#delivery_next").click(function(){
+		if(typeof restaurantID == 'undefined'){
+			var lieferart = $("input[type='radio'][name='lieferart']:checked").val();
+			if($("input[type='radio'][name='lieferart']:checked").val() == "Abholung") {
+				// Bei Abholung werden nur bestimmte Daten benötigt, daher gesonderte checkForm_abholung() und nicht checkForm_delivery()
+				if(checkForm_abholung()) weiterleiten(lieferart);
+			} else {
+				// Testen, ob korrekte Daten eingegeben wurden
+				if(checkForm_delivery()) weiterleiten(lieferart);
+			}
 		} else {
-			// Testen, ob korrekte Daten eingegeben wurden
-			if(checkForm_delivery()) weiterleiten(lieferart);
+			alert("Sie sind als Pizzeria angemeldet. Bitte melden Sie sich mit ihrem Privatkundenaccount an, um die Funktion nutzen zu können.");
 		}
 	});
 	

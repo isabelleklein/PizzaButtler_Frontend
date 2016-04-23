@@ -1,6 +1,9 @@
 /** Javascript für die Funktionalitäten der Statistikseite **/
 var rest;
 
+if(typeof Cookies.get("restaurantID") === "undefined" && window.location.href.contains("statistik.php"))
+	window.location = "index.php";
+
 $(document).ready(function() {
 	var restaurantID = Cookies.get('restaurantID');
 	rest = new RestInterface();

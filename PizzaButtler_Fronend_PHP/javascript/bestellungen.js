@@ -1,12 +1,14 @@
 /** Javascript für die Funktionalitäten der Statistikseite **/
 var rest;
 
+if(typeof Cookies.get("restaurantID") === "undefined" && window.location.href.contains("bestellungen.php"))
+	window.location = "index.php";
+
 $(document).ready(function() {
 	var restaurantID = Cookies.get('restaurantID');
 	rest = new RestInterface();
 	rest.setParameters("GET", "bestellung/" + restaurantID + "/listrestaurant", null, bestellungenAufrufen);
 	rest.send();
-	
 });
 
 function bestellungenAufrufen(bestellungen){
@@ -25,7 +27,6 @@ function bestellungenAufrufen(bestellungen){
 	var bestellungenHeute = [];
 	bestellungen.forEach(function(bestellung){
 		if(isToday(bestellung.bestellzeitpunkt)){
-			// Namen holen
 			var id;
 			
 			if(bestellung.userID > 0){
@@ -49,7 +50,7 @@ function bestellungenAufrufen(bestellungen){
 									bestellung.plz + " " +
 									bestellung.ort + "</td>");
 			var rechnungsbetrag = $("<td>" + bestellung.rechnungsbetrag + " €" + "</td>")
-			var bestellpositionen = $("<td></td>");
+			var bestellpositionen = $("<td>Siehe E-Mail</td>");
 			
 			tr.append(lieferart);
 			tr.append(lieferzeitpunkt);
@@ -81,7 +82,5 @@ function isToday(dateTimeString){
 	todayString += (month.toString().length > 1 ? month : "0" + month);
 	todayString += (date.getDate().toString().length > 1 ? date.getDate() : "0" + date.getDate());
 	
-	if(dateTimeString.startsWith(todayString))
-		return true;
-	return false;
+	return dateTimeString.startsWith(todayString)
 }

@@ -1,6 +1,10 @@
 /** Userdata zum User mit best. ID holen **/
 var rest;
 var user;
+
+if(typeof Cookies.get("userID") === "undefined" && window.location.href.contains("user.php"))
+	window.location = "index.php";
+
 $(document).ready(function(){	
 	var userID = Cookies.get('userID');
 	if(typeof userID != 'undefined'){
@@ -11,21 +15,61 @@ $(document).ready(function(){
 				setClickListener();
 			});
 		});
+		
+		$("#userpwaendern").click(passwortAendern);
 	}
 });
 
-
-var loadData = function(){
-	var userID = Cookies.get("userID");
-	if(typeof userID != 'undefined') {
+function passwortAendern (){
+	var passwortAlt = $("#passwortAlt").val();
+	var passwortNeu = $("#passwortNeu").val();
+	
+	var error = "";
+	if(passwortAlt.length === 0)
+		error += "<div>Bitte gib dein altes Passwort an</div>";
+		
+	if(passwortNeu.length === 0)
+		error += "<div>Bitte gib ein neues Passwort an</div>";		
+	else if(!new RegExp(/^.{8,12}$/).test(passwortNeu))
+		error += "<div>Bitte gib ein Passwort mit 8-12 Zeichen ein</div>";
+			
+	if(error.length == 0){
+		var postData = {};
+		
+		postData.passwortAlt = passwortAlt;
+		postData.passwortNeu = passwortNeu;
+		postData.email = user.email;
+	
 		rest = new RestInterface();
-		rest.setParameters("GET", "user/" + userID, null, callback_user);
+		rest.setParameters("POST", "resetPassword/change", postData, aendernSuccess, aendernFailure);
+		rest.returnText();
 		rest.send();
-		rest.send("./mock/getUser.json");
+	} else {
+		$("#pwAendernError").html(error);
 	}
 }
 
-var callback_user = function(data){
+function aendernSuccess(){
+	alert("Passwort wurde erfolgreich geändern");
+	$("#passwortAlt").val("");
+	$("#passwortNeu").val("");
+	$("#pwAendernError").html("");
+}
+function aendernFailure(){
+	alert("Passwort konnte nicht geändern werden, bitte überprüfe deine Eingaben");
+	$("#pwAendernError").html("");
+}
+
+function loadData(){
+	var userID = Cookies.get("userID");
+	if(typeof userID != 'undefined') {
+		rest = new RestInterface();
+		rest.setParameters("GET", "user/" + userID, null, loadDataSuccess);
+		rest.send();
+	}
+}
+
+function loadDataSuccess (data){
 	user = data;
 	if($('#userAnrede').prop("tagName") == "SELECT") {
 		$('#userAnrede').val(data.anrede);
@@ -45,9 +89,7 @@ var callback_user = function(data){
 };
 
 function setClickListener(){
-	/** Aktionsinformationen fuer den Absenden-Button **/
-	console.log("setClickListener");
-	
+	/** Aktionsinformationen fuer den Absenden-Button **/	
 	$('#userdatenspeichern').click(function(e) {
 		e.preventDefault(); /** cancel form submit **/
 		//Prüfung, ob Daten so korrekt sind und versendet werden dürfen
@@ -67,18 +109,6 @@ function setClickListener(){
 			}
 		}
 	});
-}
-
-
-function passwortPruefenaend(){
-    var pw1=document.getElementById("userpw_alt").value;
-	/**  Pruefung ob sicheres Passwort eingegeben wurde **/
-	if(!new RegExp(/^.{8,12}$/).test(pw1)){
-		fehlerAusgeben("fehlerPw_1", "userpw_alt");
-		return "Das Feld 'Passwort' hat nicht die erforderliche Sicherheit! Bitte mind. 8 stelliges Passwort verwenden\n";
-	}
-	hinweisVerbergen("fehleruserpw_alt", "userpw_alt");
-	return "";
 }
 
 //Prüfung der Eingabeinformationen

@@ -46,7 +46,6 @@ $(document).ready(function() {
 		post.userID = parseInt(bewUserID);
 		post.beschreibung = "";
 	
-		console.log(JSON.stringify(post));	
         rest = new RestInterface();
 		rest.setParameters("POST", "bewertung", post, bewertungErfolgreich);
 		rest.send();

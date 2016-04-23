@@ -1,5 +1,9 @@
 /** Userdata zum User mit best. pizzerien ID holen **/
 var rest;
+
+if(typeof Cookies.get("restaurantID") === "undefined" && window.location.href.contains("user_pizzeria.php"))
+	window.location = "index.php";
+
 $(document).ready(function(){	
 	loadData();
 	$('#datenaendern').click(function(e) {

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-22 14:02:11
+<?php /* Smarty version 3.1.27, created on 2016-04-23 11:37:26
          compiled from "views\user.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:315756f142531d7ac4_53927619%%*/
+/*%%SmartyHeaderCode:6882571b4256d856f5_49303788%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,31 +9,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '39d53655a3e08b6fd93437ccfa4aa9a1fe55656d' => 
     array (
       0 => 'views\\user.tpl',
-      1 => 1458048534,
+      1 => 1461404236,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '315756f142531d7ac4_53927619',
+  'nocache_hash' => '6882571b4256d856f5_49303788',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56f1425321a150_78321013',
+  'unifunc' => 'content_571b4256dc0071_24406440',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56f1425321a150_78321013')) {
-function content_56f1425321a150_78321013 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_571b4256dc0071_24406440')) {
+function content_571b4256dc0071_24406440 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '315756f142531d7ac4_53927619';
+$_smarty_tpl->properties['nocache_hash'] = '6882571b4256d856f5_49303788';
 ?>
 <html>
     <head>
-
         <title>Benutzer</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link href="./css/main.css" rel="stylesheet" /> 
+        <?php echo '<script'; ?>
+ type="text/javascript" src="./javascript/passwort_vergessen_absenden.js"><?php echo '</script'; ?>
+>
 		<?php echo '<script'; ?>
  type="text/javascript" src="./javascript/user.js"><?php echo '</script'; ?>
->
-		
+>		
     </head>
     
     <body>
@@ -76,8 +77,17 @@ $_smarty_tpl->properties['nocache_hash'] = '315756f142531d7ac4_53927619';
 					<p>
 						<input class="userbutton" id="userdatenaendern" name="userdatenaendern" type="button" value="Daten &auml;ndern" />
 					</p>
-                    <p>
-						<input class="userbutton" id="userpwaendern" name="userpwaendern" type="button" value="Passwort &auml;ndern" />
+                    <p id="passwortAendern">
+						<div>
+							<label>Altes Passwort</label>
+							<input type="password" id="passwortAlt"/>
+						</div>
+						<div>
+							<label>Neues Passwort</label>
+							<input type="password" id="passwortNeu"/>
+						</div>
+						<div id="pwAendernError"></div>
+						<input class="userbutton" id="userpwaendern" name="userpwaendern" type="button" value="Passwort &auml;ndern"/>
 					</p>
 				</div>
 			</form>

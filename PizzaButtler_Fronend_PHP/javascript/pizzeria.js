@@ -19,7 +19,6 @@ $(document).ready(function(){
 		// Abrufen der Speisekarte
 		rest.setParameters("GET", "restaurant/" + pizzeriaId + "/speisekarte", null, buildSpeisekarte);
 		rest.send();
-		//rest.send("./mock/getSpeisekarte.json");
 	}
 	else {
 		rest.fakeSend("./mock/null.json");
@@ -169,9 +168,6 @@ var buildSpeisekarte = function(data){
 	}
 }
 
-function waehleExtras(pizza){
-	
-}
 
 function extraslisten(data){
 	var text = (" ");
@@ -186,10 +182,10 @@ function extraslisten(data){
 									name='" + data[i].name + "'id='" + data[i].name + "' preis='" + data[i].preis + "'\
 									class='extratabelle'> <label for='"+data[i].name+"'> " + data[i].name + "</td> " + " <td align='left'> " + data[i].preis + " € </label> </td>");
 		}
-		statement = statement + ("</tr> </div>");
+		statement += ("</tr> </div>");
 	}
 	
-	statement = statement + ("</table> <p id='anmerkungentext'> Anmerkungen </p> <textarea id='anmerkungen' placeholder=' '></textarea>");
+	statement += ("</table> <p id='anmerkungentext'> Anmerkungen </p> <textarea id='anmerkungen' placeholder=' '></textarea>");
 	
 	$('#extrazutaten').html(statement);	
 }
@@ -211,12 +207,10 @@ function schliessen(){
 	    $('#overlay').fadeOut();          
 	});
 	
-	var anmerkungen = $('#anmerkungen').val();
-	
-	addToWarenkorb(aktuellePizza, extras, anmerkungen);
+	addToWarenkorb(aktuellePizza, extras, $('#anmerkungen').val());
 	aktuellePizza = "";
 	 $(':checkbox:checked').prop('checked',false);
-	 document.getElementById("anmerkungen").value= " ";
+	 document.getElementById("anmerkungen").value=" ";
  
 }
 
@@ -326,16 +320,13 @@ function hinzufuegen(i){
 
 function reduzieren(i){
 	warenkorb[i].anzahl--;
-	if (warenkorb[i].anzahl == 0){
+	if (warenkorb[i].anzahl == 0)
 		warenkorb.splice(i,1);
-	}
 	showWarenkorb();
 	summieren();
-
 }
 
-function summieren()
-{
+function summieren(){
 	var summe = 0;
 	for(var i = 0; i < warenkorb.length; i++){
 		summe += warenkorb[i].preis * warenkorb[i].anzahl;
@@ -347,12 +338,9 @@ function summieren()
 	Cookies.set("warenkorbGesamtsumme", summe);
 }
 
-function zurKasse()
-{
+function zurKasse(){
 	var q = $("<button class = 'zurKasseButton' > Zur Kasse </button>");
 	$("#zurKasse").html(q);
-	
-
 	
 	$(".zurKasseButton").click(function(){
 		
@@ -361,20 +349,24 @@ function zurKasse()
 			// Mindestbestellwert erreicht?
 			var mindestbestellwert = parseFloat(Cookies.get("restaurantMindestbestellwert"));
 			if (Cookies.get("warenkorbGesamtsumme") > mindestbestellwert){
-				var jetzt = new Date();
-				var tag = jetzt.getDate();
-				if(tag < 10) tag = "0" + tag;
-				var monat = jetzt.getMonth()+1;
-				if(monat < 10) monat = "0" + monat;
-				var jahr = jetzt.getFullYear();
-				var stunde = jetzt.getHours();
-				var minute = jetzt.getMinutes();
-				if(minute < 10) minute = "0" + minute;
+				var date = new Date();
+				var tag = date.getDate();
+				if(tag < 10) 
+					tag = "0" + tag;
+				var monat = date.getMonth()+1;
+				if(monat < 10) 
+					monat = "0" + monat;
+				var jahr = date.getFullYear();
+				var stunde = date.getHours();
+				var minute = date.getMinutes();
+				if(minute < 10) 
+					minute = "0" + minute;
 				var zeit = (tag + "." + monat + "." + jahr + ", " + stunde + ":" + minute);
 				var zeit2 = jahr + monat + tag + "-" + stunde + ":" + minute;
 				Cookies.set("zeit", zeit);
 				Cookies.set("zeit2", zeit2);
 				Cookies.set("Warenkorb",warenkorb);
+				
 				window.location.href = "./delivery.php";
 			} else {
 				window.alert("Sie müssen den Mindestbestellwert erreichen");
@@ -396,9 +388,7 @@ function hatOffen(oeffnungszeiten){
 	} else {
 		time = hours + "" + minutes;
 	}
-	//console.log(time);
-	//console.log(oeffnungszeiten[day].von);
-	//console.log(time > oeffnungszeiten[day].von && time < oeffnungszeiten[day].bis);
+
 	return (parseInt(time) > parseInt(oeffnungszeiten[day].von) && 
 			parseInt(time) < parseInt(oeffnungszeiten[day].bis));	
 }

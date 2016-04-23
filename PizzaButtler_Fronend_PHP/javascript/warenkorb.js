@@ -56,11 +56,30 @@ $(document).ready(function(){
 		}
 		
 		rest = new RestInterface();
-		rest.setParameters("POST", "bestellung/send", bestellung, verarbeiteBestellung, bestellungNichtErfolgreich);
-		rest.send();
+		rest.setParameters("POST", "bestellung/send", bestellung, bestellungSuccess);
+		
+
+		if(document.getElementById('paypal').checked || document.getElementById('bar').checked){
+			if(checkMinBestellwert()){
+				rest.send();
+				window.location = document.getElementById('paypal').checked ? 'finish_paypal.php' : 'finish_bar.php';
+			} else {
+				alert("Bestellung konnte nicht abgesendet werden, da der Mindestbestellwert nicht erreicht wurde");
+			}
+		} else {
+			window.alert("Bitte geben Sie eine Bezahlart an");
+		}
 	});
 });
 
+
+function checkMinBestellwert() {
+	return (parseFloat(Cookies.get("warenkorbGesamtsumme")) - parseFloat(Cookies.get("restaurantLieferkosten"))) > parseFloat(Cookies.get("restaurantMindestbestellwert"));
+}
+
+function bestellungSuccess(){
+	Cookies.remove("Warenkorb");
+}
 
 
 function warenkorbAnzeigen(){
@@ -167,31 +186,4 @@ function lieferadresseAnzeigen(){
 
 	// Zurück-Button
 	$("#warenkorb_back").attr("onclick", "location.href='delivery.php'");
-	
-	$("#warenkorb_next").click(function(){
-		if(document.getElementById('paypal').checked){
-			window.location.href = 'finish_paypal.php';
-		}
-		else if (document.getElementById('bar').checked){
-			window.location.href = 'finish_bar.php';
-		}
-		else {
-		window.alert("Bitte geben Sie eine Bezahlart an");
-		}
-	});
-
-	
 }
-	
-
-
-function verarbeiteBestellung(data){
-	//console.log("Erfolgreich");
-	//window.location.href = "./finish.php";
-}
-
-function bestellungNichtErfolgreich(){
-	//console.log("Fehler, Bestellungsserver ist nicht erreichbar");
-}
-
-

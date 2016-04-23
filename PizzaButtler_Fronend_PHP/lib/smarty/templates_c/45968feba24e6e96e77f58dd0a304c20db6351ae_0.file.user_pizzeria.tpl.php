@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-04-14 18:39:24
+<?php /* Smarty version 3.1.27, created on 2016-04-23 11:37:44
          compiled from "views\user_pizzeria.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:29002570fc7bced5879_92572792%%*/
+/*%%SmartyHeaderCode:32371571b42681217e5_18530603%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,20 +9,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '45968feba24e6e96e77f58dd0a304c20db6351ae' => 
     array (
       0 => 'views\\user_pizzeria.tpl',
-      1 => 1459764240,
+      1 => 1461320586,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29002570fc7bced5879_92572792',
+  'nocache_hash' => '32371571b42681217e5_18530603',
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_570fc7bcf23ad4_90944004',
+  'unifunc' => 'content_571b42681488e9_39603191',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_570fc7bcf23ad4_90944004')) {
-function content_570fc7bcf23ad4_90944004 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_571b42681488e9_39603191')) {
+function content_571b42681488e9_39603191 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '29002570fc7bced5879_92572792';
+$_smarty_tpl->properties['nocache_hash'] = '32371571b42681217e5_18530603';
 ?>
 <html>
     <head>
@@ -91,7 +91,10 @@ $_smarty_tpl->properties['nocache_hash'] = '29002570fc7bced5879_92572792';
 						<input class="userbutton" id="pwaendern" name="pwaendern" type="button" value="Passwort &auml;ndern" />
 					</p>
 					<p>
-                        	<input type='button' class='userbutton' onclick="window.location.href='./statistik.php'"value="meine Statistik"/>
+                        <input type='button' class='userbutton' onclick="window.location.href='./statistik.php'"value="Meine Statistik"/>
+                    </p>
+					<p>
+                        <input type='button' class='userbutton' onclick="window.location.href='./bestellungen.php'"value="Meine Bestellungen"/>
                     </p>
 				</div>
 			</form>

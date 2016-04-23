@@ -17,7 +17,6 @@ function sendLogin(){
 			
 	rest.setParameters("POST", "user/login", jsObj, loginSuccess, loginFailure);
 	rest.send();
-	//rest.send("./mock/loginSuccess.json");
 }
 
 function loginSuccess(userData){
@@ -26,38 +25,29 @@ function loginSuccess(userData){
 	{
 		if (typeof(userData.userID) !== 'undefined' ||
 			typeof(userData.restaurantID) !== 'undefined'){
+			
+			Cookies.remove("gastID");
 	
 			var expireTime = ($('#cbmerken').prop('checked'))? 7 : 0.2;
 					
-			//$('#div_ajaxResponse').text( returnCode );
 			if(typeof(userData.userID) !== 'undefined')	
-			{
-				console.log("Privatkunde");
-				console.log(userData.userID);
 				Cookies.set("userID", userData.userID, {expires: expireTime});
-			}
 			else if(typeof(userData.restaurantID) !== 'undefined')
-			{
-				console.log("Restaurant");
-				console.log(userData.restaurantID);
 				Cookies.set("restaurantID", userData.restaurantID, {expires: expireTime});
-			}
-			else{
+			else
 				alert("Weder User noch Pizzeria wurde erkannt");
-			}
+
 			location.reload();
 		}
 	}
 	// Anmeldung fehlgeschlagen
 	else{
-		//console.log("Fehler: Falsche Eingaben / Nicht vorhanden");
 		window.alert("Login misslungen! Bitte prüfen Sie Ihre Eingabedaten.");
 	}
 }
 
 // Aufruf ist gescheitert (Server down / Netzwerfehler)
 function loginFailure(){
-	console.log("Verbindungsfehler");
 	window.alert("Login misslungen! Bitte prüfen Sie Ihre Eingabedaten.");
 }
 

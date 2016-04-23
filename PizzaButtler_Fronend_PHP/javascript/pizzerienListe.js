@@ -10,10 +10,10 @@ $(document).ready(function(){
 	if(plzOrt != ""){
 		// Rest-Aufruf durchfuehren und Liste befuellen
 		rest.send();
-		//rest.send("./mock/getPizzerien.json");
 	}
 	
 	Cookies.remove("Warenkorb");
+	Cookies.remove("gastID");
 });
 
 var buildPizzerienListe = function(data){

@@ -20,6 +20,10 @@ function RestInterface(){
         this.successCallback = successCallback;
 		this.failureCallback = failureCallback;
     };
+	
+	this.returnText = function(){
+		dataType = "text";
+	}
 
 	/** Rest Request abschicken
 		Fall 1: Rest-Request erfolgreich

@@ -1,7 +1,3 @@
-$(document).ready(function(){
-	
-	var gesamtsumme = parseFloat(Cookies.get("warenkorbGesamtsumme"));
-	
-	$("#gesamtsumme").html(gesamtsumme.toFixed(2));
-	
+$(document).ready(function(){	
+	$("#gesamtsumme").html(parseFloat(Cookies.get("warenkorbGesamtsumme")).toFixed(2));
 });
