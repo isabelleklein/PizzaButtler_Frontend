@@ -108,13 +108,11 @@ function datenspeichernRest(){
 		//e.preventDefault(); /** cancel form submit **/
 		var json = JSON.parse(jsonErzeugen());
 		//var daten = $('#datenaendern_daten').serializeObject();
-		console.log(json);
 		var restaurantID = Cookies.get("restaurantID");
-		console.log(restaurantID + "");
 		if(typeof restaurantID != 'undefined') {
 			rest = new RestInterface();
-			rest.setParameters("POST", "restaurant/updaterestaurant", json);
-			rest.returnText(); // Sonst kommt n rückgabefehler
+			rest.setParameters("POST", "restaurant/updaterestaurant", json, aendernSuccess);
+			rest.returnText();
 			rest.send();
 		}
 		else{
@@ -123,9 +121,9 @@ function datenspeichernRest(){
 	}
 }
 
-function json(){
-	//window.location.href = "./user_pizzeria.php"; 
-	console.log("Umleitung, Ende");
+function aendernSuccess(){
+	console.log("rdy");
+	window.location = "user_pizzeria.php"; 
 }
 
 function datumAngabe(tagId, data){

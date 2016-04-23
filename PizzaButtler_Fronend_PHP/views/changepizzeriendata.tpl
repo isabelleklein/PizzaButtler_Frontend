@@ -9,7 +9,7 @@
     
     <body>
     	<div id=datenContainer>
-			<form id='datenndern_daten' name="datenaendern_daten" action="#">
+			<form id='datenndern_daten' name="datenaendern_daten" action="javascript:void(0);">
 				<h3 class="contenthead"> Deine Daten / Daten &aumlndern </h3>				
                 <div class="fline">
 	                <input type="text" name="name" id="name_piz_aend" required title="Zwischen 3 und 25 Zeichen (Umlaute möglich)" onchange="vornamePruefen1()" placeholder="Name"/>
