@@ -56,9 +56,9 @@
                             <td><label name="telefon" id="pizzeriaTelefon"></label></td>  
                         </tr>
                     </table>
-					<p>
+					<!--<p>
 						<input class="userbutton" id="datenaendern" name="datenaendern" type="button" value="Daten &auml;ndern" />
-					</p>
+					</p>-->
                     <p>
 						<input class="userbutton" id="pwaendern" name="pwaendern" type="button" value="Passwort &auml;ndern" />
 					</p>
