@@ -74,7 +74,11 @@ $(document).ready(function(){
 
 
 function checkMinBestellwert() {
-	return (parseFloat(Cookies.get("warenkorbGesamtsumme")) - parseFloat(Cookies.get("restaurantLieferkosten"))) > parseFloat(Cookies.get("restaurantMindestbestellwert"));
+	if(Cookies.get("lieferart") === "Lieferung"){
+		return (parseFloat(Cookies.get("warenkorbGesamtsumme")) - parseFloat(Cookies.get("restaurantLieferkosten"))) > parseFloat(Cookies.get("restaurantMindestbestellwert"));
+	} else {
+		return parseFloat(Cookies.get("warenkorbGesamtsumme")) > parseFloat(Cookies.get("restaurantMindestbestellwert"));
+	}	
 }
 
 function bestellungSuccess(){
