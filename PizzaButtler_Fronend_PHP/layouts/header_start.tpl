@@ -172,8 +172,8 @@
                 <p>Passwort vergessen?</p>
                 <p>Gib deine E-Mail ein, wir senden dir ein neues Passwort zu </p>
                 <div class="fline">
-                    <input class="in2" type="text" name="email" id="email_pwvergessen" placeholder="Email" required onchange="mailPruefen_pwvergessen()"/>
-                    <input class="in2" id="absenden_pwvergessen" name="absenden" type="button" value="Absenden" onclick="textTauschen('box1','box2')"/>
+                    <input type="text" name="email" id="email_pwvergessen" placeholder="Email" required onchange="mailPruefen_pwvergessen()"/>
+                    <input class="userbutton" id="absenden_pwvergessen" name="absenden" type="button" value="Absenden" onclick="textTauschen('box1','box2')"/>
                     <input type="button"  class="close_pwvergessen" value="X"/>
                 </div>
             </div>
