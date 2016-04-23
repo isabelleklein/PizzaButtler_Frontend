@@ -114,8 +114,8 @@ function datenspeichernRest(){
 		if(typeof restaurantID != 'undefined') {
 			rest = new RestInterface();
 			rest.setParameters("POST", "restaurant/updaterestaurant", json);
+			rest.returnText(); // Sonst kommt n rückgabefehler
 			rest.send();
-			console.log("durchlaufen");
 		}
 		else{
 			console.log("undefined ID");
