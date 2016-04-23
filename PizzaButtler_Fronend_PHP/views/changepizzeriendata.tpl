@@ -80,7 +80,7 @@
 	            	<label class="fehler" id="fehlerEmail_piz_aend">Bitte geben Sie eine g&uumlltige Emailadresse an</label>
 	            </div>
 				<p>
-	                <input class="userbutton" id="datenspeichern" name="datenspeichern" type="button" value="&Auml;nderungen speichern"/>
+	                <button class="userbutton" onclick="datenspeichernRest()">&Auml;nderungen speichern</button>
                     <a href="user_pizzeria.php"><input class="userbutton" id="datenspeichern_abbr" name="datenspeichern_abbr" type="button" value="abbrechen"/>
                     </a>
 	            </p>

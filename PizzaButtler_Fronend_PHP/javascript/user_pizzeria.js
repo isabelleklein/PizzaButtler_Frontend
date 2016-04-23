@@ -1,5 +1,7 @@
 /** Userdata zum User mit best. pizzerien ID holen **/
 var rest;
+var bild;
+var beschreibung;
 
 if(typeof Cookies.get("restaurantID") === "undefined" && window.location.href.contains("user_pizzeria.php"))
 	window.location = "index.php";
@@ -12,13 +14,22 @@ $(document).ready(function(){
 			setClickListener();
 		});
 	});
-    $('#pwaendern').click(function(e) {
+    /**$('#pwaendern').click(function(e) {
 		$('.maincontent').load("./views/changepizzeriapassword.tpl", function(){
 			loadData();
 			setClickListener();
 		});
 	});
+	$('#datenspeichernRestaurant').click(function(e) {
+			datenspeichernRest();
+			setClickListener();
+	});**/
+    
 });
+
+var setClickListener = function(){
+	
+};
 
 
 var loadData = function(){
@@ -26,11 +37,13 @@ var loadData = function(){
 	if(typeof restaurantID != 'undefined') {
 		rest = new RestInterface();
 		rest.setParameters("GET", "restaurant/" + restaurantID, null, callback);
-		rest.send("./mock/getRestaurant.json");
+		rest.send();
 	}
 };
 
 var callback = function(data){
+	bild = data.bild;
+	beschreibung = data.beschreibung;
 	$('#name_data_anz').text(data.name).val(data.name);
 	$('#beschreibung_data_anz').text(data.beschreibung).val(data.beschreibung);
 	
@@ -90,6 +103,31 @@ var callback = function(data){
 	$('#email_piz_aend').val(data.email);
 };
 
+function datenspeichernRest(){
+	if(checkForm_Aendern()===""){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen
+		//e.preventDefault(); /** cancel form submit **/
+		var json = JSON.parse(jsonErzeugen());
+		//var daten = $('#datenaendern_daten').serializeObject();
+		console.log(json);
+		var restaurantID = Cookies.get("restaurantID");
+		console.log(restaurantID + "");
+		if(typeof restaurantID != 'undefined') {
+			rest = new RestInterface();
+			rest.setParameters("POST", "restaurant/updateRestaurant", json);
+			rest.send();
+			console.log("durchlaufen");
+		}
+		else{
+			console.log("undefined ID");
+		}
+	}
+}
+
+function json(){
+	//window.location.href = "./user_pizzeria.php"; 
+	console.log("Umleitung, Ende");
+}
+
 function datumAngabe(tagId, data){
 	var oeffnungszeit_von = data.oeffnungszeiten[tagId].von + "";
 	oeffnungszeit_von = oeffnungszeit_von.slice(0,2) + ":" + oeffnungszeit_von.slice(2,4);
@@ -99,52 +137,34 @@ function datumAngabe(tagId, data){
 	return oeffnungszeit;
 }
 
-var setClickListener = function(){
-	/** Aktionsinformationen fuer den Absenden-Button **/
-	
-	$('#datenspeichern').click(function(e) {
-		if(checkForm_Aendern()){ //Prüfung, ob Daten so korrekt sind und versendet werden dürfen
-			e.preventDefault(); /** cancel form submit **/
-			var json = JSON.parse(jsonErzeugen());
-			//var daten = $('#datenaendern_daten').serializeObject();
-			console.log(json);
-			var restaurantID = Cookies.get("restaurantID");
-			console.log(restaurantID + "");
-			if(typeof restaurantID != 'undefined') {
-				rest = new RestInterface();
-				rest.setParameters("PUT", "pizzeria/" + restaurantID, json, function(json){
-					window.location.href = "./user_pizzeria.php"; 
-				});
-				rest.fakeSend("./mock/putRestaurant.json");
-				console.log("durchlaufen");
-			}
-			else{
-				console.log("undefined ID");
-			}
-		}
-	});	
-}
 function jsonErzeugen(){
+	var id = Cookies.get("restaurantID");
 	var jsonString = "{";
+	//jsonString = jsonString.concat("\"id\" : " + id + ",");
+	jsonString = jsonString.concat("\"id\" : 4,");
 	jsonString = jsonString.concat("\"name\":\"" + document.getElementById('name_piz_aend').value + "\",");
 	jsonString = jsonString.concat("\"oeffnungszeiten\" :[");
-	jsonString = jsonString.concat("{\"tag\": \"so\", \"von\": " + document.getElementById('sonntag_piz_aend').value.replace(":","") + ", \"bis\":" + document.getElementById('sonntag_piz_aend_bis').value.replace(":","") + "},");
-	jsonString = jsonString.concat("{\"tag\": \"mo\", \"von\": " + document.getElementById('montag_piz_aend').value.replace(":","") + ", \"bis\":" + document.getElementById('montag_piz_aend_bis').value.replace(":","") + "},");
-	jsonString = jsonString.concat("{\"tag\": \"di\", \"von\": " + document.getElementById('dienstag_piz_aend').value.replace(":","") + ", \"bis\":" + document.getElementById('dienstag_piz_aend_bis').value.replace(":","") + "},");
-	jsonString = jsonString.concat("{\"tag\": \"mi\", \"von\": " + document.getElementById('mittwoch_piz_aend').value.replace(":","") + ", \"bis\":" + document.getElementById('mittwoch_piz_aend_bis').value.replace(":","") + "},");
-	jsonString = jsonString.concat("{\"tag\": \"do\", \"von\": " + document.getElementById('donnerstag_piz_aend').value.replace(":","") + ", \"bis\":" + document.getElementById('donnerstag_piz_aend_bis').value.replace(":","") + "},");
-	jsonString = jsonString.concat("{\"tag\": \"fr\", \"von\": " + document.getElementById('freitag_piz_aend').value.replace(":","") + ", \"bis\":" + document.getElementById('freitag_piz_aend_bis').value.replace(":","") + "},");
-	jsonString = jsonString.concat("{\"tag\": \"sa\", \"von\": " + document.getElementById('samstag_piz_aend').value.replace(":","") + ", \"bis\":" + document.getElementById('samstag_piz_aend_bis').value.replace(":","") + "}");
+	jsonString = jsonString.concat("{\"tag\": \"so\", \"oeffnungszeit\": \"" + document.getElementById('sonntag_piz_aend').value.replace(":","") + "-" + document.getElementById('sonntag_piz_aend_bis').value.replace(":","") + "\"},");
+	jsonString = jsonString.concat("{\"tag\": \"mo\", \"oeffnungszeit\": \"" + document.getElementById('montag_piz_aend').value.replace(":","") + "-" + document.getElementById('montag_piz_aend_bis').value.replace(":","") + "\"},");
+	jsonString = jsonString.concat("{\"tag\": \"di\", \"oeffnungszeit\": \"" + document.getElementById('dienstag_piz_aend').value.replace(":","") + "-" + document.getElementById('dienstag_piz_aend_bis').value.replace(":","") + "\"},");
+	jsonString = jsonString.concat("{\"tag\": \"mi\", \"oeffnungszeit\": \"" + document.getElementById('mittwoch_piz_aend').value.replace(":","") + "-" + document.getElementById('mittwoch_piz_aend_bis').value.replace(":","") + "\"},");
+	jsonString = jsonString.concat("{\"tag\": \"do\", \"oeffnungszeit\": \"" + document.getElementById('donnerstag_piz_aend').value.replace(":","") + "-" + document.getElementById('donnerstag_piz_aend_bis').value.replace(":","") + "\"},");
+	jsonString = jsonString.concat("{\"tag\": \"fr\", \"oeffnungszeit\": \"" + document.getElementById('freitag_piz_aend').value.replace(":","") + "-" + document.getElementById('freitag_piz_aend_bis').value.replace(":","") + "\"},");
+	jsonString = jsonString.concat("{\"tag\": \"sa\", \"oeffnungszeit\": \"" + document.getElementById('samstag_piz_aend').value.replace(":","") + "-" + document.getElementById('samstag_piz_aend_bis').value.replace(":","") + "\"}");
 	jsonString = jsonString.concat("],");
-	jsonString = jsonString.concat("\"mindestbestellwert\":\"" + parseFloat(document.getElementById('mindestbestellwert_piz_aend').value)+ "\",");
+	jsonString = jsonString.concat("\"mindestbestellwert\":" + parseFloat(document.getElementById('mindestbestellwert_piz_aend').value)+ ",");
 	jsonString = jsonString.concat("\"strasse\":\"" + document.getElementById('strasse_piz_aend').value+ "\",");
 	jsonString = jsonString.concat("\"hausnummer\":\"" + document.getElementById('hausnummer_piz_aend').value+ "\",");
 	jsonString = jsonString.concat("\"plz\":\"" + document.getElementById('plz_piz_aend').value+ "\",");
 	jsonString = jsonString.concat("\"ort\":\"" + document.getElementById('ort_piz_aend').value+ "\",");
 	jsonString = jsonString.concat("\"telefonnummer\":\"" + document.getElementById('telefon_piz_aend').value+ "\",");
-	jsonString = jsonString.concat("\"lieferkosten\":\"" + parseFloat(document.getElementById('mindestbestellwert_piz_aend').value));
-	jsonString = jsonString.concat("\"}");
-	//console.log(jsonString);
+	jsonString = jsonString.concat("\"lieferkosten\":" + parseFloat(document.getElementById('mindestbestellwert_piz_aend').value) + ",");
+	jsonString = jsonString.concat("\"email\": \"" + document.getElementById('email_piz_aend').value + "\",");
+	jsonString = jsonString.concat("\"bild\": \"\",");
+	jsonString = jsonString.concat("\"beschreibung\": \"" + beschreibung + "\",");
+	jsonString = jsonString.concat("\"passwort\": \"test\",");
+	jsonString = jsonString.concat("\"wertung\": 4.0");
+	jsonString = jsonString.concat("}");
 	return jsonString;
 }
 
@@ -170,7 +190,7 @@ function checkForm_Aendern()//Prüfung zum Ändern von Daten einer Pizzeria
 		});
 	} catch(e){}
 	
-	
+	return strFehler;
 }
 
 function name_piz_pruefen()
@@ -262,7 +282,7 @@ function uhrzeit_piz_pruefen(tag, fehler_tag)
 	var fehl = "" + fehler_tag;
 	var zeit=document.getElementById(tage).value;
 	  /**  Pruefung ob eine gueltige Mail-Adresse eingegeben wurde **/
-    if(!new RegExp(/([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]/).test(zeit)){
+    if(!new RegExp(/([0-9]|0[0-9]|1[0-9]|2[0-4]):[0-5][0-9]/).test(zeit)){
   	    fehlerAusgeben(fehl, tage);
 		return "Die Uhrzeit entspricht nicht der typischen Form einer Uhrzeit!\n";
   	}
