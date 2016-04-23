@@ -299,10 +299,11 @@ function showWarenkorb(){
 		});		
 		zusatz = zusatz.substr(0, zusatz.length - 2); // Letztes ", " entfernen
 		
-		var li = $("<li class='warenkorbelement'>" + anzahl + " " + name + ", " + kurzgroesse + ",\
-					<button class='hinzufuegen' onclick='hinzufuegen(" + i + ")'>+</button>\
-					<button class='reduzieren' onclick='reduzieren(" + i + ")'>-</button>\
+		var li = $("<li class='warenkorbelement'>" + name + ", " + kurzgroesse + ",\
 					<span class='warenkorbpreis'>" + preis.toFixed(2) + "€</span>\
+                    <button class='hinzufuegen_button' onclick='hinzufuegen(" + i + ")'><img class='hinzufuegen' src='./images/plus.jpg' alt='+'></button>\
+					<a class='warenkorb_anzahl'>" + anzahl + "</a>\
+                    <button class='hinzufuegen_button' onclick='reduzieren(" + i + ")'><img class='reduzieren' src='./images/minus.jpg' alt='-'></button>\
 					<div class='zusatz'>" + zusatz + "</li></div>");
 		ul.append(li);
 	}

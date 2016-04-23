@@ -26,7 +26,7 @@
     	  	<input type="button"  id="close" value="X" onclick ="schliessen()"></input>
     	 	
     	 	<div id="extrazutaten"></div>
-    	 	<input type= "button" class="userbutton" value="Bestaetigen" onclick="schliessen()"></input>
+    	 	<input type= "button" class="userbutton" value="Best&auml;tigen" onclick="schliessen()"></input>
     	 	<div id="overlay">
     	 	
     	 			

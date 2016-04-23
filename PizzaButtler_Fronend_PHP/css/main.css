@@ -605,20 +605,26 @@ table {
 	border-style: solid;
 }
 
-.hinzufuegen{
-	background-color: #00CC00;
-	border-color: #0C0;
+.hinzufuegen_button{
+	padding:0;
+    border-width: 0;
+    margin-right: 0.1em;
 }
-.hinzufuegen:hover{
-	background-color: #FFF;
+
+.warenkorb_anzahl{
+    float: right;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+
+.hinzufuegen{
+	width: 2em;
+    hight: auto;
 }
 
 .reduzieren{
-	background-color: #FF0000;
-	border-color: #F00;
-}
-.reduzieren:hover{
-	background-color: #FFF;
+    width: 2em;
+    hight: auto;
 }
 
 .warenkorbelement{
@@ -630,13 +636,11 @@ table {
 	width: 2em;
 	height: 2em;
 	font-size: 60%;
-	border-width: 2px;
-	border-radius: 3px;
 	float: right;
 }
 .warenkorbpreis {
 	float:right;
-	margin-right:1em;
+	margin-left:1em;
 }
 .warenkorbelement .zusatz {
 	font-size: 75%;
