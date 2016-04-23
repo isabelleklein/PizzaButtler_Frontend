@@ -31,38 +31,38 @@
 	            <div class="fline">
 	            	<p>&Oumlffnungszeiten</p>
 	            	
-                    <input type="time" name="sonntag" id="sonntag_piz_aend" placeholder="Sonntag"></input>
-                    <input type="time" name="sonntag" id="sonntag_piz_aend_bis" placeholder="Sonntag"></input>
+                    <input type="text" name="sonntag" id="sonntag_piz_aend" placeholder="Sonntag" onchange="uhrzeit_piz_pruefen_start('sonntag_piz_aend', 'fehlerSonntag_piz_aend')"></input>
+                    <input type="text" name="sonntag" id="sonntag_piz_aend_bis" placeholder="Sonntag" onchange="uhrzeit_piz_pruefen('sonntag_piz_aend_bis', 'fehlerSonntag_piz_aend')"></input>
                     <label class='Wochentag_feld'>Sonntag</label></br>
                     <label class="fehler" id="fehlerSonntag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
-	            	<input type="time" name="montag" id="montag_piz_aend" placeholder="Montag"></input>
-                    <input type="time" name="montag" id="montag_piz_aend_bis" placeholder="Montag"></input>
+	            	<input type="text" name="montag" id="montag_piz_aend" placeholder="Montag" onchange="uhrzeit_piz_pruefen_start('montag_piz_aend', 'fehlerMontag_piz_aend')"></input>
+                    <input type="text" name="montag" id="montag_piz_aend_bis" placeholder="Montag" onchange="uhrzeit_piz_pruefen('montag_piz_aend_bis', 'fehlerMontag_piz_aend')"></input>
                     <label class='Wochentag_feld'>Montag</label></br>
                     <label class="fehler" id="fehlerMontag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
-	            	<input type="time" name="dienstag" id="dienstag_piz_aend" placeholder="Dienstag"></input>
-                    <input type="time" name="dienstag" id="dienstag_piz_aend_bis" placeholder="Dienstag"></input>
+	            	<input type="text" name="dienstag" id="dienstag_piz_aend" placeholder="Dienstag" onchange="uhrzeit_piz_pruefen_start('dienstag_piz_aend', 'fehlerDienstag_piz_aend')"></input>
+                    <input type="text" name="dienstag" id="dienstag_piz_aend_bis" placeholder="Dienstag" onchange="uhrzeit_piz_pruefen('dienstag_piz_aend_bis', 'fehlerDienstag_piz_aend')"></input>
                     <label class='Wochentag_feld'>Dienstag</label></br>
                     <label class="fehler" id="fehlerDienstag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
-	            	<input type="time" name="mittwoch" id="mittwoch_piz_aend" placeholder="Mittwoch"></input>
-                    <input type="time" name="mittwoch" id="mittwoch_piz_aend_bis" placeholder="Mittwoch"></input>
+	            	<input type="text" name="mittwoch" id="mittwoch_piz_aend" placeholder="Mittwoch" onchange="uhrzeit_piz_pruefen_start('mittwoch_piz_aend', 'fehlerMittwoch_piz_aend')"></input>
+                    <input type="text" name="mittwoch" id="mittwoch_piz_aend_bis" placeholder="Mittwoch" onchange="uhrzeit_piz_pruefen('mittwoch_piz_aend_bis', 'fehlerMittwoch_piz_aend')"></input>
                     <label class='Wochentag_feld'>Mittwoch</label></br>
                     <label class="fehler" id="fehlerMittwoch_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
-	            	<input type="time" name="donnerstag" id="donnerstag_piz_aend" placeholder="Donnerstag"></input>
-                    <input type="time" name="donnerstag" id="donnerstag_piz_aend_bis" placeholder="Donnerstag"></input>
+	            	<input type="text" name="donnerstag" id="donnerstag_piz_aend" placeholder="Donnerstag" onchange="uhrzeit_piz_pruefen_start('donnerstag_piz_aend', 'fehlerDonnerstag_piz_aend')"></input>
+                    <input type="text" name="donnerstag" id="donnerstag_piz_aend_bis" placeholder="Donnerstag" onchange="uhrzeit_piz_pruefen('donnerstag_piz_aend_bis', 'fehlerDonnerstag_piz_aend')"></input>
                     <label class='Wochentag_feld'>Donnerstag</label></br>
                     <label class="fehler" id="fehlerDonnerstag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
-	            	<input type="time" name="freitag" id="freitag_piz_aend" placeholder="Freitag"></input>
-                    <input type="time" name="freitag" id="freitag_piz_aend_bis" placeholder="Freitag"></input>
+	            	<input type="text" name="freitag" id="freitag_piz_aend" placeholder="Freitag" onchange="uhrzeit_piz_pruefen_start('freitag_piz_aend', 'fehlerFreitag_piz_aend')"></input>
+                    <input type="text" name="freitag" id="freitag_piz_aend_bis" placeholder="Freitag" onchange="uhrzeit_piz_pruefen('freitag_piz_aend_bis', 'fehlerFreitag_piz_aend')"></input>
                     <label class='Wochentag_feld'>Freitag</label></br>
                     <label class="fehler" id="fehlerFreitag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
-	            	<input type="time" name="samstag" id="samstag_piz_aend" placeholder="Samstag"></input>
-                    <input type="time" name="samstag" id="samstag_piz_aend_bis" placeholder="Samstag"></input>
+	            	<input type="text" name="samstag" id="samstag_piz_aend" placeholder="Samstag" onchange="uhrzeit_piz_pruefen_start('samstag_piz_aend', 'fehlerSamstag_piz_aend')"></input>
+                    <input type="text" name="samstag" id="samstag_piz_aend_bis" placeholder="Samstag" onchange="uhrzeit_piz_pruefen('samstag_piz_aend_bis', 'fehlerSamstag_piz_aend')"></input>
                     <label class='Wochentag_feld'>Samstag</label></br>
                     <label class="fehler" id="fehlerSamstag_piz_aend">Bitte geben Sie eine g&uumlltige Uhrzeit an</label>
 	            	
