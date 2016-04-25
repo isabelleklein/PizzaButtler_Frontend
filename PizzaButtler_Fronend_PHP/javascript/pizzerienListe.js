@@ -29,6 +29,7 @@ var buildPizzerienListe = function(data){
 		// Empfangene Daten durchgehen
 		for(var i = 0; i < data.length; i++){
 			var offen = hatOffen(data[i].oeffnungszeiten);
+			console.log(offen);
 			offen = offen ? "Geöffnet" : "Geschlossen";
 
 			var bewertung = "" + Math.round(2*data[i].bewertung)/2;
@@ -117,7 +118,8 @@ function hatOffen(oeffnungszeiten){
 		time = hours + "" + minutes;
 	}
 	
-	return (time > oeffnungszeiten[day].von && time < oeffnungszeiten[day].bis);	
+	return (parseInt(time) > parseInt(oeffnungszeiten[day].von) && 
+			parseInt(time) < parseInt(oeffnungszeiten[day].bis));	
 }
 
 function parse(val) {
